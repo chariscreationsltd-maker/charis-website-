@@ -1,0 +1,22 @@
+# WordPress ignores
+public_html/wp-config.php
+public_html/wp-content/uploads/
+public_html/wp-content/cache/
+public_html/wp-content/updraft/
+public_html/wp-content/ai1wm-backups/
+
+# Hidden and private directories
+public_html/.private/
+public_html/.tmb/
+.DS_Store
+
+# IDE and OS files
+.idea/
+.vscode/
+*.log
+
+# Ignore Charis OS / Next OS files
+public_html/charisos/
+charisos/
+*next os*
+*charis os*

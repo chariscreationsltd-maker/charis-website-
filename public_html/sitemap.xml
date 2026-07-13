@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- HOME -->
+  <url>
+    <loc>https://chariscreationsltd.com/</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/withoutwords__3_.png</image:loc>
+      <image:title>Charis Creations — Wedding Cinematography Uganda</image:title>
+      <image:caption>Charis Creations Ltd — Bringing Image To Life, Kampala Uganda since 2018</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/0C6A0493-scaled.jpg</video:thumbnail_loc>
+      <video:title>Timothy Weds Mildred — Cinematic Wedding Film Trailer | Charis Creations Uganda</video:title>
+      <video:description>A cinematic wedding film trailer by Charis Creations, Uganda's leading wedding cinematography studio in Kampala. Full day coverage, drone footage, same-day edit screened at reception.</video:description>
+      <video:content_loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/TIMOTHY-WEDS-MILDRED-TRAILER-FINAL-1920.mp4</video:content_loc>
+      <video:duration>180</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://chariscreationsltd.com">Charis Creations Ltd</video:uploader>
+      <video:publication_date>2026-01-01</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- PROJECTS -->
+  <url>
+    <loc>https://chariscreationsltd.com/projects-2/</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/0C6A0493-scaled.jpg</image:loc>
+      <image:title>Wedding Films Uganda — Charis Creations Projects</image:title>
+      <image:caption>Cinematic wedding films and photography by Charis Creations Kampala Uganda</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/0C6A4400.jpg</image:loc>
+      <image:title>Introduction Ceremony Videography Uganda — Charis Creations</image:title>
+      <image:caption>Kwanjula introduction ceremony films Uganda</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/Fred-Gloria-Shot-8-scaled.jpg</image:loc>
+      <image:title>Kukyala Ceremony Photography Uganda — Charis Creations</image:title>
+      <image:caption>Kukyala pre-wedding ceremony photography and videography Uganda</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/HP-Anniversary-3-scaled.jpg</image:loc>
+      <image:title>Podcast Production Kampala Uganda — Charis Creations</image:title>
+      <image:caption>Professional multi-camera podcast production in Kampala Uganda</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/JOAN-GRADUATION-6-scaled.jpg</image:loc>
+      <image:title>Portrait and Graduation Photography Uganda — Charis Creations</image:title>
+      <image:caption>Studio portrait and graduation photography Kampala Uganda</image:caption>
+    </image:image>
+  </url>
+
+  <!-- SERVICES -->
+  <url>
+    <loc>https://chariscreationsltd.com/services/</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/8H1A7570-scaled.jpg</image:loc>
+      <image:title>Wedding Cinematography Packages Uganda — Charis Creations</image:title>
+      <image:caption>Wedding video and photography packages Kampala Uganda</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/Moreens-Kuhinjira-3-1-scaled.jpg</image:loc>
+      <image:title>Introduction Ceremony Packages Uganda — Charis Creations</image:title>
+      <image:caption>Kwanjula introduction ceremony videography packages Uganda</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/0C6A4436-e1774343516184.jpg</image:loc>
+      <image:title>Kukyala Packages Uganda — Charis Creations</image:title>
+      <image:caption>Kukyala ceremony photography and video packages Uganda</image:caption>
+    </image:image>
+  </url>
+
+  <!-- CREATIVES -->
+  <url>
+    <loc>https://chariscreationsltd.com/creatives/</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/CHARISCREATIONSTAFF-25-Recovered-scaled.jpg</image:loc>
+      <image:title>Charis Creations Team — Videographers and Photographers Kampala Uganda</image:title>
+      <image:caption>The professional cinematography and photography team at Charis Creations Uganda</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/CHARISCREATIONSTAFF-1-scaled.jpg</image:loc>
+      <image:title>Charis Creations Photography Team Uganda</image:title>
+      <image:caption>Professional wedding photographers and videographers Kampala Uganda</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ARTISTRY -->
+  <url>
+    <loc>https://chariscreationsltd.com/artistry/</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lightgreen-goldfish-911489.hostingersite.com/wp-content/uploads/2026/03/CHARISCREATIONSTAFF-41-scaled.jpg</image:loc>
+      <image:title>Charis Creations Artistry — Creative Photography and Film Uganda</image:title>
+      <image:caption>Creative artistry photography and film production by Charis Creations Uganda</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

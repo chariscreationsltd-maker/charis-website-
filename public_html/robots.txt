@@ -1,0 +1,11 @@
+# robots.txt — Charis Creations Ltd
+# chariscreationsltd.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://chariscreationsltd.com/sitemap.xml
+
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /cdn-cgi/

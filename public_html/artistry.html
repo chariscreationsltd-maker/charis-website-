@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Charis Artistry — Bridal Beauty &amp; Makeup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:#0d1b2a;color:#e2e8f0;min-height:100vh;overflow-x:hidden;}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,27,42,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(241,102,35,0.1);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#f16623,#e05515);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;font-family:'Montserrat',sans-serif;}
+.nav-brand{font-size:14px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1.5px;}
+.nav-brand span{color:#f16623;}
+.nav-links{display:flex;gap:20px;align-items:center;}
+.nav-links a{color:#94a3b8;font-size:12px;font-weight:600;text-decoration:none;text-transform:uppercase;letter-spacing:0.8px;transition:color 0.2s;}
+.nav-links a:hover{color:#f16623;}
+.nav-cta{background:#f16623;color:#fff!important;padding:8px 18px;border-radius:6px;font-weight:700!important;}
+.nav-cta:hover{background:#e05515;color:#fff!important;}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(241,102,35,0.08) 0%,transparent 70%);}
+.hero-content{position:relative;max-width:700px;}
+.hero-badge{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#f16623;border:1px solid rgba(241,102,35,0.3);padding:6px 16px;border-radius:20px;margin-bottom:24px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(40px,8vw,72px);font-weight:700;color:#fff;line-height:1.1;margin-bottom:16px;}
+.hero h1 em{font-style:italic;color:#f16623;}
+.hero-sub{font-size:16px;color:#94a3b8;line-height:1.8;max-width:520px;margin:0 auto 36px;font-weight:300;}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#f16623;color:#fff;font-size:14px;font-weight:700;border-radius:8px;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:transform 0.2s,box-shadow 0.2s;}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(241,102,35,0.3);}
+.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;animation:bounce 2s infinite;}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
+
+/* ── SECTION SHARED ── */
+.section{padding:80px 24px;max-width:1200px;margin:0 auto;}
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#f16623;margin-bottom:10px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,42px);font-weight:700;color:#fff;margin-bottom:12px;}
+.section-desc{font-size:14px;color:#94a3b8;line-height:1.8;max-width:600px;font-weight:300;}
+.section-header{text-align:center;margin-bottom:48px;}
+.section-header .section-desc{margin:0 auto;}
+
+/* ── PACKAGES GRID ── */
+.packages{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:40px;}
+.pkg{background:#1e293b;border-radius:16px;border:1px solid #334155;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;display:flex;flex-direction:column;}
+.pkg:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.4);}
+.pkg.featured{border-color:rgba(241,102,35,0.4);position:relative;}
+.pkg.featured::after{content:'MOST POPULAR';position:absolute;top:16px;right:-28px;background:#f16623;color:#fff;font-size:10px;font-weight:800;padding:4px 32px;transform:rotate(45deg);letter-spacing:1px;}
+
+.pkg-top{padding:28px 24px 20px;border-bottom:1px solid #334155;}
+.pkg-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:4px;}
+.pkg-tagline{font-size:12px;color:#94a3b8;font-style:italic;line-height:1.5;margin-bottom:16px;}
+.pkg-price{display:flex;align-items:baseline;gap:4px;}
+.pkg-price .currency{font-size:13px;color:#f16623;font-weight:700;}
+.pkg-price .amount{font-size:32px;font-weight:900;color:#f16623;}
+
+.pkg-body{padding:20px 24px;flex:1;}
+.pkg-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#64748b;margin-bottom:10px;}
+.pkg-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.pkg-list li{font-size:13px;color:#cbd5e1;line-height:1.5;padding-left:20px;position:relative;}
+.pkg-list li::before{content:'';position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:rgba(241,102,35,0.3);border:2px solid #f16623;}
+
+.pkg-best{padding:16px 24px;border-top:1px solid #334155;font-size:12px;color:#94a3b8;line-height:1.6;}
+.pkg-best strong{color:#f16623;font-weight:700;}
+
+.pkg-footer{padding:16px 24px 24px;}
+.pkg-btn{display:block;width:100%;text-align:center;padding:12px;background:transparent;border:2px solid #f16623;color:#f16623;font-size:13px;font-weight:700;border-radius:8px;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all 0.2s;font-family:inherit;}
+.pkg-btn:hover{background:#f16623;color:#fff;}
+.pkg.featured .pkg-btn{background:#f16623;color:#fff;}
+.pkg.featured .pkg-btn:hover{background:#e05515;}
+
+/* ── WHY SECTION ── */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:36px;}
+.why-card{background:#1e293b;border-radius:12px;padding:24px;border:1px solid #334155;}
+.why-icon{font-size:28px;margin-bottom:12px;}
+.why-card h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;}
+.why-card p{font-size:13px;color:#94a3b8;line-height:1.7;}
+
+/* ── COMBO BANNER ── */
+.combo{background:linear-gradient(135deg,#1e293b 0%,#0d1b2a 100%);border:1px solid rgba(241,102,35,0.2);border-radius:16px;padding:40px 32px;text-align:center;margin:60px auto;max-width:800px;}
+.combo h2{font-family:'Playfair Display',serif;font-size:28px;color:#fff;margin-bottom:10px;}
+.combo p{font-size:14px;color:#94a3b8;line-height:1.7;margin-bottom:24px;max-width:560px;margin-left:auto;margin-right:auto;}
+.combo-highlight{font-size:18px;font-weight:900;color:#f16623;margin-bottom:20px;}
+.combo .pkg-btn{display:inline-block;width:auto;padding:12px 32px;}
+
+/* ── FOOTER ── */
+.footer{border-top:1px solid #1e293b;padding:40px 24px;text-align:center;}
+.footer-brand{font-size:18px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:2px;margin-bottom:4px;}
+.footer-brand span{color:#f16623;}
+.footer-tag{font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px;}
+.footer-contact{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-bottom:20px;}
+.footer-contact a{color:#94a3b8;font-size:12px;text-decoration:none;display:flex;align-items:center;gap:6px;transition:color 0.2s;}
+.footer-contact a:hover{color:#f16623;}
+.footer-copy{font-size:11px;color:#475569;}
+
+/* ── WHATSAPP FAB ── */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:99;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.3);transition:transform 0.2s;text-decoration:none;}
+.wa-fab:hover{transform:scale(1.1);}
+.wa-fab svg{width:28px;height:28px;fill:#fff;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .packages{grid-template-columns:1fr;}
+  .hero h1{font-size:36px;}
+  .section{padding:50px 16px;}
+  .combo{padding:28px 20px;}
+}
+@media(max-width:480px){
+  .why-grid{grid-template-columns:1fr;}
+  .footer-contact{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="https://chariscreationsltd.com">
+    <div class="nav-logo-icon">CA</div>
+    <div class="nav-brand">Charis <span>Artistry</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="#wedding">Wedding</a>
+    <a href="#introduction">Introduction</a>
+    <a href="#why">Why Us</a>
+    <a href="https://chariscreationsltd.com" target="_blank">Main Site</a>
+    <a class="nav-cta" href="https://wa.me/256706028899?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Charis%20Artistry%20makeup%20package">Book Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">The Bridal Confidence System</div>
+    <h1>You Deserve to Feel <em>Unforgettable</em></h1>
+    <p class="hero-sub">Charis Artistry is the beauty arm of Charis Creations. We don't just do makeup — we give brides the confidence to own every moment, every photograph, every memory.</p>
+    <a class="hero-cta" href="https://wa.me/256706028899?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Charis%20Artistry%20bridal%20packages">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Book on WhatsApp
+    </a>
+  </div>
+  <div class="hero-scroll">Scroll to explore</div>
+</section>
+
+<!-- WEDDING PACKAGES -->
+<section class="section" id="wedding">
+  <div class="section-header">
+    <div class="section-label">Wedding Day</div>
+    <div class="section-title">Bridal Makeup Packages</div>
+    <p class="section-desc">Three tiers designed around one truth: a wedding is long, hot, emotional, and heavily photographed. Your beauty needs to survive all of it.</p>
+  </div>
+
+  <div class="packages">
+    <!-- Bridal Glow -->
+    <div class="pkg">
+      <div class="pkg-top">
+        <div class="pkg-name">The Bridal Glow</div>
+        <div class="pkg-tagline">Beautiful, classic, timeless — with zero risk. The safest, simplest option. You will look beautiful, full stop.</div>
+        <div class="pkg-price"><span class="currency">UGX</span><span class="amount">850K</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-label">You Get</div>
+        <ul class="pkg-list">
+          <li>Classic bridal glam</li>
+          <li>Basic hair styling</li>
+          <li>Finishing spray</li>
+          <li>Retouch kit</li>
+        </ul>
+      </div>
+      <div class="pkg-best"><strong>Best for:</strong> Brides who want a graceful, natural look. Nothing extravagant — just effortlessly bridal.</div>
+      <div class="pkg-footer">
+        <a class="pkg-btn" href="https://wa.me/256706028899?text=Hi%2C%20I%27m%20interested%20in%20the%20Bridal%20Glow%20Package%20(UGX%20850K)%20for%20my%20wedding">Book This Package</a>
+      </div>
+    </div>
+
+    <!-- Bridal Luxe -->
+    <div class="pkg featured">
+      <div class="pkg-top">
+        <div class="pkg-name">The Bridal Luxe</div>
+        <div class="pkg-tagline">The peace-of-mind package. Designed to make sure you still look perfect at 5 PM — through heat, tears, hugs, and dancing.</div>
+        <div class="pkg-price"><span class="currency">UGX</span><span class="amount">1.5M</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-label">You Get</div>
+        <ul class="pkg-list">
+          <li>HD glam</li>
+          <li>Styled bridal hair</li>
+          <li>Neck &amp; chest glow</li>
+          <li>Shine control</li>
+          <li>2-hour touch-up window</li>
+        </ul>
+      </div>
+      <div class="pkg-best"><strong>Best for:</strong> Brides who want insurance — beauty that lasts through heat, tears, hugs, and dancing.</div>
+      <div class="pkg-footer">
+        <a class="pkg-btn" href="https://wa.me/256706028899?text=Hi%2C%20I%27m%20interested%20in%20the%20Bridal%20Luxe%20Package%20(UGX%201.5M)%20for%20my%20wedding">Book This Package</a>
+      </div>
+    </div>
+
+    <!-- Royal Bride -->
+    <div class="pkg">
+      <div class="pkg-top">
+        <div class="pkg-name">The Royal Bride Experience</div>
+        <div class="pkg-tagline">For brides who didn't come to look good — they came to look unforgettable. Premium, indulgent, luxurious.</div>
+        <div class="pkg-price"><span class="currency">UGX</span><span class="amount">2.5M</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-label">You Get</div>
+        <ul class="pkg-list">
+          <li>Luxury glam + custom lash set</li>
+          <li>Premium bridal styling (Hollywood waves, sculpted luxury bun)</li>
+          <li>Full glow on chest, arms, neckline</li>
+          <li>3-hour touch-up window</li>
+          <li>Pre-wedding beauty game-plan</li>
+          <li>"First Look" beauty assistance</li>
+        </ul>
+      </div>
+      <div class="pkg-best"><strong>Best for:</strong> Brides who want to look flawless in the album they will show their grandchildren.</div>
+      <div class="pkg-footer">
+        <a class="pkg-btn" href="https://wa.me/256706028899?text=Hi%2C%20I%27m%20interested%20in%20the%20Royal%20Bride%20Experience%20(UGX%202.5M)%20for%20my%20wedding">Book This Package</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRODUCTION PACKAGES -->
+<section class="section" id="introduction" style="padding-top:40px;">
+  <div class="section-header">
+    <div class="section-label">Introduction / Kwanjula</div>
+    <div class="section-title">The Confidence Collection</div>
+    <p class="section-desc">Where tradition meets modern beauty. These packages are designed for the woman who wants to honour culture without looking old-fashioned.</p>
+  </div>
+
+  <div class="packages">
+    <!-- Effortless Beauty -->
+    <div class="pkg">
+      <div class="pkg-top">
+        <div class="pkg-name">The Effortless Beauty</div>
+        <div class="pkg-tagline">For the woman who wants to look beautifully herself — only better. Elegant. Natural. Uncomplicated.</div>
+        <div class="pkg-price"><span class="currency">UGX</span><span class="amount">800K</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-label">You Get</div>
+        <ul class="pkg-list">
+          <li>Soft glam makeup</li>
+          <li>Simple hair styling</li>
+          <li>Long-lasting finish</li>
+          <li>Retouch kit</li>
+        </ul>
+      </div>
+      <div class="pkg-best"><strong>Best for:</strong> Calm, elegant introductions where poise speaks louder than glam.</div>
+      <div class="pkg-footer">
+        <a class="pkg-btn" href="https://wa.me/256706028899?text=Hi%2C%20I%27m%20interested%20in%20the%20Effortless%20Beauty%20Package%20(UGX%20800K)%20for%20my%20introduction">Book This Package</a>
+      </div>
+    </div>
+
+    <!-- Cultural Crown -->
+    <div class="pkg featured">
+      <div class="pkg-top">
+        <div class="pkg-name">The Cultural Crown</div>
+        <div class="pkg-tagline">The purpose is not makeup — it is to make your gomesi or mushanana look intentional. It makes you look like you belong to a royal family.</div>
+        <div class="pkg-price"><span class="currency">UGX</span><span class="amount">1.5M</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-label">You Get</div>
+        <ul class="pkg-list">
+          <li>Full traditional glam</li>
+          <li>Hair styled to complement cultural attire</li>
+          <li>Premium lashes</li>
+          <li>Glow finish</li>
+          <li>1-hour touch-up window</li>
+        </ul>
+      </div>
+      <div class="pkg-best"><strong>Best for:</strong> Women who want to honour culture without looking old-fashioned.</div>
+      <div class="pkg-footer">
+        <a class="pkg-btn" href="https://wa.me/256706028899?text=Hi%2C%20I%27m%20interested%20in%20the%20Cultural%20Crown%20Package%20(UGX%201.5M)%20for%20my%20introduction">Book This Package</a>
+      </div>
+    </div>
+
+    <!-- Daughter of Honour -->
+    <div class="pkg">
+      <div class="pkg-top">
+        <div class="pkg-name">The Daughter of Honour Experience</div>
+        <div class="pkg-tagline">For the bride who refuses to leave anything to chance. This is not a makeup service — it is a stress-removal experience.</div>
+        <div class="pkg-price"><span class="currency">UGX</span><span class="amount">2M</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-label">You Get</div>
+        <ul class="pkg-list">
+          <li>Luxury HD glam</li>
+          <li>Premium hair sculpting</li>
+          <li>2-hour touch-up window</li>
+          <li>Sweat-proof prep</li>
+          <li>Full glow finish</li>
+          <li>Pre-event beauty consultation</li>
+        </ul>
+      </div>
+      <div class="pkg-best"><strong>Best for:</strong> Women whose introduction is a major family event — who want to look immaculate from the first ululation to the last photograph.</div>
+      <div class="pkg-footer">
+        <a class="pkg-btn" href="https://wa.me/256706028899?text=Hi%2C%20I%27m%20interested%20in%20the%20Daughter%20of%20Honour%20Experience%20(UGX%202M)%20for%20my%20introduction">Book This Package</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMBO OFFER -->
+<section class="section" style="padding-top:20px;">
+  <div class="combo">
+    <div class="section-label">The Complete Bride</div>
+    <h2>Book Film + Makeup Together</h2>
+    <p>When you book a Charis Creations film package alongside a Charis Artistry makeup package, your makeup artist and film crew work as one team — so every glow, every angle, every moment is captured perfectly.</p>
+    <div class="combo-highlight">Film + Beauty. One team. One vision.</div>
+    <a class="pkg-btn" href="https://wa.me/256706028899?text=Hi%2C%20I%27m%20interested%20in%20a%20combined%20Charis%20film%20%2B%20makeup%20package">Ask About Combined Packages</a>
+  </div>
+</section>
+
+<!-- WHY CHARIS ARTISTRY -->
+<section class="section" id="why" style="padding-top:20px;">
+  <div class="section-header">
+    <div class="section-label">The Difference</div>
+    <div class="section-title">Why Charis Artistry</div>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">📸</div>
+      <h3>Camera-Ready Beauty</h3>
+      <p>We work alongside Charis Creations film crews daily. We know exactly how makeup translates on camera — not just in the mirror.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">☀️</div>
+      <h3>Built for Uganda</h3>
+      <p>Our products and techniques are chosen specifically for heat, humidity, and long outdoor events. Your makeup survives the whole day.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">👰</div>
+      <h3>Cultural Expertise</h3>
+      <p>From gomesi styling to mushanana coordination — we understand traditional Ugandan beauty and how to honour it with a modern edge.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🤝</div>
+      <h3>One Team, One Vision</h3>
+      <p>Your makeup artist and your film crew are from the same house. They communicate, they coordinate, and they make sure you look perfect in every frame.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">Charis <span>Artistry</span></div>
+  <div class="footer-tag">The Beauty Arm of Charis Creations</div>
+  <div class="footer-contact">
+    <a href="tel:+256706028899">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +256 706 028 899
+    </a>
+    <a href="mailto:chariscreationsltd@gmail.com">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      chariscreationsltd@gmail.com
+    </a>
+    <a href="https://www.instagram.com/CharisCreations" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      @CharisCreations
+    </a>
+    <a href="https://chariscreationsltd.com" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      chariscreationsltd.com
+    </a>
+  </div>
+  <div class="footer-copy">&copy; 2013&ndash;2026 Charis Creations Limited. All rights reserved.</div>
+</footer>
+
+<!-- WHATSAPP FAB -->
+<a class="wa-fab" href="https://wa.me/256706028899?text=Hi%2C%20I%27d%20like%20to%20know%20about%20Charis%20Artistry%20makeup%20packages" target="_blank" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>

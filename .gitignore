@@ -1,7 +1,4 @@
 # WordPress ignores
-wp-config.php
-public_html/wp-config.php
-
 wp-content/uploads/
 **/wp-content/uploads/
 public_html/wp-content/uploads/

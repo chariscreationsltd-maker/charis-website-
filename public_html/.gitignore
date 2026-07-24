@@ -1,22 +1,17 @@
 # WordPress ignores
 wp-config.php
-public_html/wp-config.php
 
 wp-content/uploads/
 **/wp-content/uploads/
-public_html/wp-content/uploads/
 
 wp-content/cache/
 **/wp-content/cache/
-public_html/wp-content/cache/
 
 wp-content/updraft/
 **/wp-content/updraft/
-public_html/wp-content/updraft/
 
 wp-content/ai1wm-backups/
 **/wp-content/ai1wm-backups/
-public_html/wp-content/ai1wm-backups/
 
 # Large media & backup files
 *.mp4
@@ -28,9 +23,7 @@ public_html/wp-content/ai1wm-backups/
 
 # Hidden and private directories
 .private/
-public_html/.private/
 .tmb/
-public_html/.tmb/
 .DS_Store
 
 # IDE and OS files
@@ -40,6 +33,5 @@ public_html/.tmb/
 
 # Ignore Charis OS / Next OS files
 charisos/
-public_html/charisos/
 *next os*
 *charis os*

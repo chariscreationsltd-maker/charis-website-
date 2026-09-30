@@ -99,7 +99,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 2
+      # The hosting FTP server rejects overlapping data connections (425).
+      # Run one folder session at a time and reuse successful folder state on retry.
+      max-parallel: 1
       matrix:
         include: ${{ fromJson(needs.plan.outputs.targets) }}
     steps:

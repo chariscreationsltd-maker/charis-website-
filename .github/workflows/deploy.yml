@@ -14,20 +14,110 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    name: Deploy to hosting
+  plan:
+    name: Split the full site into folder syncs
     runs-on: ubuntu-latest
+    outputs:
+      targets: ${{ steps.plan.outputs.targets }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
 
-      - name: Deploy over FTPS
+      - name: Build deployment folder list
+        id: plan
+        shell: bash
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          import subprocess
+
+          paths = subprocess.run(
+              ["git", "ls-files", "-z"], check=True, capture_output=True
+          ).stdout.decode().split("\0")
+          paths = [path for path in paths if path]
+          targets = []
+
+          def add_target(local_dir, files=None):
+              local_dir = local_dir.strip("/")
+              if local_dir:
+                  local = local_dir + "/"
+                  remote = "public_html/" + local_dir + "/"
+                  sparse = ["/" + local_dir + "/"] if files is None else ["/" + p for p in files]
+              else:
+                  local = "./"
+                  remote = "public_html/"
+                  sparse = ["/" + p for p in files]
+              if not sparse:
+                  return
+              targets.append({
+                  "local_dir": local,
+                  "server_dir": remote,
+                  "sparse_checkout": "\n".join(sparse),
+              })
+
+          def direct_files(folder):
+              prefix = folder + "/" if folder else ""
+              return [p for p in paths if p.startswith(prefix) and "/" not in p[len(prefix):]]
+
+          def direct_dirs(folder):
+              prefix = folder + "/" if folder else ""
+              result = set()
+              for path in paths:
+                  if path.startswith(prefix):
+                      remainder = path[len(prefix):]
+                      if "/" in remainder:
+                          result.add(remainder.split("/", 1)[0])
+              return sorted(result)
+
+          # Keep repository-root files in their own small sync.
+          add_target("", direct_files(""))
+
+          # Split WordPress core and project folders into separate FTPS sessions.
+          for folder in direct_dirs(""):
+              if folder in {".github", "public_html", "wp-content"}:
+                  continue
+              add_target(folder)
+
+          # Split wp-content root files and each plugin/theme independently.
+          content = "wp-content"
+          add_target(content, direct_files(content))
+          for child in direct_dirs(content):
+              child_path = f"{content}/{child}"
+              if child in {"plugins", "themes"}:
+                  add_target(child_path, direct_files(child_path))
+                  for item in direct_dirs(child_path):
+                      add_target(f"{child_path}/{item}")
+              else:
+                  add_target(child_path)
+
+          print("targets=" + json.dumps(targets, separators=(",", ":")))
+          PY
+
+  deploy:
+    name: Deploy ${{ matrix.local_dir }}
+    needs: plan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include: ${{ fromJson(needs.plan.outputs.targets) }}
+    steps:
+      - name: Check out this folder only
+        uses: actions/checkout@v6
+        with:
+          filter: blob:none
+          sparse-checkout: ${{ matrix.sparse_checkout }}
+          sparse-checkout-cone-mode: false
+
+      - name: Deploy folder over FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: public_html/
+          server-dir: ${{ matrix.server_dir }}
+          local-dir: ${{ matrix.local_dir }}
           protocol: ftps
           port: 21
           dangerous-clean-slate: false

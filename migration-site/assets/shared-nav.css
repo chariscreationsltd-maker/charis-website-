@@ -36,10 +36,29 @@
 
 #nav .nl img,
 #ca-nav .ca-brand img {
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 36px;
   object-fit: contain;
   flex-shrink: 0;
+}
+
+#nav .nl-wordmark,
+#ca-nav .ca-brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  color: rgba(255,255,255,.96);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: .96;
+  text-transform: uppercase;
+}
+
+#nav .nl-wordmark strong,
+#ca-nav .ca-brand-wordmark strong {
+  color: #f16623;
+  font-weight: 800;
 }
 
 #nav .nlinks,

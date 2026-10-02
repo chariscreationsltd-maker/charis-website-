@@ -42,6 +42,14 @@
   flex-shrink: 0;
 }
 
+#nav .nl .nav-logo,
+#ca-nav .ca-brand .nav-logo {
+  display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
 #nav .nl-wordmark,
 #ca-nav .ca-brand-wordmark {
   display: flex;

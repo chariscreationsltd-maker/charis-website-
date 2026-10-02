@@ -1040,6 +1040,8 @@ nav.sc{background:rgba(242,237,232,.97);backdrop-filter:blur(18px);padding:14px 
   opacity:0;transition:opacity .3s;
 }
 .fc:hover .fc-play-badge{opacity:1}
+.fc.no-reel{cursor:default;}
+.fc.no-reel .fc-play-badge{display:none;}
 .fc-play-badge svg{margin-left:2px}
 
 /* ── CARD BACK (reel slot) ── */
@@ -2790,6 +2792,7 @@ document.getElementById('strips').addEventListener('click',function(e){openVS(e)
 
 /* Collect card data from DOM */
 var fcards = Array.from(document.querySelectorAll('.fc'));
+var reelCards = fcards.filter(function(c){ return !!(c.getAttribute('data-reel-src')||'').trim(); });
 var rvData = fcards.map(function(c){
   var ph = c.querySelector('.fcph');
   var bgImg = ph ? window.getComputedStyle(ph).backgroundImage : '';
@@ -2806,7 +2809,7 @@ var rvData = fcards.map(function(c){
 var allFlipped = false;
 window.flipAllCards = function(){
   allFlipped = !allFlipped;
-  fcards.forEach(function(c,i){ setTimeout(function(){ c.classList.toggle('flipped',allFlipped); }, i*35); });
+  reelCards.forEach(function(c,i){ setTimeout(function(){ c.classList.toggle('flipped',allFlipped); }, i*35); });
   var lbl = document.getElementById('flipBtnLabel');
   var btn = document.getElementById('featFlipBtn');
   if(lbl) lbl.textContent = allFlipped ? 'Show Photos' : 'Click to Show Reels';
@@ -2815,8 +2818,11 @@ window.flipAllCards = function(){
 
 /* Individual card click — flip single card if not in all-flip mode */
 fcards.forEach(function(card){
+  var hasReel=!!(card.getAttribute('data-reel-src')||'').trim();
+  if(!hasReel) card.classList.add('no-reel');
   card.addEventListener('click',function(e){
     if(e.target.closest('.fc-back-cta-btn')) return;
+    if(!hasReel) return;
     if(!allFlipped) card.classList.toggle('flipped');
   });
 });

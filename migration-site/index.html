@@ -100,7 +100,18 @@ nav.sc{background:rgba(242,237,232,.97);backdrop-filter:blur(18px);padding:14px 
 .hero-slide-photo.is-landscape{object-position:center top;}
 .hero-slide-photo.is-celebrity{object-position:80% 100%;transform:scale(1.2);transform-origin:80% 100%;}
 .hero-slide-title{position:absolute;top:39%;left:clamp(24px,6vw,88px);z-index:2;color:#f2e4c9;font-family:'Montserrat',sans-serif;font-size:clamp(24px,3.8vw,52px);font-weight:700;line-height:1.12;letter-spacing:.035em;text-transform:uppercase;text-shadow:0 2px 18px rgba(0,0,0,.36);}
+.hero-slide-title.is-graduation{top:14%;right:clamp(28px,8vw,112px);left:auto;color:#bd9474;font-size:clamp(23px,3vw,42px);writing-mode:vertical-rl;letter-spacing:.08em;}
+.hero-slide-title.is-delivery{top:41%;left:clamp(24px,5vw,68px);max-width:34vw;color:#62c7b6;font-size:clamp(24px,3.8vw,52px);}
+.hero-slide-title.is-booking{top:42%;left:clamp(24px,6vw,88px);max-width:min(560px,48vw);color:#e8530a;font-size:clamp(25px,4.2vw,58px);line-height:1.08;}
+.hero-slide-title.is-podcasts{top:23%;left:7%;z-index:0;color:rgba(242,228,201,.78);font-size:clamp(76px,13vw,180px);font-weight:800;letter-spacing:-.075em;line-height:.9;white-space:nowrap;transform:perspective(720px) rotateY(-13deg) rotateX(5deg) skewY(-2deg);text-shadow:8px 8px 0 rgba(232,83,10,.55),18px 20px 0 rgba(8,8,8,.65),0 18px 35px rgba(0,0,0,.34);}
 .hero-slide-brand{position:absolute;top:clamp(92px,14vh,142px);right:clamp(24px,6vw,88px);z-index:2;color:#f2e4c9;font-family:'Montserrat',sans-serif;font-size:clamp(12px,1.35vw,17px);font-weight:700;line-height:1.3;letter-spacing:.045em;text-align:right;text-transform:uppercase;text-shadow:0 2px 18px rgba(0,0,0,.4);}
+.hero-slide-brand-name,.hero-slide-brand-suffix{display:inline;}
+.hero-slide-brand-suffix::before{content:' ';}
+.hero-slide-brand.is-delivery{top:56%;right:auto;left:clamp(24px,5vw,68px);color:#62c7b6;font-size:clamp(13px,1.4vw,18px);text-align:left;}
+.hero-slide-brand.is-duo{top:50%;right:auto;left:50%;z-index:2;width:max-content;max-width:88%;transform:translate(-50%,-50%);color:#f2e4c9;font-size:clamp(22px,3.8vw,50px);line-height:1.08;text-align:center;letter-spacing:.035em;}
+.hero-slide-brand.is-duo .hero-slide-brand-name,.hero-slide-brand.is-duo .hero-slide-brand-suffix{display:block;}
+.hero-slide-brand.is-duo .hero-slide-brand-suffix{color:#e8530a;}
+.hero-slide-brand.is-duo .hero-slide-brand-suffix::before{content:none;}
 .hero-slide-brand[hidden]{display:none;}
 .hero-slide-footer{position:absolute;left:clamp(24px,6vw,88px);bottom:clamp(72px,10vh,104px);z-index:2;width:min(440px,calc(100% - 48px));color:#f2e4c9;font-family:'Montserrat',sans-serif;text-shadow:0 2px 16px rgba(0,0,0,.48);}
 .hero-slide-footer[hidden]{display:none;}
@@ -1393,7 +1404,7 @@ footer{width:100%;background:#040404;padding:40px 5vw 20px;border-top:1px solid 
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 
 @media(max-width:1024px){.about{grid-template-columns:1fr}.ctin{grid-template-columns:1fr}.tcd{min-width:calc(75vw)}.det-body{flex-direction:column;gap:24px}.det-right{flex-direction:row;flex-wrap:wrap;gap:16px;min-width:0}}
-@media(max-width:768px){nav,nav.sc{padding:13px 5vw}.nlinks{display:none}.ham{display:flex}.hw{font-size:clamp(16px,4.5vw,34px);letter-spacing:.14em}.thd{flex-direction:column;align-items:flex-start}.tcd{min-width:82vw}.frow{grid-template-columns:1fr}.fc{width:clamp(200px,68vw,340px)}.ftlks{gap:20px}.hero-controls{right:16px;bottom:20px;gap:5px}.hero-controls button{width:32px;height:32px}.hero-controls .hero-pause{min-width:58px}.hero-counter{min-width:46px;font-size:9px}}
+@media(max-width:768px){nav,nav.sc{padding:13px 5vw}.nlinks{display:none}.ham{display:flex}.hw{font-size:clamp(16px,4.5vw,34px);letter-spacing:.14em}.thd{flex-direction:column;align-items:flex-start}.tcd{min-width:82vw}.frow{grid-template-columns:1fr}.fc{width:clamp(200px,68vw,340px)}.ftlks{gap:20px}.hero-controls{right:16px;bottom:20px;gap:5px}.hero-controls button{width:32px;height:32px}.hero-controls .hero-pause{min-width:58px}.hero-counter{min-width:46px;font-size:9px}.hero-slide-title.is-graduation{right:20px;font-size:clamp(20px,5vw,30px)}.hero-slide-title.is-delivery{max-width:53vw;font-size:clamp(20px,5.3vw,36px)}.hero-slide-title.is-booking{max-width:65vw;font-size:clamp(24px,7vw,42px)}.hero-slide-title.is-podcasts{top:28%;left:4%;font-size:clamp(54px,15vw,112px);text-shadow:5px 5px 0 rgba(232,83,10,.55),10px 12px 0 rgba(8,8,8,.65),0 12px 22px rgba(0,0,0,.34)}.hero-slide-brand.is-delivery{left:24px;top:56%;font-size:12px}.hero-slide-brand.is-duo{font-size:clamp(20px,5vw,34px)}.hero-slide-footer{bottom:76px}}
 @media(max-width:480px){.hw{font-size:clamp(13px,3.8vw,22px);letter-spacing:.08em}.sitem{width:clamp(100px,26vw,130px);height:clamp(64px,17vw,84px)}.aig{grid-template-rows:clamp(120px,30vw,180px) clamp(120px,30vw,180px)}}
 
 /* ── FLOATING BUTTONS ── */
@@ -1572,8 +1583,8 @@ footer{width:100%;background:#040404;padding:40px 5vw 20px;border-top:1px solid 
 </nav>
 <section class="hero" id="home">
   <div class="hero-slideshow" id="heroSlideshow" aria-hidden="true">
-    <div class="hero-slide"><img class="hero-slide-photo" src="assets/hero-slides/hero-section-refresh/2V3A1288_PerfectlyClear-scaled.jpg" alt=""/><span class="hero-slide-title" aria-hidden="true"></span><span class="hero-slide-brand" aria-hidden="true" hidden></span><div class="hero-slide-footer" aria-hidden="true" hidden><p class="hero-slide-agency">Charis Creations — The Agency</p><p class="hero-slide-description">Natural light, open spaces, and real moments, beautifully framed in the landscape.</p></div></div>
-    <div class="hero-slide"><img class="hero-slide-photo" alt=""/><span class="hero-slide-title" aria-hidden="true"></span><span class="hero-slide-brand" aria-hidden="true" hidden></span><div class="hero-slide-footer" aria-hidden="true" hidden><p class="hero-slide-agency">Charis Creations — The Agency</p><p class="hero-slide-description">Natural light, open spaces, and real moments, beautifully framed in the landscape.</p></div></div>
+    <div class="hero-slide"><img class="hero-slide-photo" src="assets/hero-slides/hero-section-refresh/2V3A1288_PerfectlyClear-scaled.jpg" alt=""/><span class="hero-slide-title" aria-hidden="true"></span><span class="hero-slide-brand" aria-hidden="true" hidden><span class="hero-slide-brand-name"></span><span class="hero-slide-brand-suffix"></span></span><div class="hero-slide-footer" aria-hidden="true" hidden><p class="hero-slide-agency">Charis Creations — The Agency</p><p class="hero-slide-description"></p></div></div>
+    <div class="hero-slide"><img class="hero-slide-photo" alt=""/><span class="hero-slide-title" aria-hidden="true"></span><span class="hero-slide-brand" aria-hidden="true" hidden><span class="hero-slide-brand-name"></span><span class="hero-slide-brand-suffix"></span></span><div class="hero-slide-footer" aria-hidden="true" hidden><p class="hero-slide-agency">Charis Creations — The Agency</p><p class="hero-slide-description"></p></div></div>
   </div>
   <div class="hscrl"><span>Scroll</span><svg width="10" height="14" viewBox="0 0 10 14" fill="none"><path d="M5 1v12M1 9l4 4 4-4" stroke="rgba(196,168,130,.5)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
   <div class="hero-controls" aria-label="Featured image slideshow controls">
@@ -2615,7 +2626,12 @@ document.getElementById('strips').addEventListener('click',function(e){openVS(e)
   var slides=heroPhotoFiles.map(function(name){
     var outdoor=name==='SUE_BD_SHOOT-154.jpg';
     var studio=name==='NICOLETTE BD SHOT-11.jpg';
-    return {src:'assets/hero-slides/hero-section-refresh/'+encodeURIComponent(name),label:outdoor?'OUTDOOR SHOOTS':studio?'STUDIO SHOOTS':'',brand:studio?'CHARIS CREATIONS — THE AGENCY':'',feature:name==='BRIAN WEIYZ-18.jpg'};
+    var graduation=name==='LEELAND AT 2-11.jpg';
+    var delivery=name==='CCJ_2970-scaled.jpg';
+    var booking=name==='BRIAN WEIYZ-18.jpg';
+    var podcasts=name==='CBC-98.jpg';
+    var duo=name==='S&C_Shoot-17.jpg';
+    return {src:'assets/hero-slides/hero-section-refresh/'+encodeURIComponent(name),label:outdoor?'OUTDOOR SHOOTS':studio?'STUDIO SHOOTS':graduation?'GRADUATION SHOOTS':delivery?'WE DELIVER ON TIME':booking?'WHAT ARE YOU WAITING FOR? BOOK YOUR SHOOT.':podcasts?'PODCASTS':'',brandName:studio||delivery||duo?'CHARIS CREATIONS':'',brandSuffix:studio||delivery||duo?'THE AGENCY':'',layout:graduation?'graduation':delivery?'delivery':booking?'booking':podcasts?'podcasts':duo?'duo':'',footer:outdoor||podcasts,copy:outdoor?'Natural light, open spaces, and real moments, beautifully framed in the landscape.':podcasts?'Thoughtful conversations, captured with clarity and character.':'',feature:name==='BRIAN WEIYZ-18.jpg'};
   });
   var layers=stage.querySelectorAll('.hero-slide');
   var counter=document.getElementById('heroSlideCounter');
@@ -2641,10 +2657,12 @@ document.getElementById('strips').addEventListener('click',function(e){openVS(e)
     var title=layer.querySelector('.hero-slide-title');
     var brand=layer.querySelector('.hero-slide-brand');
     var footer=layer.querySelector('.hero-slide-footer');
+    var description=layer.querySelector('.hero-slide-description');
     layer.style.setProperty('--hero-slide-background','url("'+slide.src+'")');
-    if(title) title.textContent=slide.label||'';
-    if(brand){brand.textContent=slide.brand||'';brand.hidden=!slide.brand;}
-    if(footer) footer.hidden=!slide.label;
+    if(title){title.textContent=slide.label||'';title.classList.remove('is-graduation','is-delivery','is-booking','is-podcasts');if(slide.layout&&slide.layout!=='duo') title.classList.add('is-'+slide.layout);}
+    if(brand){brand.querySelector('.hero-slide-brand-name').textContent=slide.brandName||'';brand.querySelector('.hero-slide-brand-suffix').textContent=slide.brandSuffix||'';brand.classList.remove('is-delivery','is-duo');if(slide.layout==='delivery'||slide.layout==='duo') brand.classList.add('is-'+slide.layout);brand.hidden=!slide.brandName;}
+    if(footer) footer.hidden=!slide.footer;
+    if(description) description.textContent=slide.copy||'';
     if(photo){
       photo.classList.remove('is-portrait','is-landscape');
       photo.onload=function(){

@@ -3,8 +3,8 @@
 #ca-nav {
   box-sizing: border-box;
   width: 100%;
-  min-height: 60px;
-  height: 60px;
+  min-height: 72px;
+  height: 72px;
   padding: 0 32px;
   display: flex;
   align-items: center;
@@ -17,8 +17,8 @@
 }
 
 #nav.sc {
-  min-height: 60px;
-  height: 60px;
+  min-height: 72px;
+  height: 72px;
   padding: 0 32px;
   background: #0d1b2a;
   border-bottom: 1px solid rgba(255,255,255,.08);
@@ -36,8 +36,8 @@
 
 #nav .nl img,
 #ca-nav .ca-brand img {
-  width: 55px;
-  height: 55px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -110,8 +110,8 @@
   #nav,
   #nav.sc,
   #ca-nav {
-    min-height: 60px;
-    height: 60px;
+    min-height: 72px;
+    height: 72px;
     padding: 0 20px;
   }
 

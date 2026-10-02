@@ -1564,7 +1564,7 @@ footer{width:100%;background:#040404;padding:40px 5vw 20px;border-top:1px solid 
 </nav>
 <section class="hero" id="home">
   <div class="hero-slideshow" id="heroSlideshow" aria-hidden="true">
-    <div class="hero-slide"><img class="hero-slide-photo" src="assets/hero-slides/Moreens-Kuhinjira-3-scaled.jpg" alt=""/></div>
+    <div class="hero-slide"><img class="hero-slide-photo" src="assets/hero-slides/hero-section-refresh/2V3A1288_PerfectlyClear-scaled.jpg" alt=""/></div>
     <div class="hero-slide"><img class="hero-slide-photo" alt=""/></div>
   </div>
   <div class="hscrl"><span>Scroll</span><svg width="10" height="14" viewBox="0 0 10 14" fill="none"><path d="M5 1v12M1 9l4 4 4-4" stroke="rgba(196,168,130,.5)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -2583,19 +2583,30 @@ document.addEventListener('keydown',function(e){
 /* strips click */
 document.getElementById('strips').addEventListener('click',function(e){openVS(e);});
 
-/* ── FULL-WIDTH HERO SLIDES — drawn from the two story strips below ── */
+/* ── FULL-WIDTH HERO SLIDES ── */
 (function(){
   var stage=document.getElementById('heroSlideshow');
   if(!stage) return;
-  var row=document.querySelector('.sr.l');
-  var cards=row?Array.prototype.slice.call(row.querySelectorAll('.sitem'),0,15):[];
-  var slides=cards.map(function(card){
-    var image=card.querySelector('.sbg');
-    var caption=card.querySelector('.stip');
-    var background=image?window.getComputedStyle(image).backgroundImage:'';
-    var match=background.match(/url\(["']?(.*?)["']?\)/);
-    return match?{src:match[1],label:caption?caption.textContent.trim():''}:null;
-  }).filter(Boolean);
+  var heroPhotoFiles=[
+    '2V3A1288_PerfectlyClear-scaled.jpg',
+    'B_Plus-212.jpg',
+    'BRIAN WEIYZ-18.jpg',
+    'CBC-98.jpg',
+    'CCJ_2970-scaled.jpg',
+    'JOSEPH AND NINA PRE WEDDING SHOOT-64_PerfectlyClear.jpg',
+    'LEELAND AT 2-11.jpg',
+    'LEELAND AT 2-19.jpg',
+    'LEELAND AT 2-50.jpg',
+    'NICOLETTE BD SHOT-11.jpg',
+    'Rev Captain Mutumba-136.jpg',
+    'Rev Captain Mutumba-143.jpg',
+    'Rev Captain Mutumba-144.jpg',
+    'S&C_Shoot-17.jpg',
+    'SUE_BD_SHOOT-154.jpg'
+  ];
+  var slides=heroPhotoFiles.map(function(name){
+    return {src:'assets/hero-slides/hero-section-refresh/'+encodeURIComponent(name),label:''};
+  });
   var layers=stage.querySelectorAll('.hero-slide');
   var counter=document.getElementById('heroSlideCounter');
   var status=document.getElementById('heroSlideStatus');

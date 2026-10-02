@@ -34,11 +34,11 @@
   text-decoration: none;
 }
 
-#nav .nl img,
-#ca-nav .ca-brand img {
-  width: 52px;
+#nav .nl .brand-symbol,
+#ca-nav .ca-brand .brand-symbol {
+  display: block;
+  width: 36px;
   height: 36px;
-  object-fit: contain;
   flex-shrink: 0;
 }
 

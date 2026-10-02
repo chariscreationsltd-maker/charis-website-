@@ -59,7 +59,7 @@
 <title>Charis Creations — We Tell Your Story</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=Barlow:wght@300;400;500&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;max-width:100vw;overflow-x:hidden;background:#F2EDE8;color:#1a1a1a;font-family:'Barlow',sans-serif;cursor:none;scroll-behavior:smooth;}
@@ -99,6 +99,7 @@ nav.sc{background:rgba(242,237,232,.97);backdrop-filter:blur(18px);padding:14px 
 .hero-slide-photo.is-portrait{object-fit:contain;object-position:center top;}
 .hero-slide-photo.is-landscape{object-position:center top;}
 .hero-slide-photo.is-celebrity{object-position:80% 100%;transform:scale(1.2);transform-origin:80% 100%;}
+.hero-slide-title{position:absolute;top:clamp(92px,14vh,142px);left:clamp(24px,6vw,88px);z-index:2;color:#f2e4c9;font-family:'Montserrat',sans-serif;font-size:clamp(21px,3.1vw,44px);font-weight:700;line-height:1.12;letter-spacing:.035em;text-transform:uppercase;text-shadow:0 2px 18px rgba(0,0,0,.36);}
 .hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.72) 0%,rgba(8,8,8,.38) 38%,rgba(8,8,8,.12) 100%),linear-gradient(0deg,rgba(8,8,8,.52),transparent 46%);}
 .hero-controls{position:absolute;right:clamp(20px,5vw,72px);bottom:22px;z-index:4;display:flex;align-items:center;gap:8px;color:#fff;font-family:'Barlow Condensed',sans-serif;}
 .hero-controls button{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);background:rgba(8,8,8,.38);color:#fff;cursor:pointer;transition:background .2s,border-color .2s,color .2s;}
@@ -1565,8 +1566,8 @@ footer{width:100%;background:#040404;padding:40px 5vw 20px;border-top:1px solid 
 </nav>
 <section class="hero" id="home">
   <div class="hero-slideshow" id="heroSlideshow" aria-hidden="true">
-    <div class="hero-slide"><img class="hero-slide-photo" src="assets/hero-slides/hero-section-refresh/2V3A1288_PerfectlyClear-scaled.jpg" alt=""/></div>
-    <div class="hero-slide"><img class="hero-slide-photo" alt=""/></div>
+    <div class="hero-slide"><img class="hero-slide-photo" src="assets/hero-slides/hero-section-refresh/2V3A1288_PerfectlyClear-scaled.jpg" alt=""/><span class="hero-slide-title" aria-hidden="true"></span></div>
+    <div class="hero-slide"><img class="hero-slide-photo" alt=""/><span class="hero-slide-title" aria-hidden="true"></span></div>
   </div>
   <div class="hscrl"><span>Scroll</span><svg width="10" height="14" viewBox="0 0 10 14" fill="none"><path d="M5 1v12M1 9l4 4 4-4" stroke="rgba(196,168,130,.5)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
   <div class="hero-controls" aria-label="Featured image slideshow controls">
@@ -2606,7 +2607,7 @@ document.getElementById('strips').addEventListener('click',function(e){openVS(e)
     'SUE_BD_SHOOT-154.jpg'
   ];
   var slides=heroPhotoFiles.map(function(name){
-    return {src:'assets/hero-slides/hero-section-refresh/'+encodeURIComponent(name),label:'',feature:name==='BRIAN WEIYZ-18.jpg'};
+    return {src:'assets/hero-slides/hero-section-refresh/'+encodeURIComponent(name),label:name==='SUE_BD_SHOOT-154.jpg'?'OUTDOOR SHOOTS':'',feature:name==='BRIAN WEIYZ-18.jpg'};
   });
   var layers=stage.querySelectorAll('.hero-slide');
   var counter=document.getElementById('heroSlideCounter');
@@ -2629,7 +2630,9 @@ document.getElementById('strips').addEventListener('click',function(e){openVS(e)
 
   function setImage(layer,slide){
     var photo=layer.querySelector('.hero-slide-photo');
+    var title=layer.querySelector('.hero-slide-title');
     layer.style.setProperty('--hero-slide-background','url("'+slide.src+'")');
+    if(title) title.textContent=slide.label||'';
     if(photo){
       photo.classList.remove('is-portrait','is-landscape');
       photo.onload=function(){

@@ -93,8 +93,8 @@ nav.sc{background:rgba(242,237,232,.97);backdrop-filter:blur(18px);padding:14px 
 .hero{width:100vw;height:100vh;min-height:580px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-left:calc(-1 * (100vw - 100%) / 2);isolation:isolate;}
 .hero-slideshow{position:absolute;inset:72px 0 0;z-index:0;overflow:hidden;background:#080808;}
 .hero-slide{position:absolute;inset:0;overflow:hidden;background:#080808;transform:translateX(0);transition:transform 1.05s cubic-bezier(.22,1,.36,1);will-change:transform;}
-.hero-slide-fill{position:absolute;inset:-3%;background-position:center;background-size:cover;background-repeat:no-repeat;filter:blur(24px);transform:scale(1.05);opacity:.68;}
-.hero-slide-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:rgba(8,8,8,.16);}
+.hero-slide-fill{display:none;}
+.hero-slide-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;object-position:center;}
 .hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.72) 0%,rgba(8,8,8,.38) 38%,rgba(8,8,8,.12) 100%),linear-gradient(0deg,rgba(8,8,8,.52),transparent 46%);}
 .hero-controls{position:absolute;right:clamp(20px,5vw,72px);bottom:22px;z-index:4;display:flex;align-items:center;gap:8px;color:#fff;font-family:'Barlow Condensed',sans-serif;}
 .hero-controls button{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);background:rgba(8,8,8,.38);color:#fff;cursor:pointer;transition:background .2s,border-color .2s,color .2s;}
@@ -1564,15 +1564,7 @@ footer{width:100%;background:#040404;padding:40px 5vw 20px;border-top:1px solid 
     <div class="hero-slide"><div class="hero-slide-fill" style="background-image:url('assets/hero-slides/Moreens-Kuhinjira-3-scaled.jpg')"></div><img class="hero-slide-photo" src="assets/hero-slides/Moreens-Kuhinjira-3-scaled.jpg" alt=""/></div>
     <div class="hero-slide"><div class="hero-slide-fill"></div><img class="hero-slide-photo" alt=""/></div>
   </div>
-  <div class="hero-shade" aria-hidden="true"></div>
-  <div class="hvign" style="z-index:2;"></div>
-  <div class="hwords" style="position:relative;z-index:3;justify-content:center;">
-    <div class="hcenter" id="playBtn">
-      <div class="hring"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M3.5 2l10 6-10 6V2z"/></svg></div>
-      <span class="hlbl">Play Showreel</span>
-    </div>
-  </div>
-  <div class="hscrl" style="z-index:3;"><span>Scroll</span><svg width="10" height="14" viewBox="0 0 10 14" fill="none"><path d="M5 1v12M1 9l4 4 4-4" stroke="rgba(196,168,130,.5)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="hscrl"><span>Scroll</span><svg width="10" height="14" viewBox="0 0 10 14" fill="none"><path d="M5 1v12M1 9l4 4 4-4" stroke="rgba(196,168,130,.5)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
   <div class="hero-controls" aria-label="Featured image slideshow controls">
     <button type="button" id="heroSlidePrev" aria-label="Previous image"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <span class="hero-counter" id="heroSlideCounter" aria-hidden="true">01 / 15</span>
@@ -2278,20 +2270,12 @@ var cur=document.getElementById('cur'),crng=document.getElementById('crng'),mx=0
 document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
 (function t(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;crng.style.left=rx+'px';crng.style.top=ry+'px';requestAnimationFrame(t);})();
 function hov(q){document.querySelectorAll(q).forEach(function(el){el.addEventListener('mouseenter',function(){cur.classList.add('hv');crng.classList.add('hv');});el.addEventListener('mouseleave',function(){cur.classList.remove('hv');crng.classList.remove('hv');});});}
-hov('a,button,.fc,.strips,.hcenter,.farr,.tbtn,.tdt');
+hov('a,button,.fc,.strips,.farr,.tbtn,.tdt');
 
 /* NAV */
 window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('sc',window.scrollY>50);});
 window.tm=function(){document.getElementById('mob').classList.toggle('op');document.getElementById('ham').classList.toggle('op');};
 window.cm=function(){document.getElementById('mob').classList.remove('op');document.getElementById('ham').classList.remove('op');};
-var pb=document.getElementById('playBtn');
-if(pb)pb.addEventListener('click',function(e){
-  e.stopPropagation();
-  /* SHOWREEL: Replace YOUR_VIDEO_ID with your YouTube video ID
-     e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ → dQw4w9WgXcQ */
-  window.open('https://www.youtube.com/watch?v=YOUR_VIDEO_ID','_blank');
-});
-
 /* REVEAL */
 var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.08});
 document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});

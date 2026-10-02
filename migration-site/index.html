@@ -90,7 +90,19 @@ nav.sc{background:rgba(242,237,232,.97);backdrop-filter:blur(18px);padding:14px 
 .mob.op{display:flex}
 .mob a{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;text-transform:uppercase;color:rgba(255,255,255,.6);text-decoration:none;transition:color .3s}
 .mob a:hover{color:var(--or)}
-.hero{width:100vw;height:100vh;min-height:580px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-left:calc(-1 * (100vw - 100%) / 2);}
+.hero{width:100vw;height:100vh;min-height:580px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-left:calc(-1 * (100vw - 100%) / 2);isolation:isolate;}
+.hero-slideshow{position:absolute;inset:0;z-index:0;overflow:hidden;background:#080808;}
+.hero-slide{position:absolute;inset:0;background-color:#080808;background-position:center;background-size:cover;background-repeat:no-repeat;transform:translateX(0);transition:transform 1.05s cubic-bezier(.22,1,.36,1);will-change:transform;}
+.hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.72) 0%,rgba(8,8,8,.38) 38%,rgba(8,8,8,.12) 100%),linear-gradient(0deg,rgba(8,8,8,.52),transparent 46%);}
+.hero-controls{position:absolute;right:clamp(20px,5vw,72px);bottom:22px;z-index:4;display:flex;align-items:center;gap:8px;color:#fff;font-family:'Barlow Condensed',sans-serif;}
+.hero-controls button{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);background:rgba(8,8,8,.38);color:#fff;cursor:pointer;transition:background .2s,border-color .2s,color .2s;}
+.hero-controls button:hover{background:var(--or);border-color:var(--or);color:#080808;}
+.hero-controls button:focus-visible{outline:2px solid var(--or);outline-offset:3px;}
+.hero-controls svg{width:13px;height:13px;display:block;}
+.hero-controls .hero-pause{width:auto;min-width:64px;padding:0 9px;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:.16em;text-transform:uppercase;}
+.hero-counter{min-width:54px;text-align:center;font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.8);}
+.hero-slide-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+@media(prefers-reduced-motion:reduce){.hero-slide{transition:none;}}
 .hglow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 55% at 15% 65%,rgba(232,83,10,.15) 0%,transparent 65%),radial-gradient(ellipse 45% 45% at 85% 28%,rgba(196,168,130,.08) 0%,transparent 60%);}
 .hvign{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,transparent 50%,#080808 100%)}
 .hwords{
@@ -211,14 +223,14 @@ nav.sc{background:rgba(242,237,232,.97);backdrop-filter:blur(18px);padding:14px 
 .sbg{width:100%;height:100%}
 .stip{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(8,8,8,.9),transparent);padding:10px 8px 7px;font-family:'Barlow Condensed',sans-serif;font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.65);opacity:0;transition:opacity .3s;}
 .sitem:hover .stip{opacity:1}
-.s1{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/Moreens-Kuhinjira-3-scaled.jpg') center/cover no-repeat; }.s2{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/0C6A0494_2-scaled-e1774276289584.jpg') center/cover no-repeat; }
-.s3{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/0C6A4403-scaled.jpg') center/cover no-repeat; }.s4{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/Screenshot-2-e1774531475657.png') center/cover no-repeat; }
-.s5{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/Annet-1-scaled.jpg') center/cover no-repeat; }.s6{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/PESH-PESH-30-scaled.jpg') center/cover no-repeat; }
-.s7{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/Fred-Gloria-Shot-14-scaled.jpg') center/cover no-repeat; }.s8{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/STRATEGIC-DIALOGUE-ON-NEW-MALARIA-TOOLS-2026-131.jpg') center/cover no-repeat; }
-.s9{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/58-scaled.jpg') center/cover no-repeat; }.s10{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/SHARIF-WEDS-LIZ-189-scaled.jpg') center/cover no-repeat; }
-.s11{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/PPK-100-BW-scaled-e1774537003267.jpg') center/cover no-repeat; }.s12{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/Fahad-Weds-Darlin-602-scaled.jpg') center/cover no-repeat; }
-.s13{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/SHARIF-WEDS-LIZ-15-scaled-e1774537111775.jpg') center/cover no-repeat; }.s14{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/0C6A7551-scaled.jpg') center/cover no-repeat; }
-.s15{ background:url('https://chariscreationsltd.com/wp-content/uploads/2026/03/JOAN-GRADUATION-5-scaled-e1774343851415.jpg') center/cover no-repeat; }
+.s1{ background:url('assets/hero-slides/Moreens-Kuhinjira-3-scaled.jpg') center/cover no-repeat; }.s2{ background:url('assets/hero-slides/0C6A0494_2-scaled-e1774276289584.jpg') center/cover no-repeat; }
+.s3{ background:url('assets/hero-slides/0C6A4403-scaled.jpg') center/cover no-repeat; }.s4{ background:url('assets/hero-slides/Screenshot-2-e1774531475657.png') center/cover no-repeat; }
+.s5{ background:url('assets/hero-slides/Annet-1-scaled.jpg') center/cover no-repeat; }.s6{ background:url('assets/hero-slides/PESH-PESH-30-scaled.jpg') center/cover no-repeat; }
+.s7{ background:url('assets/hero-slides/Fred-Gloria-Shot-14-scaled.jpg') center/cover no-repeat; }.s8{ background:url('assets/hero-slides/STRATEGIC-DIALOGUE-ON-NEW-MALARIA-TOOLS-2026-131.jpg') center/cover no-repeat; }
+.s9{ background:url('assets/hero-slides/58-scaled.jpg') center/cover no-repeat; }.s10{ background:url('assets/hero-slides/SHARIF-WEDS-LIZ-189-scaled.jpg') center/cover no-repeat; }
+.s11{ background:url('assets/hero-slides/PPK-100-BW-scaled-e1774537003267.jpg') center/cover no-repeat; }.s12{ background:url('assets/hero-slides/Fahad-Weds-Darlin-602-scaled.jpg') center/cover no-repeat; }
+.s13{ background:url('assets/hero-slides/SHARIF-WEDS-LIZ-15-scaled-e1774537111775.jpg') center/cover no-repeat; }.s14{ background:url('assets/hero-slides/0C6A7551-scaled.jpg') center/cover no-repeat; }
+.s15{ background:url('assets/hero-slides/JOAN-GRADUATION-5-scaled-e1774343851415.jpg') center/cover no-repeat; }
 
 /* ═══════════════════════════════════════════════════
    VERTICAL SLIDESHOW — split layout
@@ -1368,7 +1380,7 @@ footer{width:100%;background:#040404;padding:40px 5vw 20px;border-top:1px solid 
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 
 @media(max-width:1024px){.about{grid-template-columns:1fr}.ctin{grid-template-columns:1fr}.tcd{min-width:calc(75vw)}.det-body{flex-direction:column;gap:24px}.det-right{flex-direction:row;flex-wrap:wrap;gap:16px;min-width:0}}
-@media(max-width:768px){nav,nav.sc{padding:13px 5vw}.nlinks{display:none}.ham{display:flex}.hw{font-size:clamp(16px,4.5vw,34px);letter-spacing:.14em}.thd{flex-direction:column;align-items:flex-start}.tcd{min-width:82vw}.frow{grid-template-columns:1fr}.fc{width:clamp(200px,68vw,340px)}.ftlks{gap:20px}}
+@media(max-width:768px){nav,nav.sc{padding:13px 5vw}.nlinks{display:none}.ham{display:flex}.hw{font-size:clamp(16px,4.5vw,34px);letter-spacing:.14em}.thd{flex-direction:column;align-items:flex-start}.tcd{min-width:82vw}.frow{grid-template-columns:1fr}.fc{width:clamp(200px,68vw,340px)}.ftlks{gap:20px}.hero-controls{right:16px;bottom:20px;gap:5px}.hero-controls button{width:32px;height:32px}.hero-controls .hero-pause{min-width:58px}.hero-counter{min-width:46px;font-size:9px}}
 @media(max-width:480px){.hw{font-size:clamp(13px,3.8vw,22px);letter-spacing:.08em}.sitem{width:clamp(100px,26vw,130px);height:clamp(64px,17vw,84px)}.aig{grid-template-rows:clamp(120px,30vw,180px) clamp(120px,30vw,180px)}}
 
 /* ── FLOATING BUTTONS ── */
@@ -1546,27 +1558,11 @@ footer{width:100%;background:#040404;padding:40px 5vw 20px;border-top:1px solid 
   <div class="ham" id="ham" onclick="tm()"><span></span><span></span><span></span></div>
 </nav>
 <section class="hero" id="home">
-  <!-- ═══════════════════════════════════════════════
-       HERO BACKGROUND
-       Option A (Video): keep the <video> tag, delete the <img> tag
-       Option B (Image): keep the <img> tag, delete the <video> tag
-       Upload your file to: assets/hero-video.mp4 OR assets/hero.jpg
-  ═══════════════════════════════════════════════ -->
-
-  <!-- OPTION A — Background Video -->
-  <video autoplay muted loop playsinline
-    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-    <source src="https://chariscreationsltd.com/wp-content/uploads/2026/03/TIMOTHY-WEDS-MILDRED-TRAILER-FINAL-1920.mp4" type="video/mp4"/>
-    <!-- Fallback if video fails to load -->
-    <source src="assets/hero-video.webm" type="video/webm"/>
-  </video>
-
-  <!-- OPTION B — Background Image (delete if using video above) -->
-  <!-- <img src="assets/hero.jpg" alt="Charis Creations — Wedding Cinematography Uganda"
-    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"/> -->
-
-  <!-- Dark overlay so text stays readable over the video/image -->
-  <div style="position:absolute;inset:0;background:rgba(8,8,8,.48);z-index:1;"></div>
+  <div class="hero-slideshow" id="heroSlideshow" aria-hidden="true">
+    <div class="hero-slide" style="background-image:url('assets/hero-slides/Moreens-Kuhinjira-3-scaled.jpg')"></div>
+    <div class="hero-slide"></div>
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
   <div class="hvign" style="z-index:2;"></div>
   <div class="hwords" style="position:relative;z-index:3;">
     <span class="hw">charis</span><span class="hw">creations</span>
@@ -1577,9 +1573,16 @@ footer{width:100%;background:#040404;padding:40px 5vw 20px;border-top:1px solid 
     <span class="hw accent">the</span><span class="hw">agency</span>
   </div>
   <div class="hscrl" style="z-index:3;"><span>Scroll</span><svg width="10" height="14" viewBox="0 0 10 14" fill="none"><path d="M5 1v12M1 9l4 4 4-4" stroke="rgba(196,168,130,.5)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="hero-controls" aria-label="Featured image slideshow controls">
+    <button type="button" id="heroSlidePrev" aria-label="Previous image"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <span class="hero-counter" id="heroSlideCounter" aria-hidden="true">01 / 15</span>
+    <button type="button" class="hero-pause" id="heroSlidePause" aria-label="Pause slideshow" aria-pressed="false">Pause</button>
+    <button type="button" id="heroSlideNext" aria-label="Next image"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m6 3 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <span class="hero-slide-status" id="heroSlideStatus" aria-live="polite">Featured story 1 of 15</span>
+  </div>
 </section>
 
-<!-- TAGLINE — between hero and slideshow -->
+<!-- TAGLINE — between the hero and the two story strips -->
 <div class="tagline-strip">
   <div class="tagline-inner">
     <span class="tg-word">Unscripted</span>
@@ -2577,6 +2580,109 @@ document.addEventListener('keydown',function(e){
 
 /* strips click */
 document.getElementById('strips').addEventListener('click',function(e){openVS(e);});
+
+/* ── FULL-WIDTH HERO SLIDES — drawn from the two story strips below ── */
+(function(){
+  var stage=document.getElementById('heroSlideshow');
+  if(!stage) return;
+  var row=document.querySelector('.sr.l');
+  var cards=row?Array.prototype.slice.call(row.querySelectorAll('.sitem'),0,15):[];
+  var slides=cards.map(function(card){
+    var image=card.querySelector('.sbg');
+    var caption=card.querySelector('.stip');
+    var background=image?window.getComputedStyle(image).backgroundImage:'';
+    var match=background.match(/url\(["']?(.*?)["']?\)/);
+    return match?{src:match[1],label:caption?caption.textContent.trim():''}:null;
+  }).filter(Boolean);
+  var layers=stage.querySelectorAll('.hero-slide');
+  var counter=document.getElementById('heroSlideCounter');
+  var status=document.getElementById('heroSlideStatus');
+  var pauseButton=document.getElementById('heroSlidePause');
+  var previousButton=document.getElementById('heroSlidePrev');
+  var nextButton=document.getElementById('heroSlideNext');
+  var hero=document.getElementById('home');
+  if(!slides.length||layers.length<2||!pauseButton) return;
+
+  var current=0;
+  var activeLayer=0;
+  var direction=1;
+  var timer=null;
+  var animating=false;
+  var reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var paused=reducedMotion;
+  var duration=1050;
+  var delay=3800;
+
+  function setImage(layer,slide){layer.style.backgroundImage='url("'+slide.src+'")';}
+  function announce(){
+    if(counter) counter.textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
+    if(status) status.textContent='Featured story '+(current+1)+' of '+slides.length+(slides[current].label?': '+slides[current].label:'');
+  }
+  setImage(layers[0],slides[0]);
+  layers[0].style.visibility='visible';
+  layers[1].style.visibility='hidden';
+  layers[1].style.transform='translateX(100%)';
+  announce();
+
+  function preload(index){var image=new Image();image.src=slides[index].src;}
+  function show(index,travelDirection){
+    if(animating||index===current) return;
+    animating=true;
+    var outgoing=layers[activeLayer];
+    var incoming=layers[1-activeLayer];
+    setImage(incoming,slides[index]);
+    incoming.style.transition='none';
+    incoming.style.visibility='visible';
+    incoming.style.zIndex='2';
+    outgoing.style.zIndex='1';
+    incoming.style.transform=travelDirection>0?'translateX(-100%)':'translateX(100%)';
+    void incoming.offsetWidth;
+    incoming.style.transition='';
+    incoming.style.transform='translateX(0)';
+    outgoing.style.transform=travelDirection>0?'translateX(100%)':'translateX(-100%)';
+    window.setTimeout(function(){
+      outgoing.style.transition='none';
+      outgoing.style.transform='translateX(0)';
+      outgoing.style.visibility='hidden';
+      incoming.style.zIndex='1';
+      activeLayer=1-activeLayer;
+      current=index;
+      animating=false;
+      announce();
+      preload((current+direction+slides.length)%slides.length);
+    },duration+40);
+  }
+  function advance(){
+    if(slides.length<2) return;
+    var next=current+direction;
+    if(next>=slides.length||next<0){direction*=-1;next=current+direction;}
+    show(next,direction);
+  }
+  function manual(step){
+    direction=step;
+    show((current+step+slides.length)%slides.length,step);
+  }
+  function stopTimer(){if(timer){window.clearInterval(timer);timer=null;}}
+  function startTimer(){
+    stopTimer();
+    if(!paused&&!document.hidden&&slides.length>1) timer=window.setInterval(advance,delay);
+  }
+  function updatePause(){
+    pauseButton.textContent=paused?'Play':'Pause';
+    pauseButton.setAttribute('aria-label',paused?'Play slideshow':'Pause slideshow');
+    pauseButton.setAttribute('aria-pressed',String(paused));
+    if(paused) stopTimer(); else startTimer();
+  }
+  pauseButton.addEventListener('click',function(){paused=!paused;updatePause();});
+  previousButton.addEventListener('click',function(){manual(-1);});
+  nextButton.addEventListener('click',function(){manual(1);});
+  hero.addEventListener('pointerenter',stopTimer);
+  hero.addEventListener('pointerleave',startTimer);
+  hero.addEventListener('focusin',stopTimer);
+  hero.addEventListener('focusout',function(e){if(!hero.contains(e.relatedTarget)) startTimer();});
+  document.addEventListener('visibilitychange',startTimer);
+  updatePause();
+})();
 
 /* ── 3D HERO MOUSE TILT ── */
 (function(){

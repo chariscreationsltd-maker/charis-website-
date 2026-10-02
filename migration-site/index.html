@@ -980,15 +980,17 @@ nav.sc{background:rgba(242,237,232,.97);backdrop-filter:blur(18px);padding:14px 
 /* ── Flip hint badge ── */
 .feat-flip-hint{
   display:inline-flex;align-items:center;gap:7px;
-  font-family:'Barlow Condensed',sans-serif;font-size:8px;letter-spacing:.22em;text-transform:uppercase;
-  color:rgba(255,255,255,.5);
-  border:1px solid rgba(255,255,255,.12);
-  padding:6px 14px;cursor:pointer;
+  min-height:40px;
+  font-family:'Barlow Condensed',sans-serif;font-size:clamp(10px,.85vw,12px);font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:#F2EDE8;background:#171717;
+  border:1px solid rgba(255,255,255,.38);
+  padding:9px 14px;cursor:pointer;
   transition:all .3s;
   animation:hintpulse 2.5s ease infinite;
 }
 .feat-flip-hint:hover{border-color:var(--or);color:var(--or)}
-@keyframes hintpulse{0%,100%{border-color:rgba(255,255,255,.12)}50%{border-color:rgba(232,83,10,.5)}}
+@keyframes hintpulse{0%,100%{border-color:rgba(255,255,255,.38)}50%{border-color:rgba(232,83,10,.85)}}
+.feat-flip-hint:focus-visible{outline:2px solid var(--or);outline-offset:3px;}
 .feat-flip-hint svg{transition:transform .3s}
 .feat-flip-hint:hover svg{transform:rotateY(180deg)}
 .feat-flip-hint.flipped{border-color:var(--or);color:var(--or)}

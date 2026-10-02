@@ -100,6 +100,10 @@ nav.sc{background:rgba(242,237,232,.97);backdrop-filter:blur(18px);padding:14px 
 .hero-slide-photo.is-landscape{object-position:center top;}
 .hero-slide-photo.is-celebrity{object-position:80% 100%;transform:scale(1.2);transform-origin:80% 100%;}
 .hero-slide-title{position:absolute;top:clamp(92px,14vh,142px);left:clamp(24px,6vw,88px);z-index:2;color:#f2e4c9;font-family:'Montserrat',sans-serif;font-size:clamp(21px,3.1vw,44px);font-weight:700;line-height:1.12;letter-spacing:.035em;text-transform:uppercase;text-shadow:0 2px 18px rgba(0,0,0,.36);}
+.hero-slide-footer{position:absolute;left:clamp(24px,6vw,88px);bottom:clamp(72px,10vh,104px);z-index:2;width:min(440px,calc(100% - 48px));color:#f2e4c9;font-family:'Montserrat',sans-serif;text-shadow:0 2px 16px rgba(0,0,0,.48);}
+.hero-slide-footer[hidden]{display:none;}
+.hero-slide-agency{margin:0 0 8px;font-size:clamp(15px,1.55vw,20px);font-weight:700;line-height:1.25;letter-spacing:.045em;text-transform:uppercase;}
+.hero-slide-description{max-width:40ch;margin:0;font-size:clamp(12px,1.05vw,14px);font-weight:600;line-height:1.65;letter-spacing:.012em;}
 .hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.72) 0%,rgba(8,8,8,.38) 38%,rgba(8,8,8,.12) 100%),linear-gradient(0deg,rgba(8,8,8,.52),transparent 46%);}
 .hero-controls{position:absolute;right:clamp(20px,5vw,72px);bottom:22px;z-index:4;display:flex;align-items:center;gap:8px;color:#fff;font-family:'Barlow Condensed',sans-serif;}
 .hero-controls button{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);background:rgba(8,8,8,.38);color:#fff;cursor:pointer;transition:background .2s,border-color .2s,color .2s;}
@@ -1566,8 +1570,8 @@ footer{width:100%;background:#040404;padding:40px 5vw 20px;border-top:1px solid 
 </nav>
 <section class="hero" id="home">
   <div class="hero-slideshow" id="heroSlideshow" aria-hidden="true">
-    <div class="hero-slide"><img class="hero-slide-photo" src="assets/hero-slides/hero-section-refresh/2V3A1288_PerfectlyClear-scaled.jpg" alt=""/><span class="hero-slide-title" aria-hidden="true"></span></div>
-    <div class="hero-slide"><img class="hero-slide-photo" alt=""/><span class="hero-slide-title" aria-hidden="true"></span></div>
+    <div class="hero-slide"><img class="hero-slide-photo" src="assets/hero-slides/hero-section-refresh/2V3A1288_PerfectlyClear-scaled.jpg" alt=""/><span class="hero-slide-title" aria-hidden="true"></span><div class="hero-slide-footer" aria-hidden="true" hidden><p class="hero-slide-agency">Charis Creations — The Agency</p><p class="hero-slide-description">Natural light, open spaces, and real moments, beautifully framed in the landscape.</p></div></div>
+    <div class="hero-slide"><img class="hero-slide-photo" alt=""/><span class="hero-slide-title" aria-hidden="true"></span><div class="hero-slide-footer" aria-hidden="true" hidden><p class="hero-slide-agency">Charis Creations — The Agency</p><p class="hero-slide-description">Natural light, open spaces, and real moments, beautifully framed in the landscape.</p></div></div>
   </div>
   <div class="hscrl"><span>Scroll</span><svg width="10" height="14" viewBox="0 0 10 14" fill="none"><path d="M5 1v12M1 9l4 4 4-4" stroke="rgba(196,168,130,.5)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
   <div class="hero-controls" aria-label="Featured image slideshow controls">
@@ -2631,8 +2635,10 @@ document.getElementById('strips').addEventListener('click',function(e){openVS(e)
   function setImage(layer,slide){
     var photo=layer.querySelector('.hero-slide-photo');
     var title=layer.querySelector('.hero-slide-title');
+    var footer=layer.querySelector('.hero-slide-footer');
     layer.style.setProperty('--hero-slide-background','url("'+slide.src+'")');
     if(title) title.textContent=slide.label||'';
+    if(footer) footer.hidden=!slide.label;
     if(photo){
       photo.classList.remove('is-portrait','is-landscape');
       photo.onload=function(){

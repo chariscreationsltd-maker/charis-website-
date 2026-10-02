@@ -27,7 +27,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /home/u681194498/domains/chariscreationsltd.com/public_html/Websitemigration/
+          server-dir: Websitemigration/
           # Only deploy the WordPress-free site we prepare here. This keeps
           # WordPress core, credentials, and the separate CharisOS files out.
           local-dir: ./migration-site/

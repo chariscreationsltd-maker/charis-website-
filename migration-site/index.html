@@ -98,6 +98,10 @@ nav.sc{background:rgba(242,237,232,.97);backdrop-filter:blur(18px);padding:14px 
 .hero-slide-photo{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center top;}
 .hero-slide-photo.is-portrait{object-fit:contain;object-position:center top;}
 .hero-slide-photo.is-landscape{object-position:center top;}
+.hero-slide-companion{display:none;}
+.hero-slide.paired-portrait{display:grid;grid-template-columns:minmax(0,32fr) minmax(0,68fr);}
+.hero-slide.paired-portrait .hero-slide-photo{position:relative;inset:auto;width:100%;height:100%;object-fit:cover;object-position:center top;}
+.hero-slide.paired-portrait .hero-slide-companion{display:block;position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center;}
 .hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.72) 0%,rgba(8,8,8,.38) 38%,rgba(8,8,8,.12) 100%),linear-gradient(0deg,rgba(8,8,8,.52),transparent 46%);}
 .hero-controls{position:absolute;right:clamp(20px,5vw,72px);bottom:22px;z-index:4;display:flex;align-items:center;gap:8px;color:#fff;font-family:'Barlow Condensed',sans-serif;}
 .hero-controls button{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);background:rgba(8,8,8,.38);color:#fff;cursor:pointer;transition:background .2s,border-color .2s,color .2s;}
@@ -1386,6 +1390,7 @@ footer{width:100%;background:#040404;padding:40px 5vw 20px;border-top:1px solid 
 
 @media(max-width:1024px){.about{grid-template-columns:1fr}.ctin{grid-template-columns:1fr}.tcd{min-width:calc(75vw)}.det-body{flex-direction:column;gap:24px}.det-right{flex-direction:row;flex-wrap:wrap;gap:16px;min-width:0}}
 @media(max-width:768px){nav,nav.sc{padding:13px 5vw}.nlinks{display:none}.ham{display:flex}.hw{font-size:clamp(16px,4.5vw,34px);letter-spacing:.14em}.thd{flex-direction:column;align-items:flex-start}.tcd{min-width:82vw}.frow{grid-template-columns:1fr}.fc{width:clamp(200px,68vw,340px)}.ftlks{gap:20px}.hero-controls{right:16px;bottom:20px;gap:5px}.hero-controls button{width:32px;height:32px}.hero-controls .hero-pause{min-width:58px}.hero-counter{min-width:46px;font-size:9px}}
+@media(max-width:768px){.hero-slide.paired-portrait{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}}
 @media(max-width:480px){.hw{font-size:clamp(13px,3.8vw,22px);letter-spacing:.08em}.sitem{width:clamp(100px,26vw,130px);height:clamp(64px,17vw,84px)}.aig{grid-template-rows:clamp(120px,30vw,180px) clamp(120px,30vw,180px)}}
 
 /* ── FLOATING BUTTONS ── */
@@ -1564,8 +1569,8 @@ footer{width:100%;background:#040404;padding:40px 5vw 20px;border-top:1px solid 
 </nav>
 <section class="hero" id="home">
   <div class="hero-slideshow" id="heroSlideshow" aria-hidden="true">
-    <div class="hero-slide"><img class="hero-slide-photo" src="assets/hero-slides/Moreens-Kuhinjira-3-scaled.jpg" alt=""/></div>
-    <div class="hero-slide"><img class="hero-slide-photo" alt=""/></div>
+    <div class="hero-slide"><img class="hero-slide-photo" src="assets/hero-slides/Moreens-Kuhinjira-3-scaled.jpg" alt=""/><img class="hero-slide-companion" src="Untitled-6.jpg" alt=""/></div>
+    <div class="hero-slide"><img class="hero-slide-photo" alt=""/><img class="hero-slide-companion" src="Untitled-6.jpg" alt=""/></div>
   </div>
   <div class="hscrl"><span>Scroll</span><svg width="10" height="14" viewBox="0 0 10 14" fill="none"><path d="M5 1v12M1 9l4 4 4-4" stroke="rgba(196,168,130,.5)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
   <div class="hero-controls" aria-label="Featured image slideshow controls">
@@ -2621,7 +2626,9 @@ document.getElementById('strips').addEventListener('click',function(e){openVS(e)
     if(photo){
       photo.classList.remove('is-portrait','is-landscape');
       photo.onload=function(){
-        photo.classList.add(photo.naturalHeight>photo.naturalWidth?'is-portrait':'is-landscape');
+        var isPortrait=photo.naturalHeight>photo.naturalWidth;
+        photo.classList.add(isPortrait?'is-portrait':'is-landscape');
+        layer.classList.toggle('paired-portrait',isPortrait);
       };
       photo.src=slide.src;
       if(photo.complete&&photo.naturalWidth) photo.onload();

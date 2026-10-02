@@ -93,8 +93,10 @@ nav.sc{background:rgba(242,237,232,.97);backdrop-filter:blur(18px);padding:14px 
 .hero{width:100vw;height:100vh;min-height:580px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-left:calc(-1 * (100vw - 100%) / 2);isolation:isolate;}
 .hero-slideshow{position:absolute;inset:72px 0 0;z-index:0;overflow:hidden;background:#080808;}
 .hero-slide{position:absolute;inset:0;overflow:hidden;background:#080808;transform:translateX(0);transition:transform 1.05s cubic-bezier(.22,1,.36,1);will-change:transform;}
-.hero-slide-fill{display:none;}
+.hero-slide-fill{position:absolute;inset:-3%;background-position:center;background-size:cover;background-repeat:no-repeat;filter:blur(24px);transform:scale(1.05);opacity:.68;}
 .hero-slide-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+.hero-slide-photo.is-portrait{object-position:center top;}
+.hero-slide-photo.is-landscape{object-fit:contain;}
 .hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.72) 0%,rgba(8,8,8,.38) 38%,rgba(8,8,8,.12) 100%),linear-gradient(0deg,rgba(8,8,8,.52),transparent 46%);}
 .hero-controls{position:absolute;right:clamp(20px,5vw,72px);bottom:22px;z-index:4;display:flex;align-items:center;gap:8px;color:#fff;font-family:'Barlow Condensed',sans-serif;}
 .hero-controls button{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);background:rgba(8,8,8,.38);color:#fff;cursor:pointer;transition:background .2s,border-color .2s,color .2s;}
@@ -2600,7 +2602,14 @@ document.getElementById('strips').addEventListener('click',function(e){openVS(e)
   function setImage(layer,slide){
     var photo=layer.querySelector('.hero-slide-photo');
     var fill=layer.querySelector('.hero-slide-fill');
-    if(photo) photo.src=slide.src;
+    if(photo){
+      photo.classList.remove('is-portrait','is-landscape');
+      photo.onload=function(){
+        photo.classList.add(photo.naturalHeight>photo.naturalWidth?'is-portrait':'is-landscape');
+      };
+      photo.src=slide.src;
+      if(photo.complete&&photo.naturalWidth) photo.onload();
+    }
     if(fill) fill.style.backgroundImage='url("'+slide.src+'")';
   }
   function announce(){

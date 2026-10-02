@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    # Workflow-only changes configure Actions; they do not publish production files.
+    paths-ignore:
+      - '.github/**'
   workflow_dispatch:
 
 permissions:

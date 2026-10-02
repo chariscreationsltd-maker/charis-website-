@@ -1,0 +1,42 @@
+name: Deploy website preview over FTPS
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ftp-deploy-preview
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy preview copy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out selected branch
+        uses: actions/checkout@v6
+
+      - name: Deploy to the preview folder over FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: public_html/Websitemigration/
+          # Only deploy the WordPress-free site we prepare here. This keeps
+          # WordPress core, credentials, and the separate CharisOS files out.
+          local-dir: ./migration-site/
+          protocol: ftps
+          port: 21
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/wp-config.php
+            **/.gitignore
+            **/*.bk
+            **/.ftp-deploy-sync-state.json
+            **/CHARIS WEBSITE BACKUP/**

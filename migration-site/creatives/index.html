@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Creatives — Charis Creations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Barlow+Condensed:wght@300;400;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --or:#E8530A;--cream:#F5EFE6;--offwhite:#FAF7F2;--dk:#080808;
+  --font-display:'Montserrat',sans-serif;
+  --font-body:'Barlow',sans-serif;
+  --font-cond:'Barlow Condensed',sans-serif;
+}
+body{width:100%;overflow-x:hidden;background:var(--offwhite);color:#1a1a1a;font-family:var(--font-body);cursor:none;}
+::-webkit-scrollbar{width:2px}::-webkit-scrollbar-thumb{background:var(--or)}
+#cur,#crng{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+#cur{width:8px;height:8px;background:var(--or);border-radius:50%;z-index:10000}
+#crng{width:32px;height:32px;border:1px solid rgba(232,83,10,.45);border-radius:50%}
+#cur.hv{width:4px;height:4px;background:#fff}
+#crng.hv{width:52px;height:52px;border-color:var(--or)}
+@media(hover:none){#cur,#crng{display:none}body{cursor:auto}}
+nav{position:fixed;top:0;left:0;right:0;z-index:800;display:flex;align-items:center;justify-content:space-between;padding:20px 5vw;transition:background .4s,padding .3s}
+nav.sc{background:rgba(250,247,242,.97);backdrop-filter:blur(18px);padding:13px 5vw;border-bottom:1px solid rgba(20,15,10,.08)}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nl svg{width:32px;height:32px}
+.nlt{font-family:var(--font-cond);font-weight:900;font-size:14px;letter-spacing:.07em;text-transform:uppercase;color:#1a1a1a;line-height:1.1}
+.nlt b{color:var(--or)}
+.nlinks{display:flex;gap:30px;list-style:none;align-items:center}
+.nlinks a{font-family:var(--font-cond);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(20,15,10,.5);text-decoration:none;transition:color .3s;position:relative;padding-bottom:3px}
+.nlinks a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--or);transition:width .3s}
+.nlinks a:hover,.nlinks a.active{color:var(--or)}
+.nlinks a:hover::after,.nlinks a.active::after{width:100%}
+.ncta{background:var(--or)!important;color:#000!important;padding:8px 18px!important;font-weight:700!important}
+.ncta::after{display:none!important}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.ham span{display:block;width:22px;height:1.5px;background:#1a1a1a;transition:all .3s}
+.ham.op span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.ham.op span:nth-child(2){opacity:0}
+.ham.op span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mob{display:none;position:fixed;inset:0;background:#080808;z-index:799;flex-direction:column;align-items:center;justify-content:center;gap:22px}
+.mob.op{display:flex}
+.mob a{font-family:var(--font-cond);font-weight:900;font-size:40px;text-transform:uppercase;color:rgba(255,255,255,.6);text-decoration:none;transition:color .3s}
+.mob a:hover{color:var(--or)}
+@media(min-width:769px){.ham{display:none}.nlinks{display:flex}}
+@media(max-width:768px){.nlinks{display:none}.ham{display:flex}nav,nav.sc{padding:13px 5vw}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
+.rv.vis{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ── HERO ── */
+#hero-choice{min-height:100vh;width:100%;background:#F5F5F0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 5vw 60px;position:relative;overflow:hidden}
+#hero-choice::after{content:'';position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(232,83,10,.08) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0}
+.hero-label{position:relative;z-index:2;font-family:var(--font-display);font-size:clamp(10px,1vw,13px);font-weight:400;letter-spacing:.38em;text-transform:uppercase;color:rgba(0,0,0,.6);margin-bottom:clamp(14px,2.5vw,24px);display:flex;align-items:center;gap:14px}
+.hero-label::before,.hero-label::after{content:'';display:block;width:40px;height:1px;background:rgba(0,0,0,.25)}
+.hero-title{position:relative;z-index:2;font-family:var(--font-display);font-weight:900;font-size:clamp(28px,5vw,72px);text-transform:uppercase;letter-spacing:.06em;color:#000;text-align:center;margin-bottom:8px;line-height:1}
+.hero-title span{color:var(--or)}
+.hero-sub{position:relative;z-index:2;font-family:var(--font-body);font-weight:500;font-size:clamp(12px,1.1vw,15px);color:rgba(0,0,0,);letter-spacing:.04em;margin-bottom:clamp(40px,6vw,72px);text-align:center}
+.choice-arena{position:relative;z-index:2;display:flex;gap:clamp(24px,4vw,60px);align-items:stretch;justify-content:center;width:100%;max-width:880px}
+.flip-wrap{flex:1;max-width:360px;perspective:1200px;cursor:pointer;position:relative}
+.flip-inner{position:relative;width:100%;height:clamp(460px,55vh,620px);transform-style:preserve-3d;transition:transform 0.9s cubic-bezier(0.4,0,0.2,1)}
+.flip-wrap.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-front,.flip-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;overflow:hidden;}
+.flip-back{transform:rotateY(180deg)}
+.flip-front{background:linear-gradient(160deg,#1a1208 0%,#0e0b06 100%);border:1px solid rgba(232,83,10,.18);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:32px 28px 36px;position:relative;overflow:hidden}
+.flip-front::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 90%,rgba(232,83,10,.12) 0%,transparent 70%)}
+.flip-front-badge{font-family:var(--font-cond);font-size:px;letter-spacing:.3em;text-transform:uppercase;color:#D3D3D3 ;padding:7px 18px;border:1px solid #FF5F1F;border-radius:999px;position:relative;z-index:2}
+.flip-front-icon{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:16px;flex:1;justify-content:center}
+.flip-front-logo{width:clamp(80px,12vw,120px);height:clamp(80px,12vw,120px);display:flex;align-items:center;justify-content:center}
+.flip-choice-word{font-family:var(--font-display);font-weight:900;font-size:clamp(13px,1.6vw,18px);letter-spacing:.12em;text-transform:uppercase;color:#808080;text-align:center}
+.flip-team-name{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,4.5vw,52px);text-transform:uppercase;letter-spacing:.04em;color:#fff;text-align:center;line-height:.9}
+.flip-team-name span{color:var(--or)}
+.flip-team-sub{font-family:var(--font-body);font-weight:300;font-size:clamp(11px,1vw,13px);color:rgba(255,255,255,.3);text-align:center;letter-spacing:.04em;line-height:1.6}
+.flip-cta-hint{position:relative;z-index:2;display:flex;align-items:center;gap:8px;font-family:var(--font-cond);font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:var(--or);animation:pca 2.4s ease infinite}
+@keyframes pca{0%,100%{opacity:.7}50%{opacity:1}}
+.flip-wrap:hover .flip-front{border-color:rgba(232,83,10,.5);box-shadow:0 0 60px rgba(232,83,10,.12)}
+/* flip-back stays absolute (set in the shared rule above) — only layout props here */
+.flip-back{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 28px;}
+.flip-back-img{position:absolute;inset:0;background-size:cover;background-position:center}
+.flip-back::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(8,6,4,.9) 0%,rgba(8,6,4,.5) 50%,rgba(8,6,4,.2) 100%)}
+.flip-back-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;padding-bottom:8px;text-align:center}
+.flip-congrats{font-family:var(--font-display);font-size:clamp(8px,0.9vw,11px);font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--or);margin-bottom:8px;opacity:0;transform:translateY(16px);transition:opacity .7s ease .5s,transform .7s ease .5s}
+.flip-congrats-name{font-family:var(--font-display);font-weight:900;font-size:clamp(20px,3vw,38px);text-transform:uppercase;letter-spacing:.05em;color:#fff;line-height:.9;margin-bottom:12px;opacity:0;transform:translateY(20px);transition:opacity .7s ease .7s,transform .7s ease .7s}
+.flip-congrats-name span{color:var(--or)}
+.flip-congrats-msg{font-family:var(--font-body);font-weight:300;font-size:clamp(11px,1vw,13px);color:rgba(255,255,255,.55);line-height:1.7;max-width:260px;opacity:0;transform:translateY(16px);transition:opacity .7s ease .9s,transform .7s ease .9s}
+.flip-scroll-cta{margin-top:20px;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-weight:700;font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:#000;background:var(--or);padding:10px 22px;border-radius:2px;text-decoration:none;cursor:pointer;opacity:0;transform:translateY(16px);transition:opacity .7s ease 1.1s,transform .7s ease 1.1s}
+.flip-wrap.flipped .flip-congrats,.flip-wrap.flipped .flip-congrats-name,.flip-wrap.flipped .flip-congrats-msg,.flip-wrap.flipped .flip-scroll-cta{opacity:1;transform:translateY(0)}
+.vs-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;flex-shrink:0;position:relative;z-index:2;align-self:center}
+.vs-line{width:1px;height:60px;background:rgba(0,0,0,.15)}
+.vs-text{font-family:var(--font-display);font-weight:900;font-size:13px;letter-spacing:.12em;color:rgba(0,0,0,.2);width:36px;height:36px;border:1px solid rgba(0,0,0,.15);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.team-section{display:block!important}
+#charis-section,#creative-section{display:block!important}
+
+/* ── ORIGIN ── */
+.origin-wrap{width:100%;padding:clamp(20px,3vw,32px) clamp(24px,7vw,100px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);align-items:center;max-width:1400px;margin:0 auto}
+@media(max-width:860px){.origin-wrap,.creative-origin{grid-template-columns:1fr}}
+.origin-eyebrow{font-family:var(--font-cond);font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--or);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.origin-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--or)}
+.origin-h{font-family:var(--font-display);font-weight:900;font-size:clamp(36px,5vw,76px);line-height:.88;text-transform:uppercase;letter-spacing:.03em;margin-bottom:20px}
+.origin-h span{color:var(--or)}
+.origin-body{font-family:var(--font-body);font-weight:300;font-size:clamp(13px,1.1vw,15px);color:rgba(0,0,0,.65);line-height:1.9;margin-bottom:16px}
+.origin-stat-row{display:flex;gap:clamp(20px,3vw,44px);margin-top:28px;flex-wrap:wrap}
+.origin-stat{display:flex;flex-direction:column;gap:3px}
+.origin-stat-n{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,3.5vw,52px);color:var(--or);line-height:1}
+.origin-stat-l{font-family:var(--font-cond);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,26,26,.4)}
+.origin-right{position:relative}
+.origin-img-main{width:100%;aspect-ratio:16/10;border-radius:16px;overflow:hidden;position:relative}
+.origin-img-main img{width:100%;height:100%;object-fit:cover}
+.origin-img-badge{position:absolute;bottom:-24px;left:-24px;width:clamp(100px,14vw,160px);height:clamp(100px,14vw,160px);background:var(--or);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.origin-img-badge span:first-child{font-family:var(--font-display);font-weight:900;font-size:clamp(22px,3vw,38px);color:#fff;line-height:1}
+.origin-img-badge span:last-child{font-family:var(--font-cond);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.origin-img-accent{position:absolute;top:-16px;right:-16px;width:90px;height:90px;border:2px solid var(--or);border-radius:50%;opacity:.25}
+
+/* ── PORTRAITS ── */
+.portraits-section{padding:clamp(60px,8vw,110px) clamp(24px,5vw,80px);background:var(--cream);width:100vw;margin-left:calc(50% - 50vw)}
+.portraits-hd{text-align:center;margin-bottom:clamp(36px,5vw,64px)}
+.portraits-ey{font-family:var(--font-cond);font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--or);margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:12px}
+.portraits-ey::before,.portraits-ey::after{content:'';display:block;width:28px;height:1px;background:var(--or)}
+.portraits-title{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,4vw,60px);text-transform:uppercase;letter-spacing:.04em;line-height:.9}
+.portraits-title span{color:var(--or)}
+.portraits-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:clamp(10px,1.2vw,18px);max-width:1400px;margin:0 auto}
+@media(max-width:1100px){.portraits-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:700px){.portraits-grid{grid-template-columns:repeat(2,1fr)}}
+.portrait-card{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:3/4;background:#2a2420;cursor:pointer;transition:transform .4s ease}
+.portrait-card:hover{transform:translateY(-8px)}
+.portrait-card-img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s ease}
+.portrait-card:hover .portrait-card-img{transform:scale(1.06)}
+.portrait-card-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,4,2,.92) 0%,rgba(8,4,2,.1) 55%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(10px,1.2vw,16px)}
+.portrait-name{font-family:var(--font-display);font-weight:700;font-size:clamp(11px,1.1vw,14px);text-transform:uppercase;letter-spacing:.06em;color:#fff;line-height:1.1;margin-bottom:3px}
+.portrait-role{font-family:var(--font-cond);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--or)}
+
+/* ── RATINGS ── */
+.ratings-section{padding:clamp(60px,7vw,100px) clamp(24px,5vw,80px);background:var(--offwhite);width:100vw;margin-left:calc(50% - 50vw)}
+.ratings-section.dks{background:#0a0a0a}
+.ratings-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.5vw,24px);max-width:1400px;margin:0 auto}
+@media(max-width:900px){.ratings-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.ratings-grid{grid-template-columns:1fr}}
+.rating-card{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:14px;padding:22px 20px;display:flex;flex-direction:column;gap:12px;transition:box-shadow .3s,transform .3s}
+.rating-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.1);transform:translateY(-4px)}
+.rating-card.dkc{background:#1a1714;border-color:rgba(255,255,255,.06)}
+.rating-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--or),#c44200);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:18px;color:#fff;flex-shrink:0;overflow:hidden}
+.rating-avatar img{width:100%;height:100%;object-fit:cover}
+.rating-name{font-family:var(--font-display);font-weight:700;font-size:13px;color:#1a1a1a}
+.rating-name.dkn{color:#fff}
+.rating-role{font-family:var(--font-cond);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--or)}
+.stars{display:flex;gap:3px}
+.star{width:18px;height:18px;cursor:pointer;transition:transform .15s}
+.star:hover{transform:scale(1.25)}
+.rating-submit{font-family:var(--font-cond);font-weight:700;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#000;background:var(--or);border:none;padding:8px 16px;border-radius:4px;cursor:pointer;transition:background .2s;width:fit-content}
+.rating-submit:hover{background:#c44200}
+.book-strip{padding:clamp(50px,7vw,90px) clamp(24px,5vw,80px);background:var(--or);width:100vw;margin-left:calc(50% - 50vw);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.book-strip.dkb{background:#111;border-top:1px solid rgba(232,83,10,.2)}
+.book-h{font-family:var(--font-display);font-weight:900;font-size:clamp(24px,4vw,56px);text-transform:uppercase;letter-spacing:.04em;color:#fff;line-height:.9}
+.book-h b{color:rgba(255,255,255,.2)}
+.book-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--or);background:#fff;padding:16px 32px;border-radius:2px;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+.book-btn:hover{background:#000;color:#fff}
+.book-btn.dkbtn{background:var(--or);color:#000}
+.book-btn.dkbtn:hover{background:#fff;color:#000}
+
+/* ── CLOCK SECTION ── */
+.clock-section{padding:clamp(70px,9vw,120px) clamp(24px,5vw,80px);background:#0d0d0d;width:100vw;margin-left:calc(50% - 50vw);position:relative;overflow:hidden}
+.clock-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 30% 50%,rgba(232,83,10,.05) 0%,transparent 70%);pointer-events:none}
+.clock-wrap{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:start}
+@media(max-width:900px){.clock-wrap{grid-template-columns:1fr}}
+.clock-container{position:relative;width:min(520px,90vw);height:min(520px,90vw);margin:0 auto;user-select:none}
+#clock-svg{width:100%;height:100%;filter:drop-shadow(0 0 40px rgba(232,83,10,.12))}
+
+/* segment role labels — rendered as SVG text */
+.seg-label{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  fill:rgba(255,255,255,.5);
+  pointer-events:none;
+  transition:fill .25s;
+}
+.cseg:hover .seg-label{fill:#fff}
+.cseg.act .seg-label{fill:#fff}
+
+/* segment bg path */
+.seg-bg{transition:filter .25s}
+.cseg:hover .seg-bg{filter:brightness(1.55)}
+.cseg.act .seg-bg{filter:brightness(1.7)}
+
+/* orange overlay on active */
+.seg-ov{transition:fill .25s}
+
+/* clock hand — JS drives rotation via style.transform */
+#hand-g{transform-origin:260px 260px}
+
+/* detail panel */
+.clock-detail{display:flex;flex-direction:column;gap:18px}
+.cd-eyebrow{font-family:var(--font-cond);font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--or);display:flex;align-items:center;gap:10px}
+.cd-eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--or)}
+.cd-name{font-family:var(--font-display);font-weight:900;font-size:clamp(22px,3.5vw,48px);text-transform:uppercase;letter-spacing:.04em;color:#fff;line-height:.92;transition:opacity .28s,transform .28s}
+.cd-name span{color:var(--or)}
+.cd-rolepill{display:inline-block;font-family:var(--font-cond);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#000;background:var(--or);padding:5px 14px;border-radius:2px;margin-top:4px;transition:opacity .28s}
+.cd-photo{width:100%;max-width:320px;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:#1a1714;position:relative;transition:opacity .28s}
+.cd-photo img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.cd-photo-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:52px;color:rgba(232,83,10,.15)}
+.cd-bio{font-family:var(--font-body);font-weight:300;font-size:clamp(12px,1vw,13.5px);color:rgba(255,255,255,.38);line-height:1.85;max-width:360px;transition:opacity .28s}
+.cd-tags{display:flex;flex-wrap:wrap;gap:7px}
+.cd-tag{font-family:var(--font-cond);font-size:8px;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(232,83,10,.3);color:var(--or);padding:4px 12px;border-radius:999px}
+.speed-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:4px}
+.spd-lbl{font-family:var(--font-cond);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+.spd-btn{font-family:var(--font-cond);font-size:8px;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(255,255,255,.12);background:none;color:rgba(255,255,255,.3);padding:6px 14px;border-radius:999px;cursor:pointer;transition:all .2s}
+.spd-btn:hover,.spd-btn.on{background:var(--or);border-color:var(--or);color:#000}
+.cd-status{font-family:var(--font-cond);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.18);display:flex;align-items:center;gap:7px}
+.cd-status-dot{width:6px;height:6px;border-radius:50%;background:var(--or);animation:blk 1.4s ease infinite;flex-shrink:0}
+@keyframes blk{0%,100%{opacity:1}50%{opacity:.2}}
+
+/* ── CREATIVE ORIGIN ── */
+.creative-origin{padding:clamp(20px,3vw,32px) clamp(24px,7vw,100px);background:var(--dk);max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);align-items:center}
+.anim-word{display:inline-block;opacity:0;transform:translateY(30px) rotate(-2deg);transition:opacity .5s ease,transform .5s ease;margin-right:.28em}
+.anim-word.show{opacity:1;transform:translateY(0) rotate(0deg)}
+.creative-img-stack{position:relative;width:100%;max-width:420px;height:clamp(380px,50vh,540px)}
+.ci-img{position:absolute;border-radius:14px;overflow:hidden;background:#1a1714}
+.ci-img img{width:100%;height:100%;object-fit:cover}
+.ci-1{width:72%;height:75%;top:0;right:0}
+.ci-2{width:58%;height:58%;bottom:0;left:0;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.ci-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90px;height:90px;background:var(--or);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#fff;text-align:center;line-height:1.2;box-shadow:0 8px 30px rgba(232,83,10,.5);z-index:4}
+
+/* ── REELS ── */
+.reels-section{padding:clamp(60px,7vw,100px) clamp(24px,5vw,80px);background:#111;width:100vw;margin-left:calc(50% - 50vw)}
+.reels-hd{max-width:1400px;margin:0 auto 36px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.reels-title{font-family:var(--font-display);font-weight:900;font-size:clamp(24px,3.5vw,52px);text-transform:uppercase;letter-spacing:.04em;color:#fff;line-height:.9}
+.reels-title span{color:var(--or)}
+.reels-sub{font-family:var(--font-body);font-weight:300;font-size:13px;color:rgba(255,255,255,.25);max-width:300px;line-height:1.6;text-align:right}
+.reels-row{display:flex;gap:clamp(10px,1.2vw,18px);max-width:1400px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
+.reels-row::-webkit-scrollbar{display:none}
+.reel-item{flex:0 0 clamp(160px,18vw,240px);aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#1a1714;position:relative;cursor:pointer;transition:transform .35s ease}
+.reel-item:hover{transform:scale(1.04)}
+.reel-item-bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .5s ease}
+.reel-item:hover .reel-item-bg{transform:scale(1.05)}
+.reel-item-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,4,2,.85) 0%,rgba(8,4,2,.1) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
+.reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:44px;height:44px;border-radius:50%;background:rgba(232,83,10,.8);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s,transform .3s}
+.reel-item:hover .reel-play{opacity:1;transform:translate(-50%,-50%)}
+.reel-label{font-family:var(--font-cond);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--or);margin-bottom:4px}
+.reel-name{font-family:var(--font-display);font-weight:700;font-size:clamp(12px,1.2vw,15px);text-transform:uppercase;color:#fff;line-height:1.1}
+.reel-input{display:none}
+.reel-add-btn{display:none!important;flex:0 0 clamp(160px,18vw,240px);aspect-ratio:9/16;border-radius:14px;border:2px dashed rgba(232,83,10,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;transition:all .3s;background:rgba(232,83,10,.04);flex-shrink:0}
+.reel-add-btn:hover{border-color:var(--or);background:rgba(232,83,10,.08)}
+.reel-add-btn span{font-family:var(--font-cond);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+
+/* ── FOOTER ── */
+footer{width:100%;background:#040404;padding:40px 5vw 20px;border-top:1px solid rgba(255,255,255,.04)}
+.ftin{max-width:1400px;margin:0 auto}
+.fttop{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.04);margin-bottom:20px;gap:24px;flex-wrap:wrap}
+.ftlo{font-family:var(--font-cond);font-weight:900;font-size:20px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:4px}
+.ftlo span{color:var(--or)}
+.fttg{font-family:var(--font-cond);font-size:8px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.16)}
+.ftsc{display:flex;gap:6px;margin-top:12px}
+.fsa{width:28px;height:28px;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.28);text-decoration:none;font-family:var(--font-cond);font-weight:700;font-size:8px;transition:all .3s}
+.fsa:hover{background:var(--or);border-color:var(--or);color:#000}
+.ftlks{display:flex;gap:36px;flex-wrap:wrap}
+.ftct{font-family:var(--font-cond);font-size:8px;letter-spacing:.26em;text-transform:uppercase;color:var(--or);margin-bottom:10px}
+.ftcl ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.ftcl a{font-size:11px;color:rgba(255,255,255,.28);text-decoration:none}
+.ftcl a:hover{color:var(--or)}
+.ftbt{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.ftcp{font-size:9px;color:rgba(255,255,255,.16)}
+.ftcp span{color:rgba(232,83,10,.5)}
+.float-wa-fixed{position:fixed;bottom:28px;right:28px;z-index:8000;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:transform .3s}
+.float-wa-fixed:hover{transform:scale(1.1)}
+/* Hide visitor-facing paste-URL controls */
+.reel-item-ov > div:first-child{display:none!important}
+.reel-url-wrap{display:none!important}
+.reel-item:hover .reel-url-wrap{display:none!important}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="crng"></div>
+
+<div class="mob" id="mob">
+  <a href="/Websitemigration/" onclick="cm()">Home</a>
+  <a href="/Websitemigration/projects-2/" onclick="cm()">Projects</a>
+  <a href="/Websitemigration/creatives/" onclick="cm()">Creatives</a>
+  <a href="/Websitemigration/services/" onclick="cm()">Services</a>
+  <a href="/Websitemigration/artistry/">Artistry</a>
+   <a href="/Websitemigration/#contact" onclick="cm()">Contact Us</a>
+</div>
+
+<nav id="nav">
+  <a href="/Websitemigration/" class="nl">
+    <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="#E8530A" stroke-width="1.2" stroke-dasharray="3 2"/><path d="M10 8h7l-3.5 7h5L10 24l2-7H8l2-9z" fill="#E8530A"/></svg>
+    <div class="nlt">CHARIS<br/><b>CREATIONS</b></div>
+  </a>
+  <ul class="nlinks">
+    <li><a href="/Websitemigration/">Home</a></li>
+    <li><a href="/Websitemigration/projects-2/">Projects</a></li>
+    <li><a href="/Websitemigration/creatives/" class="active">Creatives</a></li>
+    <li><a href="/Websitemigration/services/">Services</a></li>
+    <li><a href="/Websitemigration/artistry/">Artistry</a></li>
+    <li><a href="/Websitemigration/#contact" class="ncta">Contact Us</a></li>
+  </ul>
+  <div class="ham" id="ham" onclick="tm()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="cc-hero" style="min-height:72vh;width:100%;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0d1b2a;">
+  <div id="cc-hero-bg" style="position:absolute;inset:0;background-image:url('https://chariscreationsltd.com/wp-content/uploads/2026/04/Staff-photos-46-scaled-e1775753593180.jpg');background-size:cover;background-position:center;opacity:.55;transition:opacity .4s;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.35) 0%,rgba(0,0,0,.7) 100%);"></div>
+  <div style="position:relative;z-index:2;text-align:center;padding:80px 24px 60px;">
+    <div style="font-family:var(--font-cond,monospace);font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--or,#f16623);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:14px;">
+      <span style="display:block;width:28px;height:1px;background:var(--or,#f16623);flex-shrink:0;"></span>
+      THE CREATIVES
+      <span style="display:block;width:28px;height:1px;background:var(--or,#f16623);flex-shrink:0;"></span>
+    </div>
+    <h1 style="font-family:var(--font-display,'Montserrat',sans-serif);font-weight:900;font-size:clamp(44px,8vw,100px);text-transform:uppercase;line-height:.88;color:#fff;margin:0 0 28px 0;letter-spacing:-.01em;">
+      MEET THE<br/><span style="color:var(--or,#f16623);">CREATORS</span>
+    </h1>
+    <p style="font-family:var(--font-body,'Montserrat',sans-serif);font-weight:300;font-size:clamp(13px,1.2vw,16px);color:rgba(255,255,255,.72);max-width:500px;margin:0 auto;line-height:1.7;">
+      Uganda's most trusted creative team — bringing every image to life.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ CHARIS SECTION ═══ -->
+<div id="charis-section" class="team-section">
+  <section style="background:var(--offwhite);width:100vw;margin-left:calc(50% - 50vw)">
+    <div class="origin-wrap">
+      <div class="origin-left rv">
+        <div class="origin-eyebrow">Our Origin Story</div>
+        <h2 class="origin-h">BORN FROM<br/><span>PASSION.</span><br/>BUILT ON<br/>PURPOSE.</h2>
+        <p class="origin-body">Charis Creations began in 2013 when founder <strong>Tumusiime Hudson</strong> picked up a camera at a friend's introduction ceremony in Kampala and realized that Uganda's stories weren't being told the way they deserved. That single day changed everything.</p>
+        <p class="origin-body">What started as a one-man operation filming kukyala ceremonies and weddings grew into a full-service creative studio with a team of 14 passionate storytellers — cinematographers, photographers, editors, drone pilots, and directors — all united by one belief: <em>every frame matters.</em></p>
+        <p class="origin-body">Today, Charis Creations is Uganda's most trusted name in cinematic storytelling, having captured over 300 events, portraits, documentaries, and commercial campaigns.</p>
+        <div class="origin-stat-row">
+          <div class="origin-stat"><span class="origin-stat-n">1500+</span><span class="origin-stat-l">Stories Told</span></div>
+          <div class="origin-stat"><span class="origin-stat-n">13</span><span class="origin-stat-l">Years Running</span></div>
+          <div class="origin-stat"><span class="origin-stat-n">20</span><span class="origin-stat-l">Team Members</span></div>
+          <div class="origin-stat"><span class="origin-stat-n">98%</span><span class="origin-stat-l">Client Smiles</span></div>
+        </div>
+      </div>
+      <div class="origin-right rv d2">
+        <div class="origin-img-main">
+          <img src="https://chariscreationsltd.com/wp-content/uploads/2026/04/Staff-photos-45-scaled.jpg" alt="Charis Team" loading="lazy"/>
+        </div>
+        <div class="origin-img-badge"><span>2013</span><span>Founded</span></div>
+        <div class="origin-img-accent"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portraits-section">
+    <div class="portraits-hd">
+      <div class="portraits-ey rv">The People</div>
+      <h2 class="portraits-title rv d1">MEET THE<br/><span>CHARIS CREW.</span></h2>
+    </div>
+    <div class="portraits-grid" id="charis-portraits"></div>
+  </section>
+
+  
+</div>
+
+<!-- ═══ CREATIVE SECTION ═══ -->
+<div id="creative-section" class="team-section" style="background:#0d0d0d">
+
+  <section style="background:var(--dk);width:100vw;margin-left:calc(50% - 50vw)">
+    
+
+  <!-- ═══ CLOCK SHOWCASE ═══ -->
+  <section class="clock-section" id="clock-section">
+    <div style="max-width:1400px;margin:0 auto 52px;text-align:center">
+      <div class="portraits-ey rv" style="justify-content:center">The Creative Circle</div>
+      <h2 class="portraits-title rv d1" style="color:#fff">THE <span>CLOCK</span> OF CREATIVES.</h2>
+      <p style="font-family:var(--font-body);font-weight:300;font-size:13px;color:rgba(255,255,255,.28);margin-top:14px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7">The hand rotates continuously — each segment it passes reveals that team member on the right. Click any segment to jump directly to them.</p>
+    </div>
+
+    <div class="clock-wrap">
+
+      <!-- LEFT: clock + speed controls -->
+      <div>
+        <div class="clock-container" id="clock-container">
+
+          <!-- ══ THE CLOCK SVG ══ -->
+          <svg id="clock-svg" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- clip paths so images stay inside each pie slice -->
+              <clipPath id="cp0"><path d="M260,260 L260,30 A230,230 0,0,1 375,63 Z"/></clipPath>
+              <clipPath id="cp1"><path d="M260,260 L375,63 A230,230 0,0,1 457,145 Z"/></clipPath>
+              <clipPath id="cp2"><path d="M260,260 L457,145 A230,230 0,0,1 490,260 Z"/></clipPath>
+              <clipPath id="cp3"><path d="M260,260 L490,260 A230,230 0,0,1 457,375 Z"/></clipPath>
+              <clipPath id="cp4"><path d="M260,260 L457,375 A230,230 0,0,1 375,457 Z"/></clipPath>
+              <clipPath id="cp5"><path d="M260,260 L375,457 A230,230 0,0,1 260,490 Z"/></clipPath>
+              <clipPath id="cp6"><path d="M260,260 L260,490 A230,230 0,0,1 145,457 Z"/></clipPath>
+              <clipPath id="cp7"><path d="M260,260 L145,457 A230,230 0,0,1 63,375 Z"/></clipPath>
+              <clipPath id="cp8"><path d="M260,260 L63,375 A230,230 0,0,1 30,260 Z"/></clipPath>
+              <clipPath id="cp9"><path d="M260,260 L30,260 A230,230 0,0,1 63,145 Z"/></clipPath>
+              <clipPath id="cp10"><path d="M260,260 L63,145 A230,230 0,0,1 145,63 Z"/></clipPath>
+              <clipPath id="cp11"><path d="M260,260 L145,63 A230,230 0,0,1 260,30 Z"/></clipPath>
+            </defs>
+
+            <!-- outer ring -->
+            <circle cx="260" cy="260" r="242" fill="#181410" stroke="rgba(232,83,10,0.18)" stroke-width="1.5"/>
+
+            <!-- ── 12 SEGMENTS ── each has: bg path, photo image, orange overlay, role label text -->
+
+            <!-- 0: DIRECTOR (12 o'clock, 0–30°, mid=15°) -->
+            <g class="cseg" id="seg0" onclick="manualSeg(0)">
+              <path class="seg-bg" d="M260,260 L260,30 A230,230 0,0,1 375,63 Z" fill="#222" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si0" clip-path="url(#cp0)" x="222" y="4" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov0" d="M260,260 L260,30 A230,230 0,0,1 375,63 Z" fill="rgba(232,83,10,0)"/>
+              <!-- label rotated to sit along the segment midline at 15° -->
+              <text class="seg-label" transform="translate(260,260) rotate(15)" x="0" y="-172" text-anchor="middle">DIRECTOR</text>
+            </g>
+
+            <!-- 1: WEB DESIGNER (30–60°, mid=45°) -->
+            <g class="cseg" id="seg1" onclick="manualSeg(1)">
+              <path class="seg-bg" d="M260,260 L375,63 A230,230 0,0,1 457,145 Z" fill="#1e1e1e" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si1" clip-path="url(#cp1)" x="294" y="47" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov1" d="M260,260 L375,63 A230,230 0,0,1 457,145 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(45)" x="0" y="-172" text-anchor="middle">WEB DESIGNER</text>
+            </g>
+
+            <!-- 2: GRAPHICS (60–90°, mid=75°) -->
+            <g class="cseg" id="seg2" onclick="manualSeg(2)">
+              <path class="seg-bg" d="M260,260 L457,145 A230,230 0,0,1 490,260 Z" fill="#222" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si2" clip-path="url(#cp2)" x="335" y="118" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov2" d="M260,260 L457,145 A230,230 0,0,1 490,260 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(75)" x="0" y="-172" text-anchor="middle">GRAPHICS</text>
+            </g>
+
+            <!-- 3: CINEMATOGRAPHER (90–120°, mid=105°) -->
+            <g class="cseg" id="seg3" onclick="manualSeg(3)">
+              <path class="seg-bg" d="M260,260 L490,260 A230,230 0,0,1 457,375 Z" fill="#1e1e1e" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si3" clip-path="url(#cp3)" x="335" y="202" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov3" d="M260,260 L490,260 A230,230 0,0,1 457,375 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(105)" x="0" y="-172" text-anchor="middle">CINEMATOG.</text>
+            </g>
+
+            <!-- 4: PHOTOGRAPHER (120–150°, mid=135°) -->
+            <g class="cseg" id="seg4" onclick="manualSeg(4)">
+              <path class="seg-bg" d="M260,260 L457,375 A230,230 0,0,1 375,457 Z" fill="#222" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si4" clip-path="url(#cp4)" x="294" y="274" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov4" d="M260,260 L457,375 A230,230 0,0,1 375,457 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(135)" x="0" y="-172" text-anchor="middle">PHOTOGRAPHER</text>
+            </g>
+
+            <!-- 5: DRONE PILOT (150–180°, mid=165°) -->
+            <g class="cseg" id="seg5" onclick="manualSeg(5)">
+              <path class="seg-bg" d="M260,260 L375,457 A230,230 0,0,1 260,490 Z" fill="#1e1e1e" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si5" clip-path="url(#cp5)" x="222" y="315" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov5" d="M260,260 L375,457 A230,230 0,0,1 260,490 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(165)" x="0" y="-172" text-anchor="middle">DRONE PILOT</text>
+            </g>
+
+            <!-- 6: VIDEO EDITOR (180–210°, mid=195°) -->
+            <g class="cseg" id="seg6" onclick="manualSeg(6)">
+              <path class="seg-bg" d="M260,260 L260,490 A230,230 0,0,1 145,457 Z" fill="#222" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si6" clip-path="url(#cp6)" x="138" y="315" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov6" d="M260,260 L260,490 A230,230 0,0,1 145,457 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(195)" x="0" y="-172" text-anchor="middle">VIDEO EDITOR</text>
+            </g>
+
+            <!-- 7: CONTENT CREATOR (210–240°, mid=225°) -->
+            <g class="cseg" id="seg7" onclick="manualSeg(7)">
+              <path class="seg-bg" d="M260,260 L145,457 A230,230 0,0,1 63,375 Z" fill="#1e1e1e" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si7" clip-path="url(#cp7)" x="66" y="274" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov7" d="M260,260 L145,457 A230,230 0,0,1 63,375 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(225)" x="0" y="-172" text-anchor="middle">CONTENT</text>
+            </g>
+
+            <!-- 8: SOCIAL MEDIA (240–270°, mid=255°) -->
+            <g class="cseg" id="seg8" onclick="manualSeg(8)">
+              <path class="seg-bg" d="M260,260 L63,375 A230,230 0,0,1 30,260 Z" fill="#222" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si8" clip-path="url(#cp8)" x="24" y="202" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov8" d="M260,260 L63,375 A230,230 0,0,1 30,260 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(255)" x="0" y="-172" text-anchor="middle">SOCIAL MEDIA</text>
+            </g>
+
+            <!-- 9: AUDIO MANAGER (270–300°, mid=285°) -->
+            <g class="cseg" id="seg9" onclick="manualSeg(9)">
+              <path class="seg-bg" d="M260,260 L30,260 A230,230 0,0,1 63,145 Z" fill="#1e1e1e" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si9" clip-path="url(#cp9)" x="24" y="118" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov9" d="M260,260 L30,260 A230,230 0,0,1 63,145 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(285)" x="0" y="-172" text-anchor="middle">AUDIO DIR.</text>
+            </g>
+
+            <!-- 10: ADMIN (300–330°, mid=315°) -->
+            <g class="cseg" id="seg10" onclick="manualSeg(10)">
+              <path class="seg-bg" d="M260,260 L63,145 A230,230 0,0,1 145,63 Z" fill="#222" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si10" clip-path="url(#cp10)" x="66" y="47" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov10" d="M260,260 L63,145 A230,230 0,0,1 145,63 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(315)" x="0" y="-172" text-anchor="middle">STUDIO</text>
+            </g>
+
+            <!-- 11: LEAD PHOTOGRAPHER (330–360°, mid=345°) -->
+            <g class="cseg" id="seg11" onclick="manualSeg(11)">
+              <path class="seg-bg" d="M260,260 L145,63 A230,230 0,0,1 260,30 Z" fill="#1e1e1e" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si11" clip-path="url(#cp11)" x="138" y="4" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov11" d="M260,260 L145,63 A230,230 0,0,1 260,30 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(345)" x="0" y="-172" text-anchor="middle">LEAD PHOTO</text>
+            </g>
+
+            <!-- inner circle — Charis logo PNG fills it -->
+            <defs>
+              <clipPath id="logo-clip"><circle cx="260" cy="260" r="82"/></clipPath>
+            </defs>
+            <circle cx="260" cy="260" r="90" fill="#0a0a0a" stroke="rgba(232,83,10,0.28)" stroke-width="1.5"/>
+            <!-- Actual Charis logo image clipped to circle -->
+            <image href="https://chariscreationsltd.com/wp-content/uploads/2026/03/withoutwords-3.png"
+              x="178" y="178" width="164" height="164"
+              preserveAspectRatio="xMidYMid meet"
+              clip-path="url(#logo-clip)"
+              style="mix-blend-mode:lighten"/>
+            <!-- subtle orange ring to keep separation -->
+            <circle cx="260" cy="260" r="82" fill="none" stroke="rgba(232,83,10,0.18)" stroke-width="1"/>
+
+            <!-- CLOCK HAND — JS rotates this group -->
+            <g id="hand-g">
+              <line x1="260" y1="260" x2="260" y2="42" stroke="#E8530A" stroke-width="2.5" stroke-linecap="round"/>
+              <polygon points="255,56 260,32 265,56" fill="#E8530A"/>
+              <line x1="260" y1="260" x2="260" y2="296" stroke="rgba(232,83,10,0.35)" stroke-width="2" stroke-linecap="round"/>
+            </g>
+
+            <!-- center pivot knob (sits on top of logo) -->
+            <circle cx="260" cy="260" r="9" fill="#E8530A" stroke="#0a0a0a" stroke-width="2"/>
+            <circle cx="260" cy="260" r="3.5" fill="#fff" opacity="0.95"/>
+
+            <!-- tick marks -->
+            <g stroke="rgba(232,83,10,0.35)" stroke-width="1.5">
+              <line x1="260" y1="18" x2="260" y2="30"/>
+              <line x1="375" y1="52" x2="369" y2="63"/>
+              <line x1="458" y1="133" x2="450" y2="140"/>
+              <line x1="491" y1="248" x2="480" y2="250"/>
+              <line x1="458" y1="370" x2="451" y2="362"/>
+              <line x1="374" y1="458" x2="368" y2="448"/>
+              <line x1="260" y1="490" x2="260" y2="478"/>
+              <line x1="146" y1="458" x2="152" y2="448"/>
+              <line x1="62" y1="370" x2="70" y2="362"/>
+              <line x1="29" y1="248" x2="40" y2="250"/>
+              <line x1="62" y1="133" x2="70" y2="140"/>
+              <line x1="145" y1="52" x2="151" y2="63"/>
+            </g>
+          </svg>
+
+          <!-- speed controls below clock -->
+          <div class="speed-row" style="justify-content:center;margin-top:18px">
+            <span class="spd-lbl">Speed:</span>
+            <button class="spd-btn on" id="sb0" onclick="setSpd(6,'sb0')">Slow</button>
+            <button class="spd-btn" id="sb1" onclick="setSpd(18,'sb1')">Medium</button>
+            <button class="spd-btn" id="sb2" onclick="setSpd(40,'sb2')">Fast</button>
+            <button class="spd-btn" id="sb3" onclick="setSpd(0,'sb3')">Pause</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: member detail -->
+      <div class="clock-detail" id="clock-detail">
+        <div class="cd-eyebrow">Creative Team Member</div>
+        <div class="cd-name" id="cd-name">SELECT A<br/><span>SEGMENT</span></div>
+        <div class="cd-rolepill" id="cd-rolepill" style="opacity:0">&#8212;</div>
+        <div class="cd-photo" id="cd-photo">
+          <div class="cd-photo-ph" id="cd-ph">CC</div>
+          <img id="cd-img" src="" alt="" style="display:none;width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity .28s"/>
+        </div>
+        <div class="cd-bio" id="cd-bio">The hand rotates through every role. Watch each member's portrait and story appear here — or click any segment to jump directly to that person.</div>
+        <div class="cd-tags" id="cd-tags">
+          <span class="cd-tag">Photography</span>
+          <span class="cd-tag">Cinematography</span>
+          <span class="cd-tag">Editing</span>
+        </div>
+        <div class="cd-status"><span class="cd-status-dot"></span><span id="cd-status-txt">Rotating through all members&#8230;</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REELS -->
+  <section class="reels-section">
+    <div class="reels-hd rv">
+      <div>
+        <div class="portraits-ey" style="justify-content:flex-start">Behind The Scenes</div>
+        <h2 class="reels-title">THE <span>MAKING</span><br/>OF MAGIC.</h2>
+      </div>
+      <p class="reels-sub">Five raw, unfiltered moments from behind the lens.</p>
+    </div>
+    <div class="reels-row" id="reels-row"></div>
+    <input type="file" accept="video/*" id="reel-file-input" class="reel-input"/>
+  </section>
+
+  <!-- CREATIVE RATINGS -->
+  
+
+  <section class="ratings-section">
+    <div style="max-width:1400px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:clamp(32px,4vw,52px)">
+        <div class="portraits-ey rv">Client Reviews</div>
+        <h2 class="portraits-title rv d1">RATE YOUR<br/><span>TEAM MEMBER.</span></h2>
+      </div>
+      <div class="ratings-grid" id="charis-ratings"></div>
+    </div>
+  </section>
+
+<div class="book-strip dkb">
+    <div><div class="book-h" style="color:#fff">READY TO GO<br/><b style="color:rgba(255,255,255,.15)">BE CREATIVE?</b></div>
+
+</div>
+    <a href="/Websitemigration/#contact" class="book-btn dkbtn">Book a Session &#8594;</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="ftin">
+    <div class="fttop">
+      <div>
+        <div class="ftlo">Charis <span>Creations</span></div>
+        <div class="fttg">Bringing Image To Life &#183; Uganda</div>
+        <div class="ftsc">
+          <a href="https://www.facebook.com/CharisCreations" class="fsa" target="_blank">FB</a>
+          <a href="https://www.instagram.com/CharisCreationsug" class="fsa" target="_blank">IG</a>
+          <a href="http://www.youtube.com/@chariscreations4708" class="fsa" target="_blank">YT</a>
+        </div>
+      </div>
+      <div class="ftlks">
+        <div class="ftcl"><div class="ftct">Navigate</div><ul><li><a href="/Websitemigration/">Home</a></li><li><a href="/Websitemigration/projects-2/">Projects</a></li><li><a href="/Websitemigration/creatives/">Creatives</a></li></ul></div>
+        <div class="ftcl"><div class="ftct">Connect</div><ul><li><a href="/Websitemigration/#contact">Contact</a></li><li><a href="/Websitemigration/#about">About</a></li></ul></div>
+      </div>
+    </div>
+    <div class="ftbt">
+      <div class="ftcp">&#169; 2026 <span>Charis Creations Limited</span>. All rights reserved.</div>
+      <div class="ftcp">Kampala, Uganda</div>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa-fixed" href="https://wa.me/256706028899?text=Hi%20Charis%20Creations!" target="_blank" rel="noopener">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.5 14.4c-.3-.15-1.7-.84-1.97-.93-.27-.1-.46-.14-.65.14-.2.28-.75.93-.92 1.12-.17.2-.34.22-.63.07-.3-.14-1.24-.45-2.36-1.44-.87-.77-1.45-1.72-1.62-2.02-.17-.29-.02-.45.13-.6.13-.13.3-.34.44-.51.15-.17.2-.29.3-.48.1-.2.05-.37-.02-.52-.07-.14-.65-1.56-.9-2.14-.23-.56-.48-.48-.65-.49h-.56c-.2 0-.5.07-.77.36-.26.3-1 .97-1 2.36s1.02 2.74 1.17 2.93c.14.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.68.22 1.3.19 1.8.11.54-.08 1.67-.68 1.9-1.34.24-.66.24-1.22.17-1.34-.07-.12-.26-.19-.56-.34zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2z"/></svg>
+</a>
+
+<script>
+
+(function(){
+'use strict';
+
+/* 
+╔══════════════════════════════════════════════════════════════╗
+║        CHARIS CREATIONS — TEAM DATA — EDIT HERE ONLY         ║
+║                                                              ║
+║  HOW TO SAFELY EDIT TEAM MEMBERS OR BTS VIDEOS:             ║
+║                                                              ║
+║  1. Every member entry starts { and ends },                  ║
+║     THE LAST member ends with }  (NO comma after last })     ║
+║                                                              ║
+║  2. ALWAYS use double quotes "like this" for bio text        ║
+║     → apostrophes (don't  he's  Liz's) are safe in " "      ║
+║                                                              ║
+║  3. NEVER put  ]  or  [  inside any bio or role text         ║
+║                                                              ║
+║  4. After editing: save in Elementor → Publish               ║
+║     Then go to Hostinger/Cache and click Purge All           ║
+╚══════════════════════════════════════════════════════════════╝
+*/
+/* BASE IMAGE URL — update ONLY if you move images to a new upload folder */
+var B='https://chariscreationsltd.com/wp-content/uploads/2026/04/';
+
+/* PORTRAIT GRID — 14 photo cards shown at the top of the page */
+var CHARIS=[
+  {name:'Hudson Tumusiime',role:'ceo & Executive Creative Director',img:B+'Staff-photos-1-scaled.jpg'},
+  {name:'Ibra Elo',role:'Director & Photographer',img:B+'v2_watermarked-d6becee7-f7fd-451f-b703-cf25fade186a-e1775927741874.jpg'},
+  {name:'Grace Gloria',role:'Studio Photographer & Brand Designer',img:B+'Staff-photos-34-scaled.jpg'},
+  {name:'Jonathan Tugume',role:'Lead Cinematographer & Director of Photography',img:B+'Staff-photos-12-scaled.jpg'},
+  {name:'Jessy Kawalya',role:'Cinematographer & Visual Storyteller',img:B+'Staff-photos-19-scaled.jpg'},
+  {name:'Darious Kibaro',role:'Digital Content Creator & Social Media Strategist',img:B+'Staff-photos-29-scaled.jpg'},
+  {name:'David Ahimbisibwe',role:'Portrait Photographer & Digital Content Creator',img:B+'Staff-photos-23-scaled.jpg'},
+  {name:'Nazziwa Elizabeth',role:'Audio Director',img:B+'Staff-photos-41-scaled.jpg'},
+  {name:'Ukasha Semirimu',role:'Videographer & Film Editor',img:B+'Staff-photos-31-scaled.jpg'},
+  {name:'Patience Tumusiime',role:'Beauty Director & Client Experience Manager',img:B+'HP-Anniversary-3-scaled-e1775900229391.jpg'},
+  {name:'Emmanuel Patrick Yiga',role:'Web Designer & Digital Developer',img:B+'Staff-photos-9-scaled.jpg'},
+  {name:'Brian Mukosa',role:'Photographer & Retouching Specialist',img:B+'Staff-photos-25-scaled.jpg'},
+  {name:'Dickson Mukisa',role:'Lighting Director & Production Specialist',img:B+'Staff-photos-15-scaled.jpg'},
+  {name:'Prosper Wabwire',role:'Brand Identity & Graphic Designer',img:B+'Staff-photos-44-scaled.jpg'}
+];
+
+/* CLOCK OF CREATIVES — same team, full bios for the interactive wheel */
+var CREATIVE=[
+  /* 0 */ {name:'Tumusiime Hudson',role:'Founder & Executive Creative Director',bio:'Hudson is the visionary who shapes every Be Creative campaign. With a background in fine arts, he brings a painterly quality to every frame.',tags:['Direction','Concept','Color'],img:B+'Staff-photos-7-scaled.jpg',init:'TH'},
+  /* 1 */ {name:'Emmanuel Yiga',role:'Web Designer & Digital Developer',bio:'Patrick is the reason Charis exists online. He builds and maintains the digital spaces where the work lives after the shoot wraps.',tags:['Web','UX','Dev'],img:B+'Staff-photos-11-scaled.jpg',init:'EY'},
+  /* 2 */ {name:'Wabwire Prosper',role:'Brand Identity & Graphic Designer',bio:'Prosper takes the Charis aesthetic and makes it tangible. Every logo, layout, and graphic that leaves this studio carries his hand in it.',tags:['Branding','Print','UI'],img:B+'Staff-photos-42-scaled.jpg',init:'WP'},
+  /* 3 */ {name:'Tugume Jonathan',role:'Lead Cinematographer & Director of Photography',bio:"Jonathan owns the camera floor. He sees the shot before it happens, leads the team through the take, and stays in the edit suite until the final frame earns its place.",tags:['Cinematography','Motion','BTS'],img:B+'Staff-photos-14-scaled.jpg',init:'TJ'},
+  /* 4 */ {name:'Ibra Elo',role:' Director & Photographer',bio:"Ibra brings senior-level leadership and expert photography to every production. Behind the lens, he's one of the most precise eyes on the Charis team.",tags:['Portraiture','Editorial','Lighting'],img:B+'v2_watermarked-d6becee7-f7fd-451f-b703-cf25fade186a-e1775927741874.jpg',init:'IE'},
+  /* 5 */ {name:'Kawalya Jessy',role:'Cinematographer & Visual Storyteller',bio:'Jessy is where cinema meets emotion. His strength is narrative — ads, documentaries, and stories that dont just look beautiful, they feel real.',tags:['Drone','Aerial','4K'],img:B+'Staff-photos-20-scaled.jpg',init:'KJ'},
+  /* 6 */ {name:'Ukasha',role:'Videographer & Film Editor',bio:"Every production, Ukasha adds something new. He's building the kind of visual instinct you can't teach — one frame at a time.",tags:['Editing','Color','Premiere'],img:B+'Staff-photos-31-scaled.jpg',init:'UK'},
+  /* 7 */ {name:'David Ahimbisibwe',role:'Portrait Photographer & Digital Content Creator',bio:'David is the eye between the eyes. He captures the real moments the ones the schedule didnt plan and turns them into the content people actually share.',tags:['Content','Social','Strategy'],img:B+'Staff-photos-22-scaled.jpg',init:'DA'},
+  /* 8 */ {name:'Kibaro Darious',role:'Digital Content Creator & Social Media Strategist',bio:'Darious lives where content meets strategy. Phone in hand, eye on the story — he shoots behind the scenes, edits the footage, and runs the social channels that keep Charis name in front of the world.',tags:['Sound','Music','Mix'],img:B+'Staff-photos-28-scaled.jpg',init:'KD'},
+  /* 9 */ {name:'Nazziwa Elizabeth',role:'Audio Director',bio:"Liz doesnt just capture the moment — she shapes it in the edit suite. On camera or behind the timeline, she brings the same eye to both.",tags:['Sound','Music','Mix'],img:B+'Staff-photos-36-scaled.jpg',init:'NE'},
+  /* 10 */ {name:'Grace',role:'Studio Photographer & Brand Designer',bio:"Grace is why the studio works. She shoots the portrait, edits it to perfection in Evoto, designs the brand around it — and makes sure the whole machine keeps moving.",tags:['Operations','Client Care','Planning'],img:B+'Staff-photos-34-scaled.jpg',init:'GR'},
+  /* 11 */ {name:'Brian Mukosa',role:'Photographer & Retouching Specialist',bio:"Brian sees what others overlook. His frames are clean, his edits precise — the kind of photos that look exactly like the moment felt.",tags:['Photography','Portraits','Weddings'],img:B+'Staff-photos-27-scaled.jpg',init:'BM'}
+];
+
+/* BEHIND THE SCENES — 5 BTS video slots (paste YouTube/video URL in yt:) */
+var REELS=[
+  {label:'Behind The Scenes', name:'Wedding Setup',    yt:''},
+  {label:'On Location',       name:'Ceremony Day',     yt:'https://chariscreationsltd.com/wp-content/uploads/2026/03/0219-1920.mp4'},
+  {label:'Studio Life',       name:'Portrait Session', yt:''},
+  {label:'Color Grading',     name:'Post Production',  yt:''},
+  {label:'Live Energy',       name:'Kwanjula Day',     yt:''}
+];
+
+/* ══════════════════ END OF EDITABLE DATA ══════════════════ */
+
+
+/* ── CURSOR ── */
+var cur=document.getElementById('cur'),crng=document.getElementById('crng'),mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;crng.style.left=rx+'px';crng.style.top=ry+'px';requestAnimationFrame(loop);})();
+function rehov(){
+  document.querySelectorAll('a,button,.flip-wrap,.portrait-card,.cseg,.reel-item,.rating-card,.star,.spd-btn').forEach(function(el){
+    el.addEventListener('mouseenter',function(){cur.classList.add('hv');crng.classList.add('hv');});
+    el.addEventListener('mouseleave',function(){cur.classList.remove('hv');crng.classList.remove('hv');});
+  });
+}
+rehov();
+
+/* ── NAV ── */
+window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('sc',window.scrollY>50);},{passive:true});
+window.tm=function(){document.getElementById('mob').classList.toggle('op');document.getElementById('ham').classList.toggle('op');};
+window.cm=function(){document.getElementById('mob').classList.remove('op');document.getElementById('ham').classList.remove('op');};
+
+/* ── SCROLL REVEAL ── */
+var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.06});
+document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
+
+var B='https://chariscreationsltd.com/wp-content/uploads/2026/04/';
+
+/* ── CHARIS TEAM — 14 members ── */
+
+
+/* ── CREATIVE CLOCK TEAM — 12 members, one per segment ── */
+
+
+/* ── BUILD CHARIS PORTRAITS ── */
+var cpg=document.getElementById('charis-portraits');
+CHARIS.forEach(function(m,i){
+  var c=document.createElement('a');
+  c.className='portrait-card rv'+(i%4===0?' d1':i%4===1?' d2':i%4===2?' d3':'');
+  c.href='#';c.setAttribute('onclick','return false;');
+  c.innerHTML='<img class="portrait-card-img" src="'+m.img+'" alt="'+m.name+'" loading="lazy"/>'
+    +'<div class="portrait-card-ov"><div class="portrait-name">'+m.name+'</div><div class="portrait-role">'+m.role+'</div></div>';
+  cpg.appendChild(c);ro.observe(c);
+});
+
+/* ── RATINGS BUILDER ── */
+function buildRatings(elId,team,dark){
+  var el=document.getElementById(elId);
+  team.slice(0,8).forEach(function(m){
+    var sf=dark?'rgba(255,255,255,0.1)':'rgba(0,0,0,0.12)';
+    var sc=dark?'dkc':'';
+    var rn=dark?' dkn':'';
+    var d=document.createElement('div');
+    d.className='rating-card '+sc+' rv';
+    d.innerHTML='<div style="display:flex;align-items:center;gap:12px;">'
+      +'<div class="rating-avatar"><img src="'+m.img+'" alt="'+m.name+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/></div>'
+      +'<div><div class="rating-name'+rn+'">'+m.name+'</div><div class="rating-role">'+m.role+'</div></div>'
+      +'</div>'
+      +'<div class="stars">'+[1,2,3,4,5].map(function(s){
+        return '<span class="star" data-v="'+s+'" onclick="rateStar(this)"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.5l2.09 4.24 4.68.68-3.38 3.3.8 4.65L9 11.9l-4.19 2.47.8-4.65L2.23 6.42l4.68-.68L9 1.5z" fill="'+sf+'" stroke="none"/></svg></span>';
+      }).join('')+'</div>'
+      +'<textarea style="width:100%;border:1px solid rgba('+(dark?'255,255,255':'0,0,0')+',.08);border-radius:8px;padding:10px 12px;font-family:var(--font-body);font-size:12px;resize:none;height:62px;outline:none;color:'+(dark?'rgba(255,255,255,.5)':'#555')+';background:'+(dark?'rgba(255,255,255,.04)':'#fafafa')+';" placeholder="Leave a message for '+m.name+'..."></textarea>'
+      +'<button class="rating-submit" onclick="submitRating(this)"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:4px"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Share on Instagram';
+    el.appendChild(d);ro.observe(d);
+  });
+}
+buildRatings('charis-ratings',CHARIS,false);
+buildRatings('creative-ratings',CREATIVE,true);
+
+window.rateStar=function(el){
+  var v=parseInt(el.getAttribute('data-v'));
+  var row=el.closest('.stars');
+  row.setAttribute('data-rated',v); /* track selected rating */
+  var dark=!!el.closest('.dkc');
+  row.querySelectorAll('.star').forEach(function(s){
+    var sv=parseInt(s.getAttribute('data-v'));
+    var p=s.querySelector('path');
+    if(sv<=v){p.setAttribute('fill','#E8530A');}
+    else{p.setAttribute('fill',dark?'rgba(255,255,255,0.1)':'rgba(0,0,0,0.12)');}
+  });
+};
+window.submitRating=function(btn){
+  var card=btn.closest('.rating-card');
+  if(!card)return;
+  var member=card.dataset.member||card.querySelector('.rating-name')?.innerText?.trim()||'unknown';
+  var key='cc_rated_'+member.replace(/\s+/g,'_').toLowerCase();
+  if(localStorage.getItem(key)){
+    btn.textContent='ALREADY RATED';
+    btn.style.background='#555';
+    setTimeout(()=>{btn.textContent='RATED ✓';btn.style.background='#333';},1500);
+    return;
+  }
+  var stars=card.querySelectorAll('.star');
+  var rating=0;
+  stars.forEach((s,i)=>{if(s.classList.contains('active'))rating=i+1;});
+  if(!rating){
+    btn.textContent='SELECT A STAR FIRST';
+    btn.style.background='#c44200';
+    setTimeout(()=>{btn.textContent='RATE MEMBER';btn.style.background='var(--or)';},1500);
+    return;
+  }
+  var storageKey='cc_ratings_'+member.replace(/\s+/g,'_').toLowerCase();
+  var existing=JSON.parse(localStorage.getItem(storageKey)||'[]');
+  existing.push(rating);
+  localStorage.setItem(storageKey,JSON.stringify(existing));
+  localStorage.setItem(key,'1');
+  var avg=(existing.reduce((a,b)=>a+b,0)/existing.length).toFixed(1);
+  var count=existing.length;
+  var avgEl=card.querySelector('.rating-avg');
+  if(!avgEl){
+    avgEl=document.createElement('div');
+    avgEl.className='rating-avg';
+    avgEl.style.cssText='font-family:var(--font-cond);font-size:9px;letter-spacing:.15em;color:var(--or);margin-top:4px;text-transform:uppercase;font-weight:700;';
+    var starsEl=card.querySelector('.stars');
+    if(starsEl)starsEl.after(avgEl);
+  }
+  avgEl.textContent=avg+' ★ ('+count+' rating'+(count===1?'':'s')+')';
+  btn.textContent='RATED ✓';
+  btn.style.background='#2a7a2a';
+  btn.style.cursor='default';
+};
+
+/* ════════════════════════════════════════════
+   CLOCK ENGINE — continuous RAF rotation
+   Each 30° slice = one team member.
+   Seg 0 occupies 0–30°, midpoint 15°.
+   Hand angle 0° = pointing straight up (12 o'clock).
+════════════════════════════════════════════ */
+var handEl=document.getElementById('hand-g');
+var handDeg=0;        /* current absolute angle (can exceed 360) */
+var activeSeg=-1;     /* which segment is currently lit */
+var rotSpeed=6;       /* degrees per second */
+var lastTs=null;
+var rafRunning=false;
+var rafId=null;
+var manualPaused=false;
+
+/* Assign photos to each segment image element */
+CREATIVE.forEach(function(m,i){
+  var img=document.getElementById('si'+i);
+  if(img) img.setAttribute('href',m.img);
+});
+
+function segForDeg(deg){
+  /* normalise to 0–360, then floor-divide by 30 */
+  return Math.floor(((deg%360)+360)%360/30)%12;
+}
+
+function applyDeg(deg){
+  handEl.style.transform='rotate('+deg+'deg)';
+  handDeg=deg;
+  var s=segForDeg(deg);
+  if(s!==activeSeg){
+    activeSeg=s;
+    revealMember(s);
+  }
+}
+
+function revealMember(i){
+  /* highlight correct segment, fade images */
+  for(var k=0;k<12;k++){
+    var ov=document.getElementById('ov'+k);
+    var sg=document.getElementById('seg'+k);
+    var si=document.getElementById('si'+k);
+    if(ov) ov.style.fill=(k===i)?'rgba(232,83,10,0.22)':'rgba(232,83,10,0)';
+    if(sg){if(k===i)sg.classList.add('act');else sg.classList.remove('act');}
+    if(si) si.style.opacity=(k===i)?'1':'0';
+  }
+
+  var m=CREATIVE[i];
+  if(!m) return;
+
+  /* fade panel out then swap */
+  var nEl=document.getElementById('cd-name');
+  var rEl=document.getElementById('cd-rolepill');
+  var bEl=document.getElementById('cd-bio');
+  var tEl=document.getElementById('cd-tags');
+  var iEl=document.getElementById('cd-img');
+  var phEl=document.getElementById('cd-ph');
+  var stEl=document.getElementById('cd-status-txt');
+
+  nEl.style.opacity='0'; nEl.style.transform='translateY(8px)';
+  rEl.style.opacity='0'; bEl.style.opacity='0'; iEl.style.opacity='0';
+
+  setTimeout(function(){
+    var pts=m.name.split(' ');
+    nEl.innerHTML=pts[0]+'<br/><span>'+pts.slice(1).join(' ')+'</span>';
+    rEl.textContent=m.role;
+    bEl.textContent=m.bio;
+    tEl.innerHTML=m.tags.map(function(t){return '<span class="cd-tag">'+t+'</span>';}).join('');
+    iEl.src=m.img; iEl.style.display='block'; phEl.style.display='none';
+
+    nEl.style.opacity='1'; nEl.style.transform='translateY(0)';
+    rEl.style.opacity='1'; bEl.style.opacity='1'; iEl.style.opacity='1';
+    if(stEl) stEl.textContent=(manualPaused?'Paused on ':'Rotating \u2014 ')+m.role;
+  },170);
+}
+
+/* requestAnimationFrame loop */
+function rafTick(ts){
+  if(!lastTs) lastTs=ts;
+  var dt=(ts-lastTs)/1000; lastTs=ts;
+  if(!manualPaused && rotSpeed>0){
+    applyDeg(handDeg+rotSpeed*dt);
+  }
+  rafId=requestAnimationFrame(rafTick);
+}
+
+function startClock(){
+  if(rafRunning) return;
+  rafRunning=true; lastTs=null;
+  rafId=requestAnimationFrame(rafTick);
+}
+
+/* speed buttons */
+var curSpdBtn='sb0';
+window.setSpd=function(spd,btnId){
+  rotSpeed=spd;
+  manualPaused=(spd===0);
+  lastTs=null;
+  document.querySelectorAll('.spd-btn').forEach(function(b){b.classList.remove('on');});
+  document.getElementById(btnId).classList.add('on');
+  curSpdBtn=btnId;
+  var stEl=document.getElementById('cd-status-txt');
+  if(stEl) stEl.textContent=manualPaused?'Paused \u2014 click a segment or resume':'Rotating\u2026';
+};
+
+/* manual click: snap to midpoint of that segment */
+window.manualSeg=function(i){
+  manualPaused=true; rotSpeed=0;
+  document.querySelectorAll('.spd-btn').forEach(function(b){b.classList.remove('on');});
+  document.getElementById('sb3').classList.add('on');
+
+  /* find shortest path to midpoint of segment i */
+  var target=15+i*30; /* midpoint degrees */
+  var curr=((handDeg%360)+360)%360;
+  var diff=((target-curr)+360)%360;
+  if(diff>180) diff-=360;
+  var startA=handDeg, endA=handDeg+diff;
+  var t0=null;
+  function snap(ts){
+    if(!t0)t0=ts;
+    var p=Math.min(1,(ts-t0)/480);
+    var e=1-Math.pow(1-p,3); /* ease-out-cubic */
+    applyDeg(startA+(endA-startA)*e);
+    if(p<1) requestAnimationFrame(snap);
+  }
+  requestAnimationFrame(snap);
+};
+
+/* start when clock scrolls into view */
+var clockObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting&&!rafRunning)startClock();});
+},{threshold:.1});
+var cs=document.getElementById('clock-section');
+if(cs) clockObs.observe(cs);
+
+/* ── ANIMATED WORDS ── */
+var animWords=document.querySelectorAll('.anim-word');
+var animObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting) animWords.forEach(function(w,i){setTimeout(function(){w.classList.add('show');},i*80);});
+  });
+},{threshold:.3});
+var animBlock=document.getElementById('creative-anim-text');
+if(animBlock) animObs.observe(animBlock);
+
+/* ── TEAM FLIP & SECTION REVEAL ── */
+var chosen=null;
+window.chooseTeam=function(team){
+  if(chosen===team) return; chosen=team;
+  var fc=document.getElementById('flip-charis');
+  var fr=document.getElementById('flip-creative');
+
+  if(team==='charis'){
+    fc.classList.add('flipped');
+    /* unchosen card dims but STAYS so hero looks complete */
+    fr.style.transition='all .6s ease';
+    fr.style.opacity='0.25';
+    fr.style.transform='scale(0.91)';
+    fr.style.filter='grayscale(70%)';
+    fr.style.pointerEvents='none';
+    setTimeout(function(){
+      document.getElementById('charis-section').classList.add('active');
+      document.getElementById('creative-section').classList.remove('active');
+      /* scroll to top of charis-section */
+      var t=document.getElementById('charis-section');
+      window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset,behavior:'smooth'});
+      document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);}); rehov();
+    },1100);
+  } else {
+    fr.classList.add('flipped');
+    fc.style.transition='all .6s ease';
+    fc.style.opacity='0.25';
+    fc.style.transform='scale(0.91)';
+    fc.style.filter='grayscale(70%)';
+    fc.style.pointerEvents='none';
+    setTimeout(function(){
+      document.getElementById('creative-section').classList.add('active');
+      document.getElementById('charis-section').classList.remove('active');
+      var t=document.getElementById('creative-section');
+      window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset,behavior:'smooth'});
+      document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);}); rehov();
+    },1100);
+  }
+};
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   BTS VIDEO LINKS — Paste your YouTube links below
+   Example: yt:'https://youtu.be/xxxxxxxxxxx'
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+function _ytId(u){if(!u)return '';var m=u.match(/(?:v=|youtu\.be\/|shorts\/|embed\/)([a-zA-Z0-9_-]{11})/);return m?m[1]:''}
+var rr=document.getElementById('reels-row');
+var ri=document.getElementById('reel-file-input');
+var rvu={};
+REELS.forEach(function(r,i){
+  var el=document.createElement('div');
+  el.className='reel-item'; el.id='reel-'+i;
+  var vid=_ytId(r.yt);
+  var bgSt=vid?'background-image:url(https://img.youtube.com/vi/'+vid+'/hqdefault.jpg);background-size:cover;background-position:center;height:100%':'background:#1a1714;height:100%';
+  var noVid=vid?'':('<div style="position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.25);text-transform:uppercase;pointer-events:none">&#9654;<br/>Paste<br/>URL</div>');
+  el.innerHTML='<div class="reel-item-bg" style="'+bgSt+'"></div>'
+    +'<div class="reel-item-ov">'+noVid+'<div class="reel-play">'+( vid?'&#9654;':'')+'</div><div class="reel-label">'+r.label+'</div><div class="reel-name">'+r.name+'</div></div>';
+  el.addEventListener('click',function(){if(r.yt)window.open(r.yt,'_blank');});
+  rr.appendChild(el);
+});
+
+var addBtn=document.createElement('div'); addBtn.className='reel-add-btn';
+addBtn.innerHTML='<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="rgba(232,83,10,0.4)" stroke-width="1.5"/><line x1="14" y1="8" x2="14" y2="20" stroke="rgba(232,83,10,0.6)" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="14" x2="20" y2="14" stroke="rgba(232,83,10,0.6)" stroke-width="2" stroke-linecap="round"/></svg><span>Add Reel</span>';
+addBtn.addEventListener('click',function(){ri.setAttribute('data-ri','new');ri.click();});
+rr.appendChild(addBtn);
+
+ri.addEventListener('change',function(){
+  var f=ri.files[0]; if(!f) return;
+  var url=URL.createObjectURL(f);
+  var idx=ri.getAttribute('data-ri');
+  function makeThumb(vid,cb){
+    var tv=document.createElement('video'); tv.src=vid; tv.muted=true; tv.currentTime=0.5;
+    tv.addEventListener('seeked',function(){
+      var c=document.createElement('canvas'); c.width=tv.videoWidth||160; c.height=tv.videoHeight||280;
+      c.getContext('2d').drawImage(tv,0,0,c.width,c.height); cb(c.toDataURL('image/jpeg',0.8));
+    }); tv.load();
+  }
+  if(idx==='new'){
+    var ni=REELS.length; rvu[ni]=url;
+    var nel=document.createElement('div'); nel.className='reel-item';
+    nel.innerHTML='<div class="reel-item-bg" style="background:#1a1714;height:100%"></div>'
+      +'<div class="reel-item-ov"><div class="reel-play"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M4 2l10 6L4 14V2z"/></svg></div>'
+      +'<div class="reel-label">Your Reel</div><div class="reel-name">Custom Clip</div></div>';
+    makeThumb(url,function(t){nel.querySelector('.reel-item-bg').style.background='url('+t+') center/cover';});
+    nel.addEventListener('click',function(){playReel(url);});
+    rr.insertBefore(nel,addBtn); REELS.push({});
+  } else {
+    var id2=parseInt(idx); rvu[id2]=url;
+    makeThumb(url,function(t){var re=document.getElementById('reel-'+id2);if(re)re.querySelector('.reel-item-bg').style.background='url('+t+') center/cover';});
+  }
+  ri.value='';
+});
+
+function playReel(url){
+  var m=document.createElement('div');
+  m.style.cssText='position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.95);display:flex;align-items:center;justify-content:center';
+  m.innerHTML='<div style="width:min(90vw,800px);background:#0a0a0a;border:1px solid rgba(232,83,10,.2);overflow:hidden">'
+    +'<div style="display:flex;justify-content:flex-end;padding:8px 12px"><button onclick="this.closest(\'div\').closest(\'div\').remove()" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:16px">&#10005;</button></div>'
+    +'<video src="'+url+'" controls autoplay playsinline style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#000"></video>'
+    +'</div>';
+  m.addEventListener('click',function(e){if(e.target===m)m.remove();});
+  document.body.appendChild(m);
+}
+
+})();
+
+
+
+
+/* Load existing ratings on page load */
+(function(){
+  function loadRatings(){
+    document.querySelectorAll('.rating-card').forEach(function(card){
+      var member=card.dataset.member||card.querySelector('.rating-name')?.innerText?.trim()||'';
+      if(!member)return;
+      var storageKey='cc_ratings_'+member.replace(/\s+/g,'_').toLowerCase();
+      var ratedKey='cc_rated_'+member.replace(/\s+/g,'_').toLowerCase();
+      var existing=JSON.parse(localStorage.getItem(storageKey)||'[]');
+      if(existing.length>0){
+        var avg=(existing.reduce(function(a,b){return a+b},0)/existing.length).toFixed(1);
+        var avgEl=card.querySelector('.rating-avg');
+        if(!avgEl){avgEl=document.createElement('div');avgEl.className='rating-avg';avgEl.style.cssText='font-family:var(--font-cond);font-size:9px;letter-spacing:.15em;color:var(--or);margin-top:4px;text-transform:uppercase;font-weight:700;';var st=card.querySelector('.stars');if(st)st.after(avgEl);}
+        avgEl.textContent=avg+' ★ ('+existing.length+' rating'+(existing.length===1?'':'s')+')';
+      }
+      var btn=card.querySelector('.rating-submit');
+      if(btn&&localStorage.getItem(ratedKey)){btn.textContent='RATED ✓';btn.style.background='#333';btn.style.cursor='default';}
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(loadRatings,600);});}
+  else{setTimeout(loadRatings,600);}
+})();
+</script>
+</body>
+</html>

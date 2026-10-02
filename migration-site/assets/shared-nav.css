@@ -79,8 +79,9 @@
 }
 
 #nav .nlinks a:hover::after,
+#nav .nlinks a.active::after,
 #ca-nav .ca-nlinks a:hover::after,
-#ca-nav .ca-nlinks a:hover::after {
+#ca-nav .ca-nlinks a.active::after {
   width: 100%;
 }
 

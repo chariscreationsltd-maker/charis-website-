@@ -1,6 +1,9 @@
 name: Deploy website preview over FTPS
 
 on:
+  push:
+    branches:
+      - website-preview
   workflow_dispatch:
 
 permissions:

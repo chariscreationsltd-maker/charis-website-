@@ -99,12 +99,13 @@ nav.sc{background:rgba(242,237,232,.97);backdrop-filter:blur(18px);padding:14px 
 .hero-slide-photo.is-portrait{object-fit:contain;object-position:center top;}
 .hero-slide-photo.is-landscape{object-position:center top;}
 .hero-slide-photo.is-celebrity{object-position:80% 100%;transform:scale(1.2);transform-origin:80% 100%;}
-.hero-slide-title{position:absolute;top:39%;left:clamp(24px,6vw,88px);z-index:2;color:#f2e4c9;font-family:'Montserrat',sans-serif;font-size:clamp(24px,3.8vw,52px);font-weight:700;line-height:1.12;letter-spacing:.035em;text-transform:uppercase;text-shadow:0 2px 18px rgba(0,0,0,.36);}
+.hero-slide-title{position:absolute;top:39%;left:clamp(24px,6vw,88px);z-index:2;color:#f2e4c9;font-family:'Montserrat',sans-serif;font-size:clamp(24px,3.8vw,52px);font-weight:800;line-height:1.12;letter-spacing:.035em;text-transform:uppercase;text-shadow:0 2px 18px rgba(0,0,0,.36);}
 .hero-slide-title.is-graduation{top:14%;right:clamp(28px,8vw,112px);left:auto;color:#bd9474;font-size:clamp(23px,3vw,42px);writing-mode:vertical-rl;letter-spacing:.08em;}
 .hero-slide-title.is-delivery{top:41%;left:clamp(24px,5vw,68px);max-width:34vw;color:#62c7b6;font-size:clamp(24px,3.8vw,52px);}
 .hero-slide-title.is-booking{top:42%;left:clamp(24px,6vw,88px);max-width:min(560px,48vw);color:#e8530a;font-size:clamp(25px,4.2vw,58px);line-height:1.08;}
-.hero-slide-title.is-podcasts{top:23%;left:7%;z-index:0;color:rgba(242,228,201,.78);font-size:clamp(76px,13vw,180px);font-weight:800;letter-spacing:-.075em;line-height:.9;white-space:nowrap;transform:perspective(720px) rotateY(-13deg) rotateX(5deg) skewY(-2deg);text-shadow:8px 8px 0 rgba(232,83,10,.55),18px 20px 0 rgba(8,8,8,.65),0 18px 35px rgba(0,0,0,.34);}
-.hero-slide-brand{position:absolute;top:clamp(92px,14vh,142px);right:clamp(24px,6vw,88px);z-index:2;color:#f2e4c9;font-family:'Montserrat',sans-serif;font-size:clamp(12px,1.35vw,17px);font-weight:700;line-height:1.3;letter-spacing:.045em;text-align:right;text-transform:uppercase;text-shadow:0 2px 18px rgba(0,0,0,.4);}
+.hero-slide-title.is-documentary{top:13%;left:clamp(24px,6vw,88px);color:#493b2c;font-size:clamp(23px,3.6vw,48px);font-weight:800;}
+.hero-slide-title.is-podcasts{top:2%;left:8%;z-index:2;color:#f2e4c9;font-size:clamp(64px,10vw,136px);font-weight:800;letter-spacing:-.075em;line-height:.9;white-space:nowrap;transform:perspective(720px) rotateY(-13deg) rotateX(5deg) skewY(-2deg);text-shadow:8px 8px 0 rgba(232,83,10,.68),18px 20px 0 rgba(8,8,8,.72),0 18px 35px rgba(0,0,0,.4);}
+.hero-slide-brand{position:absolute;top:clamp(92px,14vh,142px);right:clamp(24px,6vw,88px);z-index:2;color:#f2e4c9;font-family:'Montserrat',sans-serif;font-size:clamp(12px,1.35vw,17px);font-weight:800;line-height:1.3;letter-spacing:.045em;text-align:right;text-transform:uppercase;text-shadow:0 2px 18px rgba(0,0,0,.4);}
 .hero-slide-brand-name,.hero-slide-brand-suffix{display:inline;}
 .hero-slide-brand-suffix::before{content:' ';}
 .hero-slide-brand.is-delivery{top:56%;right:auto;left:clamp(24px,5vw,68px);color:#62c7b6;font-size:clamp(13px,1.4vw,18px);text-align:left;}
@@ -113,10 +114,12 @@ nav.sc{background:rgba(242,237,232,.97);backdrop-filter:blur(18px);padding:14px 
 .hero-slide-brand.is-duo .hero-slide-brand-suffix{color:#e8530a;}
 .hero-slide-brand.is-duo .hero-slide-brand-suffix::before{content:none;}
 .hero-slide-brand[hidden]{display:none;}
-.hero-slide-footer{position:absolute;left:clamp(24px,6vw,88px);bottom:clamp(72px,10vh,104px);z-index:2;width:min(440px,calc(100% - 48px));color:#f2e4c9;font-family:'Montserrat',sans-serif;text-shadow:0 2px 16px rgba(0,0,0,.48);}
+.hero-slide-footer{position:absolute;left:clamp(24px,6vw,88px);bottom:clamp(72px,10vh,104px);z-index:2;width:min(440px,calc(100% - 48px));color:#f2e4c9;font-family:'Montserrat',sans-serif;font-weight:800;text-shadow:0 2px 16px rgba(0,0,0,.48);}
+.hero-slide-footer.is-graduation{color:#bd9474;text-shadow:0 2px 16px rgba(0,0,0,.72);}
+.hero-slide-footer.is-documentary{color:#f2e4c9;text-shadow:0 2px 16px rgba(0,0,0,.7);}
 .hero-slide-footer[hidden]{display:none;}
-.hero-slide-agency{margin:0 0 8px;font-size:clamp(15px,1.55vw,20px);font-weight:700;line-height:1.25;letter-spacing:.045em;text-transform:uppercase;}
-.hero-slide-description{max-width:40ch;margin:0;font-size:clamp(12px,1.05vw,14px);font-weight:600;line-height:1.65;letter-spacing:.012em;}
+.hero-slide-agency{margin:0 0 8px;font-size:clamp(15px,1.55vw,20px);font-weight:800;line-height:1.25;letter-spacing:.045em;text-transform:uppercase;}
+.hero-slide-description{max-width:40ch;margin:0;font-size:clamp(12px,1.05vw,14px);font-weight:700;line-height:1.65;letter-spacing:.012em;}
 .hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.72) 0%,rgba(8,8,8,.38) 38%,rgba(8,8,8,.12) 100%),linear-gradient(0deg,rgba(8,8,8,.52),transparent 46%);}
 .hero-controls{position:absolute;right:clamp(20px,5vw,72px);bottom:22px;z-index:4;display:flex;align-items:center;gap:8px;color:#fff;font-family:'Barlow Condensed',sans-serif;}
 .hero-controls button{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);background:rgba(8,8,8,.38);color:#fff;cursor:pointer;transition:background .2s,border-color .2s,color .2s;}
@@ -1404,7 +1407,7 @@ footer{width:100%;background:#040404;padding:40px 5vw 20px;border-top:1px solid 
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 
 @media(max-width:1024px){.about{grid-template-columns:1fr}.ctin{grid-template-columns:1fr}.tcd{min-width:calc(75vw)}.det-body{flex-direction:column;gap:24px}.det-right{flex-direction:row;flex-wrap:wrap;gap:16px;min-width:0}}
-@media(max-width:768px){nav,nav.sc{padding:13px 5vw}.nlinks{display:none}.ham{display:flex}.hw{font-size:clamp(16px,4.5vw,34px);letter-spacing:.14em}.thd{flex-direction:column;align-items:flex-start}.tcd{min-width:82vw}.frow{grid-template-columns:1fr}.fc{width:clamp(200px,68vw,340px)}.ftlks{gap:20px}.hero-controls{right:16px;bottom:20px;gap:5px}.hero-controls button{width:32px;height:32px}.hero-controls .hero-pause{min-width:58px}.hero-counter{min-width:46px;font-size:9px}.hero-slide-title.is-graduation{right:20px;font-size:clamp(20px,5vw,30px)}.hero-slide-title.is-delivery{max-width:53vw;font-size:clamp(20px,5.3vw,36px)}.hero-slide-title.is-booking{max-width:65vw;font-size:clamp(24px,7vw,42px)}.hero-slide-title.is-podcasts{top:28%;left:4%;font-size:clamp(54px,15vw,112px);text-shadow:5px 5px 0 rgba(232,83,10,.55),10px 12px 0 rgba(8,8,8,.65),0 12px 22px rgba(0,0,0,.34)}.hero-slide-brand.is-delivery{left:24px;top:56%;font-size:12px}.hero-slide-brand.is-duo{font-size:clamp(20px,5vw,34px)}.hero-slide-footer{bottom:76px}}
+@media(max-width:768px){nav,nav.sc{padding:13px 5vw}.nlinks{display:none}.ham{display:flex}.hw{font-size:clamp(16px,4.5vw,34px);letter-spacing:.14em}.thd{flex-direction:column;align-items:flex-start}.tcd{min-width:82vw}.frow{grid-template-columns:1fr}.fc{width:clamp(200px,68vw,340px)}.ftlks{gap:20px}.hero-controls{right:16px;bottom:20px;gap:5px}.hero-controls button{width:32px;height:32px}.hero-controls .hero-pause{min-width:58px}.hero-counter{min-width:46px;font-size:9px}.hero-slide-title.is-graduation{right:20px;font-size:clamp(20px,5vw,30px)}.hero-slide-title.is-delivery{max-width:53vw;font-size:clamp(20px,5.3vw,36px)}.hero-slide-title.is-booking{max-width:65vw;font-size:clamp(24px,7vw,42px)}.hero-slide-title.is-podcasts{top:2%;left:4%;font-size:clamp(54px,15vw,112px);text-shadow:5px 5px 0 rgba(232,83,10,.55),10px 12px 0 rgba(8,8,8,.65),0 12px 22px rgba(0,0,0,.34)}.hero-slide-brand.is-delivery{left:24px;top:56%;font-size:12px}.hero-slide-brand.is-duo{font-size:clamp(20px,5vw,34px)}.hero-slide-footer{bottom:76px}}
 @media(max-width:480px){.hw{font-size:clamp(13px,3.8vw,22px);letter-spacing:.08em}.sitem{width:clamp(100px,26vw,130px);height:clamp(64px,17vw,84px)}.aig{grid-template-rows:clamp(120px,30vw,180px) clamp(120px,30vw,180px)}}
 
 /* ── FLOATING BUTTONS ── */
@@ -2627,11 +2630,12 @@ document.getElementById('strips').addEventListener('click',function(e){openVS(e)
     var outdoor=name==='SUE_BD_SHOOT-154.jpg';
     var studio=name==='NICOLETTE BD SHOT-11.jpg';
     var graduation=name==='LEELAND AT 2-11.jpg';
-    var delivery=name==='CCJ_2970-scaled.jpg';
+    var delivery=name==='2V3A1288_PerfectlyClear-scaled.jpg';
+    var documentary=name==='CCJ_2970-scaled.jpg';
     var booking=name==='BRIAN WEIYZ-18.jpg';
     var podcasts=name==='CBC-98.jpg';
     var duo=name==='S&C_Shoot-17.jpg';
-    return {src:'assets/hero-slides/hero-section-refresh/'+encodeURIComponent(name),label:outdoor?'OUTDOOR SHOOTS':studio?'STUDIO SHOOTS':graduation?'GRADUATION SHOOTS':delivery?'WE DELIVER ON TIME':booking?'WHAT ARE YOU WAITING FOR? BOOK YOUR SHOOT.':podcasts?'PODCASTS':'',brandName:studio||delivery||duo?'CHARIS CREATIONS':'',brandSuffix:studio||delivery||duo?'THE AGENCY':'',layout:graduation?'graduation':delivery?'delivery':booking?'booking':podcasts?'podcasts':duo?'duo':'',footer:outdoor||podcasts,copy:outdoor?'Natural light, open spaces, and real moments, beautifully framed in the landscape.':podcasts?'Thoughtful conversations, captured with clarity and character.':'',feature:name==='BRIAN WEIYZ-18.jpg'};
+    return {src:'assets/hero-slides/hero-section-refresh/'+encodeURIComponent(name),label:outdoor?'OUTDOOR SHOOTS':studio?'STUDIO SHOOTS':graduation?'GRADUATION SHOOTS':delivery?'WE DELIVER ON TIME':booking?'WHAT ARE YOU WAITING FOR? BOOK YOUR SHOOT.':documentary?'DOCUMENTARIES':podcasts?'PODCASTS':'',brandName:studio||delivery||duo?'CHARIS CREATIONS':'',brandSuffix:studio||delivery||duo?'THE AGENCY':'',layout:graduation?'graduation':delivery?'delivery':booking?'booking':documentary?'documentary':podcasts?'podcasts':duo?'duo':'',footer:outdoor||podcasts||graduation||documentary,copy:outdoor?'Natural light, open spaces, and real moments, beautifully framed in the landscape.':graduation?'A milestone worth celebrating, captured to last a lifetime.':documentary?'Real stories, captured with honesty and cinematic care.':podcasts?'Thoughtful conversations, captured with clarity and character.':'',feature:name==='BRIAN WEIYZ-18.jpg'};
   });
   var layers=stage.querySelectorAll('.hero-slide');
   var counter=document.getElementById('heroSlideCounter');
@@ -2659,9 +2663,9 @@ document.getElementById('strips').addEventListener('click',function(e){openVS(e)
     var footer=layer.querySelector('.hero-slide-footer');
     var description=layer.querySelector('.hero-slide-description');
     layer.style.setProperty('--hero-slide-background','url("'+slide.src+'")');
-    if(title){title.textContent=slide.label||'';title.classList.remove('is-graduation','is-delivery','is-booking','is-podcasts');if(slide.layout&&slide.layout!=='duo') title.classList.add('is-'+slide.layout);}
+    if(title){title.textContent=slide.label||'';title.classList.remove('is-graduation','is-delivery','is-booking','is-documentary','is-podcasts');if(slide.layout&&slide.layout!=='duo') title.classList.add('is-'+slide.layout);}
     if(brand){brand.querySelector('.hero-slide-brand-name').textContent=slide.brandName||'';brand.querySelector('.hero-slide-brand-suffix').textContent=slide.brandSuffix||'';brand.classList.remove('is-delivery','is-duo');if(slide.layout==='delivery'||slide.layout==='duo') brand.classList.add('is-'+slide.layout);brand.hidden=!slide.brandName;}
-    if(footer) footer.hidden=!slide.footer;
+    if(footer){footer.hidden=!slide.footer;footer.classList.remove('is-graduation','is-documentary');if(slide.layout==='graduation'||slide.layout==='documentary') footer.classList.add('is-'+slide.layout);}
     if(description) description.textContent=slide.copy||'';
     if(photo){
       photo.classList.remove('is-portrait','is-landscape');

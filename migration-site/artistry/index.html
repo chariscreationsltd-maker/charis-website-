@@ -948,22 +948,21 @@ html, body { overflow-x: hidden !important; overflow-y: auto !important; }
 }
 /* === END === */
 </style>
+<link rel="stylesheet" href="../assets/shared-nav.css"/>
 <nav id="ca-nav">
   <a href="../" class="ca-brand" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
      <img src="https://chariscreationsltd.com/wp-content/uploads/2026/04/words-4.png" 
        alt="Charis Creations" 
        style="width:50px;height:50px;object-fit:contain;flex-shrink:0"/>
- 
-   
-    <span style="color:#fff;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;line-height:1.2;">CHARIS<br><span style="color:#f16623;font-size:9px;letter-spacing:1px;">ARTISTRY</span></span>
   </a>
   <ul class="ca-nlinks" id="ca-nlinks">
     <li><a href="../projects-2/">Projects</a></li>
     <li><a href="../services/">Services</a></li>
     <li><a href="../creatives/">Creatives</a></li>
     <li><a href="../artistry/" class="active">Artistry</a></li>
-    <li><a href="#contact" class="ncta">Contact Us</a></li>
+    <li><a href="../#contact" class="ncta">Contact Us</a></li>
   </ul>
+  <div id="ca-ham" role="button" aria-label="Toggle navigation" aria-controls="ca-nlinks" aria-expanded="false" onclick="const links=document.getElementById('ca-nlinks');const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open)"><span></span><span></span><span></span></div>
 </nav>
 
 

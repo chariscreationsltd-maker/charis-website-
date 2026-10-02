@@ -1,0 +1,122 @@
+/* Shared navigation styling based on the home page header. */
+#nav,
+#ca-nav {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 94px;
+  height: auto;
+  padding: 22px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  transition: background .4s, padding .3s;
+}
+
+#ca-nav {
+  background: transparent;
+  border-bottom: 0;
+  box-shadow: none;
+}
+
+#nav.sc {
+  min-height: 78px;
+  padding: 14px 5vw;
+}
+
+#nav .nl,
+#ca-nav .ca-brand {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 10px;
+  text-decoration: none;
+}
+
+#nav .nl img,
+#ca-nav .ca-brand img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+#nav .nlinks,
+#ca-nav .ca-nlinks {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav .nlinks a,
+#ca-nav .ca-nlinks a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .28em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+#nav .nlinks a::after,
+#ca-nav .ca-nlinks a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #E8530A;
+  transition: width .3s;
+}
+
+#nav .nlinks a:hover::after,
+#nav .nlinks a.active::after,
+#ca-nav .ca-nlinks a:hover::after,
+#ca-nav .ca-nlinks a.active::after {
+  width: 100%;
+}
+
+#ca-nav .ca-nlinks a.active {
+  border-bottom: 0;
+  padding-bottom: 3px;
+}
+
+#nav .nlinks .ncta,
+#ca-nav .ca-nlinks .ncta {
+  background: #E8530A !important;
+  color: #000 !important;
+  padding: 8px 18px !important;
+  font-weight: 700 !important;
+  border: 0;
+  border-radius: 0;
+}
+
+#nav .nlinks .ncta::after,
+#ca-nav .ca-nlinks .ncta::after {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #nav,
+  #nav.sc,
+  #ca-nav {
+    min-height: 76px;
+    padding: 13px 5vw;
+  }
+
+  #nav .nlinks,
+  #ca-nav .ca-nlinks {
+    gap: 16px;
+  }
+
+  #ca-nav .ca-nlinks {
+    top: 76px;
+  }
+}

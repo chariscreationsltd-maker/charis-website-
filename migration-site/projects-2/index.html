@@ -1109,10 +1109,13 @@ see and feel.</div>
   .cc-trailers-grid { grid-template-columns: 1fr; }
 }
 .cc-trailer-card {
+  display: block;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
+  color: inherit;
+  text-decoration: none;
   aspect-ratio: 16/9;
   background: #111;
   box-shadow: 0 4px 20px rgba(0,0,0,0.5);
@@ -1236,70 +1239,52 @@ see and feel.</div>
     <div class="cc-trailers-grid">
 
       <!-- ▼ CARD 1 — Replace BOTH src values with your video URL -->
-      <div class="cc-trailer-card"
-           data-video="https://chariscreationsltd.com/wp-content/uploads/2026/03/2025-GRAND-OPENING-1920.mp4"
-           data-title="Trailer One">
-        <video src="https://chariscreationsltd.com/wp-content/uploads/2026/03/2025-GRAND-OPENING-1920.mp4" muted autoplay loop playsinline preload="metadata"></video>
+      <a class="cc-trailer-card" href="https://chariscreationsltd.com/wp-content/uploads/2026/03/2025-GRAND-OPENING-1920.mp4" data-video="https://chariscreationsltd.com/wp-content/uploads/2026/03/2025-GRAND-OPENING-1920.mp4" data-title="Trailer One" aria-label="Play Trailer One">
+        <video src="https://chariscreationsltd.com/wp-content/uploads/2026/03/2025-GRAND-OPENING-1920.mp4" muted loop playsinline preload="metadata"></video>
         <div class="cc-trailer-overlay">
           <div class="cc-play-btn">&#9654;</div>
           <p class="cc-trailer-title">Trailer One</p>
-        </div>
-      </div>
+        </div></a>
 
       <!-- ▼ CARD 2 -->
-      <div class="cc-trailer-card"
-           data-video="https://chariscreationsltd.com/wp-content/uploads/2026/03/TIMOTHY-WEDS-MILDRED-TRAILER-FINAL-1920.mp4"
-           data-title="Trailer Two">
-        <video src="https://chariscreationsltd.com/wp-content/uploads/2026/03/TIMOTHY-WEDS-MILDRED-TRAILER-FINAL-1920.mp4" muted autoplay loop playsinline preload="metadata"></video>
+      <a class="cc-trailer-card" href="https://chariscreationsltd.com/wp-content/uploads/2026/03/TIMOTHY-WEDS-MILDRED-TRAILER-FINAL-1920.mp4" data-video="https://chariscreationsltd.com/wp-content/uploads/2026/03/TIMOTHY-WEDS-MILDRED-TRAILER-FINAL-1920.mp4" data-title="Trailer Two" aria-label="Play Trailer Two">
+        <video src="https://chariscreationsltd.com/wp-content/uploads/2026/03/TIMOTHY-WEDS-MILDRED-TRAILER-FINAL-1920.mp4" muted loop playsinline preload="metadata"></video>
         <div class="cc-trailer-overlay">
           <div class="cc-play-btn">&#9654;</div>
           <p class="cc-trailer-title">Trailer Two</p>
-        </div>
-      </div>
+        </div></a>
 
       <!-- ▼ CARD 3 -->
-      <div class="cc-trailer-card"
-           data-video="https://chariscreationsltd.com/wp-content/uploads/2026/04/ANDREW-WEDS-BARBARA-REEL-1-1920.mp4"
-           data-title="Trailer Three">
-        <video src="https://chariscreationsltd.com/wp-content/uploads/2026/04/ANDREW-WEDS-BARBARA-REEL-1-1920.mp4" muted autoplay loop playsinline preload="metadata"></video>
+      <a class="cc-trailer-card" href="https://chariscreationsltd.com/wp-content/uploads/2026/04/ANDREW-WEDS-BARBARA-REEL-1-1920.mp4" data-video="https://chariscreationsltd.com/wp-content/uploads/2026/04/ANDREW-WEDS-BARBARA-REEL-1-1920.mp4" data-title="Trailer Three" aria-label="Play Trailer Three">
+        <video src="https://chariscreationsltd.com/wp-content/uploads/2026/04/ANDREW-WEDS-BARBARA-REEL-1-1920.mp4" muted loop playsinline preload="metadata"></video>
         <div class="cc-trailer-overlay">
           <div class="cc-play-btn">&#9654;</div>
           <p class="cc-trailer-title">Trailer Three</p>
-        </div>
-      </div>
+        </div></a>
 
       <!-- ▼ CARD 4 -->
-      <div class="cc-trailer-card"
-           data-video="https://chariscreationsltd.com/wp-content/uploads/2026/04/EMMA-WEDS-RITAH-1920.mp4"
-           data-title="Trailer Four">
-        <video src="https://chariscreationsltd.com/wp-content/uploads/2026/04/EMMA-WEDS-RITAH-1920.mp4" muted autoplay loop playsinline preload="metadata"></video>
+      <a class="cc-trailer-card" href="https://chariscreationsltd.com/wp-content/uploads/2026/04/EMMA-WEDS-RITAH-1920.mp4" data-video="https://chariscreationsltd.com/wp-content/uploads/2026/04/EMMA-WEDS-RITAH-1920.mp4" data-title="Trailer Four" aria-label="Play Trailer Four">
+        <video src="https://chariscreationsltd.com/wp-content/uploads/2026/04/EMMA-WEDS-RITAH-1920.mp4" muted loop playsinline preload="metadata"></video>
         <div class="cc-trailer-overlay">
           <div class="cc-play-btn">&#9654;</div>
           <p class="cc-trailer-title">Trailer Four</p>
-        </div>
-      </div>
+        </div></a>
 
       <!-- ▼ CARD 5 -->
-      <div class="cc-trailer-card"
-           data-video="https://chariscreationsltd.com/wp-content/uploads/2026/04/HUDSON-WEDS-PATIENCE-2-1920.mp4"
-           data-title="Trailer Five">
-        <video src="https://chariscreationsltd.com/wp-content/uploads/2026/04/HUDSON-WEDS-PATIENCE-2-1920.mp4" muted autoplay loop playsinline preload="metadata"></video>
+      <a class="cc-trailer-card" href="https://chariscreationsltd.com/wp-content/uploads/2026/04/HUDSON-WEDS-PATIENCE-2-1920.mp4" data-video="https://chariscreationsltd.com/wp-content/uploads/2026/04/HUDSON-WEDS-PATIENCE-2-1920.mp4" data-title="Trailer Five" aria-label="Play Trailer Five">
+        <video src="https://chariscreationsltd.com/wp-content/uploads/2026/04/HUDSON-WEDS-PATIENCE-2-1920.mp4" muted loop playsinline preload="metadata"></video>
         <div class="cc-trailer-overlay">
           <div class="cc-play-btn">&#9654;</div>
           <p class="cc-trailer-title">Trailer Five</p>
-        </div>
-      </div>
+        </div></a>
 
       <!-- ▼ CARD 6 -->
-      <div class="cc-trailer-card"
-           data-video="https://chariscreationsltd.com/wp-content/uploads/2026/04/QUEEN-AND-SILAS-TRAILER-1920.mp4"
-           data-title="Trailer Six">
-        <video src="https://chariscreationsltd.com/wp-content/uploads/2026/04/QUEEN-AND-SILAS-TRAILER-1920.mp4" muted autoplay loop playsinline preload="metadata"></video>
+      <a class="cc-trailer-card" href="https://chariscreationsltd.com/wp-content/uploads/2026/04/QUEEN-AND-SILAS-TRAILER-1920.mp4" data-video="https://chariscreationsltd.com/wp-content/uploads/2026/04/QUEEN-AND-SILAS-TRAILER-1920.mp4" data-title="Trailer Six" aria-label="Play Trailer Six">
+        <video src="https://chariscreationsltd.com/wp-content/uploads/2026/04/QUEEN-AND-SILAS-TRAILER-1920.mp4" muted loop playsinline preload="metadata"></video>
         <div class="cc-trailer-overlay">
           <div class="cc-play-btn">&#9654;</div>
           <p class="cc-trailer-title">Trailer Six</p>
-        </div>
-      </div>
+        </div></a>
 
     </div>
   </div>
@@ -1323,12 +1308,29 @@ see and feel.</div>
 
   // Open modal on card click
   document.querySelectorAll('.cc-trailer-card').forEach(function(card){
-    card.addEventListener('click', function(){
+    var preview = card.querySelector('video');
+    function playPreview(){
+      if (!preview) return;
+      preview.play().catch(function(){});
+    }
+    function pausePreview(){
+      if (!preview) return;
+      preview.pause();
+      preview.currentTime = 0;
+    }
+    card.addEventListener('pointerenter', playPreview);
+    card.addEventListener('pointerleave', pausePreview);
+    card.addEventListener('focus', playPreview);
+    card.addEventListener('blur', pausePreview);
+    card.addEventListener('click', function(event){
+      event.preventDefault();
       var src = card.getAttribute('data-video');
       if(!src || src.indexOf('REPLACE') !== -1) return;
+      pausePreview();
       modalVid.src = src;
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      modalVid.play().catch(function(){});
     });
   });
 

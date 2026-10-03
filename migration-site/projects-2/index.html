@@ -67,8 +67,8 @@ nav.sc{background:rgba(242,237,232,.97);backdrop-filter:blur(18px);padding:14px 
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 #reveal-scroll-hint span{font-family:'Barlow Condensed',sans-serif;font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:var(--ta);}
 #hero-layer{position:absolute;inset:0;z-index:2;will-change:transform;transform:translateX(0%);background:var(--dk);overflow:hidden;}
-#hero-layer video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
-#hero-layer::after{content:'';position:absolute;inset:0;background:rgba(8,8,8,.48);z-index:1;pointer-events:none;}
+#hero-layer iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:0;}
+#hero-layer::after{content:'';position:absolute;inset:0;background:rgba(8,8,8,.18);z-index:1;pointer-events:none;}
 .hwords{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:space-between;padding:0 2vw;perspective:900px;perspective-origin:50% 50%;}
 .hw{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:clamp(28px,6vw,92px);letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.85);line-height:1;flex:1;text-align:center;transform-style:preserve-3d;text-shadow:2px 4px 0 rgba(0,0,0,.4),4px 8px 0 rgba(0,0,0,.2),0 0 60px rgba(232,83,10,.08);}
 .hw:nth-child(1){transform:rotateY(12deg) translateZ(-20px)}
@@ -347,19 +347,13 @@ films, and corporate events. This is what Charis looks like.</p>
       <svg width="10" height="14" viewBox="0 0 10 14" fill="none"><path d="M5 1v12M1 9l4 4 4-4" stroke="rgba(196,168,130,.5)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
     <div id="hero-layer">
-      <video autoplay muted loop playsinline>
-        <source src="https://chariscreationsltd.com/wp-content/uploads/2026/03/2025-GRAND-OPENING-1920.mp4" type="video/mp4"/>
-      </video>
-      <div class="hwords">
-        <span class="hw">Bringing</span>
-        <span class="hw">image</span>
-        <div class="hcenter" id="playBtn">
-          <div class="hring"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M3.5 2l10 6-10 6V2z"/></svg></div>
-          <span class="hlbl">Showreel</span>
-        </div>
-        <span class="hw accent">to</span>
-        <span class="hw"> life</span>
-      </div>
+      <iframe
+        src="https://www.youtube.com/embed/p6XoDi0lxJ0?autoplay=1&amp;mute=1&amp;playsinline=1&amp;rel=0"
+        title="THEO WEDS JACKIE TRAILER"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
       <div class="hscrl">
         <span>Scroll</span>
         <svg width="10" height="14" viewBox="0 0 10 14" fill="none"><path d="M5 1v12M1 9l4 4 4-4" stroke="rgba(196,168,130,.5)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>

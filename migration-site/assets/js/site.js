@@ -169,38 +169,58 @@
     else (window.dataLayer = window.dataLayer || []).push({ event: name, link_url: a.href });
   });
 
-  // Client voices: a pinned deck that deals itself upward as you scroll.
-  // One progress value p (0..1) from the tall track; the front card lifts and
-  // tilts back off the top while the one behind rises and grows into focus.
-  // The last card stays. Transforms are written straight to the DOM.
-  var track = document.querySelector("[data-stack]");
-  if (track && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    var cards = Array.prototype.slice.call(track.querySelectorAll(".voice"));
-    var now = track.querySelector("[data-stack-now]");
-    var steps = cards.length - 1, ticking = false, shown = -1;
+  // Client voices: a deck that deals itself. Every few seconds the front card
+  // lifts and tilts back off the top while the one behind rises and grows into
+  // focus; the lifted card then rejoins the back. Hovering or focusing the deck
+  // pauses it so a review can be read; it also rests while off screen.
+  var deck = document.querySelector("[data-stack]");
+  if (deck && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var cards = Array.prototype.slice.call(deck.querySelectorAll(".voice"));
+    var n = cards.length, now = document.querySelector("[data-stack-now]");
+    var HOLD = 4200, MOVE = 1100, STEP = HOLD + MOVE;
+    var clock = 0, last = 0, paused = false, visible = false, raf = 0;
     var lerp = function (a, b, t) { return a + (b - a) * t; };
+    var ease = function (t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
     var render = function () {
-      ticking = false;
-      var r = track.getBoundingClientRect(), span = track.offsetHeight - window.innerHeight;
-      if (r.bottom < -100 || r.top > window.innerHeight + 100) return;
-      var p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
-      var active = steps > 0 ? Math.min(Math.floor(p * steps), steps - 1) : 0;
-      var segP = steps > 0 ? p * steps - active : 0;
-      if (steps > 0 && p >= 1) { active = steps - 1; segP = 1; }
+      var step = Math.floor(clock / STEP), within = clock - step * STEP;
+      var t = n > 1 && within > HOLD ? ease((within - HOLD) / MOVE) : 0;
+      var front = step % n;
       cards.forEach(function (card, i) {
-        var y, rx = 0, sc = 1, o = 1;
-        if (i < active) { y = -250; rx = 35; o = 0; }
-        else if (i === active && steps > 0) { y = lerp(-50, -200, segP); rx = lerp(0, 35, segP); o = segP > 0.85 ? (1 - segP) / 0.15 : 1; }
-        else { var b = i - active - (steps > 0 ? segP : 0); y = -50 + b * 5; sc = 1 - b * 0.075; o = b > 2.5 ? Math.max(0, 3.5 - b) : 1; }
+        var k = (i - front + n) % n, y, rx = 0, sc, o = 1, z;
+        if (k === 0 && t > 0) { y = lerp(-50, -200, t); rx = lerp(0, 35, t); sc = 1; o = t > 0.7 ? 1 - (t - 0.7) / 0.3 : 1; z = n + 1; }
+        else {
+          var d = k === 0 ? 0 : k - t; // waiting cards rise one place as the front lifts
+          y = -50 + d * 5; sc = 1 - d * 0.075; z = n - k;
+          if (d > 2.6) o = Math.max(0, 3.6 - d);
+          if (k === n - 1 && n > 2) o = Math.min(o, t); // the card rejoining the back fades in
+        }
         card.style.transform = "translate(-50%," + y.toFixed(2) + "%) rotateX(" + rx.toFixed(2) + "deg) scale(" + sc.toFixed(3) + ")";
         card.style.opacity = o.toFixed(3);
+        card.style.zIndex = z;
+        // only the front card (and the one rising to replace it) shows its content
+        card.style.setProperty("--c", k === 0 ? 1 : k === 1 ? t.toFixed(3) : 0);
+        card.style.pointerEvents = k === 0 ? "auto" : "none";
       });
-      var current = Math.min(cards.length - 1, active + (segP > 0.5 ? 1 : 0));
-      if (now && current !== shown) { shown = current; now.textContent = (current < 9 ? "0" : "") + (current + 1); }
+      var shown = (front + (t > 0.5 ? 1 : 0)) % n;
+      if (now) now.textContent = (shown < 9 ? "0" : "") + (shown + 1);
     };
-    var queue = function () { if (!ticking) { ticking = true; requestAnimationFrame(render); } };
-    window.addEventListener("scroll", queue, { passive: true });
-    window.addEventListener("resize", queue);
+    var tick = function (ts) {
+      if (!last) last = ts;
+      if (!paused) clock += Math.min(ts - last, 100);
+      last = ts;
+      render();
+      raf = visible ? requestAnimationFrame(tick) : 0;
+    };
+    var start = function () { if (!raf && visible) { last = 0; raf = requestAnimationFrame(tick); } };
+    deck.addEventListener("mouseenter", function () { paused = true; });
+    deck.addEventListener("mouseleave", function () { paused = false; });
+    deck.addEventListener("focusin", function () { paused = true; });
+    deck.addEventListener("focusout", function () { paused = false; });
+    // Touch: tap the deck to hold a card, tap again to let it play on
+    deck.addEventListener("touchstart", function () { paused = !paused; }, { passive: true });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) { visible = es[0].isIntersecting; start(); }, { threshold: 0.2 }).observe(deck);
+    } else { visible = true; start(); }
     render();
   }
 })();

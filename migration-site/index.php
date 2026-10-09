@@ -68,21 +68,6 @@ foreach ($rows as $ri => $row) {
       </div>
     </section>
 
-    <section class="trusted" aria-labelledby="trusted-title">
-      <div class="wrap">
-        <h2 id="trusted-title"><?= e($C['trusted']['heading']) ?></h2>
-        <ul class="logos">
-<?php foreach ($C['trusted']['logos'] as $l):
-    $file = '/assets/img/logos/' . $l['file'];
-    if (!is_file(SITE_ROOT . $file)) continue;
-    [$w, $hh] = getimagesize(SITE_ROOT . $file);
-    $dh = (int) ($l['h'] ?? 48); ?>
-          <li><img src="<?= e($file) ?>" width="<?= (int) round($w * $dh / $hh) ?>" height="<?= $dh ?>" style="--h:<?= $dh ?>px" alt="<?= e($l['name']) ?>" loading="lazy"></li>
-<?php endforeach; ?>
-        </ul>
-      </div>
-    </section>
-
     <section class="section" id="work" aria-labelledby="work-title">
       <div class="wrap">
         <div class="section-head">
@@ -147,6 +132,21 @@ foreach ($rows as $ri => $row) {
           </dl>
           <p><?= button($C['story']['link']['label'], $C['story']['link']['url'], 'text') ?></p>
         </div>
+      </div>
+    </section>
+
+    <section class="trusted" aria-labelledby="trusted-title">
+      <div class="wrap">
+        <h2 id="trusted-title"><?= e($C['trusted']['heading']) ?></h2>
+        <ul class="logos">
+<?php foreach ($C['trusted']['logos'] as $l):
+    $file = '/assets/img/logos/' . $l['file'];
+    if (!is_file(SITE_ROOT . $file)) continue;
+    [$w, $hh] = getimagesize(SITE_ROOT . $file);
+    $dh = (int) ($l['h'] ?? 48); ?>
+          <li><img src="<?= e($file) ?>" width="<?= (int) round($w * $dh / $hh) ?>" height="<?= $dh ?>" style="--h:<?= $dh ?>px" alt="<?= e($l['name']) ?>" loading="lazy"></li>
+<?php endforeach; ?>
+        </ul>
       </div>
     </section>
 

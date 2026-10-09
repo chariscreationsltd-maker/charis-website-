@@ -168,4 +168,39 @@
     if (typeof window.gtag === "function") window.gtag("event", name, { link_url: a.href, page_path: location.pathname });
     else (window.dataLayer = window.dataLayer || []).push({ event: name, link_url: a.href });
   });
+
+  // Client voices: a pinned deck that deals itself upward as you scroll.
+  // One progress value p (0..1) from the tall track; the front card lifts and
+  // tilts back off the top while the one behind rises and grows into focus.
+  // The last card stays. Transforms are written straight to the DOM.
+  var track = document.querySelector("[data-stack]");
+  if (track && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var cards = Array.prototype.slice.call(track.querySelectorAll(".voice"));
+    var now = track.querySelector("[data-stack-now]");
+    var steps = cards.length - 1, ticking = false, shown = -1;
+    var lerp = function (a, b, t) { return a + (b - a) * t; };
+    var render = function () {
+      ticking = false;
+      var r = track.getBoundingClientRect(), span = track.offsetHeight - window.innerHeight;
+      if (r.bottom < -100 || r.top > window.innerHeight + 100) return;
+      var p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
+      var active = steps > 0 ? Math.min(Math.floor(p * steps), steps - 1) : 0;
+      var segP = steps > 0 ? p * steps - active : 0;
+      if (steps > 0 && p >= 1) { active = steps - 1; segP = 1; }
+      cards.forEach(function (card, i) {
+        var y, rx = 0, sc = 1, o = 1;
+        if (i < active) { y = -250; rx = 35; o = 0; }
+        else if (i === active && steps > 0) { y = lerp(-50, -200, segP); rx = lerp(0, 35, segP); o = segP > 0.85 ? (1 - segP) / 0.15 : 1; }
+        else { var b = i - active - (steps > 0 ? segP : 0); y = -50 + b * 5; sc = 1 - b * 0.075; o = b > 2.5 ? Math.max(0, 3.5 - b) : 1; }
+        card.style.transform = "translate(-50%," + y.toFixed(2) + "%) rotateX(" + rx.toFixed(2) + "deg) scale(" + sc.toFixed(3) + ")";
+        card.style.opacity = o.toFixed(3);
+      });
+      var current = Math.min(cards.length - 1, active + (segP > 0.5 ? 1 : 0));
+      if (now && current !== shown) { shown = current; now.textContent = (current < 9 ? "0" : "") + (current + 1); }
+    };
+    var queue = function () { if (!ticking) { ticking = true; requestAnimationFrame(render); } };
+    window.addEventListener("scroll", queue, { passive: true });
+    window.addEventListener("resize", queue);
+    render();
+  }
 })();

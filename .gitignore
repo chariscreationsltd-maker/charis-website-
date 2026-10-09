@@ -43,3 +43,7 @@ public_html/charisos/
 *charis os*
 
 migration-site/hero section/
+
+# Live CharisOS data: key written at deploy, cache made on the server
+migration-site/inc/cache/
+migration-site/inc/charis-os-key.php

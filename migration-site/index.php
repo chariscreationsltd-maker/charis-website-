@@ -216,6 +216,44 @@ $logoRows = [array_slice($logos, 0, $mid), array_slice($logos, $mid)];
       </div>
     </section>
 
+<?php
+require_once SITE_ROOT . '/inc/testimonials.php';
+$voices = live_testimonials();
+$tones = ['ember', 'ivory', 'graphite', 'burnt'];
+?>
+<?php if ($voices): ?>
+    <section class="voices" id="testimonials" aria-labelledby="voices-title" style="--n: <?= count($voices) ?>">
+      <div class="voices__track" data-stack>
+        <div class="voices__pin">
+          <div class="wrap voices__head">
+            <h2 id="voices-title"><?= e($C['voices']['heading']) ?></h2>
+            <p class="voices__count" aria-hidden="true"><span data-stack-now>01</span> / <?= sprintf('%02d', count($voices)) ?></p>
+          </div>
+          <ol class="voices__deck">
+<?php foreach ($voices as $i => $v):
+    $len = mb_strlen($v['quote']);
+    $size = $len > 420 ? ' is-long' : ($len > 220 ? ' is-mid' : ''); ?>
+            <li class="voice voice--<?= $tones[$i % count($tones)] ?><?= $size ?>" style="z-index: <?= count($voices) - $i ?>">
+              <figure class="voice__inner">
+                <div class="voice__copy">
+                  <p class="voice__kicker"><?= e(implode(' · ', array_filter([$v['event'], $v['date']]))) ?: 'Charis client' ?></p>
+                  <blockquote class="voice__quote"><p><?= e($v['quote']) ?></p></blockquote>
+                </div>
+                <figcaption class="voice__side">
+                  <span class="voice__mark" aria-hidden="true">&ldquo;</span>
+<?php if ($v['rating']): ?>
+                  <span class="voice__stars" role="img" aria-label="<?= $v['rating'] ?> out of 5 stars"><?= str_repeat('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>', $v['rating']) ?></span>
+<?php endif; ?>
+                  <cite class="voice__name"><?= e($v['name']) ?></cite>
+                </figcaption>
+              </figure>
+            </li>
+<?php endforeach; ?>
+          </ol>
+        </div>
+      </div>
+    </section>
+<?php else: ?>
     <section class="section" id="testimonials" aria-labelledby="voices-title">
       <div class="wrap">
         <div class="section-head">
@@ -224,6 +262,7 @@ $logoRows = [array_slice($logos, 0, $mid), array_slice($logos, $mid)];
         <iframe class="embed embed--testimonials" src="<?= e(href('testimonials')) ?>" loading="lazy" title="What our clients say" data-embed="hide-section"></iframe>
       </div>
     </section>
+<?php endif; ?>
 
     <section class="section section--raised" id="starting-points" aria-labelledby="start-title">
       <div class="wrap start">

@@ -1,0 +1,774 @@
+<div id="cur"></div><div id="crng"></div>
+
+<!-- ═══ HERO ═══ -->
+<section id="cc-hero" style="min-height:72vh;width:100%;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0d1b2a;">
+  <div id="cc-hero-bg" style="position:absolute;inset:0;background-image:url('https://chariscreationsltd.com/wp-content/uploads/2026/04/Staff-photos-46-scaled-e1775753593180.jpg');background-size:cover;background-position:center;opacity:.55;transition:opacity .4s;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.35) 0%,rgba(0,0,0,.7) 100%);"></div>
+  <div style="position:relative;z-index:2;text-align:center;padding:80px 24px 60px;">
+    <div style="font-family:var(--font-cond,monospace);font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--or,#f16623);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:14px;">
+      <span style="display:block;width:28px;height:1px;background:var(--or,#f16623);flex-shrink:0;"></span>
+      THE CREATIVES
+      <span style="display:block;width:28px;height:1px;background:var(--or,#f16623);flex-shrink:0;"></span>
+    </div>
+    <h1 style="font-family:var(--font-display,'Montserrat',sans-serif);font-weight:900;font-size:clamp(44px,8vw,100px);text-transform:uppercase;line-height:.88;color:#fff;margin:0 0 28px 0;letter-spacing:-.01em;">
+      MEET THE<br/><span style="color:var(--or,#f16623);">CREATORS</span>
+    </h1>
+    <p style="font-family:var(--font-body,'Montserrat',sans-serif);font-weight:300;font-size:clamp(13px,1.2vw,16px);color:rgba(255,255,255,.72);max-width:500px;margin:0 auto;line-height:1.7;">
+      Uganda's most trusted creative team — bringing every image to life.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ CHARIS SECTION ═══ -->
+<div id="charis-section" class="team-section">
+  <section style="background:var(--offwhite);width:100vw;margin-left:calc(50% - 50vw)">
+    <div class="origin-wrap">
+      <div class="origin-left rv">
+        <div class="origin-eyebrow">Our Origin Story</div>
+        <h2 class="origin-h">BORN FROM<br/><span>PASSION.</span><br/>BUILT ON<br/>PURPOSE.</h2>
+        <p class="origin-body">Charis Creations began in 2013 when founder <strong>Tumusiime Hudson</strong> picked up a camera at a friend's introduction ceremony in Kampala and realized that Uganda's stories weren't being told the way they deserved. That single day changed everything.</p>
+        <p class="origin-body">What started as a one-man operation filming kukyala ceremonies and weddings grew into a full-service creative studio with a team of 14 passionate storytellers — cinematographers, photographers, editors, drone pilots, and directors — all united by one belief: <em>every frame matters.</em></p>
+        <p class="origin-body">Today, Charis Creations is Uganda's most trusted name in cinematic storytelling, having captured over 300 events, portraits, documentaries, and commercial campaigns.</p>
+        <div class="origin-stat-row">
+          <div class="origin-stat"><span class="origin-stat-n">1500+</span><span class="origin-stat-l">Stories Told</span></div>
+          <div class="origin-stat"><span class="origin-stat-n">13</span><span class="origin-stat-l">Years Running</span></div>
+          <div class="origin-stat"><span class="origin-stat-n">20</span><span class="origin-stat-l">Team Members</span></div>
+          <div class="origin-stat"><span class="origin-stat-n">98%</span><span class="origin-stat-l">Client Smiles</span></div>
+        </div>
+      </div>
+      <div class="origin-right rv d2">
+        <div class="origin-img-main">
+          <img src="https://chariscreationsltd.com/wp-content/uploads/2026/04/Staff-photos-45-scaled.jpg" alt="Charis Team" loading="lazy"/>
+        </div>
+        <div class="origin-img-badge"><span>2013</span><span>Founded</span></div>
+        <div class="origin-img-accent"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portraits-section">
+    <div class="portraits-hd">
+      <div class="portraits-ey rv">The People</div>
+      <h2 class="portraits-title rv d1">MEET THE<br/><span>CHARIS CREW.</span></h2>
+    </div>
+    <div class="portraits-grid" id="charis-portraits"></div>
+  </section>
+
+  
+</div>
+
+<!-- ═══ CREATIVE SECTION ═══ -->
+<div id="creative-section" class="team-section" style="background:#0d0d0d">
+
+  <section style="background:var(--dk);width:100vw;margin-left:calc(50% - 50vw)">
+    
+
+  <!-- ═══ CLOCK SHOWCASE ═══ -->
+  <section class="clock-section" id="clock-section">
+    <div style="max-width:1400px;margin:0 auto 52px;text-align:center">
+      <div class="portraits-ey rv" style="justify-content:center">The Creative Circle</div>
+      <h2 class="portraits-title rv d1" style="color:#fff">THE <span>CLOCK</span> OF CREATIVES.</h2>
+      <p style="font-family:var(--font-body);font-weight:300;font-size:13px;color:rgba(255,255,255,.28);margin-top:14px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7">The hand rotates continuously — each segment it passes reveals that team member on the right. Click any segment to jump directly to them.</p>
+    </div>
+
+    <div class="clock-wrap">
+
+      <!-- LEFT: clock + speed controls -->
+      <div>
+        <div class="clock-container" id="clock-container">
+
+          <!-- ══ THE CLOCK SVG ══ -->
+          <svg id="clock-svg" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- clip paths so images stay inside each pie slice -->
+              <clipPath id="cp0"><path d="M260,260 L260,30 A230,230 0,0,1 375,63 Z"/></clipPath>
+              <clipPath id="cp1"><path d="M260,260 L375,63 A230,230 0,0,1 457,145 Z"/></clipPath>
+              <clipPath id="cp2"><path d="M260,260 L457,145 A230,230 0,0,1 490,260 Z"/></clipPath>
+              <clipPath id="cp3"><path d="M260,260 L490,260 A230,230 0,0,1 457,375 Z"/></clipPath>
+              <clipPath id="cp4"><path d="M260,260 L457,375 A230,230 0,0,1 375,457 Z"/></clipPath>
+              <clipPath id="cp5"><path d="M260,260 L375,457 A230,230 0,0,1 260,490 Z"/></clipPath>
+              <clipPath id="cp6"><path d="M260,260 L260,490 A230,230 0,0,1 145,457 Z"/></clipPath>
+              <clipPath id="cp7"><path d="M260,260 L145,457 A230,230 0,0,1 63,375 Z"/></clipPath>
+              <clipPath id="cp8"><path d="M260,260 L63,375 A230,230 0,0,1 30,260 Z"/></clipPath>
+              <clipPath id="cp9"><path d="M260,260 L30,260 A230,230 0,0,1 63,145 Z"/></clipPath>
+              <clipPath id="cp10"><path d="M260,260 L63,145 A230,230 0,0,1 145,63 Z"/></clipPath>
+              <clipPath id="cp11"><path d="M260,260 L145,63 A230,230 0,0,1 260,30 Z"/></clipPath>
+            </defs>
+
+            <!-- outer ring -->
+            <circle cx="260" cy="260" r="242" fill="#181410" stroke="rgba(232,83,10,0.18)" stroke-width="1.5"/>
+
+            <!-- ── 12 SEGMENTS ── each has: bg path, photo image, orange overlay, role label text -->
+
+            <!-- 0: DIRECTOR (12 o'clock, 0–30°, mid=15°) -->
+            <g class="cseg" id="seg0" onclick="manualSeg(0)">
+              <path class="seg-bg" d="M260,260 L260,30 A230,230 0,0,1 375,63 Z" fill="#222" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si0" clip-path="url(#cp0)" x="222" y="4" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov0" d="M260,260 L260,30 A230,230 0,0,1 375,63 Z" fill="rgba(232,83,10,0)"/>
+              <!-- label rotated to sit along the segment midline at 15° -->
+              <text class="seg-label" transform="translate(260,260) rotate(15)" x="0" y="-172" text-anchor="middle">DIRECTOR</text>
+            </g>
+
+            <!-- 1: WEB DESIGNER (30–60°, mid=45°) -->
+            <g class="cseg" id="seg1" onclick="manualSeg(1)">
+              <path class="seg-bg" d="M260,260 L375,63 A230,230 0,0,1 457,145 Z" fill="#1e1e1e" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si1" clip-path="url(#cp1)" x="294" y="47" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov1" d="M260,260 L375,63 A230,230 0,0,1 457,145 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(45)" x="0" y="-172" text-anchor="middle">WEB DESIGNER</text>
+            </g>
+
+            <!-- 2: GRAPHICS (60–90°, mid=75°) -->
+            <g class="cseg" id="seg2" onclick="manualSeg(2)">
+              <path class="seg-bg" d="M260,260 L457,145 A230,230 0,0,1 490,260 Z" fill="#222" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si2" clip-path="url(#cp2)" x="335" y="118" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov2" d="M260,260 L457,145 A230,230 0,0,1 490,260 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(75)" x="0" y="-172" text-anchor="middle">GRAPHICS</text>
+            </g>
+
+            <!-- 3: CINEMATOGRAPHER (90–120°, mid=105°) -->
+            <g class="cseg" id="seg3" onclick="manualSeg(3)">
+              <path class="seg-bg" d="M260,260 L490,260 A230,230 0,0,1 457,375 Z" fill="#1e1e1e" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si3" clip-path="url(#cp3)" x="335" y="202" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov3" d="M260,260 L490,260 A230,230 0,0,1 457,375 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(105)" x="0" y="-172" text-anchor="middle">CINEMATOG.</text>
+            </g>
+
+            <!-- 4: PHOTOGRAPHER (120–150°, mid=135°) -->
+            <g class="cseg" id="seg4" onclick="manualSeg(4)">
+              <path class="seg-bg" d="M260,260 L457,375 A230,230 0,0,1 375,457 Z" fill="#222" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si4" clip-path="url(#cp4)" x="294" y="274" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov4" d="M260,260 L457,375 A230,230 0,0,1 375,457 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(135)" x="0" y="-172" text-anchor="middle">PHOTOGRAPHER</text>
+            </g>
+
+            <!-- 5: DRONE PILOT (150–180°, mid=165°) -->
+            <g class="cseg" id="seg5" onclick="manualSeg(5)">
+              <path class="seg-bg" d="M260,260 L375,457 A230,230 0,0,1 260,490 Z" fill="#1e1e1e" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si5" clip-path="url(#cp5)" x="222" y="315" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov5" d="M260,260 L375,457 A230,230 0,0,1 260,490 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(165)" x="0" y="-172" text-anchor="middle">DRONE PILOT</text>
+            </g>
+
+            <!-- 6: VIDEO EDITOR (180–210°, mid=195°) -->
+            <g class="cseg" id="seg6" onclick="manualSeg(6)">
+              <path class="seg-bg" d="M260,260 L260,490 A230,230 0,0,1 145,457 Z" fill="#222" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si6" clip-path="url(#cp6)" x="138" y="315" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov6" d="M260,260 L260,490 A230,230 0,0,1 145,457 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(195)" x="0" y="-172" text-anchor="middle">VIDEO EDITOR</text>
+            </g>
+
+            <!-- 7: CONTENT CREATOR (210–240°, mid=225°) -->
+            <g class="cseg" id="seg7" onclick="manualSeg(7)">
+              <path class="seg-bg" d="M260,260 L145,457 A230,230 0,0,1 63,375 Z" fill="#1e1e1e" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si7" clip-path="url(#cp7)" x="66" y="274" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov7" d="M260,260 L145,457 A230,230 0,0,1 63,375 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(225)" x="0" y="-172" text-anchor="middle">CONTENT</text>
+            </g>
+
+            <!-- 8: SOCIAL MEDIA (240–270°, mid=255°) -->
+            <g class="cseg" id="seg8" onclick="manualSeg(8)">
+              <path class="seg-bg" d="M260,260 L63,375 A230,230 0,0,1 30,260 Z" fill="#222" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si8" clip-path="url(#cp8)" x="24" y="202" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov8" d="M260,260 L63,375 A230,230 0,0,1 30,260 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(255)" x="0" y="-172" text-anchor="middle">SOCIAL MEDIA</text>
+            </g>
+
+            <!-- 9: AUDIO MANAGER (270–300°, mid=285°) -->
+            <g class="cseg" id="seg9" onclick="manualSeg(9)">
+              <path class="seg-bg" d="M260,260 L30,260 A230,230 0,0,1 63,145 Z" fill="#1e1e1e" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si9" clip-path="url(#cp9)" x="24" y="118" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov9" d="M260,260 L30,260 A230,230 0,0,1 63,145 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(285)" x="0" y="-172" text-anchor="middle">AUDIO DIR.</text>
+            </g>
+
+            <!-- 10: ADMIN (300–330°, mid=315°) -->
+            <g class="cseg" id="seg10" onclick="manualSeg(10)">
+              <path class="seg-bg" d="M260,260 L63,145 A230,230 0,0,1 145,63 Z" fill="#222" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si10" clip-path="url(#cp10)" x="66" y="47" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov10" d="M260,260 L63,145 A230,230 0,0,1 145,63 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(315)" x="0" y="-172" text-anchor="middle">STUDIO</text>
+            </g>
+
+            <!-- 11: LEAD PHOTOGRAPHER (330–360°, mid=345°) -->
+            <g class="cseg" id="seg11" onclick="manualSeg(11)">
+              <path class="seg-bg" d="M260,260 L145,63 A230,230 0,0,1 260,30 Z" fill="#1e1e1e" stroke="#0d0d0d" stroke-width="3"/>
+              <image id="si11" clip-path="url(#cp11)" x="138" y="4" width="160" height="200" preserveAspectRatio="xMidYMin slice" opacity="0" style="transition:opacity .5s"/>
+              <path class="seg-ov" id="ov11" d="M260,260 L145,63 A230,230 0,0,1 260,30 Z" fill="rgba(232,83,10,0)"/>
+              <text class="seg-label" transform="translate(260,260) rotate(345)" x="0" y="-172" text-anchor="middle">LEAD PHOTO</text>
+            </g>
+
+            <!-- inner circle — Charis logo PNG fills it -->
+            <defs>
+              <clipPath id="logo-clip"><circle cx="260" cy="260" r="82"/></clipPath>
+            </defs>
+            <circle cx="260" cy="260" r="90" fill="#0a0a0a" stroke="rgba(232,83,10,0.28)" stroke-width="1.5"/>
+            <!-- Actual Charis logo image clipped to circle -->
+            <image href="https://chariscreationsltd.com/wp-content/uploads/2026/03/withoutwords-3.png"
+              x="178" y="178" width="164" height="164"
+              preserveAspectRatio="xMidYMid meet"
+              clip-path="url(#logo-clip)"
+              style="mix-blend-mode:lighten"/>
+            <!-- subtle orange ring to keep separation -->
+            <circle cx="260" cy="260" r="82" fill="none" stroke="rgba(232,83,10,0.18)" stroke-width="1"/>
+
+            <!-- CLOCK HAND — JS rotates this group -->
+            <g id="hand-g">
+              <line x1="260" y1="260" x2="260" y2="42" stroke="#E8530A" stroke-width="2.5" stroke-linecap="round"/>
+              <polygon points="255,56 260,32 265,56" fill="#E8530A"/>
+              <line x1="260" y1="260" x2="260" y2="296" stroke="rgba(232,83,10,0.35)" stroke-width="2" stroke-linecap="round"/>
+            </g>
+
+            <!-- center pivot knob (sits on top of logo) -->
+            <circle cx="260" cy="260" r="9" fill="#E8530A" stroke="#0a0a0a" stroke-width="2"/>
+            <circle cx="260" cy="260" r="3.5" fill="#fff" opacity="0.95"/>
+
+            <!-- tick marks -->
+            <g stroke="rgba(232,83,10,0.35)" stroke-width="1.5">
+              <line x1="260" y1="18" x2="260" y2="30"/>
+              <line x1="375" y1="52" x2="369" y2="63"/>
+              <line x1="458" y1="133" x2="450" y2="140"/>
+              <line x1="491" y1="248" x2="480" y2="250"/>
+              <line x1="458" y1="370" x2="451" y2="362"/>
+              <line x1="374" y1="458" x2="368" y2="448"/>
+              <line x1="260" y1="490" x2="260" y2="478"/>
+              <line x1="146" y1="458" x2="152" y2="448"/>
+              <line x1="62" y1="370" x2="70" y2="362"/>
+              <line x1="29" y1="248" x2="40" y2="250"/>
+              <line x1="62" y1="133" x2="70" y2="140"/>
+              <line x1="145" y1="52" x2="151" y2="63"/>
+            </g>
+          </svg>
+
+          <!-- speed controls below clock -->
+          <div class="speed-row" style="justify-content:center;margin-top:18px">
+            <span class="spd-lbl">Speed:</span>
+            <button class="spd-btn on" id="sb0" onclick="setSpd(6,'sb0')">Slow</button>
+            <button class="spd-btn" id="sb1" onclick="setSpd(18,'sb1')">Medium</button>
+            <button class="spd-btn" id="sb2" onclick="setSpd(40,'sb2')">Fast</button>
+            <button class="spd-btn" id="sb3" onclick="setSpd(0,'sb3')">Pause</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: member detail -->
+      <div class="clock-detail" id="clock-detail">
+        <div class="cd-eyebrow">Creative Team Member</div>
+        <div class="cd-name" id="cd-name">SELECT A<br/><span>SEGMENT</span></div>
+        <div class="cd-rolepill" id="cd-rolepill" style="opacity:0">&#8212;</div>
+        <div class="cd-photo" id="cd-photo">
+          <div class="cd-photo-ph" id="cd-ph">CC</div>
+          <img id="cd-img" src="" alt="" style="display:none;width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity .28s"/>
+        </div>
+        <div class="cd-bio" id="cd-bio">The hand rotates through every role. Watch each member's portrait and story appear here — or click any segment to jump directly to that person.</div>
+        <div class="cd-tags" id="cd-tags">
+          <span class="cd-tag">Photography</span>
+          <span class="cd-tag">Cinematography</span>
+          <span class="cd-tag">Editing</span>
+        </div>
+        <div class="cd-status"><span class="cd-status-dot"></span><span id="cd-status-txt">Rotating through all members&#8230;</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REELS -->
+  <section class="reels-section">
+    <div class="reels-hd rv">
+      <div>
+        <div class="portraits-ey" style="justify-content:flex-start">Behind The Scenes</div>
+        <h2 class="reels-title">THE <span>MAKING</span><br/>OF MAGIC.</h2>
+      </div>
+      <p class="reels-sub">Five raw, unfiltered moments from behind the lens.</p>
+    </div>
+    <div class="reels-row" id="reels-row"></div>
+    <input type="file" accept="video/*" id="reel-file-input" class="reel-input"/>
+  </section>
+
+  <!-- CREATIVE RATINGS -->
+  
+
+  <section class="ratings-section">
+    <div style="max-width:1400px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:clamp(32px,4vw,52px)">
+        <div class="portraits-ey rv">Client Reviews</div>
+        <h2 class="portraits-title rv d1">RATE YOUR<br/><span>TEAM MEMBER.</span></h2>
+      </div>
+      <div class="ratings-grid" id="charis-ratings"></div>
+    </div>
+  </section>
+
+<div class="book-strip dkb">
+    <div><div class="book-h" style="color:#fff">READY TO GO<br/><b style="color:rgba(255,255,255,.15)">BE CREATIVE?</b></div>
+
+</div>
+    <a href="/#enquiry" class="book-btn dkbtn">Book a Session &#8594;</a>
+  </div>
+
+</div>
+
+<script>
+
+(function(){
+'use strict';
+
+/* 
+╔══════════════════════════════════════════════════════════════╗
+║        CHARIS CREATIONS — TEAM DATA — EDIT HERE ONLY         ║
+║                                                              ║
+║  HOW TO SAFELY EDIT TEAM MEMBERS OR BTS VIDEOS:             ║
+║                                                              ║
+║  1. Every member entry starts { and ends },                  ║
+║     THE LAST member ends with }  (NO comma after last })     ║
+║                                                              ║
+║  2. ALWAYS use double quotes "like this" for bio text        ║
+║     → apostrophes (don't  he's  Liz's) are safe in " "      ║
+║                                                              ║
+║  3. NEVER put  ]  or  [  inside any bio or role text         ║
+║                                                              ║
+║  4. After editing: save in Elementor → Publish               ║
+║     Then go to Hostinger/Cache and click Purge All           ║
+╚══════════════════════════════════════════════════════════════╝
+*/
+/* BASE IMAGE URL — update ONLY if you move images to a new upload folder */
+var B='https://chariscreationsltd.com/wp-content/uploads/2026/04/';
+
+/* PORTRAIT GRID — 14 photo cards shown at the top of the page */
+var CHARIS=[
+  {name:'Hudson Tumusiime',role:'ceo & Executive Creative Director',img:B+'Staff-photos-1-scaled.jpg'},
+  {name:'Ibra Elo',role:'Director & Photographer',img:B+'v2_watermarked-d6becee7-f7fd-451f-b703-cf25fade186a-e1775927741874.jpg'},
+  {name:'Grace Gloria',role:'Studio Photographer & Brand Designer',img:B+'Staff-photos-34-scaled.jpg'},
+  {name:'Jonathan Tugume',role:'Lead Cinematographer & Director of Photography',img:B+'Staff-photos-12-scaled.jpg'},
+  {name:'Jessy Kawalya',role:'Cinematographer & Visual Storyteller',img:B+'Staff-photos-19-scaled.jpg'},
+  {name:'Darious Kibaro',role:'Digital Content Creator & Social Media Strategist',img:B+'Staff-photos-29-scaled.jpg'},
+  {name:'David Ahimbisibwe',role:'Portrait Photographer & Digital Content Creator',img:B+'Staff-photos-23-scaled.jpg'},
+  {name:'Nazziwa Elizabeth',role:'Audio Director',img:B+'Staff-photos-41-scaled.jpg'},
+  {name:'Ukasha Semirimu',role:'Videographer & Film Editor',img:B+'Staff-photos-31-scaled.jpg'},
+  {name:'Patience Tumusiime',role:'Beauty Director & Client Experience Manager',img:B+'HP-Anniversary-3-scaled-e1775900229391.jpg'},
+  {name:'Emmanuel Patrick Yiga',role:'Web Designer & Digital Developer',img:B+'Staff-photos-9-scaled.jpg'},
+  {name:'Brian Mukosa',role:'Photographer & Retouching Specialist',img:B+'Staff-photos-25-scaled.jpg'},
+  {name:'Dickson Mukisa',role:'Lighting Director & Production Specialist',img:B+'Staff-photos-15-scaled.jpg'},
+  {name:'Prosper Wabwire',role:'Brand Identity & Graphic Designer',img:B+'Staff-photos-44-scaled.jpg'}
+];
+
+/* CLOCK OF CREATIVES — same team, full bios for the interactive wheel */
+var CREATIVE=[
+  /* 0 */ {name:'Tumusiime Hudson',role:'Founder & Executive Creative Director',bio:'Hudson is the visionary who shapes every Be Creative campaign. With a background in fine arts, he brings a painterly quality to every frame.',tags:['Direction','Concept','Color'],img:B+'Staff-photos-7-scaled.jpg',init:'TH'},
+  /* 1 */ {name:'Emmanuel Yiga',role:'Web Designer & Digital Developer',bio:'Patrick is the reason Charis exists online. He builds and maintains the digital spaces where the work lives after the shoot wraps.',tags:['Web','UX','Dev'],img:B+'Staff-photos-11-scaled.jpg',init:'EY'},
+  /* 2 */ {name:'Wabwire Prosper',role:'Brand Identity & Graphic Designer',bio:'Prosper takes the Charis aesthetic and makes it tangible. Every logo, layout, and graphic that leaves this studio carries his hand in it.',tags:['Branding','Print','UI'],img:B+'Staff-photos-42-scaled.jpg',init:'WP'},
+  /* 3 */ {name:'Tugume Jonathan',role:'Lead Cinematographer & Director of Photography',bio:"Jonathan owns the camera floor. He sees the shot before it happens, leads the team through the take, and stays in the edit suite until the final frame earns its place.",tags:['Cinematography','Motion','BTS'],img:B+'Staff-photos-14-scaled.jpg',init:'TJ'},
+  /* 4 */ {name:'Ibra Elo',role:' Director & Photographer',bio:"Ibra brings senior-level leadership and expert photography to every production. Behind the lens, he's one of the most precise eyes on the Charis team.",tags:['Portraiture','Editorial','Lighting'],img:B+'v2_watermarked-d6becee7-f7fd-451f-b703-cf25fade186a-e1775927741874.jpg',init:'IE'},
+  /* 5 */ {name:'Kawalya Jessy',role:'Cinematographer & Visual Storyteller',bio:'Jessy is where cinema meets emotion. His strength is narrative — ads, documentaries, and stories that dont just look beautiful, they feel real.',tags:['Drone','Aerial','4K'],img:B+'Staff-photos-20-scaled.jpg',init:'KJ'},
+  /* 6 */ {name:'Ukasha',role:'Videographer & Film Editor',bio:"Every production, Ukasha adds something new. He's building the kind of visual instinct you can't teach — one frame at a time.",tags:['Editing','Color','Premiere'],img:B+'Staff-photos-31-scaled.jpg',init:'UK'},
+  /* 7 */ {name:'David Ahimbisibwe',role:'Portrait Photographer & Digital Content Creator',bio:'David is the eye between the eyes. He captures the real moments the ones the schedule didnt plan and turns them into the content people actually share.',tags:['Content','Social','Strategy'],img:B+'Staff-photos-22-scaled.jpg',init:'DA'},
+  /* 8 */ {name:'Kibaro Darious',role:'Digital Content Creator & Social Media Strategist',bio:'Darious lives where content meets strategy. Phone in hand, eye on the story — he shoots behind the scenes, edits the footage, and runs the social channels that keep Charis name in front of the world.',tags:['Sound','Music','Mix'],img:B+'Staff-photos-28-scaled.jpg',init:'KD'},
+  /* 9 */ {name:'Nazziwa Elizabeth',role:'Audio Director',bio:"Liz doesnt just capture the moment — she shapes it in the edit suite. On camera or behind the timeline, she brings the same eye to both.",tags:['Sound','Music','Mix'],img:B+'Staff-photos-36-scaled.jpg',init:'NE'},
+  /* 10 */ {name:'Grace',role:'Studio Photographer & Brand Designer',bio:"Grace is why the studio works. She shoots the portrait, edits it to perfection in Evoto, designs the brand around it — and makes sure the whole machine keeps moving.",tags:['Operations','Client Care','Planning'],img:B+'Staff-photos-34-scaled.jpg',init:'GR'},
+  /* 11 */ {name:'Brian Mukosa',role:'Photographer & Retouching Specialist',bio:"Brian sees what others overlook. His frames are clean, his edits precise — the kind of photos that look exactly like the moment felt.",tags:['Photography','Portraits','Weddings'],img:B+'Staff-photos-27-scaled.jpg',init:'BM'}
+];
+
+/* BEHIND THE SCENES — 5 BTS video slots (paste YouTube/video URL in yt:) */
+var REELS=[
+  {label:'Behind The Scenes', name:'Wedding Setup',    yt:''},
+  {label:'On Location',       name:'Ceremony Day',     yt:'https://chariscreationsltd.com/wp-content/uploads/2026/03/0219-1920.mp4'},
+  {label:'Studio Life',       name:'Portrait Session', yt:''},
+  {label:'Color Grading',     name:'Post Production',  yt:''},
+  {label:'Live Energy',       name:'Kwanjula Day',     yt:''}
+];
+
+/* ══════════════════ END OF EDITABLE DATA ══════════════════ */
+
+
+/* ── CURSOR ── */
+var cur=document.getElementById('cur'),crng=document.getElementById('crng'),mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;crng.style.left=rx+'px';crng.style.top=ry+'px';requestAnimationFrame(loop);})();
+function rehov(){
+  document.querySelectorAll('a,button,.flip-wrap,.portrait-card,.cseg,.reel-item,.rating-card,.star,.spd-btn').forEach(function(el){
+    el.addEventListener('mouseenter',function(){cur.classList.add('hv');crng.classList.add('hv');});
+    el.addEventListener('mouseleave',function(){cur.classList.remove('hv');crng.classList.remove('hv');});
+  });
+}
+rehov();
+
+/* ── NAV ── */
+/* nav now comes from the site header */
+window.tm=function(){document.getElementById('mob').classList.toggle('op');document.getElementById('ham').classList.toggle('op');};
+window.cm=function(){document.getElementById('mob').classList.remove('op');document.getElementById('ham').classList.remove('op');};
+
+/* ── SCROLL REVEAL ── */
+var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.06});
+document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
+
+var B='https://chariscreationsltd.com/wp-content/uploads/2026/04/';
+
+/* ── CHARIS TEAM — 14 members ── */
+
+
+/* ── CREATIVE CLOCK TEAM — 12 members, one per segment ── */
+
+
+/* ── BUILD CHARIS PORTRAITS ── */
+var cpg=document.getElementById('charis-portraits');
+CHARIS.forEach(function(m,i){
+  var c=document.createElement('a');
+  c.className='portrait-card rv'+(i%4===0?' d1':i%4===1?' d2':i%4===2?' d3':'');
+  c.href='#';c.setAttribute('onclick','return false;');
+  c.innerHTML='<img class="portrait-card-img" src="'+m.img+'" alt="'+m.name+'" loading="lazy"/>'
+    +'<div class="portrait-card-ov"><div class="portrait-name">'+m.name+'</div><div class="portrait-role">'+m.role+'</div></div>';
+  cpg.appendChild(c);ro.observe(c);
+});
+
+/* ── RATINGS BUILDER ── */
+function buildRatings(elId,team,dark){
+  var el=document.getElementById(elId); if(!el) return;
+  team.slice(0,8).forEach(function(m){
+    var sf=dark?'rgba(255,255,255,0.1)':'rgba(0,0,0,0.12)';
+    var sc=dark?'dkc':'';
+    var rn=dark?' dkn':'';
+    var d=document.createElement('div');
+    d.className='rating-card '+sc+' rv';
+    d.innerHTML='<div style="display:flex;align-items:center;gap:12px;">'
+      +'<div class="rating-avatar"><img src="'+m.img+'" alt="'+m.name+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/></div>'
+      +'<div><div class="rating-name'+rn+'">'+m.name+'</div><div class="rating-role">'+m.role+'</div></div>'
+      +'</div>'
+      +'<div class="stars">'+[1,2,3,4,5].map(function(s){
+        return '<span class="star" data-v="'+s+'" onclick="rateStar(this)"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.5l2.09 4.24 4.68.68-3.38 3.3.8 4.65L9 11.9l-4.19 2.47.8-4.65L2.23 6.42l4.68-.68L9 1.5z" fill="'+sf+'" stroke="none"/></svg></span>';
+      }).join('')+'</div>'
+      +'<textarea style="width:100%;border:1px solid rgba('+(dark?'255,255,255':'0,0,0')+',.08);border-radius:8px;padding:10px 12px;font-family:var(--font-body);font-size:12px;resize:none;height:62px;outline:none;color:'+(dark?'rgba(255,255,255,.5)':'#555')+';background:'+(dark?'rgba(255,255,255,.04)':'#fafafa')+';" placeholder="Leave a message for '+m.name+'..."></textarea>'
+      +'<button class="rating-submit" onclick="submitRating(this)"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:4px"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Share on Instagram';
+    el.appendChild(d);ro.observe(d);
+  });
+}
+buildRatings('charis-ratings',CHARIS,false);
+buildRatings('creative-ratings',CREATIVE,true);
+
+window.rateStar=function(el){
+  var v=parseInt(el.getAttribute('data-v'));
+  var row=el.closest('.stars');
+  row.setAttribute('data-rated',v); /* track selected rating */
+  var dark=!!el.closest('.dkc');
+  row.querySelectorAll('.star').forEach(function(s){
+    var sv=parseInt(s.getAttribute('data-v'));
+    var p=s.querySelector('path');
+    if(sv<=v){p.setAttribute('fill','#E8530A');}
+    else{p.setAttribute('fill',dark?'rgba(255,255,255,0.1)':'rgba(0,0,0,0.12)');}
+  });
+};
+window.submitRating=function(btn){
+  var card=btn.closest('.rating-card');
+  if(!card)return;
+  var member=card.dataset.member||card.querySelector('.rating-name')?.innerText?.trim()||'unknown';
+  var key='cc_rated_'+member.replace(/\s+/g,'_').toLowerCase();
+  if(localStorage.getItem(key)){
+    btn.textContent='ALREADY RATED';
+    btn.style.background='#555';
+    setTimeout(()=>{btn.textContent='RATED ✓';btn.style.background='#333';},1500);
+    return;
+  }
+  var stars=card.querySelectorAll('.star');
+  var rating=0;
+  stars.forEach((s,i)=>{if(s.classList.contains('active'))rating=i+1;});
+  if(!rating){
+    btn.textContent='SELECT A STAR FIRST';
+    btn.style.background='#c44200';
+    setTimeout(()=>{btn.textContent='RATE MEMBER';btn.style.background='var(--or)';},1500);
+    return;
+  }
+  var storageKey='cc_ratings_'+member.replace(/\s+/g,'_').toLowerCase();
+  var existing=JSON.parse(localStorage.getItem(storageKey)||'[]');
+  existing.push(rating);
+  localStorage.setItem(storageKey,JSON.stringify(existing));
+  localStorage.setItem(key,'1');
+  var avg=(existing.reduce((a,b)=>a+b,0)/existing.length).toFixed(1);
+  var count=existing.length;
+  var avgEl=card.querySelector('.rating-avg');
+  if(!avgEl){
+    avgEl=document.createElement('div');
+    avgEl.className='rating-avg';
+    avgEl.style.cssText='font-family:var(--font-cond);font-size:9px;letter-spacing:.15em;color:var(--or);margin-top:4px;text-transform:uppercase;font-weight:700;';
+    var starsEl=card.querySelector('.stars');
+    if(starsEl)starsEl.after(avgEl);
+  }
+  avgEl.textContent=avg+' ★ ('+count+' rating'+(count===1?'':'s')+')';
+  btn.textContent='RATED ✓';
+  btn.style.background='#2a7a2a';
+  btn.style.cursor='default';
+};
+
+/* ════════════════════════════════════════════
+   CLOCK ENGINE — continuous RAF rotation
+   Each 30° slice = one team member.
+   Seg 0 occupies 0–30°, midpoint 15°.
+   Hand angle 0° = pointing straight up (12 o'clock).
+════════════════════════════════════════════ */
+var handEl=document.getElementById('hand-g');
+var handDeg=0;        /* current absolute angle (can exceed 360) */
+var activeSeg=-1;     /* which segment is currently lit */
+var rotSpeed=6;       /* degrees per second */
+var lastTs=null;
+var rafRunning=false;
+var rafId=null;
+var manualPaused=false;
+
+/* Assign photos to each segment image element */
+CREATIVE.forEach(function(m,i){
+  var img=document.getElementById('si'+i);
+  if(img) img.setAttribute('href',m.img);
+});
+
+function segForDeg(deg){
+  /* normalise to 0–360, then floor-divide by 30 */
+  return Math.floor(((deg%360)+360)%360/30)%12;
+}
+
+function applyDeg(deg){
+  handEl.style.transform='rotate('+deg+'deg)';
+  handDeg=deg;
+  var s=segForDeg(deg);
+  if(s!==activeSeg){
+    activeSeg=s;
+    revealMember(s);
+  }
+}
+
+function revealMember(i){
+  /* highlight correct segment, fade images */
+  for(var k=0;k<12;k++){
+    var ov=document.getElementById('ov'+k);
+    var sg=document.getElementById('seg'+k);
+    var si=document.getElementById('si'+k);
+    if(ov) ov.style.fill=(k===i)?'rgba(232,83,10,0.22)':'rgba(232,83,10,0)';
+    if(sg){if(k===i)sg.classList.add('act');else sg.classList.remove('act');}
+    if(si) si.style.opacity=(k===i)?'1':'0';
+  }
+
+  var m=CREATIVE[i];
+  if(!m) return;
+
+  /* fade panel out then swap */
+  var nEl=document.getElementById('cd-name');
+  var rEl=document.getElementById('cd-rolepill');
+  var bEl=document.getElementById('cd-bio');
+  var tEl=document.getElementById('cd-tags');
+  var iEl=document.getElementById('cd-img');
+  var phEl=document.getElementById('cd-ph');
+  var stEl=document.getElementById('cd-status-txt');
+
+  nEl.style.opacity='0'; nEl.style.transform='translateY(8px)';
+  rEl.style.opacity='0'; bEl.style.opacity='0'; iEl.style.opacity='0';
+
+  setTimeout(function(){
+    var pts=m.name.split(' ');
+    nEl.innerHTML=pts[0]+'<br/><span>'+pts.slice(1).join(' ')+'</span>';
+    rEl.textContent=m.role;
+    bEl.textContent=m.bio;
+    tEl.innerHTML=m.tags.map(function(t){return '<span class="cd-tag">'+t+'</span>';}).join('');
+    iEl.src=m.img; iEl.style.display='block'; phEl.style.display='none';
+
+    nEl.style.opacity='1'; nEl.style.transform='translateY(0)';
+    rEl.style.opacity='1'; bEl.style.opacity='1'; iEl.style.opacity='1';
+    if(stEl) stEl.textContent=(manualPaused?'Paused on ':'Rotating \u2014 ')+m.role;
+  },170);
+}
+
+/* requestAnimationFrame loop */
+function rafTick(ts){
+  if(!lastTs) lastTs=ts;
+  var dt=(ts-lastTs)/1000; lastTs=ts;
+  if(!manualPaused && rotSpeed>0){
+    applyDeg(handDeg+rotSpeed*dt);
+  }
+  rafId=requestAnimationFrame(rafTick);
+}
+
+function startClock(){
+  if(rafRunning) return;
+  rafRunning=true; lastTs=null;
+  rafId=requestAnimationFrame(rafTick);
+}
+
+/* speed buttons */
+var curSpdBtn='sb0';
+window.setSpd=function(spd,btnId){
+  rotSpeed=spd;
+  manualPaused=(spd===0);
+  lastTs=null;
+  document.querySelectorAll('.spd-btn').forEach(function(b){b.classList.remove('on');});
+  document.getElementById(btnId).classList.add('on');
+  curSpdBtn=btnId;
+  var stEl=document.getElementById('cd-status-txt');
+  if(stEl) stEl.textContent=manualPaused?'Paused \u2014 click a segment or resume':'Rotating\u2026';
+};
+
+/* manual click: snap to midpoint of that segment */
+window.manualSeg=function(i){
+  manualPaused=true; rotSpeed=0;
+  document.querySelectorAll('.spd-btn').forEach(function(b){b.classList.remove('on');});
+  document.getElementById('sb3').classList.add('on');
+
+  /* find shortest path to midpoint of segment i */
+  var target=15+i*30; /* midpoint degrees */
+  var curr=((handDeg%360)+360)%360;
+  var diff=((target-curr)+360)%360;
+  if(diff>180) diff-=360;
+  var startA=handDeg, endA=handDeg+diff;
+  var t0=null;
+  function snap(ts){
+    if(!t0)t0=ts;
+    var p=Math.min(1,(ts-t0)/480);
+    var e=1-Math.pow(1-p,3); /* ease-out-cubic */
+    applyDeg(startA+(endA-startA)*e);
+    if(p<1) requestAnimationFrame(snap);
+  }
+  requestAnimationFrame(snap);
+};
+
+/* start when clock scrolls into view */
+var clockObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting&&!rafRunning)startClock();});
+},{threshold:.1});
+var cs=document.getElementById('clock-section');
+if(cs) clockObs.observe(cs);
+
+/* ── ANIMATED WORDS ── */
+var animWords=document.querySelectorAll('.anim-word');
+var animObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting) animWords.forEach(function(w,i){setTimeout(function(){w.classList.add('show');},i*80);});
+  });
+},{threshold:.3});
+var animBlock=document.getElementById('creative-anim-text');
+if(animBlock) animObs.observe(animBlock);
+
+/* ── TEAM FLIP & SECTION REVEAL ── */
+var chosen=null;
+window.chooseTeam=function(team){
+  if(chosen===team) return; chosen=team;
+  var fc=document.getElementById('flip-charis');
+  var fr=document.getElementById('flip-creative');
+
+  if(team==='charis'){
+    fc.classList.add('flipped');
+    /* unchosen card dims but STAYS so hero looks complete */
+    fr.style.transition='all .6s ease';
+    fr.style.opacity='0.25';
+    fr.style.transform='scale(0.91)';
+    fr.style.filter='grayscale(70%)';
+    fr.style.pointerEvents='none';
+    setTimeout(function(){
+      document.getElementById('charis-section').classList.add('active');
+      document.getElementById('creative-section').classList.remove('active');
+      /* scroll to top of charis-section */
+      var t=document.getElementById('charis-section');
+      window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset,behavior:'smooth'});
+      document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);}); rehov();
+    },1100);
+  } else {
+    fr.classList.add('flipped');
+    fc.style.transition='all .6s ease';
+    fc.style.opacity='0.25';
+    fc.style.transform='scale(0.91)';
+    fc.style.filter='grayscale(70%)';
+    fc.style.pointerEvents='none';
+    setTimeout(function(){
+      document.getElementById('creative-section').classList.add('active');
+      document.getElementById('charis-section').classList.remove('active');
+      var t=document.getElementById('creative-section');
+      window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset,behavior:'smooth'});
+      document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);}); rehov();
+    },1100);
+  }
+};
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   BTS VIDEO LINKS — Paste your YouTube links below
+   Example: yt:'https://youtu.be/xxxxxxxxxxx'
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+function _ytId(u){if(!u)return '';var m=u.match(/(?:v=|youtu\.be\/|shorts\/|embed\/)([a-zA-Z0-9_-]{11})/);return m?m[1]:''}
+var rr=document.getElementById('reels-row');
+var ri=document.getElementById('reel-file-input');
+var rvu={};
+REELS.forEach(function(r,i){
+  var el=document.createElement('div');
+  el.className='reel-item'; el.id='reel-'+i;
+  var vid=_ytId(r.yt);
+  var bgSt=vid?'background-image:url(https://img.youtube.com/vi/'+vid+'/hqdefault.jpg);background-size:cover;background-position:center;height:100%':'background:#1a1714;height:100%';
+  var noVid=vid?'':('<div style="position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.25);text-transform:uppercase;pointer-events:none">&#9654;<br/>Paste<br/>URL</div>');
+  el.innerHTML='<div class="reel-item-bg" style="'+bgSt+'"></div>'
+    +'<div class="reel-item-ov">'+noVid+'<div class="reel-play">'+( vid?'&#9654;':'')+'</div><div class="reel-label">'+r.label+'</div><div class="reel-name">'+r.name+'</div></div>';
+  el.addEventListener('click',function(){if(r.yt)window.open(r.yt,'_blank');});
+  rr.appendChild(el);
+});
+
+var addBtn=document.createElement('div'); addBtn.className='reel-add-btn';
+addBtn.innerHTML='<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="rgba(232,83,10,0.4)" stroke-width="1.5"/><line x1="14" y1="8" x2="14" y2="20" stroke="rgba(232,83,10,0.6)" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="14" x2="20" y2="14" stroke="rgba(232,83,10,0.6)" stroke-width="2" stroke-linecap="round"/></svg><span>Add Reel</span>';
+addBtn.addEventListener('click',function(){ri.setAttribute('data-ri','new');ri.click();});
+rr.appendChild(addBtn);
+
+ri.addEventListener('change',function(){
+  var f=ri.files[0]; if(!f) return;
+  var url=URL.createObjectURL(f);
+  var idx=ri.getAttribute('data-ri');
+  function makeThumb(vid,cb){
+    var tv=document.createElement('video'); tv.src=vid; tv.muted=true; tv.currentTime=0.5;
+    tv.addEventListener('seeked',function(){
+      var c=document.createElement('canvas'); c.width=tv.videoWidth||160; c.height=tv.videoHeight||280;
+      c.getContext('2d').drawImage(tv,0,0,c.width,c.height); cb(c.toDataURL('image/jpeg',0.8));
+    }); tv.load();
+  }
+  if(idx==='new'){
+    var ni=REELS.length; rvu[ni]=url;
+    var nel=document.createElement('div'); nel.className='reel-item';
+    nel.innerHTML='<div class="reel-item-bg" style="background:#1a1714;height:100%"></div>'
+      +'<div class="reel-item-ov"><div class="reel-play"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M4 2l10 6L4 14V2z"/></svg></div>'
+      +'<div class="reel-label">Your Reel</div><div class="reel-name">Custom Clip</div></div>';
+    makeThumb(url,function(t){nel.querySelector('.reel-item-bg').style.background='url('+t+') center/cover';});
+    nel.addEventListener('click',function(){playReel(url);});
+    rr.insertBefore(nel,addBtn); REELS.push({});
+  } else {
+    var id2=parseInt(idx); rvu[id2]=url;
+    makeThumb(url,function(t){var re=document.getElementById('reel-'+id2);if(re)re.querySelector('.reel-item-bg').style.background='url('+t+') center/cover';});
+  }
+  ri.value='';
+});
+
+function playReel(url){
+  var m=document.createElement('div');
+  m.style.cssText='position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.95);display:flex;align-items:center;justify-content:center';
+  m.innerHTML='<div style="width:min(90vw,800px);background:#0a0a0a;border:1px solid rgba(232,83,10,.2);overflow:hidden">'
+    +'<div style="display:flex;justify-content:flex-end;padding:8px 12px"><button onclick="this.closest(\'div\').closest(\'div\').remove()" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:16px">&#10005;</button></div>'
+    +'<video src="'+url+'" controls autoplay playsinline style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#000"></video>'
+    +'</div>';
+  m.addEventListener('click',function(e){if(e.target===m)m.remove();});
+  document.body.appendChild(m);
+}
+
+})();
+
+
+
+
+/* Load existing ratings on page load */
+(function(){
+  function loadRatings(){
+    document.querySelectorAll('.rating-card').forEach(function(card){
+      var member=card.dataset.member||card.querySelector('.rating-name')?.innerText?.trim()||'';
+      if(!member)return;
+      var storageKey='cc_ratings_'+member.replace(/\s+/g,'_').toLowerCase();
+      var ratedKey='cc_rated_'+member.replace(/\s+/g,'_').toLowerCase();
+      var existing=JSON.parse(localStorage.getItem(storageKey)||'[]');
+      if(existing.length>0){
+        var avg=(existing.reduce(function(a,b){return a+b},0)/existing.length).toFixed(1);
+        var avgEl=card.querySelector('.rating-avg');
+        if(!avgEl){avgEl=document.createElement('div');avgEl.className='rating-avg';avgEl.style.cssText='font-family:var(--font-cond);font-size:9px;letter-spacing:.15em;color:var(--or);margin-top:4px;text-transform:uppercase;font-weight:700;';var st=card.querySelector('.stars');if(st)st.after(avgEl);}
+        avgEl.textContent=avg+' ★ ('+existing.length+' rating'+(existing.length===1?'':'s')+')';
+      }
+      var btn=card.querySelector('.rating-submit');
+      if(btn&&localStorage.getItem(ratedKey)){btn.textContent='RATED ✓';btn.style.background='#333';btn.style.cursor='default';}
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(loadRatings,600);});}
+  else{setTimeout(loadRatings,600);}
+})();
+</script>

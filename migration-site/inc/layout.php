@@ -42,6 +42,7 @@ function page_start(array $meta, string $current = ''): void {
   <link rel="preload" href="/assets/fonts/barlow-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/barlow-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="<?= asset('assets/css/site.css') ?>">
+<?= $meta['head'] ?? '' /* extra head markup for a page, e.g. the kept old pages */ ?>
 <?php if (!empty($SITE['analyticsId'])): ?>
   <script async src="https://www.googletagmanager.com/gtag/js?id=<?= e(rawurlencode($SITE['analyticsId'])) ?>"></script>
 <?php endif; ?>

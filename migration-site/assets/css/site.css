@@ -249,18 +249,19 @@ p { margin: 0; }
 .logos img:hover { opacity: 1; }
 
 /* ---------- Featured work: editorial grid ---------- */
-.work { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 40px 16px; list-style: none; margin: 0; padding: 0; }
-.work__item { display: grid; gap: 14px; align-content: start; min-width: 0; }
+.work { --inset: max(var(--gutter), calc((100% - var(--wrap)) / 2 + var(--gutter))); display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; list-style: none; margin: 0; padding: 0 var(--inset) 16px; scroll-padding-inline: var(--inset); scrollbar-width: thin; scrollbar-color: #333 transparent; }
+.work::-webkit-scrollbar { height: 6px; }
+.work::-webkit-scrollbar-thumb { background: #333; }
+.work__item { flex: 0 0 380px; display: grid; gap: 16px; align-content: start; min-width: 0; scroll-snap-align: start; }
 .work__open { display: block; cursor: zoom-in; }
 .work__open:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-.work__media { display: block; position: relative; overflow: hidden; background: var(--bg-2); aspect-ratio: 3 / 4; }
+.work__media { display: block; position: relative; overflow: hidden; background: var(--bg-2); aspect-ratio: 2 / 3; }
 .work__media img { width: 100%; height: 100%; object-fit: cover; }
 @media (hover: hover) and (pointer: fine) { .work__open:hover .work__media img { transform: scale(1.04); } }
-.work__item h3 { font-size: 1.2rem; }
-.work__meta { color: var(--text-3); font-size: 0.9rem; }
+.work__item h3 { font-size: 1.5rem; }
+.work__meta { color: var(--text-3); font-size: 0.95rem; }
 .work__item .link-arrow { margin-top: 2px; }
-@media (max-width: 1000px) { .work { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .work { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 12px; } }
+@media (max-width: 760px) { .work__item { flex-basis: 78%; } }
 
 /* ---------- What we create: image tiles ---------- */
 .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; list-style: none; margin: 0; padding: 0; }

@@ -91,10 +91,11 @@ foreach ($rows as $ri => $row) {
         <ul class="work">
 <?php foreach ($C['featured']['items'] as $i => $it):
     if (!has_photo($it['photo'])) continue;
-    $meta = trim($it['type'] . ($it['place'] ? ' · ' . $it['place'] : ''));
-    $sizes = $i === 0 ? '(max-width: 900px) 100vw, 58vw' : '(max-width: 560px) 100vw, (max-width: 900px) 50vw, 36vw'; ?>
+    $meta = trim($it['type'] . ($it['place'] ? ' | ' . $it['place'] : '')); ?>
           <li class="work__item reveal">
-            <div class="work__media develop"><?= photo($it['photo'], $it['alt'], $sizes) ?></div>
+            <a class="work__open" href="/assets/img/photo/<?= e($it['photo']) ?>-1600.webp" data-lightbox="work" data-alt="<?= e($it['alt']) ?>" data-caption="<?= e($it['title'] . ' | ' . $meta) ?>" aria-label="View <?= e($it['title']) ?> larger">
+              <span class="work__media develop"><?= photo($it['photo'], $it['alt'], '(max-width: 560px) 50vw, (max-width: 1000px) 33vw, 200px') ?></span>
+            </a>
             <div>
               <h3><?= e($it['title']) ?></h3>
               <p class="work__meta"><?= e($meta) ?></p>
@@ -234,4 +235,11 @@ foreach ($rows as $ri => $row) {
         </div>
       </div>
     </section>
+    <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Featured work">
+      <img src="data:," alt="">
+      <button class="lightbox__btn lightbox__close" type="button" aria-label="Close"><?= icon('close') ?></button>
+      <button class="lightbox__btn lightbox__prev" type="button" aria-label="Previous project"><?= icon('arrow') ?></button>
+      <button class="lightbox__btn lightbox__next" type="button" aria-label="Next project"><?= icon('arrow') ?></button>
+      <p class="lightbox__count" aria-live="polite"></p>
+    </div>
 <?php page_end(); ?>

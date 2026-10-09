@@ -120,11 +120,11 @@
     function show(i) {
       idx = (i + list.length) % list.length;
       img.src = list[idx].src; img.alt = list[idx].alt;
-      count.textContent = (idx + 1) + " / " + list.length;
+      count.textContent = list[idx].caption || ((idx + 1) + " / " + list.length);
     }
     function open(group, i, from) {
       list = Array.prototype.map.call(document.querySelectorAll('[data-lightbox="' + group + '"]'), function (a) {
-        return { src: a.getAttribute("href"), alt: a.getAttribute("data-alt") || "" };
+        return { src: a.getAttribute("href"), alt: a.getAttribute("data-alt") || "", caption: a.getAttribute("data-caption") || "" };
       });
       if (!list.length) return;
       opener = from; box.hidden = false; document.body.style.overflow = "hidden"; show(i);

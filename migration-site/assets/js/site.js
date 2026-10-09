@@ -177,7 +177,7 @@
   if (deck && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     var cards = Array.prototype.slice.call(deck.querySelectorAll(".voice"));
     var n = cards.length, now = document.querySelector("[data-stack-now]");
-    var HOLD = 4200, MOVE = 1100, STEP = HOLD + MOVE;
+    var HOLD = 3200, MOVE = 1000, STEP = HOLD + MOVE;
     var clock = 0, last = 0, paused = false, visible = false, raf = 0;
     var lerp = function (a, b, t) { return a + (b - a) * t; };
     var ease = function (t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
@@ -212,7 +212,8 @@
       raf = visible ? requestAnimationFrame(tick) : 0;
     };
     var start = function () { if (!raf && visible) { last = 0; raf = requestAnimationFrame(tick); } };
-    deck.addEventListener("mouseenter", function () { paused = true; });
+    // Pause only while the pointer is on the front card being read
+    deck.addEventListener("mouseover", function (e) { var c = e.target.closest(".voice"); paused = !!c && c.style.pointerEvents !== "none"; });
     deck.addEventListener("mouseleave", function () { paused = false; });
     deck.addEventListener("focusin", function () { paused = true; });
     deck.addEventListener("focusout", function () { paused = false; });

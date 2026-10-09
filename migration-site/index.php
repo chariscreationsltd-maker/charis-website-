@@ -88,13 +88,14 @@ foreach ($rows as $ri => $row) {
         <div class="section-head">
           <h2 id="work-title"><?= e($C['featured']['heading']) ?></h2>
         </div>
+      </div>
         <ul class="work">
 <?php foreach ($C['featured']['items'] as $i => $it):
     if (!has_photo($it['photo'])) continue;
     $meta = trim($it['type'] . ($it['place'] ? ' | ' . $it['place'] : '')); ?>
           <li class="work__item reveal">
             <a class="work__open" href="/assets/img/photo/<?= e($it['photo']) ?>-1600.webp" data-lightbox="work" data-alt="<?= e($it['alt']) ?>" data-caption="<?= e($it['title'] . ' | ' . $meta) ?>" aria-label="View <?= e($it['title']) ?> larger">
-              <span class="work__media develop"><?= photo($it['photo'], $it['alt'], '(max-width: 560px) 50vw, (max-width: 1000px) 33vw, 200px') ?></span>
+              <span class="work__media develop"><?= photo($it['photo'], $it['alt'], '(max-width: 760px) 78vw, 380px') ?></span>
             </a>
             <div>
               <h3><?= e($it['title']) ?></h3>
@@ -106,6 +107,7 @@ foreach ($rows as $ri => $row) {
           </li>
 <?php endforeach; ?>
         </ul>
+      <div class="wrap">
         <p style="margin-top:clamp(40px,5vw,64px)"><?= button('See All Our Work', '/projects/', 'text') ?></p>
       </div>
     </section>

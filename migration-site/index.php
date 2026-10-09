@@ -219,9 +219,11 @@ $logoRows = [array_slice($logos, 0, $mid), array_slice($logos, $mid)];
 <?php
 require_once SITE_ROOT . '/inc/testimonials.php';
 $voices = live_testimonials();
+// Until approved reviews arrive from CharisOS, show the studio's own lines (never as client reviews).
+$studio = !$voices;
+if ($studio) $voices = array_map(fn($c) => ['quote' => $c['quote'], 'name' => $c['name'], 'event' => $c['kicker'], 'date' => '', 'rating' => 0, 'link' => $c['link'] ?? ''], $C['voices']['placeholders']);
 $tones = ['ember', 'ivory', 'graphite', 'burnt'];
 ?>
-<?php if ($voices): ?>
     <section class="voices" id="testimonials" aria-labelledby="voices-title" style="--n: <?= count($voices) ?>">
       <div class="voices__track" data-stack>
         <div class="voices__pin">
@@ -237,12 +239,17 @@ $tones = ['ember', 'ivory', 'graphite', 'burnt'];
               <figure class="voice__inner">
                 <div class="voice__copy">
                   <p class="voice__kicker"><?= e(implode(' · ', array_filter([$v['event'], $v['date']]))) ?: 'Charis client' ?></p>
-                  <blockquote class="voice__quote"><p><?= e($v['quote']) ?></p></blockquote>
+                  <?php if ($studio): ?><p class="voice__quote voice__quote--studio"><?= e($v['quote']) ?></p><?php else: ?><blockquote class="voice__quote"><p><?= e($v['quote']) ?></p></blockquote><?php endif; ?>
                 </div>
                 <figcaption class="voice__side">
+<?php if (!$studio): ?>
                   <span class="voice__mark" aria-hidden="true">&ldquo;</span>
+<?php endif; ?>
 <?php if ($v['rating']): ?>
                   <span class="voice__stars" role="img" aria-label="<?= $v['rating'] ?> out of 5 stars"><?= str_repeat('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>', $v['rating']) ?></span>
+<?php endif; ?>
+<?php if (!empty($v['link'])): ?>
+                  <a class="btn btn--ivory voice__cta" href="<?= e($SITE['whatsapp']) ?>" data-track="whatsapp"><?= e($v['link']) ?></a>
 <?php endif; ?>
                   <cite class="voice__name"><?= e($v['name']) ?></cite>
                 </figcaption>
@@ -253,16 +260,6 @@ $tones = ['ember', 'ivory', 'graphite', 'burnt'];
         </div>
       </div>
     </section>
-<?php else: ?>
-    <section class="section" id="testimonials" aria-labelledby="voices-title">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="voices-title"><?= e($C['voices']['heading']) ?></h2>
-        </div>
-        <iframe class="embed embed--testimonials" src="<?= e(href('testimonials')) ?>" loading="lazy" title="What our clients say" data-embed="hide-section"></iframe>
-      </div>
-    </section>
-<?php endif; ?>
 
     <section class="section section--raised" id="starting-points" aria-labelledby="start-title">
       <div class="wrap start">

@@ -821,3 +821,7 @@ body { background: var(--bg); color: var(--text); }
     .js .voice { width: calc(100% - 32px); height: min(82%, 640px); top: 50%; }
   }
 }
+/* Studio cards (shown until approved reviews arrive from CharisOS) */
+.voice__quote--studio { margin: 0; font: 800 clamp(2rem, 4.2vw, 3.6rem)/0.95 var(--display); text-transform: uppercase; letter-spacing: 0.01em; text-wrap: balance; }
+.voice__cta { align-self: flex-start; min-height: 46px; padding: 0 22px; font-size: 0.85rem; }
+@media (max-width: 760px) { .voice__quote--studio { font-size: 2rem; } }

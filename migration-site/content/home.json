@@ -326,7 +326,31 @@
     ]
   },
   "voices": {
-    "heading": "Hear it from our clients."
+    "heading": "Hear it from our clients.",
+    "_note": "Until CharisOS sends approved reviews, the stack shows these studio cards. They are Charis's own words, never presented as client reviews. Real reviews replace them automatically.",
+    "placeholders": [
+      {
+        "kicker": "From the studio",
+        "quote": "We don’t direct your moments. We disappear into them.",
+        "name": "Charis Creations"
+      },
+      {
+        "kicker": "From the studio",
+        "quote": "We don’t sell photography. We sell peace of mind.",
+        "name": "Charis Creations"
+      },
+      {
+        "kicker": "From the studio",
+        "quote": "Unscripted. Unfiltered. Unforgettable.",
+        "name": "Charis Creations"
+      },
+      {
+        "kicker": "Worked with us?",
+        "quote": "We would love to hear how your day felt. Your words could be the first ones here.",
+        "name": "Share your story",
+        "link": "Message us on WhatsApp"
+      }
+    ]
   },
   "start": {
     "heading": "Find your starting point.",
@@ -392,7 +416,12 @@
     "headingLight": "Let’s tell",
     "headingBold": "your story.",
     "body": "Tell us your date and what you are planning, and we will help you find your starting point.",
-    "primary": { "label": "Check Your Date", "link": "date" },
-    "secondary": { "label": "WhatsApp Us" }
+    "primary": {
+      "label": "Check Your Date",
+      "link": "date"
+    },
+    "secondary": {
+      "label": "WhatsApp Us"
+    }
   }
 }

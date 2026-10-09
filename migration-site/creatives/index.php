@@ -7,7 +7,7 @@ require dirname(__DIR__) . '/inc/bootstrap.php';
 $dir = SITE_ROOT . '/content/legacy/';
 $head = '  <link rel="preconnect" href="https://fonts.googleapis.com">' . "\n"
       . '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n"
-      . '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&amp;family=Barlow+Condensed:wght@300;400;700;900&amp;family=Barlow:wght@300;400;500&amp;display=swap">' . "\n"
+      . '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&amp;family=Barlow:wght@300;400;500&amp;display=swap">' . "\n"
       . ""
       . "  <style>\n" . file_get_contents($dir . 'creatives.css') . "\n  </style>\n";
 page_start(['title' => 'Meet the Creators | Charis Creations', 'description' => 'Meet the Charis Creations team: photographers, cinematographers, editors and storytellers in Kampala.', 'path' => '/creatives/', 'image' => 'og-team', 'head' => $head], 'team');

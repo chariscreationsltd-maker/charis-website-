@@ -385,5 +385,14 @@
     "body": "Start with a few details. We’ll help you find the right next step.",
     "whatsappLine": "Prefer WhatsApp? Chat with us.",
     "privacyLine": "By sending this you agree to our Privacy Policy."
+  },
+  "closing": {
+    "_note": "The glass call-to-action at the end of the home page.",
+    "label": "Unscripted. Unfiltered. Unforgettable.",
+    "headingLight": "Let’s tell",
+    "headingBold": "your story.",
+    "body": "Tell us your date and what you are planning, and we will help you find your starting point.",
+    "primary": { "label": "Check Your Date", "link": "date" },
+    "secondary": { "label": "WhatsApp Us" }
   }
 }

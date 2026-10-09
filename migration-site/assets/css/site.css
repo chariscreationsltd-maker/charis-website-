@@ -716,3 +716,37 @@ body { background: var(--bg); color: var(--text); }
 /* Footer closes the page in night */
 .site-footer { background: var(--night); border-top-color: var(--line); }
 .site-footer__col a { color: rgba(244, 239, 233, 0.86); }
+
+/* Tighter hand-off from Featured Work into What We Create */
+#work { padding-bottom: clamp(40px, 5vw, 72px); }
+#create { padding-top: clamp(64px, 7vw, 104px); }
+.work__all { margin-top: clamp(24px, 3vw, 36px); }
+
+/* Ivory button: on photos and glass */
+.btn--ivory { background: var(--text); color: var(--bg); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35); }
+@media (hover: hover) and (pointer: fine) { .btn--ivory:hover { background: #fff; box-shadow: 0 10px 30px rgba(255, 255, 255, 0.18); } }
+
+/* Closing call to action: glass card over a ribbon of light */
+.finale { position: relative; isolation: isolate; overflow: hidden; padding: clamp(96px, 11vw, 168px) 0 0; background: linear-gradient(180deg, var(--bg) 0%, var(--night) 30%); }
+.finale__ribbon { position: absolute; z-index: -1; left: -5%; top: 4%; width: 110%; height: 460px; filter: blur(26px); opacity: 0.7; pointer-events: none; }
+.finale__glow { position: absolute; z-index: -1; left: 22%; top: 140px; width: 420px; height: 280px; border-radius: 50%; background: rgba(120, 110, 100, 0.25); filter: blur(90px); pointer-events: none; }
+.finale__wrap { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; padding: 0 var(--gutter); }
+.finale__card {
+  display: grid; justify-items: center; gap: 22px; text-align: center; padding: clamp(36px, 5vw, 60px) clamp(22px, 5vw, 60px);
+  border-radius: 30px; background: rgba(22, 20, 18, 0.5); border: 1px solid rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+.finale__card .chip { font-size: 0.7rem; min-height: 34px; padding: 0 14px; }
+.finale h2 { font-size: clamp(2.4rem, 4.6vw, 3.8rem); line-height: 0.95; }
+.finale__light { font-weight: 200; letter-spacing: 0.05em; }
+.finale__body { max-width: 42ch; margin: 0; font-weight: 300; color: var(--text-2); }
+.finale .btn-row { justify-content: center; }
+.finale__socials { margin: 4px 0 0; }
+.finale__ghost {
+  position: relative; z-index: 1; margin: 30px 0 0; text-align: center; pointer-events: none;
+  font: 800 clamp(5.5rem, 26vw, 26rem)/0.78 var(--display); text-transform: uppercase; white-space: nowrap;
+  color: transparent; -webkit-text-stroke: 1px rgba(244, 239, 233, 0.09);
+}
+@media (prefers-reduced-motion: no-preference) { .finale__ribbon { animation: ribbon 12s ease-in-out infinite; } }
+@media (max-width: 700px) { .finale .btn-row { flex-direction: column; align-self: stretch; } .finale .btn { width: 100%; } .finale__ghost { font-size: 26vw; } }

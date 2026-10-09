@@ -125,7 +125,7 @@ $rows = [$strip, array_merge(array_slice($strip, $half), array_slice($strip, 0, 
 <?php endforeach; ?>
         </ul>
       <div class="wrap">
-        <p style="margin-top:clamp(40px,5vw,64px)"><?= button('See All Our Work', '/projects/', 'text') ?></p>
+        <p class="work__all"><?= button('See All Our Work', '/projects/', 'text') ?></p>
       </div>
     </section>
 
@@ -280,6 +280,28 @@ $logoRows = [array_slice($logos, 0, $mid), array_slice($logos, $mid)];
           <p class="enquiry__note"><?= e(preg_replace('/Privacy Policy\.$/', '', $C['enquiry']['privacyLine'])) ?><a href="/privacy-policy/">Privacy Policy</a>.</p>
         </div>
       </div>
+    </section>
+    <section class="finale" aria-labelledby="finale-title">
+<?php $cl = $C['closing']; $so = $SITE['social']; ?>
+      <svg class="finale__ribbon" aria-hidden="true" focusable="false" viewBox="0 0 1440 600" preserveAspectRatio="none" fill="none"><path d="M-40 380 C 300 160, 560 520, 820 300 S 1200 80, 1500 220" stroke="#f16623" stroke-width="30" stroke-linecap="round"/></svg>
+      <div class="finale__glow" aria-hidden="true"></div>
+      <div class="finale__wrap">
+        <div class="finale__card">
+          <p class="chip"><?= e($cl['label']) ?></p>
+          <h2 id="finale-title"><span class="finale__light"><?= e($cl['headingLight']) ?></span> <span><?= e($cl['headingBold']) ?></span></h2>
+          <p class="finale__body"><?= e($cl['body']) ?></p>
+          <div class="btn-row">
+            <?= button($cl['primary']['label'], href($cl['primary']['link']), 'primary') ?>
+            <?= button($cl['secondary']['label'], $SITE['whatsapp'], 'ivory') ?>
+          </div>
+          <ul class="socials finale__socials" aria-label="Charis Creations on social media">
+            <li><a href="<?= e($so['instagram']) ?>" aria-label="Instagram"><?= icon('instagram') ?></a></li>
+            <li><a href="<?= e($so['youtube']) ?>" aria-label="YouTube"><?= icon('youtube') ?></a></li>
+            <li><a href="<?= e($so['tiktok']) ?>" aria-label="TikTok"><?= icon('tiktok') ?></a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="finale__ghost" aria-hidden="true">Together</p>
     </section>
     <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Featured work">
       <img src="data:," alt="">

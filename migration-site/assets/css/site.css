@@ -252,11 +252,11 @@ p { margin: 0; }
 .work { --inset: max(var(--gutter), calc((100% - var(--wrap)) / 2 + var(--gutter))); display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; list-style: none; margin: 0; padding: 0 var(--inset) 16px; scroll-padding-inline: var(--inset); scrollbar-width: thin; scrollbar-color: #333 transparent; }
 .work::-webkit-scrollbar { height: 6px; }
 .work::-webkit-scrollbar-thumb { background: #333; }
-.work__item { flex: 0 0 330px; display: grid; gap: 16px; align-content: start; min-width: 0; scroll-snap-align: start; padding: 12px 12px 20px; background: var(--bg-2); border: 1px solid var(--line); transition: border-color 300ms ease; }
+.work__item { flex: 0 0 330px; display: grid; gap: 16px; align-content: start; min-width: 0; scroll-snap-align: start; padding: 12px 12px 20px; background: var(--bg-2); border: 1px solid var(--line); border-radius: 16px; transition: border-color 300ms ease; }
 .work__item:hover { border-color: var(--line-strong); }
 .work__open { display: block; cursor: zoom-in; }
-.work__open:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-.work__media { display: block; position: relative; overflow: hidden; background: var(--bg-2); aspect-ratio: 2 / 3; }
+.work__open:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 10px; }
+.work__media { display: block; position: relative; overflow: hidden; background: var(--bg-2); aspect-ratio: 2 / 3; border-radius: 10px; }
 .work__media img { width: 100%; height: 100%; object-fit: cover; }
 @media (hover: hover) and (pointer: fine) { .work__open:hover .work__media img { transform: scale(1.04); } }
 .work__item h3 { font-size: 1.35rem; }
@@ -266,7 +266,7 @@ p { margin: 0; }
 
 /* ---------- What we create: image tiles ---------- */
 .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; list-style: none; margin: 0; padding: 0; }
-.tile { position: relative; isolation: isolate; display: grid; align-content: end; min-height: clamp(260px, 25vw, 340px); overflow: hidden; text-decoration: none; background: var(--bg-2); }
+.tile { position: relative; isolation: isolate; display: grid; align-content: end; min-height: clamp(260px, 25vw, 340px); overflow: hidden; text-decoration: none; background: var(--bg-2); border-radius: 16px; }
 .tile img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
 .tile::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(10,10,10,0.95) 6%, rgba(10,10,10,0.6) 40%, rgba(10,10,10,0.05) 74%); }
 .tile__body { display: grid; gap: 10px; padding: clamp(22px, 2.4vw, 32px); }

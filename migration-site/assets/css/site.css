@@ -248,6 +248,29 @@ p { margin: 0; }
 .logos img { height: var(--h, 52px); width: auto; opacity: 0.74; transition: opacity 200ms ease; }
 .logos img:hover { opacity: 1; }
 
+/* ---------- Tagline band and photo strips (from the old site) ---------- */
+.tagline { background: #f2ede8; color: #1a1a1a; }
+.tagline__head { padding: clamp(48px, 7vw, 96px) 5vw clamp(32px, 4vw, 48px); text-align: center; display: grid; justify-items: center; gap: 24px; }
+.tagline__words { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(12px, 2vw, 28px); margin: 0; font: 800 clamp(28px, 5vw, 72px)/1 var(--display); letter-spacing: 0.06em; text-transform: uppercase; color: #1a1a1a; }
+.tagline__words .is-accent, .tagline__dot { color: var(--accent); }
+.tagline__dot { font-weight: 300; }
+.tagline__body { max-width: 600px; margin: 0; font-size: clamp(15px, 1.2vw, 16px); line-height: 1.8; color: rgba(20, 15, 10, 0.66); }
+.strips { overflow: hidden; display: grid; gap: 12px; padding-bottom: clamp(36px, 4vw, 56px); }
+.strips__row { display: flex; gap: 12px; width: max-content; }
+.strips__row--left { animation: strip-left 55s linear infinite; }
+.strips__row--right { animation: strip-right 55s linear infinite; }
+.strips:hover .strips__row, .strips:focus-within .strips__row { animation-play-state: paused; }
+@keyframes strip-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes strip-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+.strips__item { position: relative; flex: none; width: clamp(180px, 17vw, 280px); height: clamp(120px, 11vw, 185px); border-radius: 12px; overflow: hidden; display: block; }
+.strips__item img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms ease; }
+.strips__item:hover img { transform: scale(1.06); }
+.strips__item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.strips__cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 12px 9px; background: linear-gradient(to top, rgba(8, 8, 8, 0.9), transparent); font: 600 12px/1.2 var(--display); letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255, 255, 255, 0.88); opacity: 0; transition: opacity 300ms ease; }
+.strips__item:hover .strips__cap, .strips__item:focus-visible .strips__cap { opacity: 1; }
+@media (hover: none) { .strips__cap { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .strips__row--left, .strips__row--right { animation: none; } .strips { overflow-x: auto; } }
+
 /* ---------- Featured work: editorial grid ---------- */
 .work { --inset: max(var(--gutter), calc((100% - var(--wrap)) / 2 + var(--gutter))); display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; list-style: none; margin: 0; padding: 0 var(--inset) 16px; scroll-padding-inline: var(--inset); scrollbar-width: thin; scrollbar-color: #333 transparent; }
 .work::-webkit-scrollbar { height: 6px; }
@@ -279,11 +302,13 @@ p { margin: 0; }
 .story { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(36px, 7vw, 112px); align-items: center; }
 .story__media { position: relative; overflow: hidden; background: var(--bg-2); aspect-ratio: 5 / 6; }
 .story__media img { width: 100%; height: 100%; object-fit: cover; }
+#story .story__media { aspect-ratio: 3 / 4; border-radius: 16px; }
+#story .story__media img { object-position: 50% 40%; }
 .story__copy { display: grid; gap: 26px; }
 .facts { display: flex; flex-wrap: wrap; gap: 16px 48px; margin: 8px 0 0; padding: 22px 0 0; border-top: 1px solid var(--line); list-style: none; }
 .facts dt { font: 600 0.8rem/1.2 var(--display); letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-3); }
 .facts dd { margin: 4px 0 0; font: 800 1.6rem/1 var(--display); text-transform: uppercase; }
-@media (max-width: 860px) { .story { grid-template-columns: 1fr; } .story__media { aspect-ratio: 4 / 3; } }
+@media (max-width: 860px) { .story { grid-template-columns: 1fr; } .story__media { aspect-ratio: 4 / 3; } #story .story__media { aspect-ratio: 4 / 5; } }
 
 /* ---------- Client journey ---------- */
 .journey { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; list-style: none; margin: 0; padding: 0; counter-reset: step; border-top: 1px solid var(--line); }

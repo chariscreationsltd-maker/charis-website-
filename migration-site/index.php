@@ -68,6 +68,35 @@ foreach ($rows as $ri => $row) {
       </div>
     </section>
 
+<?php
+$t = $C['tagline'];
+$strip = array_values(array_filter($t['strip'], fn($s) => has_photo($s['photo'])));
+$half = intdiv(count($strip), 2);
+$rows = [$strip, array_merge(array_slice($strip, $half), array_slice($strip, 0, $half))];
+?>
+    <section class="tagline" aria-labelledby="tagline-title">
+      <div class="tagline__head">
+        <h2 id="tagline-title" class="tagline__words">
+<?php foreach ($t['words'] as $i => $w): ?>
+          <?php if ($i): ?><span class="tagline__dot" aria-hidden="true">·</span><?php endif; ?><span<?= $i === count($t['words']) - 1 ? ' class="is-accent"' : '' ?>><?= e($w) ?></span>
+<?php endforeach; ?>
+        </h2>
+        <p class="tagline__body"><?= e($t['body']) ?></p>
+      </div>
+      <div class="strips">
+<?php foreach ($rows as $ri => $row): ?>
+        <div class="strips__row strips__row--<?= $ri ? 'right' : 'left' ?>">
+<?php foreach ([false, true] as $copy): foreach ($row as $s): ?>
+          <a class="strips__item" href="<?= e($t['link']) ?>"<?= $copy ? ' aria-hidden="true" tabindex="-1"' : '' ?>>
+            <img src="/assets/img/photo/<?= e($s['photo']) ?>-800.webp" alt="" width="280" height="185" loading="lazy" decoding="async">
+            <span class="strips__cap"><?= e($s['caption']) ?></span>
+          </a>
+<?php endforeach; endforeach; ?>
+        </div>
+<?php endforeach; ?>
+      </div>
+    </section>
+
     <section class="section" id="work" aria-labelledby="work-title">
       <div class="wrap">
         <div class="section-head">

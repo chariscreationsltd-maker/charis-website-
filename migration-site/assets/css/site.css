@@ -11,6 +11,8 @@
 @font-face { font-family: "Barlow Condensed"; src: url("../fonts/barlow-condensed-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
 @font-face { font-family: "Barlow Condensed"; src: url("../fonts/barlow-condensed-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
 @font-face { font-family: "Barlow Condensed"; src: url("../fonts/barlow-condensed-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("../fonts/barlow-condensed-latin-200-normal.woff2") format("woff2"); font-weight: 200; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../fonts/barlow-latin-300-normal.woff2") format("woff2"); font-weight: 300; font-display: swap; }
 
 /* ---------- Tokens ---------- */
 :root {
@@ -564,3 +566,153 @@ a.cat:hover .cat__media img { transform: scale(1.04); }
 .notfound .btn-row { justify-content: center; }
 .close .btn-row { justify-content: center; }
 .lede b { color: var(--text); font-weight: 600; }
+
+/* =====================================================================
+   Premium layer: warm blacks, ivory, stone greys and one orange that
+   behaves like light. Pills, frosted glass and soft glow.
+   ===================================================================== */
+:root {
+  --night: #0a0908;        /* hero and footer, deepest */
+  --bg: #0e0d0c;           /* warm black: page base */
+  --bg-2: #171412;         /* graphite: raised sections */
+  --card: #201d1a;         /* cards and panels */
+  --line: rgba(244, 239, 233, 0.1);
+  --line-strong: rgba(244, 239, 233, 0.26);
+  --text: #f4efe9;         /* ivory */
+  --text-2: #b5aca4;       /* stone: 8.7:1 */
+  --text-3: #8a817a;       /* ash: 5.1:1 */
+  --accent-hi: #ff7a3a;    /* ember */
+  --on-accent: #0e0d0c;
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-line: rgba(255, 255, 255, 0.16);
+  --cream: #f2ede8;
+  --ink: #1a1816;
+  --ink-2: #5e5751;        /* 6.1:1 on cream */
+  --burnt: #ad400b;        /* orange on cream: 5.1:1 */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+body { background: var(--bg); color: var(--text); }
+
+/* Buttons: pill primary with glow, frosted glass partner */
+.btn { border-radius: 999px; min-height: 54px; padding: 0 30px; letter-spacing: 0.15em; border-width: 1px; transition: background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease, transform 300ms var(--ease-soft); }
+.btn--primary {
+  background: linear-gradient(180deg, #f57a3d 0%, #f16623 55%, #e05a1a 100%); color: var(--on-accent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 8px 24px rgba(241, 102, 35, 0.28);
+}
+.btn--outline {
+  background: var(--glass); border-color: var(--glass-line); color: var(--text);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn--primary:hover { background: linear-gradient(180deg, #f57a3d 0%, #f16623 55%, #e05a1a 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 36px rgba(241, 102, 35, 0.5); transform: translateY(-1px); }
+  .btn--outline:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.3); }
+}
+.btn:active { transform: scale(0.97); }
+
+/* Text link: label with an orange ring arrow */
+.link-arrow { color: var(--text); gap: 12px; }
+.link-arrow .arrow { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(241, 102, 35, 0.6); color: var(--accent); transition: background-color 300ms ease, border-color 300ms ease; }
+.link-arrow .arrow svg { width: 14px; height: 14px; transition: transform 300ms var(--ease-soft); }
+@media (hover: hover) and (pointer: fine) {
+  .link-arrow:hover { color: var(--text); }
+  .link-arrow:hover .arrow { background: rgba(241, 102, 35, 0.12); border-color: var(--accent); }
+  .link-arrow:hover .arrow svg { transform: translateX(3px); }
+}
+
+/* Chip: glass label with a glowing orange dot */
+.chip {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 36px; padding: 0 16px; margin: 0;
+  border-radius: 999px; background: var(--glass); border: 1px solid var(--glass-line);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  font: 600 0.76rem/1.2 var(--display); letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-2);
+}
+.chip__dot { flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+
+/* Header */
+.site-header { background: rgba(10, 9, 8, 0.82); border-bottom-color: var(--line); }
+.book__toggle { border-radius: 999px; min-height: 44px; padding: 0 20px; background: linear-gradient(180deg, #f57a3d 0%, #f16623 55%, #e05a1a 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 6px 18px rgba(241, 102, 35, 0.25); }
+@media (hover: hover) and (pointer: fine) { .book__toggle:hover { background: linear-gradient(180deg, #f57a3d 0%, #f16623 55%, #e05a1a 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 8px 26px rgba(241, 102, 35, 0.45); } }
+.book__menu { border-radius: 18px; overflow: hidden; background: rgba(23, 20, 18, 0.96); border: 1px solid var(--line); }
+@media (min-width: 961px) {
+  /* Floating glass pill */
+  .site-header { top: 12px; margin: 12px clamp(8px, 1.4vw, 20px) 0; background: transparent; border: 0; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .site-header__inner {
+    max-width: 1240px; padding: 0 10px 0 24px; border-radius: 999px;
+    background: rgba(14, 13, 12, 0.6); border: 1px solid rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 16px 40px rgba(0, 0, 0, 0.35);
+  }
+  /* On the home page the hero runs up behind the floating header */
+  .page-home main > .hero:first-child { margin-top: calc(-1 * (var(--nav-h) + 12px)); padding-top: calc(var(--nav-h) + 68px); min-height: 100vh; min-height: 100svh; }
+}
+/* A backdrop-filter on the header would trap the fixed mobile menu inside its 68px box */
+@media (max-width: 960px) { .site-header { background: rgba(10, 9, 8, 0.96); -webkit-backdrop-filter: none; backdrop-filter: none; } .nav { background: var(--night); } }
+
+/* Hero: night, dimmed tilted wall, orange ribbon of light, ghost word */
+.hero { background: var(--night); padding-bottom: 150px; }
+.wall { inset: -40px 0; opacity: 0.34; transform: rotate(-4deg) scale(1.12); }
+.hero::before { background: radial-gradient(ellipse 60% 55% at 50% 48%, rgba(10, 9, 8, 0.55), transparent 75%); }
+.hero::after { height: 40%; background: linear-gradient(to bottom, transparent, var(--night)); }
+.hero__glow { position: absolute; z-index: -1; left: 50%; top: 30%; width: min(560px, 80vw); height: 360px; transform: translateX(-50%); border-radius: 50%; background: rgba(241, 102, 35, 0.22); filter: blur(90px); pointer-events: none; }
+.hero__ribbon { position: absolute; z-index: -1; left: -5%; top: 20%; width: 110%; height: min(520px, 60%); filter: blur(22px); opacity: 0.8; pointer-events: none; }
+.hero__copy { gap: 26px; }
+.hero__copy h1 { font-size: clamp(2.7rem, 7.6vw, 7.4rem); line-height: 0.9; letter-spacing: 0.01em; text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); }
+.hero__copy h1 span:first-child { font-weight: 200; letter-spacing: 0.05em; }
+.hero__copy .lede { color: var(--text-2); font-weight: 300; }
+.hero__motto { color: var(--text-3); }
+.hero__ghost {
+  position: absolute; z-index: -1; left: 0; right: 0; bottom: 0.1em; margin: 0; text-align: center; pointer-events: none;
+  font: 800 clamp(7rem, 24vw, 24rem)/0.8 var(--display); text-transform: uppercase; white-space: nowrap;
+  color: transparent; -webkit-text-stroke: 1px rgba(244, 239, 233, 0.08);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero__ribbon { animation: ribbon 12s ease-in-out infinite; }
+}
+@keyframes ribbon { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-14px) rotate(0deg); } }
+@media (max-width: 700px) {
+  .hero { padding-bottom: 110px; }
+  .hero__ribbon { top: 26%; height: 46%; }
+  .chip { font-size: 0.68rem; letter-spacing: 0.16em; padding: 0 14px; }
+}
+
+/* Cream panel: floats up over the hero with rounded corners */
+.tagline {
+  position: relative; z-index: 3; margin: -72px clamp(8px, 1.4vw, 20px) 0; border-radius: 36px; overflow: hidden;
+  background: var(--cream); color: var(--ink);
+  box-shadow: 0 -24px 60px rgba(10, 9, 8, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.tagline__words { color: var(--ink); }
+.tagline__words .is-accent, .tagline__dot { color: var(--burnt); }
+.tagline__body { color: var(--ink-2); }
+.strips { padding-bottom: clamp(20px, 3vw, 40px); }
+@media (max-width: 700px) { .tagline { margin-top: -48px; border-radius: 24px; } }
+
+/* Section colour ramp: night > cream > graphite > warm black, alternating */
+#work, #story { background: var(--bg-2); }
+#create { background: var(--bg); }
+#work { padding-top: clamp(104px, 13vw, 180px); margin-top: -36px; }
+#story { background: radial-gradient(900px 420px at 88% 0%, rgba(241, 102, 35, 0.08), transparent 62%), var(--bg-2); }
+.section--raised { background: var(--bg-2); }
+.trusted { background: var(--bg); border-top-color: var(--line); }
+#enquiry { background: radial-gradient(900px 480px at 12% 0%, rgba(241, 102, 35, 0.07), transparent 60%), var(--bg-2); }
+
+/* Glass frames on cards */
+.work__item { background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)), var(--card); border-color: rgba(255, 255, 255, 0.1); border-radius: 22px; padding: 12px 12px 22px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 20px 40px rgba(0, 0, 0, 0.25); }
+.work__item:hover { border-color: rgba(255, 255, 255, 0.22); }
+.work__media { border-radius: 14px; background: var(--bg); }
+.work__item h3, .work__item .work__meta, .work__item .link-arrow { padding-inline: 6px; }
+.tile { border-radius: 22px; }
+#story .story__media { border-radius: 24px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4); }
+.embed-fallback { border-radius: 22px; background: var(--card); }
+
+/* Glass socials, lightbox circles and the WhatsApp bubble */
+.socials a { border-radius: 12px; background: var(--glass); border-color: var(--glass-line); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); transition: border-color 300ms ease, color 300ms ease, background-color 300ms ease; }
+.socials a:hover { color: var(--text); border-color: rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.1); }
+.socials svg { width: 17px; height: 17px; }
+.lightbox__btn { border-radius: 50%; background: var(--glass); border: 1px solid var(--glass-line); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.lightbox__next { background: var(--text); color: var(--bg); border-color: transparent; }
+
+/* Footer closes the page in night */
+.site-footer { background: var(--night); border-top-color: var(--line); }
+.site-footer__col a { color: rgba(244, 239, 233, 0.86); }

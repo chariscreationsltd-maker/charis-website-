@@ -39,6 +39,7 @@ $h = $C['hero'];
 <?php endif; ?>
 
     <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__glow" aria-hidden="true"></div>
       <div class="wall" aria-hidden="true">
 <?php
 $rows = [range(1, 6), range(7, 12), range(13, 18)];
@@ -56,8 +57,9 @@ foreach ($rows as $ri => $row) {
 }
 ?>
       </div>
+      <svg class="hero__ribbon" aria-hidden="true" focusable="false" viewBox="0 0 1440 600" preserveAspectRatio="none" fill="none"><path d="M-40 420 C 260 260, 520 520, 760 330 S 1180 120, 1500 260" stroke="#f16623" stroke-width="26" stroke-linecap="round"/><path d="M-40 470 C 300 330, 560 560, 820 380 S 1200 200, 1500 320" stroke="#ff7a3a" stroke-width="8" stroke-linecap="round" opacity="0.8"/></svg>
       <div class="wrap hero__copy">
-        <p class="eyebrow"><?= e($h['eyebrow']) ?></p>
+        <p class="chip"><span class="chip__dot" aria-hidden="true"></span><?= e($h['eyebrow']) ?></p>
         <h1 id="hero-title"><?php foreach ($h['headline'] as $line): ?><span><?= e($line) ?></span> <?php endforeach; ?></h1>
         <p class="lede"><?= e($h['support']) ?></p>
         <div class="btn-row">
@@ -66,6 +68,7 @@ foreach ($rows as $ri => $row) {
         </div>
         <p class="hero__motto"><?= e($h['motto']) ?></p>
       </div>
+      <p class="hero__ghost" aria-hidden="true">Charis</p>
     </section>
 
 <?php

@@ -1,0 +1,72 @@
+{
+  "_note": "Site-wide settings. Edit text here; the pages read it. Keep valid JSON (double quotes, commas between items).",
+  "siteName": "Charis Creations",
+  "legalName": "Charis Creations Limited",
+  "baseUrl": "https://chariscreationsltd.com",
+  "noindex": true,
+  "analyticsId": "",
+  "_analyticsNote": "TO CONFIRM: paste the existing Google Analytics ID (G-XXXXXXX) from the WordPress site so history continues. Hudson must be owner.",
+  "_noindexNote": "Set noindex to false on launch day so Google can index the live site.",
+  "tagline": "Bringing Image to Life.",
+  "taglineSub": "Photography, films and human stories in Uganda.",
+  "founded": "2013",
+  "phone": "+256 706 028 899",
+  "phoneHref": "+256706028899",
+  "phoneAlt": "+256 778 028 899",
+  "phoneAltHref": "+256778028899",
+  "whatsapp": "https://wa.me/256706028899",
+  "email": "chariscreationsltd@gmail.com",
+  "_emailNote": "TO CONFIRM: Hudson to confirm the public email (may move to info@ on our own domain).",
+  "address": "Block 103 / Plot 801, Mungu Valley Road, Namugongo Sonde. P.O. Box 151380, Mukono.",
+  "artistry": {
+    "whatsappNumber": "+256 779 721 401",
+    "whatsapp": "https://wa.me/256779721401",
+    "instagram": "https://www.instagram.com/charis_artistry_",
+    "_instagramNote": "TO CONFIRM: Hudson to confirm the Artistry Instagram handle."
+  },
+  "social": {
+    "_note": "TO CONFIRM: Hudson to confirm the main Instagram handle (@CharisCreations or @CharisCreationsug).",
+    "instagram": "https://www.instagram.com/CharisCreationsug",
+    "tiktok": "https://www.tiktok.com/@CharisCreations",
+    "youtube": "https://www.youtube.com/@chariscreations4708",
+    "facebook": "https://www.facebook.com/CharisCreations",
+    "x": "https://x.com/CharisCreations"
+  },
+  "links": {
+    "_note": "Public CharisOS pages only (Master Handover section 07). Never add private pages here.",
+    "date": "https://app.chariscreationsltd.com/date.html",
+    "invest": "https://app.chariscreationsltd.com/invest.html",
+    "book": "https://app.chariscreationsltd.com/book.html",
+    "builder": "https://app.chariscreationsltd.com/builder.html",
+    "brief": "https://app.chariscreationsltd.com/brief.html",
+    "enquiry": "https://app.chariscreationsltd.com/contact-widget.html",
+    "testimonials": "https://app.chariscreationsltd.com/testimonials-widget.html",
+    "gift": "https://app.chariscreationsltd.com/gift.html",
+    "weddingTimeline": "https://app.chariscreationsltd.com/wedding-timeline.html",
+    "prepChecklist": "https://app.chariscreationsltd.com/prep-checklist.html",
+    "whatToWear": "https://app.chariscreationsltd.com/what-to-wear.html",
+    "makeupPackages": "https://app.chariscreationsltd.com/artistry.html",
+    "graduation": "https://app.chariscreationsltd.com/graduation.html",
+    "october": "https://app.chariscreationsltd.com/october.html"
+  },
+  "banners": [
+    {
+      "_note": "October free studio campaign. Shows only between start and end (end is the first day it is hidden).",
+      "on": true,
+      "start": "2026-10-01",
+      "end": "2026-11-01",
+      "text": "A free studio photoshoot this October.",
+      "button": "See How to Enter",
+      "link": "october"
+    },
+    {
+      "_note": "Default seasonal slot. Switch on or off with \"on\".",
+      "on": true,
+      "start": "",
+      "end": "",
+      "text": "A portrait session to give.",
+      "button": "Gift a Session",
+      "link": "gift"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+# Charis Creations website (PHP, no WordPress)
+Options -Indexes
+DirectoryIndex index.php index.html
+ErrorDocument 404 /404.php
+AddDefaultCharset utf-8
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Content and code folders are never served directly
+  RewriteRule ^(content|inc)(/|$) - [F,L]
+  RewriteRule (^|/)\.(?!well-known) - [F,L]
+  RewriteRule \.(md|json|log|bk|sql|zip)$ - [F,L,NC]
+
+  # sitemap and robots are generated from site.json
+  RewriteRule ^sitemap\.xml$ sitemap.php [L]
+  RewriteRule ^robots\.txt$ robots.php [L]
+
+  # Old addresses -> new addresses (permanent)
+  RewriteRule ^projects-2/?$ /projects/ [R=301,L,NC]
+  RewriteRule ^our-team/?$ /creatives/ [R=301,L,NC]
+  RewriteRule ^team/?$ /creatives/ [R=301,L,NC]
+  RewriteRule ^charis-artistry/?$ /artistry/ [R=301,L,NC]
+  RewriteRule ^refund-and-cancellation-policy/?$ /refund-policy/ [R=301,L,NC]
+  RewriteRule ^terms-and-conditions/?$ /terms-of-service/ [R=301,L,NC]
+
+  # /something/index.html or index.php -> /something/
+  RewriteCond %{THE_REQUEST} \s/+(.*?/)?index\.(html|php)[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L,NE]
+
+  # Old WordPress addresses
+  RewriteRule ^(wp-admin|wp-login\.php|wp-content|wp-includes|xmlrpc\.php)(/|$) - [G,L]
+  RewriteRule ^feed/?$ / [R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com; frame-src https://app.chariscreationsltd.com https://www.youtube-nocookie.com https://www.youtube.com https://player.vimeo.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://app.chariscreationsltd.com"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain application/javascript text/javascript application/xml image/svg+xml
+</IfModule>
+
+<FilesMatch "\.(json|md|log)$">
+  Require all denied
+</FilesMatch>

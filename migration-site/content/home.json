@@ -1,0 +1,114 @@
+{
+  "_note": "Home page text and photos. Photo names refer to /assets/img/photo/{name}-1600.webp.",
+  "meta": {
+    "title": "Charis Creations | Wedding Films, Introductions and Portraits in Kampala",
+    "description": "Wedding films, introductions, kukyala, portraits and stories for people and organisations. Charis Creations, Namugongo, Kampala, since 2013.",
+    "image": "og-home"
+  },
+  "hero": {
+    "_photosNote": "TO CONFIRM: Hudson to supply or approve the 15 to 18 photos. Only clients whose brief allows public use. Files: /assets/img/hero/wall-01.webp to wall-18.webp.",
+    "eyebrow": "Charis Creations | Kampala | Since 2013",
+    "headline": ["We don’t direct your moments.", "We disappear into them."],
+    "support": "Wedding films, introductions, portraits and stories for people and organisations.",
+    "primary": { "label": "Check Your Date", "link": "date" },
+    "secondary": { "label": "See Our Work", "link": "/projects/" },
+    "motto": "Unscripted. Unfiltered. Unforgettable."
+  },
+  "trusted": {
+    "heading": "Trusted to tell important stories.",
+    "_logosNote": "TO CONFIRM: Hudson to confirm permission to show each logo. White logos on transparent background in /assets/img/logos/. h = display height in px.",
+    "logos": [
+      { "file": "ethics-integrity-op.png", "name": "Directorate for Ethics and Integrity, Office of the President of Uganda", "h": 40 },
+      { "file": "raise-the-roof.png", "name": "Raise the Roof Academy", "h": 64 },
+      { "file": "haven.png", "name": "Haven for African Children", "h": 44 },
+      { "file": "isi.png", "name": "Iron Sharpens Iron Ministries International", "h": 56 },
+      { "file": "the-lawns.png", "name": "The Lawns, Wild Game and BBQ Restaurant", "h": 46 },
+      { "file": "steel-and-tube.png", "name": "Steel & Tube", "h": 34 },
+      { "file": "st-lawrence.png", "name": "St Lawrence Schools & Colleges", "h": 30 },
+      { "file": "st-francis.png", "name": "St Francis Chapel, Makerere University", "h": 44 },
+      { "file": "fathers-arise.png", "name": "Fathers Arise", "h": 54 },
+      { "file": "barefoot.png", "name": "Barefoot Soccer", "h": 54 },
+      { "file": "humble-management.png", "name": "Humble Management", "h": 50 },
+      { "file": "3ez-series-books.png", "name": "3Ez Series", "h": 40 },
+      { "file": "peak.png", "name": "PP, I Can Do All Things", "h": 54 },
+      { "file": "make-jesus-famous.png", "name": "Make Jesus Famous", "h": 50 }
+    ]
+  },
+  "featured": {
+    "heading": "Featured work.",
+    "_note": "TO CONFIRM: Hudson to supply six projects, titles, places, links and consent. 'link' and 'linkLabel' appear only when a real film or gallery exists.",
+    "items": [
+      { "photo": "fahad-darlin", "title": "Fahad & Darlin", "type": "Wedding", "place": "", "alt": "Fahad and Darlin celebrating at their lakeside wedding", "link": "", "linkLabel": "" },
+      { "photo": "moreen-kuhinjira", "title": "Moreen’s Kuhinjira", "type": "Kuhinjira", "place": "", "alt": "Moreen in bridal makeup on her kuhinjira day", "link": "", "linkLabel": "" },
+      { "photo": "sharif-liz", "title": "Sharif & Liz", "type": "Wedding", "place": "", "alt": "The groom checking his watch among green leaves before the ceremony", "link": "", "linkLabel": "" },
+      { "photo": "fred-gloria", "title": "Fred & Gloria", "type": "Couple Portraits", "place": "", "alt": "Fred and Gloria in a soft studio portrait", "link": "", "linkLabel": "" },
+      { "photo": "malaria-dialogue", "title": "Strategic Dialogue on New Malaria Tools", "type": "Corporate Event", "place": "Kampala", "alt": "A speaker at the podium during the Strategic Dialogue on New Malaria Tools", "link": "", "linkLabel": "" },
+      { "photo": "joan-graduation", "title": "Joan", "type": "Graduation Portraits", "place": "", "alt": "Joan seated in the studio beside her graduation gown", "link": "", "linkLabel": "" }
+    ]
+  },
+  "create": {
+    "heading": "What we create.",
+    "items": [
+      { "photo": "svc-weddings", "title": "Weddings", "line": "The people, promises and reactions that make the day yours.", "anchor": "weddings", "alt": "A bride holding her bouquet in a garden" },
+      { "photo": "svc-introductions", "title": "Introductions & Kukyala", "line": "Family, culture and the meaning behind each tradition.", "anchor": "introductions", "alt": "A bride in a gomesi at her introduction ceremony" },
+      { "photo": "svc-studio", "title": "Studio Portraits", "line": "Portraits that feel like you, with guidance when you need it.", "anchor": "studio", "alt": "Two friends sitting back to back in a red studio set" },
+      { "photo": "svc-corporate", "title": "Corporate & Events", "line": "Clear coverage of the people and work behind your organisation.", "anchor": "corporate", "alt": "Performers on a lit stage at a live event" },
+      { "photo": "svc-documentaries", "title": "Documentaries & Brand Films", "line": "Human stories that help others understand your work.", "anchor": "corporate", "alt": "An elephant in tall grass, from a documentary shoot" },
+      { "photo": "svc-podcasts", "title": "Podcasts & Livestreams", "line": "Thoughtful production for conversations and events worth sharing.", "anchor": "podcast", "alt": "Three hosts on a podcast set" }
+    ]
+  },
+  "story": {
+    "heading": "A camera was the beginning.",
+    "body": "Charis Creations began in 2013 with a camera and a belief that people deserve to see their lives and work represented with care. Today we photograph weddings, create films, produce brand stories and work with organisations across Uganda. The work has grown. The attention we give people remains at its centre.",
+    "photo": "story",
+    "alt": "A couple laughing together in a black and white wedding portrait",
+    "facts": [
+      { "label": "Founded", "value": "2013" },
+      { "label": "Studio", "value": "Namugongo, Kampala" }
+    ],
+    "link": { "label": "Meet Our Team", "url": "/creatives/" }
+  },
+  "journey": {
+    "heading": "What it feels like to work with us.",
+    "intro": "You should always know what happens next and where your project stands.",
+    "_screensNote": "TO CONFIRM: Hudson to supply four phone screenshots with names, amounts and private details hidden. Add the photo name to 'screen' to show it.",
+    "steps": [
+      { "title": "Plan With Us", "text": "Your timeline, preparation checklist and what-to-wear guide, made for your day.", "screen": "" },
+      { "title": "Your Private Page", "text": "Your project details, payments and updates in one place.", "screen": "" },
+      { "title": "The Day", "text": "Your crew arrives knowing the plan and the people to watch for.", "screen": "" },
+      { "title": "The Reveal", "text": "Your photographs and film arrive on a private page made just for you.", "screen": "" }
+    ],
+    "closing": ["We don’t sell photography.", "We sell peace of mind."]
+  },
+  "voices": {
+    "heading": "Hear it from our clients."
+  },
+  "start": {
+    "heading": "Find your starting point.",
+    "body": "Every occasion is different. Explore the options, then tell us what you need.",
+    "_pricesNote": "TO CONFIRM: Hudson to confirm three starting prices. Leave price empty to hide the figure.",
+    "items": [
+      { "label": "Wedding photography & film", "price": "" },
+      { "label": "Introduction coverage", "price": "" },
+      { "label": "Studio portraits", "price": "" }
+    ],
+    "button": { "label": "Explore Packages", "link": "invest" }
+  },
+  "faq": {
+    "heading": "A few things you may be wondering.",
+    "items": [
+      { "q": "How do I reserve my date?", "a": "Your booking fee confirms the booking. For weddings and introductions, your date is reserved once 70% of the package has cleared. Our <a href=\"/terms-of-service/\">Terms</a> explain the details." },
+      { "q": "Do you travel outside Kampala?", "a": "Yes. For events more than 100 km from our studio in Namugongo, the client provides accommodation for the crew." },
+      { "q": "What if our date changes?", "a": "You can move your event to a new date within 6 months, if our team is free. Everything you paid moves with you." },
+      { "q": "How will we receive our work?", "a": "Your finished photographs and film arrive through a private online gallery link." },
+      { "q": "Can we request changes?", "a": "One round of revisions is included. Send your requests within 14 days of delivery." },
+      { "q": "Can I gift a studio session?", "a": "Yes. <a href=\"https://app.chariscreationsltd.com/gift.html\">Gift a session online.</a>" }
+    ]
+  },
+  "enquiry": {
+    "heading": "Tell us what you’re planning.",
+    "body": "Start with a few details. We’ll help you find the right next step.",
+    "whatsappLine": "Prefer WhatsApp? Chat with us.",
+    "privacyLine": "By sending this you agree to our Privacy Policy."
+  }
+}

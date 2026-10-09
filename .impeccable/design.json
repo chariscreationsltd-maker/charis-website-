@@ -1,0 +1,452 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-09T11:10:59+00:00",
+  "title": "Design System: Charis Creations",
+  "extensions": {
+    "colorMeta": {
+      "ink-black": {
+        "role": "neutral",
+        "displayName": "Ink Black",
+        "canonical": "oklch(14.5% 0 0)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca",
+          "#eeeeee"
+        ]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "oklch(21.8% 0 0)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca",
+          "#eeeeee"
+        ]
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Bone",
+        "canonical": "oklch(96.7% 0.003 106.4)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#242423",
+          "#40403e",
+          "#5e5e5c",
+          "#80807e",
+          "#a5a5a3",
+          "#cacac9",
+          "#eeeeec"
+        ]
+      },
+      "bone-muted": {
+        "role": "neutral",
+        "displayName": "Bone Muted",
+        "canonical": "rgba(244, 244, 242, 0.72)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#242423",
+          "#40403e",
+          "#5e5e5c",
+          "#80807e",
+          "#a5a5a3",
+          "#cacac9",
+          "#eeeeec"
+        ]
+      },
+      "bone-faint": {
+        "role": "neutral",
+        "displayName": "Bone Faint",
+        "canonical": "rgba(244, 244, 242, 0.56)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#242423",
+          "#40403e",
+          "#5e5e5c",
+          "#80807e",
+          "#a5a5a3",
+          "#cacac9",
+          "#eeeeec"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(244, 244, 242, 0.12)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#242423",
+          "#40403e",
+          "#5e5e5c",
+          "#80807e",
+          "#a5a5a3",
+          "#cacac9",
+          "#eeeeec"
+        ]
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "rgba(244, 244, 242, 0.28)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#242423",
+          "#40403e",
+          "#5e5e5c",
+          "#80807e",
+          "#a5a5a3",
+          "#cacac9",
+          "#eeeeec"
+        ]
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Logo Orange",
+        "canonical": "oklch(67.6% 0.187 42.4)",
+        "tonalRamp": [
+          "#1a0400",
+          "#411300",
+          "#6d2500",
+          "#9c3a01",
+          "#d35002",
+          "#fe773b",
+          "#feb79c",
+          "#feeae2"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Ember Orange",
+        "canonical": "oklch(73% 0.176 44.5)",
+        "tonalRamp": [
+          "#190400",
+          "#401501",
+          "#6b2801",
+          "#9a3d01",
+          "#d05503",
+          "#fb7a39",
+          "#feb899",
+          "#ffeae1"
+        ]
+      },
+      "on-primary": {
+        "role": "neutral",
+        "displayName": "Ink on Orange",
+        "canonical": "oklch(14.5% 0 0)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca",
+          "#eeeeee"
+        ]
+      },
+      "whatsapp-green": {
+        "role": "tertiary",
+        "displayName": "WhatsApp Green",
+        "canonical": "oklch(76.1% 0.201 149.7)",
+        "tonalRamp": [
+          "#001003",
+          "#012d0f",
+          "#024e20",
+          "#007131",
+          "#069a45",
+          "#04c55a",
+          "#4eed7f",
+          "#c8ffd1"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page and hero headlines, one per page; uppercase, balanced."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card, tile, package, person and step names; also FAQ questions and ruled-list row names."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running copy at 17px, held to 64ch; never under 16px on phones."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "First paragraph under a headline, held to 58ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav, sub-nav tabs, footer heads, package tags and group heads, the three pinned eyebrows, the hero motto."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Button and arrow-link text."
+      }
+    },
+    "shadows": [
+      {
+        "name": "float",
+        "value": "0 24px 60px rgba(0, 0, 0, 0.55)",
+        "purpose": "Book Now dropdown on desktop."
+      },
+      {
+        "name": "device",
+        "value": "0 28px 60px rgba(0, 0, 0, 0.5)",
+        "purpose": "Phone frames showing CharisOS screens in the client journey."
+      },
+      {
+        "name": "action",
+        "value": "0 12px 30px rgba(0, 0, 0, 0.5)",
+        "purpose": "Floating WhatsApp button."
+      },
+      {
+        "name": "headline-lift",
+        "value": "text-shadow: 0 2px 32px rgba(0, 0, 0, 0.5)",
+        "purpose": "Home hero headline over the photo wall."
+      },
+      {
+        "name": "featured-rule",
+        "value": "inset 0 2px 0 #f16623",
+        "purpose": "Top-edge orange rule on a featured package card."
+      },
+      {
+        "name": "glass-header",
+        "value": "background: rgba(10,10,10,0.82); backdrop-filter: blur(16px) saturate(140%)",
+        "purpose": "Sticky header; solid #0a0a0a under prefers-reduced-transparency."
+      },
+      {
+        "name": "glass-subnav",
+        "value": "background: rgba(10,10,10,0.92); backdrop-filter: blur(12px)",
+        "purpose": "Services sticky sub-navigation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "House easing for reveals, develop, menus, arrows and press feedback."
+      },
+      {
+        "name": "press",
+        "value": "transform: scale(0.97) over 140ms",
+        "purpose": "Active state on buttons and the Book Now toggle (WhatsApp float: 0.94)."
+      },
+      {
+        "name": "state-color",
+        "value": "160ms to 180ms ease",
+        "purpose": "Hover colour, border and background changes; hover only on (hover: hover) and (pointer: fine)."
+      },
+      {
+        "name": "menu",
+        "value": "opacity 160ms, transform 180ms ease-out from translateY(-4px) scale(0.98)",
+        "purpose": "Book Now dropdown and mobile nav sheet (200ms/220ms)."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity 0.35 to 1, translateY(16px) to 0 over 900ms ease-out",
+        "purpose": "Fade-up of content blocks on scroll (threshold 0.12, rootMargin -12% bottom)."
+      },
+      {
+        "name": "develop",
+        "value": "filter grayscale(1) brightness(0.9) to none over 1400ms ease-out",
+        "purpose": "Signature: photos resolve from black and white to colour as they enter the viewport."
+      },
+      {
+        "name": "hero-rise",
+        "value": "opacity 0 and translateY(14px) to rest over 900ms, 70ms stagger",
+        "purpose": "Home hero copy entrance."
+      },
+      {
+        "name": "wall-drift",
+        "value": "translateX 0 to -50%, linear, 56s to 68s, alternating direction per row",
+        "purpose": "Home hero photo wall drift."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce disables all of the above",
+        "purpose": "Wall still, content visible at rest, smooth scroll off."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "560px"
+      },
+      {
+        "name": "hero-stack",
+        "value": "700px"
+      },
+      {
+        "name": "split-collapse",
+        "value": "860px to 900px"
+      },
+      {
+        "name": "nav-sheet",
+        "value": "960px"
+      },
+      {
+        "name": "packages-2up",
+        "value": "1080px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one main action in a view: Check Your Date, Enquire Now on a featured package.",
+      "html": "<div class=\"ds-stage\"><a class=\"ds-btn ds-btn-primary\" href=\"#\">Check Your Date</a></div>",
+      "css": ":host{--bg:#0a0a0a;--bg-2:#1a1a1a;--line:rgba(244,244,242,.12);--line-strong:rgba(244,244,242,.28);--text:#f4f4f2;--text-2:rgba(244,244,242,.72);--text-3:rgba(244,244,242,.56);--accent:#f16623;--accent-hi:#ff7d3d;--on-accent:#0a0a0a;--display:'Barlow Condensed','Arial Narrow',sans-serif;--body:Barlow,system-ui,-apple-system,'Segoe UI',sans-serif;--ease-out:cubic-bezier(0.23,1,0.32,1);} .ds-stage{background:var(--bg);padding:32px;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;font:700 .95rem/1 var(--display);letter-spacing:.13em;text-transform:uppercase;text-decoration:none;white-space:nowrap;cursor:pointer;border:1.5px solid transparent;border-radius:0;transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease,transform 140ms var(--ease-out);} .ds-btn:active{transform:scale(.97);} .ds-btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px;} .ds-btn-primary{background:var(--accent);color:var(--on-accent);} .ds-btn-primary:hover{background:var(--accent-hi);}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action beside a primary (See Our Work), and Enquire Now on non-featured packages.",
+      "html": "<div class=\"ds-stage\"><a class=\"ds-btn ds-btn-outline\" href=\"#\">See Our Work</a></div>",
+      "css": ":host{--bg:#0a0a0a;--bg-2:#1a1a1a;--line:rgba(244,244,242,.12);--line-strong:rgba(244,244,242,.28);--text:#f4f4f2;--text-2:rgba(244,244,242,.72);--text-3:rgba(244,244,242,.56);--accent:#f16623;--accent-hi:#ff7d3d;--on-accent:#0a0a0a;--display:'Barlow Condensed','Arial Narrow',sans-serif;--body:Barlow,system-ui,-apple-system,'Segoe UI',sans-serif;--ease-out:cubic-bezier(0.23,1,0.32,1);} .ds-stage{background:var(--bg);padding:32px;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;font:700 .95rem/1 var(--display);letter-spacing:.13em;text-transform:uppercase;text-decoration:none;white-space:nowrap;cursor:pointer;border:1.5px solid transparent;border-radius:0;transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease,transform 140ms var(--ease-out);} .ds-btn:active{transform:scale(.97);} .ds-btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px;} .ds-btn-outline{border-color:var(--line-strong);color:var(--text);background:rgba(10,10,10,.25);} .ds-btn-outline:hover{border-color:var(--text);background:rgba(244,244,242,.06);}"
+    },
+    {
+      "name": "Arrow Link",
+      "kind": "custom",
+      "refersTo": "link-arrow",
+      "description": "Tertiary step in orange condensed caps; the arrow slides on hover.",
+      "html": "<div class=\"ds-stage\"><a class=\"ds-link-arrow\" href=\"#\">See how to enter <span class=\"ds-arrow\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></span></a></div>",
+      "css": ":host{--bg:#0a0a0a;--bg-2:#1a1a1a;--line:rgba(244,244,242,.12);--line-strong:rgba(244,244,242,.28);--text:#f4f4f2;--text-2:rgba(244,244,242,.72);--text-3:rgba(244,244,242,.56);--accent:#f16623;--accent-hi:#ff7d3d;--on-accent:#0a0a0a;--display:'Barlow Condensed','Arial Narrow',sans-serif;--body:Barlow,system-ui,-apple-system,'Segoe UI',sans-serif;--ease-out:cubic-bezier(0.23,1,0.32,1);} .ds-stage{background:var(--bg);padding:32px;} .ds-link-arrow{display:inline-flex;align-items:center;gap:8px;color:var(--accent);text-decoration:none;font:700 .92rem/1.2 var(--display);letter-spacing:.12em;text-transform:uppercase;} .ds-arrow svg{display:block;transition:transform 200ms var(--ease-out);} .ds-link-arrow:hover .ds-arrow svg{transform:translateX(4px);} .ds-link-arrow:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky 68px glass header: logo wordmark, condensed caps links, current page underlined in orange, orange Book Now toggle.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-brand__word\">Charis<br><b>Creations</b></span></a><nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Projects</a><a href=\"#\">Services</a><a href=\"#\">Our Team</a><a href=\"#\">Artistry</a><a href=\"#\">Contact</a><button class=\"ds-book\" type=\"button\">Book Now <svg viewBox=\"0 0 24 24\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M5 9l7 7 7-7\"/></svg></button></nav></header>",
+      "css": ":host{--bg:#0a0a0a;--bg-2:#1a1a1a;--line:rgba(244,244,242,.12);--line-strong:rgba(244,244,242,.28);--text:#f4f4f2;--text-2:rgba(244,244,242,.72);--text-3:rgba(244,244,242,.56);--accent:#f16623;--accent-hi:#ff7d3d;--on-accent:#0a0a0a;--display:'Barlow Condensed','Arial Narrow',sans-serif;--body:Barlow,system-ui,-apple-system,'Segoe UI',sans-serif;--ease-out:cubic-bezier(0.23,1,0.32,1);} .ds-header{display:flex;align-items:center;justify-content:space-between;gap:24px;height:68px;padding:0 32px;background:rgba(10,10,10,.82);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid var(--line);color:var(--text);} .ds-brand{text-decoration:none;color:var(--text);} .ds-brand__word{font:800 .9rem/.94 var(--display);letter-spacing:.09em;text-transform:uppercase;} .ds-brand__word b{color:var(--accent);} .ds-nav{display:flex;align-items:center;gap:28px;} .ds-nav a{padding:10px 0;text-decoration:none;font:600 .86rem/1 var(--display);letter-spacing:.17em;text-transform:uppercase;color:var(--text-2);transition:color 160ms ease;} .ds-nav a:hover,.ds-nav a[aria-current=page]{color:var(--text);} .ds-nav a[aria-current=page]{box-shadow:inset 0 -2px 0 var(--accent);} .ds-nav a:focus-visible,.ds-book:focus-visible{outline:2px solid var(--accent);outline-offset:3px;} .ds-book{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 18px;border:0;cursor:pointer;background:var(--accent);color:var(--on-accent);font:700 .88rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;transition:background-color 180ms ease,transform 140ms var(--ease-out);} .ds-book:hover{background:var(--accent-hi);} .ds-book:active{transform:scale(.97);}"
+    },
+    {
+      "name": "Package Card",
+      "kind": "card",
+      "refersTo": "package-card",
+      "description": "Graphite pricing card; the featured variant gets a stronger hairline, a 2px orange top rule and an orange tag.",
+      "html": "<div class=\"ds-stage\"><article class=\"ds-package ds-package--featured\"><p class=\"ds-package__tag\">Most Booked</p><h3>The Signature Cinema Package</h3><p class=\"ds-package__desc\">Drone coverage, colour grading, and a highlight film good enough to screen at the reception.</p><div class=\"ds-package__groups\"><h4>Photography</h4><ul><li>2 elite photographers</li><li>Premium collaged album</li></ul></div><a class=\"ds-btn\" href=\"#\">Enquire Now</a></article></div>",
+      "css": ":host{--bg:#0a0a0a;--bg-2:#1a1a1a;--line:rgba(244,244,242,.12);--line-strong:rgba(244,244,242,.28);--text:#f4f4f2;--text-2:rgba(244,244,242,.72);--text-3:rgba(244,244,242,.56);--accent:#f16623;--accent-hi:#ff7d3d;--on-accent:#0a0a0a;--display:'Barlow Condensed','Arial Narrow',sans-serif;--body:Barlow,system-ui,-apple-system,'Segoe UI',sans-serif;--ease-out:cubic-bezier(0.23,1,0.32,1);} .ds-stage{background:var(--bg);padding:32px;color:var(--text);font:400 1.0625rem/1.65 var(--body);} .ds-package{display:flex;flex-direction:column;gap:18px;max-width:360px;padding:30px;background:var(--bg-2);border:1px solid var(--line);} .ds-package--featured{border-color:var(--line-strong);box-shadow:inset 0 2px 0 var(--accent);} .ds-package__tag{margin:0;font:600 .78rem/1.2 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);} .ds-package h3{margin:0;font:800 1.7rem/1.08 var(--display);text-transform:uppercase;} .ds-package__desc{margin:0;color:var(--text-2);font-size:1rem;} .ds-package__groups{padding-top:18px;border-top:1px solid var(--line);} .ds-package__groups h4{margin:0 0 6px;font:700 .8rem/1.2 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--text-3);} .ds-package__groups ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;} .ds-package__groups li{position:relative;padding-left:18px;font-size:.98rem;} .ds-package__groups li::before{content:'';position:absolute;left:0;top:.72em;width:7px;height:2px;background:var(--accent);} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;font:700 .95rem/1 var(--display);letter-spacing:.13em;text-transform:uppercase;text-decoration:none;white-space:nowrap;cursor:pointer;border:1.5px solid transparent;border-radius:0;transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease,transform 140ms var(--ease-out);} .ds-btn:active{transform:scale(.97);} .ds-btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px;} .ds-package .ds-btn{align-self:flex-start;background:var(--accent);color:var(--on-accent);} .ds-package .ds-btn:hover{background:var(--accent-hi);}"
+    },
+    {
+      "name": "Ruled FAQ",
+      "kind": "custom",
+      "refersTo": "ruled-list",
+      "description": "The house ruled-list pattern: hairline rows, condensed caps question, orange plus that turns to a cross when open.",
+      "html": "<div class=\"ds-stage\"><div class=\"ds-faq\"><details open><summary>Do you travel outside Kampala?<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 4v16M4 12h16\"/></svg></summary><p>Yes. Tell us the venue when you check your date.</p></details><details><summary>How do we book?<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 4v16M4 12h16\"/></svg></summary><p>Check your date, then build your package.</p></details></div></div>",
+      "css": ":host{--bg:#0a0a0a;--bg-2:#1a1a1a;--line:rgba(244,244,242,.12);--line-strong:rgba(244,244,242,.28);--text:#f4f4f2;--text-2:rgba(244,244,242,.72);--text-3:rgba(244,244,242,.56);--accent:#f16623;--accent-hi:#ff7d3d;--on-accent:#0a0a0a;--display:'Barlow Condensed','Arial Narrow',sans-serif;--body:Barlow,system-ui,-apple-system,'Segoe UI',sans-serif;--ease-out:cubic-bezier(0.23,1,0.32,1);} .ds-stage{background:var(--bg);padding:32px;color:var(--text);font:400 1.0625rem/1.65 var(--body);} .ds-faq{border-top:1px solid var(--line);max-width:640px;} .ds-faq details{border-bottom:1px solid var(--line);} .ds-faq summary{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;cursor:pointer;list-style:none;font:700 1.3rem/1.2 var(--display);text-transform:uppercase;letter-spacing:.02em;} .ds-faq summary::-webkit-details-marker{display:none;} .ds-faq summary svg{flex:none;color:var(--accent);transition:transform 220ms var(--ease-out);} .ds-faq details[open] summary svg{transform:rotate(45deg);} .ds-faq summary:hover{color:#fff;} .ds-faq summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;} .ds-faq p{margin:0;padding:0 48px 26px 0;color:var(--text-2);}"
+    },
+    {
+      "name": "Client Journey Steps",
+      "kind": "custom",
+      "refersTo": "journey",
+      "description": "Ruled step columns with orange tabular numerals and hairline column dividers (neutral, never coloured).",
+      "html": "<div class=\"ds-stage\"><ol class=\"ds-journey\"><li><span class=\"ds-num\">01</span><h3>Check your date</h3><p>See if we are free on your day.</p></li><li><span class=\"ds-num\">02</span><h3>Plan together</h3><p>Your private project page holds the plan.</p></li><li><span class=\"ds-num\">03</span><h3>The day</h3><p>A briefed crew that disappears into it.</p></li></ol></div>",
+      "css": ":host{--bg:#0a0a0a;--bg-2:#1a1a1a;--line:rgba(244,244,242,.12);--line-strong:rgba(244,244,242,.28);--text:#f4f4f2;--text-2:rgba(244,244,242,.72);--text-3:rgba(244,244,242,.56);--accent:#f16623;--accent-hi:#ff7d3d;--on-accent:#0a0a0a;--display:'Barlow Condensed','Arial Narrow',sans-serif;--body:Barlow,system-ui,-apple-system,'Segoe UI',sans-serif;--ease-out:cubic-bezier(0.23,1,0.32,1);} .ds-stage{background:var(--bg);padding:32px;color:var(--text);font:400 1.0625rem/1.65 var(--body);} .ds-journey{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;margin:0;padding:0;border-top:1px solid var(--line);} .ds-journey li{display:grid;gap:14px;align-content:start;padding:32px 24px 8px 0;} .ds-journey li+li{padding-left:24px;border-left:1px solid var(--line);} .ds-num{font:800 3.2rem/1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums;} .ds-journey h3{margin:0;font:700 1.5rem/1.08 var(--display);text-transform:uppercase;} .ds-journey p{margin:0;color:var(--text-2);}"
+    },
+    {
+      "name": "Service Tile",
+      "kind": "card",
+      "refersTo": "service-tile",
+      "description": "Full-bleed photo tile with a bottom-up black scrim and condensed caption; photo eases to 1.04 on hover.",
+      "html": "<div class=\"ds-stage\"><a class=\"ds-tile\" href=\"#\"><span class=\"ds-tile__img\"></span><span class=\"ds-tile__body\"><h3>Weddings</h3><p>Photography and film for the whole day.</p></span></a></div>",
+      "css": ":host{--bg:#0a0a0a;--bg-2:#1a1a1a;--line:rgba(244,244,242,.12);--line-strong:rgba(244,244,242,.28);--text:#f4f4f2;--text-2:rgba(244,244,242,.72);--text-3:rgba(244,244,242,.56);--accent:#f16623;--accent-hi:#ff7d3d;--on-accent:#0a0a0a;--display:'Barlow Condensed','Arial Narrow',sans-serif;--body:Barlow,system-ui,-apple-system,'Segoe UI',sans-serif;--ease-out:cubic-bezier(0.23,1,0.32,1);} .ds-stage{background:var(--bg);padding:32px;color:var(--text);font:400 1.0625rem/1.65 var(--body);} .ds-tile{position:relative;isolation:isolate;display:grid;align-content:end;min-height:340px;max-width:360px;overflow:hidden;text-decoration:none;color:var(--text);background:var(--bg-2);} .ds-tile__img{position:absolute;inset:0;z-index:-2;background:linear-gradient(135deg,#5d5d5d,#242424);transition:transform 900ms var(--ease-out);} .ds-tile::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(10,10,10,.95) 6%,rgba(10,10,10,.6) 40%,rgba(10,10,10,.05) 74%);} .ds-tile:hover .ds-tile__img{transform:scale(1.04);} .ds-tile:focus-visible{outline:2px solid var(--accent);outline-offset:3px;} .ds-tile__body{display:grid;gap:10px;padding:28px;} .ds-tile h3{margin:0;font:700 1.55rem/1.08 var(--display);text-transform:uppercase;} .ds-tile p{margin:0;color:rgba(244,244,242,.8);font-size:1rem;}"
+    },
+    {
+      "name": "Floating WhatsApp",
+      "kind": "button",
+      "refersTo": "whatsapp-float",
+      "description": "The only round element and the only green: a fixed 58px WhatsApp circle with the Action shadow.",
+      "html": "<div class=\"ds-stage\"><a class=\"ds-wa\" href=\"#\" aria-label=\"Chat with Charis on WhatsApp\"><svg viewBox=\"0 0 24 24\" width=\"30\" height=\"30\" fill=\"currentColor\"><path d=\"M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.6.6-.9 1.4-.9 2.2 0 1 .5 2 1.1 2.8 1 1.4 2.3 2.6 3.9 3.3 1.4.6 2 .7 2.7.6.6-.1 1.5-.6 1.7-1.2.2-.5.2-1 .1-1.2l-.5-.2z\"/></svg></a></div>",
+      "css": ":host{--bg:#0a0a0a;--bg-2:#1a1a1a;--line:rgba(244,244,242,.12);--line-strong:rgba(244,244,242,.28);--text:#f4f4f2;--text-2:rgba(244,244,242,.72);--text-3:rgba(244,244,242,.56);--accent:#f16623;--accent-hi:#ff7d3d;--on-accent:#0a0a0a;--display:'Barlow Condensed','Arial Narrow',sans-serif;--body:Barlow,system-ui,-apple-system,'Segoe UI',sans-serif;--ease-out:cubic-bezier(0.23,1,0.32,1);} .ds-stage{background:var(--bg);padding:32px;} .ds-wa{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:#25d366;color:#0a0a0a;box-shadow:0 12px 30px rgba(0,0,0,.5);transition:transform 160ms var(--ease-out);} .ds-wa:active{transform:scale(.94);} .ds-wa:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Darkroom Wall",
+    "overview": "The site is a black wall in a darkroom with real prints pinned to it. Charis disappears into moments, so the interface does the same: near-black planes recede, photographs of real Ugandan weddings, introductions and portraits carry every page, and type speaks in short, condensed, uppercase lines like captions stencilled under the prints. Photos arrive in black and white and develop into colour as they scroll into view; that one motion is the system's signature.\n\nDensity is generous and editorial. Sections breathe on a tall vertical rhythm, photography is cropped edge to edge in sharp rectangles, and structure is drawn with hairline rules rather than boxes or shadows. Colour is almost absent by design: a single logo orange is spent only where the visitor acts (Check Your Date, Book Now, Enquire) and on a handful of small marks, so the next step is always the brightest thing on screen.\n\nThe system refuses the agency-template hero with a showreel button, soft rounded cards, coloured side stripes, invented kickers over every heading, and decorative motion. It is one dark theme, phone first, built to load fast inside WhatsApp's browser.",
+    "keyCharacteristics": [
+      "Two-tone black ground (#0A0A0A page, #1A1A1A raised) with warm bone text in three opacities.",
+      "One accent, logo orange, reserved for primary actions and small marks, always with dark text on it.",
+      "Barlow Condensed 800 uppercase headlines; Barlow body at 17px.",
+      "Sharp rectangles everywhere; hairline rules for structure; tonal layering instead of shadows.",
+      "\"Develop\" motion: grayscale to colour on scroll, quiet fade-up reveals, a slow drifting photo wall in the home hero; all of it off under reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "The Two Blacks Rule",
+        "body": "Backgrounds are #0A0A0A or #1A1A1A and nothing else. Depth comes from swapping between the two, never from a third grey, a gradient panel or a tinted surface. Photos and their scrims are the only other things that sit behind text.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Fire Rule",
+        "body": "Orange appears only on primary actions and small accents. If a screen has more than one orange-filled element in view besides the Book Now toggle, one of them is wrong. Text on orange is always ink black.",
+        "section": "colors"
+      },
+      {
+        "name": "The Shout and Explain Rule",
+        "body": "Everything that names something (headings, buttons, nav, labels) is Barlow Condensed uppercase; everything that explains is Barlow in sentence case. Never set a paragraph in condensed, and never set a heading in regular Barlow.",
+        "section": "typography"
+      },
+      {
+        "name": "The Phone Floor Rule",
+        "body": "Body text is never below 16px on phones (it ships at 17px). Captions and meta may drop to about 15px; only uppercase condensed labels and the legal line go smaller.",
+        "section": "typography"
+      },
+      {
+        "name": "The Three Eyebrows Rule",
+        "body": "Only the three eyebrows the handover pins exist: Home (\"Charis Creations | Kampala | Since 2013\"), Projects (\"Selected Work\") and Our Team (\"The People Behind the Work\"). Their style is Label in Bone Faint. An empty eyebrow field renders nothing. No other heading gets a label stacked above it.",
+        "section": "typography"
+      },
+      {
+        "name": "The Scrim, Not Shadow Rule",
+        "body": "Text over photographs is made legible with dark scrims (a 55% Ink Black wash on the home wall, a bottom-up gradient to 95% on service tiles), never with boxes behind the words.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Print Edge Rule",
+        "body": "Corners are square. A radius anywhere other than a depicted device or the WhatsApp circle is a defect.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do keep every background #0A0A0A or #1A1A1A, and alternate them to separate sections.",
+      "Do reserve orange (#F16623) for primary buttons, the Book Now toggle and small accents (step numerals, arrow links, dash bullets, the active-nav underline, focus rings), with ink-black text on any orange fill.",
+      "Do set headings, buttons, nav and labels in Barlow Condensed uppercase (800 for headlines, 700 for titles and buttons, 600 for labels) and running text in Barlow at 17px, never under 16px on phones.",
+      "Do keep every corner square and draw structure with 1px hairlines at 12% or 28% bone.",
+      "Do let photographs fill their frames edge to edge at fixed ratios, and put text over them only on a dark scrim.",
+      "Do gate every animation behind prefers-reduced-motion: no-preference, and keep content visible without JavaScript.",
+      "Do hide any block whose content is missing or unconfirmed (an empty eyebrow, a failed embed, an unconfirmed price) instead of showing a placeholder.",
+      "Do write copy with commas, full stops and pipes; keep the owned lines verbatim."
+    ],
+    "donts": [
+      "Don't introduce a third background grey, a gradient panel or a tinted surface.",
+      "Don't use orange for headings, large fills, section backgrounds or decoration, and don't put white text on orange.",
+      "Don't add eyebrows or kicker labels above headings beyond the three the handover pins.",
+      "Don't use coloured border-left (or border-right) accent stripes on cards, quotes or list items. Neutral hairline column dividers in ruled lists are fine.",
+      "Don't round corners, except the depicted phone frame and the WhatsApp circle.",
+      "Don't use em dashes or long dashes in copy.",
+      "Don't add pins, custom cursors, rotating clocks, flip cards, oversized scrolling text or any motion that ignores reduced-motion.",
+      "Don't add coloured or hard offset shadows; the only shadows are the soft black Float, Device and Action shadows."
+    ]
+  }
+}

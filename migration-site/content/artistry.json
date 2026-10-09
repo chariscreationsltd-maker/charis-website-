@@ -1,0 +1,254 @@
+{
+  "_note": "Package names, inclusions and prices must not change without Hudson's sign-off.",
+  "meta": {
+    "title": "Charis Artistry | Bridal Makeup & Hair in Kampala",
+    "description": "Bridal makeup, hair styling and beauty for introductions, weddings, studio portraits and special occasions in Kampala.",
+    "image": "og-artistry"
+  },
+  "hero": {
+    "eyebrow": "",
+    "headline": "Beauty that survives the whole day.",
+    "support": "The beauty team of Charis Creations. From bridal looks to studio sessions, corporate profiles and graduations, we create looks that suit you and last through the day.",
+    "photo": "artistry-hero",
+    "alt": "A bride with soft glam makeup and a pearl hair piece, holding a flower corsage",
+    "buttons": [
+      {
+        "label": "Book on WhatsApp",
+        "url": "wa:Hi, I'd like to book Charis Artistry makeup services",
+        "variant": "primary"
+      },
+      {
+        "label": "View Packages",
+        "url": "#packages",
+        "variant": "outline"
+      }
+    ]
+  },
+  "services": {
+    "heading": "Everything beauty, all under one roof.",
+    "body": "From bridal preparation to portraits and celebrations, we create looks that suit you, your attire and the setting, alongside the team filming your day.",
+    "items": [
+      {
+        "name": "Weddings",
+        "line": "Bridal glam designed to last through heat, tears, and dancing",
+        "link": "#packages",
+        "linkLabel": "See Packages"
+      },
+      {
+        "name": "Introductions",
+        "line": "Traditional beauty that makes your gomesi or mushanana look intentional",
+        "link": "#intro-packages",
+        "linkLabel": "See Packages"
+      },
+      {
+        "name": "Studio Shoots",
+        "line": "Camera-ready makeup for portraits, headshots & editorial sessions",
+        "wa": "Hi, I'd like a quote for Studio Shoot Makeup",
+        "linkLabel": "Get a Quote"
+      },
+      {
+        "name": "Graduations",
+        "line": "Gown-day glam that photographs beautifully in any light",
+        "wa": "Hi, I'd like a quote for Graduation Makeup",
+        "linkLabel": "Get a Quote"
+      },
+      {
+        "name": "Birthdays & Parties",
+        "line": "Celebration-ready looks for photoshoots and special occasions",
+        "wa": "Hi, I'd like a quote for Birthday Makeup",
+        "linkLabel": "Get a Quote"
+      },
+      {
+        "name": "Maternity Shoots",
+        "line": "Radiant, glowing looks for maternity photography sessions",
+        "wa": "Hi, I'd like a quote for Maternity Shoot Makeup",
+        "linkLabel": "Get a Quote"
+      },
+      {
+        "name": "Corporate & Brand",
+        "line": "Professional makeup for product shoots, profiles & campaigns",
+        "wa": "Hi, I'd like a quote for Commercial Makeup",
+        "linkLabel": "Get a Quote"
+      },
+      {
+        "name": "Bridal Party",
+        "line": "Bridesmaids, mothers, sisters, priced per person, styled as one",
+        "wa": "Hi, I'd like a quote for Bridal Party Makeup",
+        "linkLabel": "Get a Quote"
+      },
+      {
+        "name": "Special Occasions",
+        "line": "Engagements, anniversaries, galas, dinners, any event that needs a look",
+        "wa": "Hi, I'd like a quote for Special Occasion Makeup",
+        "linkLabel": "Get a Quote"
+      },
+      {
+        "name": "Hair Styling",
+        "line": "Braids, updos, weaves & natural styling, standalone or part of any package",
+        "wa": "Hi, I'd like a quote for Hair Styling",
+        "linkLabel": "Get a Quote"
+      }
+    ],
+    "note": "Weddings and introductions have set packages below. Everything else is custom-quoted: message us and we’ll build something for you.",
+    "_note": "Each item links to its packages or opens a WhatsApp quote request to the Artistry number."
+  },
+  "work": {
+    "heading": "See it for yourself.",
+    "support": "Finished looks on real clients.",
+    "_note": "TO CONFIRM: Only real, approved Charis Artistry photos. The forwarded WhatsApp images on the old page could not be confirmed as our own work and are not used until Hudson approves them.",
+    "photos": [
+      {
+        "name": "artistry-hero",
+        "alt": "Bridal makeup with a soft glam finish and a pearl hair piece"
+      },
+      {
+        "name": "artistry-studio",
+        "alt": "Studio portrait makeup with a natural finish, paired with glasses"
+      }
+    ]
+  },
+  "wedding": {
+    "kicker": "The Bridal Confidence System",
+    "heading": "Wedding packages.",
+    "intro": "Three tiers. Every package includes hair and makeup together.",
+    "packages": [
+      {
+        "name": "The Bridal Glow Package",
+        "desc": "A soft, classic bridal look with essential finishing touches.",
+        "price": "850,000",
+        "items": [
+          "Classic bridal glam",
+          "Basic hair styling",
+          "Finishing spray",
+          "Retouch kit"
+        ],
+        "best": "Brides who want a graceful, natural look. Nothing extravagant, just effortlessly bridal.",
+        "wa": "Hi, I'd like to book The Bridal Glow Package (UGX 850,000)"
+      },
+      {
+        "name": "The Bridal Luxe Package",
+        "tag": "Most Popular",
+        "featured": true,
+        "desc": "A more detailed bridal look with added finishing and touch-up support.",
+        "price": "1,500,000",
+        "items": [
+          "HD glam",
+          "Styled bridal hair",
+          "Neck & chest glow",
+          "Shine control",
+          "2-hour touch-up"
+        ],
+        "best": "Brides who want their look to hold through heat, tears, hugs and dancing on a long, emotional and heavily photographed day.",
+        "wa": "Hi, I'd like to book The Bridal Luxe Package (UGX 1,500,000)"
+      },
+      {
+        "name": "The Royal Bride Experience",
+        "desc": "Our most complete bridal experience, with planning and assistance before and on the day.",
+        "price": "2,500,000",
+        "items": [
+          "Luxury glam + custom lash set",
+          "Premium bridal styling (Hollywood waves, sculpted luxury bun)",
+          "Full glow on chest, arms, neckline",
+          "3-hour touch-up",
+          "Pre-wedding beauty game-plan",
+          "\"First Look\" beauty assistance"
+        ],
+        "best": "Brides who want a look they will love in the album they show their grandchildren.",
+        "wa": "Hi, I'd like to book The Royal Bride Experience (UGX 2,500,000)"
+      }
+    ]
+  },
+  "intro": {
+    "kicker": "The Confidence Collection",
+    "heading": "Introduction / Kwanjula packages.",
+    "intro": "Your introduction happens once. Traditional beauty that feels modern, intentional and completely you, without looking overdone.",
+    "packages": [
+      {
+        "name": "The Effortless Beauty Package",
+        "desc": "Soft glam for a calm, elegant introduction.",
+        "price": "800,000",
+        "items": [
+          "Soft glam makeup",
+          "Simple hair styling",
+          "Long-lasting finish",
+          "Retouch kit"
+        ],
+        "best": "Calm, elegant introductions where poise speaks louder than glam.",
+        "wa": "Hi, I'd like to book The Effortless Beauty Package (UGX 800,000)"
+      },
+      {
+        "name": "The Cultural Crown Package",
+        "tag": "Most Popular",
+        "featured": true,
+        "desc": "Where tradition meets modern beauty.",
+        "price": "1,500,000",
+        "items": [
+          "Full traditional glam",
+          "Hair styled to complement cultural attire",
+          "Premium lashes",
+          "Glow finish",
+          "1-hour touch-up"
+        ],
+        "best": "Women who want to honour culture without looking old-fashioned. Makes gomesi or mushanana look intentional and royal.",
+        "wa": "Hi, I'd like to book The Cultural Crown Package (UGX 1,500,000)"
+      },
+      {
+        "name": "The Daughter of Honour Experience",
+        "desc": "This is not only a makeup service. It is a stress-removal experience.",
+        "price": "2,000,000",
+        "items": [
+          "Luxury HD glam",
+          "Premium hair sculpting",
+          "2-hour touch-up",
+          "Sweat-proof prep",
+          "Full glow finish",
+          "Pre-event beauty consultation"
+        ],
+        "best": "Women whose introduction is a major family event, from the first ululation to the last photograph.",
+        "wa": "Hi, I'd like to book The Daughter of Honour Experience (UGX 2,000,000)"
+      }
+    ]
+  },
+  "why": {
+    "heading": "The Charis advantage.",
+    "intro": "There are many makeup artists. There is only one team that does your face and your film as one coordinated vision.",
+    "items": [
+      {
+        "title": "Camera-Ready Beauty",
+        "text": "We work alongside a professional film crew. Your makeup is designed to look right on camera, not just in the mirror."
+      },
+      {
+        "title": "Built for Uganda",
+        "text": "Products and techniques chosen for heat, humidity and long outdoor events, so your look holds through the ceremony, the reception and the golden hour photos."
+      },
+      {
+        "title": "Cultural Expertise",
+        "text": "From gomesi to mushanana, we understand traditional Ugandan beauty. We don’t make traditional attire look like a costume. We make it look like a crown."
+      },
+      {
+        "title": "One Team, One Vision",
+        "text": "When you book Charis Artistry with Charis Creations film, your makeup artist and film crew work as one coordinated team. No separate briefings."
+      },
+      {
+        "title": "Hair + Makeup Together",
+        "text": "No need to book separate people, coordinate separate schedules, or worry about styles that don’t match."
+      },
+      {
+        "title": "Touch-Up Coverage",
+        "text": "Most packages include dedicated touch-up time. We stay through the day so you look your best in every photo."
+      }
+    ]
+  },
+  "combined": {
+    "kicker": "The Charis Complete Package",
+    "heading": "Book film and makeup together.",
+    "body": "When Charis Creations films your wedding and Charis Artistry does your makeup, the two teams work as one. Your makeup artist knows when the cameras are rolling. Your cinematographer knows your best angles. Ask about our combined package offers.",
+    "wa": "Hi, I'd like to ask about combined Film + Makeup packages from Charis",
+    "button": "Ask About Combined Packages"
+  },
+  "book": {
+    "heading": "Ready to book?",
+    "body": "Weddings and introductions book up early. Message us to check availability.",
+    "wa": "Hi, I'd like to book Charis Artistry makeup services. Please share availability."
+  }
+}

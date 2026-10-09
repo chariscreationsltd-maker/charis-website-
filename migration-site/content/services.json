@@ -1,0 +1,652 @@
+{
+  "_note": "Package names, inclusions, quantities and prices must not change without Hudson's sign-off (Master Handover, ground rules).",
+  "meta": {
+    "title": "Services and Packages | Charis Creations",
+    "description": "Wedding films, introductions, kukyala, studio portraits, corporate and brand films, livestreams and podcasts from Charis Creations in Kampala.",
+    "image": "og-services"
+  },
+  "hero": {
+    "headline": "Coverage that fits your occasion.",
+    "support": "Every package is built around your day. Here is where most people start."
+  },
+  "tabs": [
+    {
+      "id": "weddings",
+      "label": "Weddings"
+    },
+    {
+      "id": "introductions",
+      "label": "Introductions"
+    },
+    {
+      "id": "kukyala",
+      "label": "Kukyala & Pre-visit"
+    },
+    {
+      "id": "studio",
+      "label": "Studio Sessions"
+    },
+    {
+      "id": "corporate",
+      "label": "Corporate & Brand"
+    },
+    {
+      "id": "livestream",
+      "label": "Livestreaming"
+    },
+    {
+      "id": "podcast",
+      "label": "Podcast"
+    }
+  ],
+  "weddings": {
+    "headline": "Everything about your wedding is temporary. Except the film.",
+    "body": "You spend months preparing for one day. The film is what gets watched again, on anniversaries and by your children. We think that deserves serious attention.",
+    "photo": "svc-weddings",
+    "alt": "A bride holding her bouquet in a garden",
+    "buttons": [
+      {
+        "label": "Book a Wedding",
+        "url": "wa:Hi Charis, I'm interested in a Wedding Package",
+        "variant": "primary"
+      },
+      {
+        "label": "Build Your Package",
+        "url": "builder",
+        "variant": "outline"
+      },
+      {
+        "label": "Check Your Date",
+        "url": "date",
+        "variant": "outline"
+      }
+    ],
+    "packages": [
+      {
+        "name": "The Heart Story Package",
+        "desc": "Thoughtful coverage of your wedding, with photography, film and keepsakes chosen for the day.",
+        "groups": [
+          {
+            "title": "Photography",
+            "items": [
+              "2 Charis photographers trained in story-driven shooting",
+              "High-resolution soft copies delivered",
+              "Handcrafted album: 300 prints",
+              "1 A3 Framed board"
+            ]
+          },
+          {
+            "title": "Videography",
+            "items": [
+              "2 professional videographers",
+              "2-3 minute cinematic highlight",
+              "Full HD film delivered on USB"
+            ]
+          },
+          {
+            "title": "Experience",
+            "items": [
+              "Color-balanced professional editing",
+              "Standard cinematic lighting"
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Enquire Now",
+          "url": "wa:Hi Charis, I'm interested in The Heart Story Package"
+        }
+      },
+      {
+        "tag": "Most Booked",
+        "featured": true,
+        "name": "The Signature Cinema Package",
+        "desc": "This is the one most couples choose. Drone coverage, colour grading, and a highlight film good enough to screen at the reception.",
+        "groups": [
+          {
+            "title": "Photography",
+            "items": [
+              "2 elite photographers",
+              "Premium collaged album: 400 prints",
+              "2 A3 framed boards"
+            ]
+          },
+          {
+            "title": "Videography",
+            "items": [
+              "3 professional videographers",
+              "3-5 minute cinematic highlight film",
+              "Full HD event film"
+            ]
+          },
+          {
+            "title": "Experience",
+            "items": [
+              "Advanced cinematic lighting rig",
+              "Soft cinematic color grading",
+              "Drone coverage for key moments"
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Enquire Now",
+          "url": "wa:Hi Charis, I'm interested in The Signature Cinema Package"
+        }
+      },
+      {
+        "name": "The Crown Experience",
+        "desc": "Our Creative Director runs your day. A same-day edit plays at your reception. When your guests go silent watching your highlight reel, you’ll understand why this package exists.",
+        "groups": [
+          {
+            "title": "Photography",
+            "items": [
+              "3 elite photographers",
+              "Luxury album: 600 prints",
+              "3 A3 framed boards"
+            ]
+          },
+          {
+            "title": "Videography",
+            "items": [
+              "3 filmmakers on the day",
+              "Same-Day Edit screened at your event",
+              "5-7 minute cinematic highlight",
+              "Full HD film + hard drive delivery"
+            ]
+          },
+          {
+            "title": "Experience",
+            "items": [
+              "Complete professional lighting rig",
+              "Charis Creative Director on-site",
+              "Signature color grade & finish",
+              "Full drone coverage throughout"
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Enquire Now",
+          "url": "wa:Hi Charis, I'm interested in The Crown Experience"
+        }
+      }
+    ],
+    "addons": {
+      "heading": "Wedding add-ons",
+      "items": [
+        {
+          "name": "Signature Drone Package",
+          "desc": "Breathtaking aerial perspectives of your venue and key ceremony moments."
+        },
+        {
+          "name": "Extra Photo Board A2",
+          "desc": "Large-format printed collage board, perfect for display at your next ceremony."
+        },
+        {
+          "name": "Second-Day Event Coverage",
+          "desc": "Full day of photography and film for day-two celebrations and after-parties."
+        },
+        {
+          "name": "Same-Day Edit",
+          "desc": "A cinematic highlight screened live at your reception, the moment guests never forget."
+        },
+        {
+          "name": "Custom USB Drive",
+          "desc": "Branded custom USB with your complete film and photo gallery."
+        },
+        {
+          "name": "4K Livestream",
+          "desc": "Multi-camera 4K livestream for family and guests joining from abroad."
+        },
+        {
+          "name": "Extra Livestream Camera",
+          "desc": "An additional 4K camera angle to capture every moment from every perspective."
+        },
+        {
+          "name": "Invitation Video",
+          "desc": "A cinematic invitation reel to share with your guests on WhatsApp and social media."
+        }
+      ]
+    }
+  },
+  "guides": {
+    "heading": "Plan with confidence.",
+    "items": [
+      {
+        "label": "Wedding Day Timeline",
+        "link": "weddingTimeline"
+      },
+      {
+        "label": "Preparation Checklist",
+        "link": "prepChecklist"
+      },
+      {
+        "label": "What to Wear",
+        "link": "whatToWear"
+      }
+    ]
+  },
+  "introductions": {
+    "headline": "Your introduction happens once. The film lasts forever.",
+    "body": "The negotiations move fast, the attire is stunning, the families are emotional, and it’s all over in a few hours. If your team misses a moment, it’s gone. We don’t miss moments.",
+    "photo": "svc-introductions",
+    "alt": "A bride in a gomesi at her introduction ceremony",
+    "buttons": [
+      {
+        "label": "Let’s Talk About Your Introduction",
+        "url": "wa:Hi Charis, I'm interested in an Introduction Package",
+        "variant": "primary"
+      },
+      {
+        "label": "Check Your Date",
+        "url": "date",
+        "variant": "outline"
+      }
+    ],
+    "packages": [
+      {
+        "name": "The Heart Story Package",
+        "desc": "Perfect for couples who want clean, beautiful memories, captured with excellence and delivered with care.",
+        "groups": [
+          {
+            "title": "Photography",
+            "items": [
+              "2 story-driven Charis photographers",
+              "High-resolution soft copies",
+              "Handcrafted album: 300 prints",
+              "1 A3 Framed board"
+            ]
+          },
+          {
+            "title": "Videography",
+            "items": [
+              "2 videographers",
+              "2-3 min cinematic highlight",
+              "Full HD film on USB"
+            ]
+          },
+          {
+            "title": "Experience",
+            "items": [
+              "Color-balanced editing",
+              "Standard cinematic lighting"
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Enquire Now",
+          "url": "wa:Hi Charis, Introduction Heart Story Package"
+        }
+      },
+      {
+        "tag": "Most Booked",
+        "featured": true,
+        "name": "The Signature Cinema Package",
+        "desc": "The ideal balance of luxury and cinematic emotion. Our most-chosen package, and you'll understand why the moment you see the film.",
+        "groups": [
+          {
+            "title": "Photography",
+            "items": [
+              "2 photographers",
+              "Premium collaged album: 400 prints",
+              "2 A3 framed boards"
+            ]
+          },
+          {
+            "title": "Videography",
+            "items": [
+              "3 videographers",
+              "3-5 min cinematic highlight",
+              "Full event film (HD)"
+            ]
+          },
+          {
+            "title": "Experience",
+            "items": [
+              "Advanced lighting",
+              "Soft cinematic color grading",
+              "Drone coverage for key moments"
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Enquire Now",
+          "url": "wa:Hi Charis, Introduction Signature Cinema Package"
+        }
+      },
+      {
+        "name": "The Crown Experience",
+        "desc": "For families who want a film they'll screen at the wedding. Full storytelling, from the first meeting to the final dance.",
+        "groups": [
+          {
+            "title": "Photography",
+            "items": [
+              "3 elite photographers",
+              "Luxury album: 600 prints",
+              "3 A3 framed boards"
+            ]
+          },
+          {
+            "title": "Videography",
+            "items": [
+              "3 filmmakers",
+              "Same-Day Edit at the event",
+              "5-7 min cinematic highlight",
+              "Full HD film + hard drive"
+            ]
+          },
+          {
+            "title": "Experience",
+            "items": [
+              "Complete lighting rig",
+              "Charis Creative Director on-site",
+              "Signature color & grade",
+              "Full drone coverage"
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Enquire Now",
+          "url": "wa:Hi Charis, Introduction Crown Experience"
+        }
+      }
+    ]
+  },
+  "kukyala": {
+    "from": "UGX 500K",
+    "headline": "The first steps deserve to be remembered.",
+    "body": "A Kukyala is intimate, joyful and full of family meaning. We photograph the connections, attire and traditions with care.",
+    "photo": "cat-kukyala",
+    "alt": "A couple embracing at a garden celebration",
+    "buttons": [
+      {
+        "label": "Enquire About Kukyala",
+        "url": "wa:Hi Charis, I'm interested in a Kukyala Package",
+        "variant": "primary"
+      }
+    ],
+    "packages": [
+      {
+        "name": "The Simple Grace Session",
+        "desc": "Perfect for couples who want simple, elegant documentation. Clean, timeless, and beautifully retouched.",
+        "groups": [
+          {
+            "title": "What You Receive",
+            "items": [
+              "1 professional Charis photographer",
+              "High-resolution soft copies delivered",
+              "Beautiful light retouching on every image",
+              "Edited photographs delivered to your private gallery."
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Enquire Now",
+          "url": "wa:Hi Charis, Simple Grace Kukyala Session"
+        }
+      },
+      {
+        "name": "The Motion Story Package",
+        "desc": "Adds emotion and retelling power to your kukyala. You'll want to watch this film over and over.",
+        "groups": [
+          {
+            "title": "What You Receive",
+            "items": [
+              "Everything in Simple Grace",
+              "1-2 minute cinematic highlight film",
+              "Smooth handheld cinematic motion",
+              "Licensed music scoring"
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Enquire Now",
+          "url": "wa:Hi Charis, Motion Story Kukyala Package"
+        }
+      },
+      {
+        "name": "The Handcrafted Memory Package",
+        "desc": "Turns your Kukyala into a keepsake. A tangible legacy you'll treasure for decades.",
+        "groups": [
+          {
+            "title": "What You Receive",
+            "items": [
+              "Everything in Motion Story",
+              "40-page professionally designed album",
+              "Personalized cover & custom layout"
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Enquire Now",
+          "url": "wa:Hi Charis, Handcrafted Memory Kukyala Package"
+        }
+      },
+      {
+        "featured": true,
+        "name": "The Full Cultural Experience",
+        "desc": "The album enters the equation, and this becomes the obvious, emotional choice. Perfect for families who want the entire journey documented from kukyala to wedding day.",
+        "groups": [
+          {
+            "title": "Everything Included",
+            "items": [
+              "Everything in Handcrafted Memory",
+              "2 A3 framed boards, ready for display at the next ceremony",
+              "The perfect setup to carry into your Introduction and Wedding"
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Book the Full Experience",
+          "url": "wa:Hi Charis, Full Cultural Experience Kukyala Package"
+        }
+      }
+    ]
+  },
+  "studio": {
+    "headline": "Look the way you feel inside.",
+    "body": "You know that feeling when someone takes a photo of you and you actually like it? That’s what our studio does. Personal branding. Family portraits. Content creation. Product shoots. You do not need to know how to pose. We’ll guide you.",
+    "photo": "svc-studio",
+    "alt": "Two friends sitting back to back in a red studio set",
+    "buttons": [
+      {
+        "label": "Book a Studio Session",
+        "url": "book",
+        "variant": "primary"
+      },
+      {
+        "label": "What to Wear",
+        "url": "whatToWear",
+        "variant": "outline"
+      },
+      {
+        "label": "Gift a Session",
+        "url": "gift",
+        "variant": "outline"
+      }
+    ],
+    "_pricesNote": "TO CONFIRM: Hudson to decide whether studio prices appear. Add \"price\" to a package to show it.",
+    "packages": [
+      {
+        "name": "The Starter Glow Session",
+        "desc": "Simple, clean, classic. Get the professional look without the complexity.",
+        "groups": [
+          {
+            "title": "Session Details",
+            "items": [
+              "30-minute studio session",
+              "10 beautifully edited photos",
+              "White or grey studio backdrop"
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Book This Session",
+          "url": "book"
+        }
+      },
+      {
+        "name": "The Signature Look Session",
+        "desc": "Recommended for personal branding, LinkedIn, and social media presence. You'll look like the professional you are.",
+        "groups": [
+          {
+            "title": "Session Details",
+            "items": [
+              "1-hour studio session",
+              "20 edited photos, all print-ready",
+              "2 backdrop choices",
+              "1 A4 print included"
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Book This Session",
+          "url": "book"
+        }
+      },
+      {
+        "tag": "Most Popular",
+        "featured": true,
+        "name": "The Celebrity Portrait Experience",
+        "desc": "Created for those who want to look iconic. This is the session that changes how the world sees you.",
+        "groups": [
+          {
+            "title": "Session Details",
+            "items": [
+              "1.5-hour premium studio session",
+              "30 edited photos",
+              "Up to 3 backdrop choices",
+              "2 A4 prints + 1 A3 collage",
+              "Optional BTS reel add-on"
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Book This Session",
+          "url": "book"
+        }
+      },
+      {
+        "name": "The Family Legacy Collection",
+        "desc": "This is the emotional anchor. A collection that becomes a family heirloom.",
+        "groups": [
+          {
+            "title": "Session Details",
+            "items": [
+              "2-hour full family session",
+              "40 edited photos",
+              "4 backdrop choices",
+              "3 A4 prints + framed A2",
+              "Group + individual portraits",
+              "Seasonal props included"
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Book This Session",
+          "url": "book"
+        }
+      }
+    ],
+    "addons": {
+      "heading": "Studio add-ons",
+      "items": [
+        {
+          "name": "Extra Edits",
+          "desc": "Additional retouched photos beyond your package allowance."
+        },
+        {
+          "name": "Short BTS Reel",
+          "desc": "A 60-second behind-the-scenes reel of your studio session, perfect for social media."
+        },
+        {
+          "name": "Custom Props",
+          "desc": "Themed and branded props sourced specifically for your studio session concept."
+        }
+      ]
+    }
+  },
+  "corporate": {
+    "headline": "Show people what your work makes possible.",
+    "body": "From company profiles and campaigns to events and documentary stories, we help organisations communicate clearly through photography and film.",
+    "photo": "svc-corporate",
+    "alt": "Performers on a lit stage at a live event",
+    "buttons": [
+      {
+        "label": "Tell Us About Your Project",
+        "url": "brief",
+        "variant": "primary"
+      }
+    ]
+  },
+  "livestream": {
+    "headline": "Bring everyone into the room.",
+    "body": "Multi-camera livestreams for conferences, services and events, planned around your programme.",
+    "photo": "cat-corporate",
+    "alt": "Guests and officials at a formal event",
+    "buttons": [
+      {
+        "label": "Ask About Livestreaming",
+        "url": "https://app.chariscreationsltd.com/contact-widget.html?service=Livestream",
+        "variant": "primary"
+      }
+    ]
+  },
+  "podcast": {
+    "headline": "Let the conversation lead.",
+    "body": "Multi-camera podcast production with considered lighting, clear audio and an edit made for where your audience watches.",
+    "photo": "svc-podcasts",
+    "alt": "Three hosts on a podcast set",
+    "buttons": [
+      {
+        "label": "Ask About Podcasts",
+        "url": "https://app.chariscreationsltd.com/contact-widget.html?service=Podcast",
+        "variant": "primary"
+      }
+    ]
+  },
+  "process": {
+    "heading": "From first call to final film.",
+    "steps": [
+      {
+        "title": "You Message Us",
+        "text": "WhatsApp, DM, or the form on this site. Takes 30 seconds."
+      },
+      {
+        "title": "We Listen",
+        "text": "Your project, your budget, your timeline. No pitch. No pressure."
+      },
+      {
+        "title": "We Build Your Package",
+        "text": "Around what you told us. Not a template."
+      },
+      {
+        "title": "We Create",
+        "text": "You focus on your event. We handle everything else."
+      },
+      {
+        "title": "Delivery",
+        "text": "Edited and colour-graded with care, then delivered to your private gallery."
+      }
+    ]
+  },
+  "close": {
+    "heading": "Whatever you’re building, it starts with one message.",
+    "body": "A wedding. A brand. A podcast. A partnership. Send it.",
+    "buttons": [
+      {
+        "label": "WhatsApp Us",
+        "url": "wa:Hi Charis Creations, I'd like to book a session!",
+        "variant": "primary"
+      },
+      {
+        "label": "Instagram DM",
+        "url": "instagram",
+        "variant": "outline"
+      },
+      {
+        "label": "Send an Enquiry",
+        "url": "enquiry",
+        "variant": "outline"
+      }
+    ]
+  }
+}

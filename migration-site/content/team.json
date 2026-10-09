@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "Our Team | Charis Creations",
+    "description": "Meet the Charis crew: photographers, filmmakers, editors and producers in Namugongo, Kampala, who prepare together and care about the people in front of the camera.",
+    "image": "og-team"
+  },
+  "hero": {
+    "eyebrow": "The People Behind the Work",
+    "headline": "Meet the Charis crew.",
+    "support": "Photographers, filmmakers, editors and producers who prepare together and care about the people in front of the camera.",
+    "photo": "team-group",
+    "alt": "The Charis Creations team together in the studio"
+  },
+  "origin": {
+    "heading": "How it started.",
+    "_note": "TO CONFIRM: Hudson to confirm the founding anecdote. About 80 words, no 'most trusted', no numbers.",
+    "body": "Charis Creations began in 2013, when founder Tumusiime Hudson picked up a camera at a friend’s introduction ceremony in Kampala and saw that Uganda’s stories were not being told the way they deserved. What started as one person filming kukyala ceremonies and weddings grew into a studio of cinematographers, photographers, editors, drone pilots and directors, united by one belief: every frame matters.",
+    "facts": [
+      { "label": "Founded", "value": "2013" },
+      { "label": "Studio", "value": "Namugongo, Kampala" }
+    ]
+  },
+  "people": {
+    "heading": "The people you may meet.",
+    "_note": "TO CONFIRM: Hudson to supply photos, full names, roles and one sentence each. The section is hidden while this list is empty. Example item: { \"photo\": \"team-hudson\", \"name\": \"Tumusiime Hudson\", \"role\": \"Founder and Creative Director\", \"line\": \"...\" }",
+    "items": []
+  },
+  "behind": {
+    "heading": "Behind the camera.",
+    "support": "Preparation, teamwork and the decisions that help the day run smoothly.",
+    "photos": [
+      { "name": "team-bts", "alt": "A Charis team member laughing during a studio session" }
+    ]
+  },
+  "close": {
+    "heading": "Ready to work with us?",
+    "button": { "label": "Tell Us About Your Project", "link": "enquiry" }
+  }
+}

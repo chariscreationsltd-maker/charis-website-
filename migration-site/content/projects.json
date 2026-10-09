@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "Our Work | Charis Creations",
+    "description": "Selected weddings, introductions, kukyala, portraits, documentaries and brand films by Charis Creations in Kampala.",
+    "image": "og-projects"
+  },
+  "hero": {
+    "eyebrow": "Selected Work",
+    "headline": "The work speaks.",
+    "support": "Weddings, introductions, portraits, documentaries and brand films.",
+    "_showreelNote": "TO CONFIRM: Hudson to supply the showreel. Paste a YouTube or Vimeo embed URL (for example https://www.youtube-nocookie.com/embed/VIDEO_ID). Empty means no player is shown.",
+    "showreel": ""
+  },
+  "potm": {
+    "heading": "Project of the month.",
+    "title": "Brenda’s Kuhinjira",
+    "category": "Kuhinjira | Elban Gardens",
+    "story": "They did not have a perfect plan. They just had each other, a vision, and a love that refused to be ordinary. From the first conversation to the final vow, every moment between them carried weight, the kind you feel in your chest before you can explain it in words. And that is exactly how Brenda’s kuhinjira became our Project of the Month.",
+    "details": [
+      { "label": "Location", "value": "Kampala, Uganda" },
+      { "label": "Date", "value": "May 2026" },
+      { "label": "Services", "value": "Photography and Videography" }
+    ],
+    "button": "View Brenda’s Story",
+    "_photosNote": "Photo names in /assets/img/photo/. The first is the large cover. Brenda's photos are waiting on files from the backup.",
+    "photos": [
+      { "name": "brenda-01", "alt": "Brenda at her kuhinjira" },
+      { "name": "brenda-02", "alt": "Brenda and her family at the kuhinjira" },
+      { "name": "brenda-03", "alt": "A moment from Brenda's kuhinjira" },
+      { "name": "brenda-04", "alt": "Guests at Brenda's kuhinjira" },
+      { "name": "brenda-05", "alt": "Brenda's kuhinjira at Elban Gardens" },
+      { "name": "brenda-06", "alt": "Celebration at Brenda's kuhinjira" },
+      { "name": "brenda-07", "alt": "Brenda's kuhinjira details" },
+      { "name": "brenda-08", "alt": "Brenda's kuhinjira portrait" }
+    ]
+  },
+  "gallery": {
+    "heading": "Find the work that speaks to you.",
+    "support": "Choose a category to see complete galleries and films.",
+    "_linksNote": "TO CONFIRM: Hudson to supply eight public SmugMug gallery links. Never use smugmug.com/app/organize (the private admin screen). A card without a link shows without a button. Cover photos are interim until Hudson approves.",
+    "items": [
+      { "title": "Wedding Films", "line": "Everything about your wedding is temporary. Except the film.", "photo": "cat-wedding", "alt": "A wedding guest holding a mirror while the bride smiles", "link": "" },
+      { "title": "Introduction", "line": "Your introduction happens once. We don’t miss moments.", "photo": "cat-introduction", "alt": "A bride in a gomesi at her introduction", "link": "" },
+      { "title": "Documentary", "line": "Your organisation does work that matters. We turn that impact into something people can see and feel.", "photo": "cat-documentary", "alt": "An elephant in tall grass", "link": "" },
+      { "title": "Kukyala", "line": "The warmth, laughter and cultural details of a day that brings families closer.", "photo": "cat-kukyala", "alt": "A couple embracing at a garden celebration", "link": "" },
+      { "title": "Podcasts", "line": "Clear sound, considered lighting and a setting that keeps the focus on the conversation.", "photo": "cat-podcasts", "alt": "Three hosts on a podcast set", "link": "" },
+      { "title": "Commercial Photography", "line": "Photography that presents your people, products and work with care and clarity.", "photo": "cat-commercial", "alt": "Two women in bright clothes on a lifestyle shoot", "link": "" },
+      { "title": "Branding", "line": "Personal Brand · Corporate", "photo": "cat-branding", "alt": "A man seated outside a modern house for a personal brand shoot", "link": "" },
+      { "title": "Corporate Events", "line": "Conferences · Launches · Galas", "photo": "cat-corporate", "alt": "Guests and officials at a formal event", "link": "" }
+    ]
+  },
+  "trailers": {
+    "heading": "Watch the story unfold.",
+    "_note": "TO CONFIRM: Hudson to supply six trailer links (YouTube or Vimeo embed URLs). Title format: \"Couple or Organisation | Film type\". Empty list means the section is hidden.",
+    "items": []
+  },
+  "close": {
+    "heading": "Your story could be next.",
+    "button": { "label": "Check Your Date", "link": "date" }
+  }
+}

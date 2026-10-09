@@ -95,7 +95,7 @@ foreach ($rows as $ri => $row) {
     $meta = trim($it['type'] . ($it['place'] ? ' | ' . $it['place'] : '')); ?>
           <li class="work__item reveal">
             <a class="work__open" href="/assets/img/photo/<?= e($it['photo']) ?>-1600.webp" data-lightbox="work" data-alt="<?= e($it['alt']) ?>" data-caption="<?= e($it['title'] . ' | ' . $meta) ?>" aria-label="View <?= e($it['title']) ?> larger">
-              <span class="work__media develop"><?= photo($it['photo'], $it['alt'], '(max-width: 760px) 78vw, 380px') ?></span>
+              <span class="work__media develop"><?= photo($it['photo'], $it['alt'], '(max-width: 760px) 78vw, 330px') ?></span>
             </a>
             <div>
               <h3><?= e($it['title']) ?></h3>

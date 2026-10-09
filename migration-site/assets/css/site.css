@@ -244,9 +244,14 @@ p { margin: 0; }
 /* ---------- Trusted by ---------- */
 .trusted { padding: clamp(64px, 9vw, 120px) 0; text-align: center; border-top: 1px solid var(--line); }
 .trusted h2 { font-size: clamp(1.7rem, 3.4vw, 2.6rem); margin-bottom: clamp(36px, 5vw, 56px); }
-.logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(28px, 4.2vw, 56px) clamp(32px, 5vw, 72px); list-style: none; margin: 0 auto; padding: 0; max-width: 1180px; }
-.logos img { height: var(--h, 52px); width: auto; opacity: 0.74; transition: opacity 200ms ease; }
-.logos img:hover { opacity: 1; }
+.logo-strips { display: grid; gap: clamp(28px, 4vw, 48px); overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.logo-strips__row { display: flex; align-items: center; gap: clamp(48px, 6vw, 96px); width: max-content; list-style: none; margin: 0; padding: 0 clamp(24px, 3vw, 48px); }
+.logo-strips__row--left { animation: strip-left 45s linear infinite; }
+.logo-strips__row--right { animation: strip-right 45s linear infinite; }
+.logo-strips:hover .logo-strips__row { animation-play-state: paused; }
+.logo-strips img { height: var(--h, 52px); width: auto; max-width: none; opacity: 0.74; transition: opacity 200ms ease; }
+.logo-strips img:hover { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .logo-strips__row--left, .logo-strips__row--right { animation: none; } .logo-strips { overflow-x: auto; } }
 
 /* ---------- Tagline band and photo strips (from the old site) ---------- */
 .tagline { background: #f2ede8; color: #1a1a1a; }

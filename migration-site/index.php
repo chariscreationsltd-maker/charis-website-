@@ -167,15 +167,27 @@ $rows = [$strip, array_merge(array_slice($strip, $half), array_slice($strip, 0, 
     <section class="trusted" aria-labelledby="trusted-title">
       <div class="wrap">
         <h2 id="trusted-title"><?= e($C['trusted']['heading']) ?></h2>
-        <ul class="logos">
-<?php foreach ($C['trusted']['logos'] as $l):
+      </div>
+<?php
+$logos = [];
+foreach ($C['trusted']['logos'] as $l) {
     $file = '/assets/img/logos/' . $l['file'];
     if (!is_file(SITE_ROOT . $file)) continue;
     [$w, $hh] = getimagesize(SITE_ROOT . $file);
-    $dh = (int) ($l['h'] ?? 48); ?>
-          <li><img src="<?= e($file) ?>" width="<?= (int) round($w * $dh / $hh) ?>" height="<?= $dh ?>" style="--h:<?= $dh ?>px" alt="<?= e($l['name']) ?>" loading="lazy"></li>
-<?php endforeach; ?>
+    $dh = (int) ($l['h'] ?? 48);
+    $logos[] = ['src' => $file, 'name' => $l['name'], 'h' => $dh, 'w' => (int) round($w * $dh / $hh)];
+}
+$mid = (int) ceil(count($logos) / 2);
+$logoRows = [array_slice($logos, 0, $mid), array_slice($logos, $mid)];
+?>
+      <div class="logo-strips">
+<?php foreach ($logoRows as $ri => $row): if (!$row) continue; ?>
+        <ul class="logo-strips__row logo-strips__row--<?= $ri ? 'right' : 'left' ?>">
+<?php foreach ([false, true, true, true] as $copy): foreach ($row as $l): ?>
+          <li<?= $copy ? ' aria-hidden="true"' : '' ?>><img src="<?= e($l['src']) ?>" width="<?= $l['w'] ?>" height="<?= $l['h'] ?>" style="--h:<?= $l['h'] ?>px" alt="<?= $copy ? '' : e($l['name']) ?>" loading="lazy"></li>
+<?php endforeach; endforeach; ?>
         </ul>
+<?php endforeach; ?>
       </div>
     </section>
 

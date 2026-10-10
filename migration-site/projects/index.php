@@ -4,6 +4,9 @@ $C = content('projects');
 page_start($C['meta'] + ['path' => '/projects/'], 'projects');
 ?>
     <section class="page-hero arc-hero" aria-labelledby="page-title">
+<?php if (has_photo($C['hero']['photo'] ?? '')): ?>
+      <div class="arc-hero__bg" aria-hidden="true"><?= photo($C['hero']['photo'], '', '100vw', '', false, true) ?></div>
+<?php endif; ?>
       <div class="wrap arc-hero__grid">
         <div class="page-hero__inner arc-hero__copy">
           <p class="chip"><span class="chip__dot" aria-hidden="true"></span><?= e($C['hero']['eyebrow']) ?></p>

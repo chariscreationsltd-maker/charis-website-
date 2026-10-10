@@ -1,0 +1,27 @@
+name: Check live site
+
+on:
+  push:
+    branches: [website-preview]
+    paths: [launch/check.trigger]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check chariscreationsltd.com
+        run: |
+          out=""
+          for u in / /projects/ /services/ /creatives/ /privacy-policy/ /sitemap.xml /robots.txt /test-post-created/ /projects-2/ /wp-login.php; do
+            out="$out $u=$(curl -s -o /dev/null -w '%{http_code}' "https://chariscreationsltd.com$u")"
+          done
+          out="$out www=$(curl -s -o /dev/null -w '%{http_code}>%{redirect_url}' https://www.chariscreationsltd.com/)"
+          echo "::notice title=codes::$out"
+          home=$(curl -s -D headers.txt https://chariscreationsltd.com/)
+          echo "::notice title=home-markers::newsite=$(echo "$home" | grep -c '/assets/css/site.css') wordpress=$(echo "$home" | grep -c 'wp-content') title=$(echo "$home" | grep -o '<title>[^<]*' | head -1 | tr -d '<')"
+          echo "::notice title=headers::$(grep -iE '^(server|x-litespeed-cache|x-turbo-charged-by|cache-control|x-cache|cf-cache-status|platform|panel|x-hcdn|age):' headers.txt | tr -d '\r' | tr '\n' '|')"
+          echo "::notice title=preview::$(curl -s -o /dev/null -w '%{http_code}' https://preview.chariscreationsltd.com/) bust=$(curl -s "https://chariscreationsltd.com/?nocache=$RANDOM" | grep -c '/assets/css/site.css')"

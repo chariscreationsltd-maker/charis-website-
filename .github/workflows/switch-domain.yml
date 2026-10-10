@@ -1,0 +1,84 @@
+name: Switch chariscreationsltd.com to the new site
+
+# One-off. Runs when launch/switch.trigger (switch) or launch/rollback.trigger
+# (put WordPress back) changes on website-preview. Only public_html/.htaccess
+# is touched; the WordPress .htaccess is kept as public_html/.htaccess-wordpress.
+on:
+  push:
+    branches: [website-preview]
+    paths: [launch/switch.trigger, launch/rollback.trigger]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ftp-deploy-preview
+  cancel-in-progress: false
+
+jobs:
+  switch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+
+      - name: Decide switch or rollback
+        id: mode
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep -q '^launch/rollback.trigger$'; then echo "mode=rollback" >> "$GITHUB_OUTPUT"; else echo "mode=switch" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Swap public_html/.htaccess over FTPS
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          MODE: ${{ steps.mode.outputs.mode }}
+        run: |
+          set -euo pipefail
+          OPTS="set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate no; set net:max-retries 3; set net:timeout 30"
+          L() { lftp -u "$FTP_USERNAME,$FTP_PASSWORD" "$FTP_SERVER" -e "$OPTS; $1; bye"; }
+          # Find the folder that holds both WordPress and Websitemigration (the domain's public_html)
+          ROOT=""
+          for d in "" "public_html" "domains/chariscreationsltd.com/public_html"; do
+            if L "cd '/$d' && cls -1a" > listing.txt 2>/dev/null && grep -qx 'Websitemigration/' listing.txt && grep -q 'wp-config.php' listing.txt; then ROOT="/$d"; break; fi
+          done
+          [ -n "$ROOT" ] || { echo "Could not find public_html with Websitemigration and wp-config.php"; cat listing.txt || true; exit 1; }
+          echo "public_html is at FTP path: $ROOT"
+          mkdir -p out
+          L "cd '$ROOT'; get -e .htaccess -o out/current.htaccess" || true
+          if [ "$MODE" = "switch" ]; then
+            if ! L "cd '$ROOT'; cls -1a" | grep -qx '.htaccess-wordpress'; then
+              [ -s out/current.htaccess ] && L "cd '$ROOT'; put out/current.htaccess -o .htaccess-wordpress"
+              echo "Saved WordPress .htaccess as .htaccess-wordpress"
+            else
+              echo ".htaccess-wordpress already exists; keeping it"
+            fi
+            L "cd '$ROOT'; put launch/public_html.htaccess -o .htaccess"
+            echo "New .htaccess in place"
+          else
+            L "cd '$ROOT'; get -e .htaccess-wordpress -o out/wordpress.htaccess"
+            L "cd '$ROOT'; put out/wordpress.htaccess -o .htaccess"
+            echo "WordPress .htaccess restored"
+          fi
+
+      - name: Keep a copy of the previous .htaccess
+        uses: actions/upload-artifact@v4
+        with:
+          name: previous-htaccess
+          path: out/
+          if-no-files-found: ignore
+
+      - name: Check the live site
+        run: |
+          sleep 5
+          for u in / /projects/ /services/ /creatives/ /privacy-policy/ /sitemap.xml /robots.txt /test-post-created/ /projects-2/; do
+            printf '%-22s %s\n' "$u" "$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "https://chariscreationsltd.com$u")"
+          done
+          printf 'www                    %s\n' "$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' https://www.chariscreationsltd.com/)"
+          if [ "${{ steps.mode.outputs.mode }}" = "switch" ]; then
+            curl -s https://chariscreationsltd.com/ | grep -q '/assets/css/site.css' && echo "LIVE: new site is serving" || { echo "New site markers not found on the home page"; exit 1; }
+          fi

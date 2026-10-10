@@ -1,0 +1,45 @@
+{
+  "_note": "One entry per Projects gallery card. Leave 'photos' empty to load the folder from the current WordPress site; fill it (URLs or photo names) to use your own list.",
+  "galleries": {
+    "wedding": {
+      "title": "Wedding Films",
+      "line": "Everything about your wedding is temporary. Except the film.",
+      "photos": []
+    },
+    "introduction": {
+      "title": "Introduction",
+      "line": "Your introduction happens once. We don’t miss moments.",
+      "photos": []
+    },
+    "documentary": {
+      "title": "Documentary",
+      "line": "Your organisation does work that matters. We turn that impact into something people can see and feel.",
+      "photos": []
+    },
+    "kukyala": {
+      "title": "Kukyala",
+      "line": "The warmth, laughter and cultural details of a day that brings families closer.",
+      "photos": []
+    },
+    "podcasts": {
+      "title": "Podcasts",
+      "line": "Clear sound, considered lighting and a setting that keeps the focus on the conversation.",
+      "photos": []
+    },
+    "commercial": {
+      "title": "Commercial Photography",
+      "line": "Photography that presents your people, products and work with care and clarity.",
+      "photos": []
+    },
+    "branding": {
+      "title": "Branding",
+      "line": "Personal Brand · Corporate",
+      "photos": []
+    },
+    "corporate": {
+      "title": "Corporate Events",
+      "line": "Conferences · Launches · Galas",
+      "photos": []
+    }
+  }
+}

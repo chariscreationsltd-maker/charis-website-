@@ -17,6 +17,32 @@ page_start($C['meta'] + ['path' => '/projects/'], 'projects');
     </section>
 
 
+    <section class="section" id="galleries" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="gallery-title"><?= e($C['gallery']['heading']) ?></h2>
+          <p class="lede"><?= e($C['gallery']['support']) ?></p>
+        </div>
+        <ul class="cats">
+<?php foreach ($C['gallery']['items'] as $it):
+    $tag = !empty($it['link']) ? 'a' : 'div';
+    $attr = !empty($it['link']) ? ' href="' . e($it['link']) . '"' : ''; ?>
+          <li class="reveal">
+            <<?= $tag ?> class="cat"<?= $attr ?>>
+              <div class="cat__media develop"><?= photo($it['photo'], $it['alt'], '(max-width: 520px) 100vw, (max-width: 1000px) 50vw, 25vw') ?></div>
+              <h3><?= e($it['title']) ?></h3>
+              <p><?= e($it['line']) ?></p>
+<?php if (!empty($it['link'])): ?>
+              <span class="link-arrow">View Gallery <span class="arrow" aria-hidden="true"><?= icon('arrow') ?></span></span>
+<?php endif; ?>
+            </<?= $tag ?>>
+          </li>
+<?php endforeach; ?>
+        </ul>
+      </div>
+    </section>
+
+
 <?php if (!empty($C['trailers']['items'])): $T = $C['trailers']; ?>
     <section class="section trailers" id="trailers" aria-labelledby="trailers-title">
       <div class="wrap">
@@ -45,32 +71,6 @@ page_start($C['meta'] + ['path' => '/projects/'], 'projects');
       </div>
     </section>
 <?php endif; ?>
-
-    <section class="section" id="galleries" aria-labelledby="gallery-title">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="gallery-title"><?= e($C['gallery']['heading']) ?></h2>
-          <p class="lede"><?= e($C['gallery']['support']) ?></p>
-        </div>
-        <ul class="cats">
-<?php foreach ($C['gallery']['items'] as $it):
-    $tag = !empty($it['link']) ? 'a' : 'div';
-    $attr = !empty($it['link']) ? ' href="' . e($it['link']) . '"' : ''; ?>
-          <li class="reveal">
-            <<?= $tag ?> class="cat"<?= $attr ?>>
-              <div class="cat__media develop"><?= photo($it['photo'], $it['alt'], '(max-width: 520px) 100vw, (max-width: 1000px) 50vw, 25vw') ?></div>
-              <h3><?= e($it['title']) ?></h3>
-              <p><?= e($it['line']) ?></p>
-<?php if (!empty($it['link'])): ?>
-              <span class="link-arrow">View Gallery <span class="arrow" aria-hidden="true"><?= icon('arrow') ?></span></span>
-<?php endif; ?>
-            </<?= $tag ?>>
-          </li>
-<?php endforeach; ?>
-        </ul>
-      </div>
-    </section>
-
 
     <section class="section close" aria-labelledby="close-title">
       <div class="wrap">

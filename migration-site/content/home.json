@@ -169,59 +169,77 @@
   },
   "featured": {
     "heading": "Featured work.",
-    "_note": "TO CONFIRM: Hudson to supply six projects, titles, places, links and consent. 'link' and 'linkLabel' appear only when a real film or gallery exists.",
+    "_note": "Photos supplied by Patrick (October 2026). Titles are descriptive placeholders: swap in client names only with their consent. 'link' and 'linkLabel' appear only when a real film or gallery exists.",
     "items": [
       {
-        "photo": "fahad-darlin",
-        "title": "Fahad & Darlin",
+        "photo": "feat-bride-gold",
+        "title": "Bridal Portrait",
+        "type": "Bridal Portraits",
+        "place": "",
+        "alt": "A bride in white and gold beadwork smiling, framed through soft foreground shadows",
+        "link": "",
+        "linkLabel": ""
+      },
+      {
+        "photo": "feat-couple-white",
+        "title": "Wedding Day",
         "type": "Wedding",
         "place": "",
-        "alt": "Fahad and Darlin celebrating at their lakeside wedding",
+        "alt": "A groom in a white tuxedo with his bride smiling over his shoulder",
         "link": "",
         "linkLabel": ""
       },
       {
-        "photo": "moreen-kuhinjira",
-        "title": "Moreen’s Kuhinjira",
-        "type": "Kuhinjira",
+        "photo": "feat-rbm-dialogue",
+        "title": "Strategic Dialogue on Malaria Tools",
+        "type": "Corporate Event",
+        "place": "Sheraton Kampala",
+        "alt": "A speaker addressing delegates at the RBM Partnership dialogue on new malaria tools",
+        "link": "",
+        "linkLabel": ""
+      },
+      {
+        "photo": "feat-orange-portrait",
+        "title": "Traditional Portrait",
+        "type": "Portraits",
         "place": "",
-        "alt": "Moreen in bridal makeup on her kuhinjira day",
+        "alt": "A woman in an orange beaded gomesi smiling at a mirrored table",
         "link": "",
         "linkLabel": ""
       },
       {
-        "photo": "sharif-liz",
-        "title": "Sharif & Liz",
-        "type": "Wedding",
+        "photo": "feat-bridal-prep",
+        "title": "Getting Ready",
+        "type": "Bridal Prep",
         "place": "",
-        "alt": "The groom checking his watch among green leaves before the ceremony",
+        "alt": "A bride in a white shirt and crystal headpiece smiling down at her jewellery",
         "link": "",
         "linkLabel": ""
       },
       {
-        "photo": "fred-gloria",
-        "title": "Fred & Gloria",
+        "photo": "feat-birthday-two",
+        "title": "Second Birthday",
+        "type": "Kids Portraits",
+        "place": "",
+        "alt": "A little boy in a cap and striped waistcoat holding a chalkboard for his second birthday",
+        "link": "",
+        "linkLabel": ""
+      },
+      {
+        "photo": "feat-editorial",
+        "title": "Editorial Portrait",
+        "type": "Fashion",
+        "place": "",
+        "alt": "A man in sunglasses and a black and white jacket against a ribbed dark wall",
+        "link": "",
+        "linkLabel": ""
+      },
+      {
+        "photo": "feat-couple-garden",
+        "title": "Couple Session",
         "type": "Couple Portraits",
         "place": "",
-        "alt": "Fred and Gloria in a soft studio portrait",
-        "link": "",
-        "linkLabel": ""
-      },
-      {
-        "photo": "malaria-dialogue",
-        "title": "Strategic Dialogue on New Malaria Tools",
-        "type": "Corporate Event",
-        "place": "Kampala",
-        "alt": "A speaker at the podium during the Strategic Dialogue on New Malaria Tools",
-        "link": "",
-        "linkLabel": ""
-      },
-      {
-        "photo": "joan-graduation",
-        "title": "Joan",
-        "type": "Graduation Portraits",
-        "place": "",
-        "alt": "Joan seated in the studio beside her graduation gown",
+        "alt": "A couple in matching green on a garden bench looking at a phone together",
         "link": "",
         "linkLabel": ""
       }

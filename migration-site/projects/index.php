@@ -5,7 +5,12 @@ page_start($C['meta'] + ['path' => '/projects/'], 'projects');
 ?>
     <section class="page-hero arc-hero" aria-labelledby="page-title">
 <?php if (has_photo($C['hero']['photo'] ?? '')): ?>
-      <div class="arc-hero__bg" aria-hidden="true"><?= photo($C['hero']['photo'], '', '100vw', '', false, true) ?></div>
+      <div class="arc-hero__bg" aria-hidden="true">
+        <?= photo($C['hero']['photo'], '', '100vw', '', false, true) ?>
+<?php if (!empty($C['hero']['video'])): ?>
+        <video class="arc-hero__video" data-bg-video="<?= e(media_url($C['hero']['video'])) ?>" muted loop playsinline preload="none" tabindex="-1"></video>
+<?php endif; ?>
+      </div>
 <?php endif; ?>
       <div class="wrap arc-hero__grid">
         <div class="page-hero__inner arc-hero__copy">

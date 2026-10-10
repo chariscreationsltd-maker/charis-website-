@@ -225,6 +225,26 @@
     render();
   }
 
+  // Background trailers (Projects hero): only on larger screens, never for reduced
+  // motion or data-saver, and only while on screen. Phones keep the still photo.
+  var bgv = document.querySelectorAll("video[data-bg-video]");
+  if (bgv.length) {
+    var calmBg = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var saver = navigator.connection && navigator.connection.saveData;
+    var wide = window.matchMedia("(min-width: 761px)").matches;
+    if (!calmBg && !saver && wide) {
+      bgv.forEach(function (v) {
+        v.muted = true;
+        v.src = v.getAttribute("data-bg-video");
+        v.addEventListener("playing", function () { v.classList.add("is-playing"); }, { once: true });
+        var go = function () { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); };
+        if ("IntersectionObserver" in window) {
+          new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) go(); else v.pause(); }); }, { threshold: 0.05 }).observe(v);
+        } else go();
+      });
+    }
+  }
+
   // Looping film cards (featured work): play only while on screen, and not at all for reduced motion.
   var loops = document.querySelectorAll("video[data-autoplay]");
   if (loops.length) {

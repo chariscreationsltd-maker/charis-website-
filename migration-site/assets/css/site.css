@@ -1078,3 +1078,8 @@ body { background: var(--bg); color: var(--text); }
 .cat h3 { margin-top: 6px; }
 .cat .link-arrow { align-self: end; margin-top: 4px; }
 @media (hover: hover) and (pointer: fine) { a.cat:hover { border-color: rgba(255, 255, 255, 0.22); transform: translateY(-3px); } }
+
+/* Projects hero: a trailer plays softly behind everything (the photo shows until it starts, and on phones) */
+.arc-hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s ease; }
+.arc-hero__video.is-playing { opacity: 0.38; }
+.arc-hero__bg:has(.arc-hero__video.is-playing) img { opacity: 0; transition: opacity 1.2s ease; }

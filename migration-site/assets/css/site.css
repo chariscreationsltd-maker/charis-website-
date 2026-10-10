@@ -1066,3 +1066,15 @@ body { background: var(--bg); color: var(--text); }
   .story__badge { left: 10px; bottom: 24px; padding: 10px 14px 10px 12px; }
   .story__badge b { font-size: 2rem; }
 }
+
+/* Projects: gallery cards framed like the featured-work cards */
+.cats > li { display: flex; }
+.cat { flex: 1; align-content: start; grid-template-rows: auto auto 1fr auto; padding: 12px 12px 20px; border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)), var(--bg-2);
+  border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 20px 40px -18px rgba(0, 0, 0, 0.5);
+  transition: border-color 300ms ease, transform 400ms var(--ease-out); }
+.cat__media { border-radius: 14px; }
+.cat h3, .cat p, .cat .link-arrow { padding-inline: 6px; }
+.cat h3 { margin-top: 6px; }
+.cat .link-arrow { align-self: end; margin-top: 4px; }
+@media (hover: hover) and (pointer: fine) { a.cat:hover { border-color: rgba(255, 255, 255, 0.22); transform: translateY(-3px); } }

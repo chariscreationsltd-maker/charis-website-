@@ -814,3 +814,7 @@ body { background: var(--bg); color: var(--text); }
 /* Tighter hand-off from What We Create into the About section */
 #create { padding-bottom: clamp(48px, 6vw, 88px); }
 #story { padding-top: clamp(56px, 7vw, 104px); }
+
+/* Tighter hand-off from the journey ("We sell peace of mind") into client voices */
+#experience { padding-bottom: clamp(48px, 6vw, 88px); }
+.voices { padding-top: clamp(56px, 7vw, 104px); }

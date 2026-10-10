@@ -10,6 +10,7 @@ define('SITE_ROOT', dirname(__DIR__));
 date_default_timezone_set('Africa/Kampala');
 
 require __DIR__ . '/icons.php';
+require __DIR__ . '/site-content.php';
 
 /** Load a JSON content file from /content. Fails loudly in the log, quietly on screen. */
 function content(string $name): array {
@@ -21,7 +22,8 @@ function content(string $name): array {
         error_log("Charis: content file missing or invalid JSON: $name.json");
         $data = [];
     }
-    return $cache[$name] = $data;
+    // Changes the owner published in the website editor sit on top of the file.
+    return $cache[$name] = apply_overrides($name, $data);
 }
 
 $SITE = content('site');
@@ -64,21 +66,45 @@ function asset(string $path): string {
     return '/' . ltrim($path, '/') . '?v=' . $v;
 }
 
-/** Does a photo set exist? Photos are /assets/img/photo/{name}-1600.webp and -800.webp. */
+/**
+ * Address of one size of a photo. A photo is either a set in /assets/img/photo/
+ * ({name}-1600.webp and {name}-800.webp), an image uploaded through the website
+ * editor (stored in CharisOS with the same -1600 / -800 pair), or a full URL.
+ */
+function photo_src(?string $name, int $size = 1600): string {
+    if ($name === null || $name === '') return '';
+    if (is_media_url($name)) return preg_replace('#-1600\.(webp|jpg)$#', "-{$size}.$1", $name);
+    if (preg_match('#^(https?:)?//|^/#', $name)) return $name;
+    return "/assets/img/photo/{$name}-{$size}.webp";
+}
+
+/** Does a photo exist? */
 function has_photo(?string $name): bool {
-    return $name !== null && $name !== '' && is_file(SITE_ROOT . "/assets/img/photo/{$name}-1600.webp");
+    if ($name === null || $name === '') return false;
+    if (is_media_url($name)) return true;
+    return is_file(SITE_ROOT . "/assets/img/photo/{$name}-1600.webp");
+}
+
+/** [width, height] of the large size. Editor uploads carry it in the file name (…_1600x1067-1600.webp). */
+function photo_size(string $name): array {
+    if (is_media_url($name)) {
+        return preg_match('#_(\d{2,5})x(\d{2,5})-1600\.#', $name, $m) ? [(int) $m[1], (int) $m[2]] : [1600, 1067];
+    }
+    $file = SITE_ROOT . photo_src($name, 1600);
+    return (is_file($file) ? getimagesize($file) : null) ?: [1600, 1000];
 }
 
 /**
- * Responsive photo. $sizes is the CSS sizes hint. Width and height are read from
- * the file so the browser reserves space (no layout jump).
+ * Responsive photo. $sizes is the CSS sizes hint. Width and height are known
+ * up front so the browser reserves space (no layout jump).
  */
 function photo(?string $name, string $alt = '', string $sizes = '100vw', string $class = '', bool $lazy = true, bool $priority = false): string {
     if (!has_photo($name)) return '';
-    $large = "/assets/img/photo/{$name}-1600.webp";
-    $small = "/assets/img/photo/{$name}-800.webp";
-    [$w, $h] = getimagesize(SITE_ROOT . $large) ?: [1600, 1000];
-    [$sw] = is_file(SITE_ROOT . $small) ? getimagesize(SITE_ROOT . $small) : [800];
+    $large = photo_src($name, 1600);
+    $small = photo_src($name, 800);
+    [$w, $h] = photo_size($name);
+    $sw = min(800, $w);
+    if (!is_media_url($name) && is_file(SITE_ROOT . $small)) { [$sw] = getimagesize(SITE_ROOT . $small) ?: [800]; }
     $attrs = $class ? ' class="' . e($class) . '"' : '';
     $attrs .= $lazy && !$priority ? ' loading="lazy"' : '';
     $attrs .= $priority ? ' fetchpriority="high"' : '';

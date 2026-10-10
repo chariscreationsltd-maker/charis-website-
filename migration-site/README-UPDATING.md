@@ -4,6 +4,13 @@ The site is plain PHP pages that read text from JSON files. There is no WordPres
 Pushing to the `website-preview` branch deploys `migration-site/` to the preview over FTPS.
 (This file is blocked from public view by `.htaccess`.)
 
+## The website editor (no code)
+
+The owner can change text, links and photos at `/editor/`, signing in with their CharisOS account
+(Owner or Admin role). Published changes are stored in CharisOS and laid over the JSON files, so a code
+deploy never wipes them; "Use original" in the editor goes back to what the JSON file says. Editing a JSON
+file still works and changes the default. Setup for CharisOS is in `../charis-os-integration/README.md`.
+
 ## Where things live
 
 | What you want to change | File |

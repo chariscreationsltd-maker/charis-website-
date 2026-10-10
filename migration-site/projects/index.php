@@ -18,7 +18,7 @@ page_start($C['meta'] + ['path' => '/projects/'], 'projects');
 <?php foreach ($C['gallery']['items'] as $i => $it): ?>
             <a class="arc-card" href="<?= e($it['link'] ?: '#galleries') ?>" aria-label="<?= e($it['title']) ?> gallery">
               <span class="arc-card__motion"><span class="arc-card__surface">
-                <img src="/assets/img/photo/<?= e($it['photo']) ?>-800.webp" alt="" loading="lazy" decoding="async" draggable="false">
+                <img src="<?= e(photo_src($it['photo'], 800)) ?>" alt="" loading="lazy" decoding="async" draggable="false">
                 <span class="arc-card__shade"></span>
                 <span class="arc-card__top"><span>Gallery <?= sprintf('%02d', $i + 1) ?></span><span>Charis Creations</span></span>
                 <span class="arc-card__title"><?= e($it['title']) ?></span>

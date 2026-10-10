@@ -91,7 +91,7 @@ $rows = [$strip, array_merge(array_slice($strip, $half), array_slice($strip, 0, 
         <div class="strips__row strips__row--<?= $ri ? 'right' : 'left' ?>">
 <?php foreach ([false, true] as $copy): foreach ($row as $s): ?>
           <a class="strips__item" href="<?= e($t['link']) ?>"<?= $copy ? ' aria-hidden="true" tabindex="-1"' : '' ?>>
-            <img src="/assets/img/photo/<?= e($s['photo']) ?>-800.webp" alt="" width="280" height="185" loading="lazy" decoding="async">
+            <img src="<?= e(photo_src($s['photo'], 800)) ?>" alt="" width="280" height="185" loading="lazy" decoding="async">
             <span class="strips__cap"><?= e($s['caption']) ?></span>
           </a>
 <?php endforeach; endforeach; ?>
@@ -111,7 +111,7 @@ $rows = [$strip, array_merge(array_slice($strip, $half), array_slice($strip, 0, 
     if (!has_photo($it['photo'])) continue;
     $meta = trim($it['type'] . ($it['place'] ? ' | ' . $it['place'] : '')); ?>
           <li class="work__item reveal">
-            <a class="work__open" href="/assets/img/photo/<?= e($it['photo']) ?>-1600.webp" data-lightbox="work" data-alt="<?= e($it['alt']) ?>" data-caption="<?= e($it['title'] . ' | ' . $meta) ?>" aria-label="View <?= e($it['title']) ?> larger">
+            <a class="work__open" href="<?= e(photo_src($it['photo'], 1600)) ?>" data-lightbox="work" data-alt="<?= e($it['alt']) ?>" data-caption="<?= e($it['title'] . ' | ' . $meta) ?>" aria-label="View <?= e($it['title']) ?> larger">
               <span class="work__media develop"><?= photo($it['photo'], $it['alt'], '(max-width: 760px) 78vw, 330px') ?></span>
             </a>
             <div>
@@ -251,7 +251,7 @@ $voicePhotos = array_values(array_filter(array_map(fn($x) => $x['photo'], $C['ta
 <?php endif; ?>
               </figcaption>
             </div>
-            <div class="voice__media" aria-hidden="true"<?= $ph ? ' style="background-image: url(/assets/img/photo/' . e($ph) . '-800.webp)"' : '' ?>></div>
+            <div class="voice__media" aria-hidden="true"<?= $ph ? ' style="background-image: url(' . e(photo_src($ph, 800)) . ')"' : '' ?>></div>
           </figure>
         </li>
 <?php endforeach; ?>

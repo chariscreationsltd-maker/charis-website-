@@ -20,7 +20,7 @@ function gallery_photos(string $key): array {
     $G = content('galleries');
     $manual = $G['galleries'][$key]['photos'] ?? [];
     if ($manual) {
-        return array_map(fn($p) => preg_match('#^(https?:)?//|^/#', $p) ? $p : "/assets/img/photo/{$p}-1600.webp", $manual);
+        return array_values(array_map(fn($p) => photo_src($p, 1600), $manual));
     }
     $dir = __DIR__ . '/cache';
     if (!is_dir($dir)) @mkdir($dir, 0755, true);

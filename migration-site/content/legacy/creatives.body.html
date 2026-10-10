@@ -427,15 +427,16 @@ function buildRatings(elId,team,dark){
     var rn=dark?' dkn':'';
     var d=document.createElement('div');
     d.className='rating-card '+sc+' rv';
+    d.dataset.member=m.name;
     d.innerHTML='<div style="display:flex;align-items:center;gap:12px;">'
-      +'<div class="rating-avatar"><img src="'+m.img+'" alt="'+m.name+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/></div>'
+      +'<div class="rating-avatar"><img src="/assets/img/team/'+m.img.split('/').pop().replace(/\.[^.]+$/,'')+'.webp" onerror="this.onerror=null;this.src=\''+m.img+'\'" alt="'+m.name+'" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/></div>'
       +'<div><div class="rating-name'+rn+'">'+m.name+'</div><div class="rating-role">'+m.role+'</div></div>'
       +'</div>'
       +'<div class="stars">'+[1,2,3,4,5].map(function(s){
         return '<span class="star" data-v="'+s+'" onclick="rateStar(this)"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.5l2.09 4.24 4.68.68-3.38 3.3.8 4.65L9 11.9l-4.19 2.47.8-4.65L2.23 6.42l4.68-.68L9 1.5z" fill="'+sf+'" stroke="none"/></svg></span>';
       }).join('')+'</div>'
       +'<textarea style="width:100%;border:1px solid rgba('+(dark?'255,255,255':'0,0,0')+',.08);border-radius:8px;padding:10px 12px;font-family:var(--font-body);font-size:12px;resize:none;height:62px;outline:none;color:'+(dark?'rgba(255,255,255,.5)':'#555')+';background:'+(dark?'rgba(255,255,255,.04)':'#fafafa')+';" placeholder="Leave a message for '+m.name+'..."></textarea>'
-      +'<button class="rating-submit" onclick="submitRating(this)"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:4px"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Share on Instagram';
+      +'<button class="rating-submit" type="button" onclick="submitRating(this)">RATE MEMBER</button>';
     el.appendChild(d);ro.observe(d);
   });
 }
@@ -455,45 +456,40 @@ window.rateStar=function(el){
   });
 };
 window.submitRating=function(btn){
+  /* Ratings are saved in CharisOS through the website (api/rate.php). */
   var card=btn.closest('.rating-card');
-  if(!card)return;
-  var member=card.dataset.member||card.querySelector('.rating-name')?.innerText?.trim()||'unknown';
+  if(!card||btn.disabled)return;
+  var member=card.dataset.member||card.querySelector('.rating-name').innerText.trim();
   var key='cc_rated_'+member.replace(/\s+/g,'_').toLowerCase();
-  if(localStorage.getItem(key)){
-    btn.textContent='ALREADY RATED';
-    btn.style.background='#555';
-    setTimeout(()=>{btn.textContent='RATED ✓';btn.style.background='#333';},1500);
-    return;
-  }
-  var stars=card.querySelectorAll('.star');
-  var rating=0;
-  stars.forEach((s,i)=>{if(s.classList.contains('active'))rating=i+1;});
-  if(!rating){
-    btn.textContent='SELECT A STAR FIRST';
-    btn.style.background='#c44200';
-    setTimeout(()=>{btn.textContent='RATE MEMBER';btn.style.background='var(--or)';},1500);
-    return;
-  }
-  var storageKey='cc_ratings_'+member.replace(/\s+/g,'_').toLowerCase();
-  var existing=JSON.parse(localStorage.getItem(storageKey)||'[]');
-  existing.push(rating);
-  localStorage.setItem(storageKey,JSON.stringify(existing));
-  localStorage.setItem(key,'1');
-  var avg=(existing.reduce((a,b)=>a+b,0)/existing.length).toFixed(1);
-  var count=existing.length;
-  var avgEl=card.querySelector('.rating-avg');
-  if(!avgEl){
-    avgEl=document.createElement('div');
-    avgEl.className='rating-avg';
-    avgEl.style.cssText='font-family:var(--font-cond);font-size:9px;letter-spacing:.15em;color:var(--or);margin-top:4px;text-transform:uppercase;font-weight:700;';
-    var starsEl=card.querySelector('.stars');
-    if(starsEl)starsEl.after(avgEl);
-  }
-  avgEl.textContent=avg+' ★ ('+count+' rating'+(count===1?'':'s')+')';
-  btn.textContent='RATED ✓';
-  btn.style.background='#2a7a2a';
-  btn.style.cursor='default';
+  var label=btn.getAttribute('data-label')||btn.textContent; btn.setAttribute('data-label',label);
+  function flash(t,bg,keep){btn.textContent=t;btn.style.background=bg;if(!keep)setTimeout(function(){btn.textContent=label;btn.style.background='var(--or)';},2200);}
+  var row=card.querySelector('.stars');
+  var rating=parseInt(row&&row.getAttribute('data-rated'),10)||0;
+  if(!rating){flash('SELECT A STAR FIRST','#c44200');return;}
+  var ta=card.querySelector('textarea');
+  btn.disabled=true;btn.textContent='SENDING…';
+  fetch('/api/rate.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({member:member,rating:rating,comment:ta?ta.value:''})})
+    .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});})
+    .then(function(x){
+      if(x.ok&&x.j.ok){
+        try{localStorage.setItem(key,'1');}catch(e){}
+        if(ta)ta.value='';
+        showAvg(card,x.j.avg,x.j.count);
+        flash('THANK YOU ✓','#2a7a2a',true);btn.style.cursor='default';
+      }else if(x.j&&x.j.error==='already_rated'){
+        try{localStorage.setItem(key,'1');}catch(e){}
+        flash('ALREADY RATED TODAY','#333',true);
+      }else{btn.disabled=false;flash('TRY AGAIN','#c44200');}
+    })
+    .catch(function(){btn.disabled=false;flash('NO CONNECTION, TRY AGAIN','#c44200');});
 };
+function showAvg(card,avg,count){
+  if(!count)return;
+  var avgEl=card.querySelector('.rating-avg');
+  if(!avgEl){avgEl=document.createElement('div');avgEl.className='rating-avg';avgEl.style.cssText='font-family:var(--font-cond);font-size:9px;letter-spacing:.15em;color:var(--or);margin-top:4px;text-transform:uppercase;font-weight:700;';var st=card.querySelector('.stars');if(st)st.after(avgEl);}
+  avgEl.textContent=Number(avg).toFixed(1)+' ★ ('+count+' rating'+(count===1?'':'s')+')';
+}
+window.showAvg=showAvg;
 
 /* ════════════════════════════════════════════
    CLOCK ENGINE — continuous RAF rotation
@@ -757,26 +753,21 @@ function playReel(url){
 
 
 
-/* Load existing ratings on page load */
+/* Load averages from CharisOS on page load */
 (function(){
   function loadRatings(){
-    document.querySelectorAll('.rating-card').forEach(function(card){
-      var member=card.dataset.member||card.querySelector('.rating-name')?.innerText?.trim()||'';
-      if(!member)return;
-      var storageKey='cc_ratings_'+member.replace(/\s+/g,'_').toLowerCase();
-      var ratedKey='cc_rated_'+member.replace(/\s+/g,'_').toLowerCase();
-      var existing=JSON.parse(localStorage.getItem(storageKey)||'[]');
-      if(existing.length>0){
-        var avg=(existing.reduce(function(a,b){return a+b},0)/existing.length).toFixed(1);
-        var avgEl=card.querySelector('.rating-avg');
-        if(!avgEl){avgEl=document.createElement('div');avgEl.className='rating-avg';avgEl.style.cssText='font-family:var(--font-cond);font-size:9px;letter-spacing:.15em;color:var(--or);margin-top:4px;text-transform:uppercase;font-weight:700;';var st=card.querySelector('.stars');if(st)st.after(avgEl);}
-        avgEl.textContent=avg+' ★ ('+existing.length+' rating'+(existing.length===1?'':'s')+')';
-      }
-      var btn=card.querySelector('.rating-submit');
-      if(btn&&localStorage.getItem(ratedKey)){btn.textContent='RATED ✓';btn.style.background='#333';btn.style.cursor='default';}
-    });
+    fetch('/api/team-ratings.php').then(function(r){return r.json();}).then(function(j){
+      var all=(j&&j.ratings)||{};
+      document.querySelectorAll('.rating-card').forEach(function(card){
+        var member=card.dataset.member||'';
+        if(all[member]&&window.showAvg)window.showAvg(card,all[member].avg,all[member].count);
+        var btn=card.querySelector('.rating-submit');
+        var rated=false;try{rated=!!localStorage.getItem('cc_rated_'+member.replace(/\s+/g,'_').toLowerCase());}catch(e){}
+        if(btn&&rated){btn.textContent='RATED ✓';btn.style.background='#333';btn.style.cursor='default';btn.disabled=true;}
+      });
+    }).catch(function(){});
   }
-  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(loadRatings,600);});}
-  else{setTimeout(loadRatings,600);}
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(loadRatings,300);});}
+  else{setTimeout(loadRatings,300);}
 })();
 </script>

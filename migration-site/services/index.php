@@ -67,9 +67,11 @@ function render_addons(array $a): void { ?>
         </div>
 <?php }
 ?>
-    <section class="page-hero" aria-labelledby="page-title">
+    <section class="page-hero svc-hero" aria-labelledby="page-title">
+      <div class="svc-hero__media" aria-hidden="true"><?= photo($C['hero']['photo'] ?? 'feat-couple-white', '', '100vw', '', false, true) ?></div>
       <div class="wrap">
-        <div class="page-hero__inner">
+        <div class="page-hero__inner svc-hero__copy">
+          <p class="chip"><span class="chip__dot" aria-hidden="true"></span><?= e($C['hero']['eyebrow'] ?? 'Our services') ?></p>
           <h1 id="page-title"><?= e($C['hero']['headline']) ?></h1>
           <p class="lede"><?= e($C['hero']['support']) ?></p>
         </div>

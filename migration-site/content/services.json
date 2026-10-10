@@ -7,7 +7,9 @@
   },
   "hero": {
     "headline": "Coverage that fits your occasion.",
-    "support": "Every package is built around your day. Here is where most people start."
+    "support": "Every package is built around your day. Here is where most people start.",
+    "eyebrow": "Our services",
+    "photo": "feat-couple-white"
   },
   "tabs": [
     {

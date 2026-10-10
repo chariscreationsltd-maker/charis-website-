@@ -368,11 +368,11 @@ var CREATIVE=[
 
 /* BEHIND THE SCENES — 5 BTS video slots (paste YouTube/video URL in yt:) */
 var REELS=[
-  {label:'Behind The Scenes', name:'Wedding Setup',    yt:''},
-  {label:'On Location',       name:'Ceremony Day',     yt:'https://chariscreationsltd.com/wp-content/uploads/2026/03/0219-1920.mp4'},
-  {label:'Studio Life',       name:'Portrait Session', yt:''},
-  {label:'Color Grading',     name:'Post Production',  yt:''},
-  {label:'Live Energy',       name:'Kwanjula Day',     yt:''}
+  {label:'Behind The Scenes', name:'Ceremony Day',    video:'https://chariscreationsltd.com/wp-content/uploads/2026/03/0219-1920.mp4'},
+  {label:'On Location',       name:'Wedding Trailer', video:'https://chariscreationsltd.com/wp-content/uploads/2026/03/TIMOTHY-WEDS-MILDRED-TRAILER-FINAL-1920.mp4'},
+  {label:'Live Energy',       name:'Wedding Reel',    video:'https://chariscreationsltd.com/wp-content/uploads/2026/04/ANDREW-WEDS-BARBARA-REEL-1-1920.mp4'},
+  {label:'Event Day',         name:'Grand Opening',   video:'https://chariscreationsltd.com/wp-content/uploads/2026/03/2025-GRAND-OPENING-1920.mp4'},
+  {label:'Wedding Film',      name:'The Big Day',     video:'https://chariscreationsltd.com/wp-content/uploads/2026/04/EMMA-WEDS-RITAH-1920.mp4'}
 ];
 
 /* ══════════════════ END OF EDITABLE DATA ══════════════════ */
@@ -697,7 +697,15 @@ REELS.forEach(function(r,i){
   var noVid=vid?'':('<div style="position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.25);text-transform:uppercase;pointer-events:none">&#9654;<br/>Paste<br/>URL</div>');
   el.innerHTML='<div class="reel-item-bg" style="'+bgSt+'"></div>'
     +'<div class="reel-item-ov">'+noVid+'<div class="reel-play">'+( vid?'&#9654;':'')+'</div><div class="reel-label">'+r.label+'</div><div class="reel-name">'+r.name+'</div></div>';
-  el.addEventListener('click',function(){if(r.yt)window.open(r.yt,'_blank');});
+  if(r.video){
+    /* video reel: muted preview plays on screen; the site's player opens it full size */
+    el.setAttribute('data-trailer',r.video); el.setAttribute('role','button'); el.tabIndex=0; el.setAttribute('aria-label','Play '+r.name);
+    el.querySelector('.reel-item-bg').innerHTML='<video src="'+r.video+'#t=0.5" muted loop playsinline preload="none" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block"></video>';
+    el.querySelector('.reel-play').innerHTML='&#9654;';
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});
+  } else {
+    el.addEventListener('click',function(){if(r.yt)window.open(r.yt,'_blank');});
+  }
   rr.appendChild(el);
 });
 

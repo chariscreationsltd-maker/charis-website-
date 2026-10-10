@@ -15,4 +15,10 @@ page_start(['title' => 'Meet the Creators | Charis Creations', 'description' => 
     <div class="lg-creatives">
 <?php readfile($dir . 'creatives.body.html'); ?>
     </div>
+    <div class="trailer-modal" id="trailer-modal" hidden role="dialog" aria-modal="true" aria-label="Behind the scenes">
+      <div class="trailer-modal__box">
+        <video controls playsinline></video>
+        <button class="trailer-modal__close" type="button" aria-label="Close"><?= icon('close') ?></button>
+      </div>
+    </div>
 <?php page_end(); ?>

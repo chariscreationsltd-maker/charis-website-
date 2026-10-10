@@ -810,3 +810,7 @@ body { background: var(--bg); color: var(--text); }
     .js .voice { width: calc(100% - 40px); height: 84%; top: 48%; }
   }
 }
+
+/* Tighter hand-off from What We Create into the About section */
+#create { padding-bottom: clamp(48px, 6vw, 88px); }
+#story { padding-top: clamp(56px, 7vw, 104px); }

@@ -18,6 +18,9 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'OPTIONS') { http_response_code(204);
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') { http_response_code(405); echo '{"ok":false}'; exit; }
-$file = charis_cache_dir() . '/site-content.json';
-if (!is_file($file) || time() - filemtime($file) >= 5) charis_cache_clear('site-content');
+// Clears published edits and reviews, so a newly approved review shows at once too.
+foreach (['site-content', 'testimonials'] as $name) {
+    $file = charis_cache_dir() . "/$name.json";
+    if (!is_file($file) || time() - filemtime($file) >= 5) charis_cache_clear($name);
+}
 echo '{"ok":true}';

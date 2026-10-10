@@ -35,4 +35,6 @@ echo json_encode([
     'review_cache_age_seconds' => $age('testimonials'),
     'editor_pages_published'  => array_keys(site_overrides()),
     'cache_folder_writable'   => is_writable($dir),
+    'key_type'                => charis_os_key() === '' ? 'none' : (str_starts_with(charis_os_key(), 'eyJ') ? 'legacy anon (JWT)' : (str_starts_with(charis_os_key(), 'sb_publishable_') ? 'publishable' : (str_starts_with(charis_os_key(), 'sb_secret_') ? 'SECRET - remove it, use the publishable key' : 'unknown'))),
+    'last_error'              => $GLOBALS['CHARIS_OS_LAST_ERROR'] ?? null,
 ], JSON_PRETTY_PRINT);

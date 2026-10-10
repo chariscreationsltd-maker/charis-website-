@@ -48,12 +48,18 @@ function charis_os_rpc(string $fn, array $args = [], int $timeout = 5): ?array {
         CURLOPT_POSTFIELDS     => json_encode((object) $args),
         CURLOPT_CONNECTTIMEOUT => 3,
         CURLOPT_TIMEOUT        => $timeout,
-        CURLOPT_HTTPHEADER     => ['apikey: ' . $key, 'Authorization: Bearer ' . $key, 'Content-Type: application/json', 'Accept: application/json'],
+        // New-style keys (sb_publishable_…) go in apikey only; old JWT-style anon keys also as Bearer.
+        CURLOPT_HTTPHEADER     => array_merge(['apikey: ' . $key, 'Content-Type: application/json', 'Accept: application/json'],
+                                              str_starts_with($key, 'eyJ') ? ['Authorization: Bearer ' . $key] : []),
     ]);
     $body = curl_exec($ch);
     $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $err  = curl_error($ch);
     curl_close($ch);
-    if ($body === false || $code !== 200) return null;
+    if ($body === false || $code !== 200) {
+        $GLOBALS['CHARIS_OS_LAST_ERROR'] = trim("$fn: HTTP $code " . ($err ?: mb_substr((string) $body, 0, 300)));
+        return null;
+    }
     $data = json_decode((string) $body, true);
     return is_array($data) ? $data : null;
 }

@@ -954,3 +954,9 @@ body { background: var(--bg); color: var(--text); }
 
 /* Featured work: a film card plays silently on a loop like a moving photo */
 .work__media--video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* About: the full team photo stays landscape and gets the wider column */
+.story { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+#story .story__media { aspect-ratio: 3 / 2; }
+#story .story__media img { object-position: 50% 50%; }
+@media (max-width: 860px) { .story { grid-template-columns: 1fr; } #story .story__media { aspect-ratio: 3 / 2; } }

@@ -1016,3 +1016,15 @@ body { background: var(--bg); color: var(--text); }
 @media (max-width: 700px) { .finale__haze, .finale__lines { height: 60%; top: 4%; } }
 .finale__haze { opacity: 1; filter: blur(30px) saturate(1.15); }
 .finale__glow { left: 50%; top: 120px; width: min(640px, 80vw); height: 340px; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(241, 102, 35, 0.28), rgba(141, 155, 176, 0.18) 60%, transparent); filter: blur(60px); }
+
+/* Policy pages */
+.policy-updated { margin: 0; color: var(--text-3); font-size: 0.95rem; }
+.prose ul { padding-left: 1.2em; }
+.prose li { margin-bottom: 0.45em; }
+.prose li::marker { color: var(--accent); }
+.prose strong { color: var(--text); font-weight: 600; }
+.prose .card { margin: 1.6em 0; padding: 20px 22px; border-radius: 18px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-2); }
+.prose .card a { color: var(--accent); }
+.policy-hero { padding-bottom: clamp(16px, 2vw, 28px); }
+.policy-body { padding-top: clamp(8px, 1.5vw, 20px); }
+.policy-hero .page-hero__inner { gap: 12px; }

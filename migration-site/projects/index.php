@@ -2,8 +2,6 @@
 require dirname(__DIR__) . '/inc/bootstrap.php';
 $C = content('projects');
 page_start($C['meta'] + ['path' => '/projects/'], 'projects');
-$p = $C['potm'];
-$potmPhotos = array_values(array_filter($p['photos'], fn($ph) => has_photo($ph['name'])));
 ?>
     <section class="page-hero" aria-labelledby="page-title">
       <div class="wrap">
@@ -18,40 +16,35 @@ $potmPhotos = array_values(array_filter($p['photos'], fn($ph) => has_photo($ph['
       </div>
     </section>
 
-    <section class="section section--raised" id="project-of-the-month" aria-labelledby="potm-title">
+
+<?php if (!empty($C['trailers']['items'])): $T = $C['trailers']; ?>
+    <section class="section trailers" id="trailers" aria-labelledby="trailers-title">
       <div class="wrap">
         <div class="section-head">
-          <h2 id="potm-title"><?= e($p['heading']) ?></h2>
+          <p class="chip"><span class="chip__dot" aria-hidden="true"></span><?= e($T['eyebrow']) ?></p>
+          <h2 id="trailers-title"><?= e($T['heading']) ?></h2>
         </div>
-        <div class="potm">
-<?php if ($potmPhotos): ?>
-          <div class="potm__media">
-<?php foreach (array_slice($potmPhotos, 0, 3) as $i => $ph): ?>
-            <figure class="develop reveal"><?= photo($ph['name'], $ph['alt'], $i === 0 ? '(max-width: 900px) 66vw, 40vw' : '(max-width: 900px) 33vw, 20vw') ?></figure>
+        <ul class="trailers__grid">
+<?php foreach ($T['items'] as $i => $t): ?>
+          <li>
+            <button class="trailer" type="button" data-trailer="<?= e($t['video']) ?>" aria-label="Play <?= e($t['title']) ?>">
+              <video src="<?= e($t['video']) ?>#t=0.5" muted loop playsinline preload="none" aria-hidden="true"></video>
+              <span class="trailer__shade" aria-hidden="true"></span>
+              <span class="trailer__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+              <span class="trailer__meta"><span class="trailer__type"><?= e($t['type']) ?></span><span class="trailer__title"><?= e($t['title']) ?></span></span>
+            </button>
+          </li>
 <?php endforeach; ?>
-          </div>
-<?php endif; ?>
-          <div class="potm__copy reveal">
-            <p class="potm__cat"><?= e($p['category']) ?></p>
-            <h3 style="font-size:clamp(2rem,4vw,3rem)"><?= e($p['title']) ?></h3>
-            <p class="body"><?= e($p['story']) ?></p>
-            <dl>
-<?php foreach ($p['details'] as $d): ?>
-              <dt><?= e($d['label']) ?></dt><dd><?= e($d['value']) ?></dd>
-<?php endforeach; ?>
-            </dl>
-<?php if ($potmPhotos): ?>
-            <p><a class="btn btn--primary" href="/assets/img/photo/<?= e($potmPhotos[0]['name']) ?>-1600.webp" data-lightbox-open="potm"><?= e($p['button']) ?></a></p>
-            <div hidden>
-<?php foreach ($potmPhotos as $ph): ?>
-              <a href="/assets/img/photo/<?= e($ph['name']) ?>-1600.webp" data-lightbox="potm" data-alt="<?= e($ph['alt']) ?>"></a>
-<?php endforeach; ?>
-            </div>
-<?php endif; ?>
-          </div>
+        </ul>
+      </div>
+      <div class="trailer-modal" id="trailer-modal" hidden role="dialog" aria-modal="true" aria-label="Trailer">
+        <div class="trailer-modal__box">
+          <video controls playsinline></video>
+          <button class="trailer-modal__close" type="button" aria-label="Close"><?= icon('close') ?></button>
         </div>
       </div>
     </section>
+<?php endif; ?>
 
     <section class="section" id="galleries" aria-labelledby="gallery-title">
       <div class="wrap">
@@ -78,21 +71,6 @@ $potmPhotos = array_values(array_filter($p['photos'], fn($ph) => has_photo($ph['
       </div>
     </section>
 
-<?php if (!empty($C['trailers']['items'])): ?>
-    <section class="section section--raised" id="trailers" aria-labelledby="trailers-title">
-      <div class="wrap">
-        <div class="section-head"><h2 id="trailers-title"><?= e($C['trailers']['heading']) ?></h2></div>
-        <ul class="cats" style="--cols:3">
-<?php foreach ($C['trailers']['items'] as $t): ?>
-          <li class="cat">
-            <div class="reel" style="margin-top:0"><iframe src="<?= e($t['embed']) ?>" title="<?= e($t['title']) ?>" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-            <h3><?= e($t['title']) ?></h3>
-          </li>
-<?php endforeach; ?>
-        </ul>
-      </div>
-    </section>
-<?php endif; ?>
 
     <section class="section close" aria-labelledby="close-title">
       <div class="wrap">

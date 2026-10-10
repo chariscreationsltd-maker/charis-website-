@@ -224,4 +224,36 @@
     } else { visible = true; start(); }
     render();
   }
+
+  // Trailers: muted previews play only while on screen; a click opens the full film.
+  var trailers = document.querySelectorAll("[data-trailer]");
+  if (trailers.length) {
+    var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if ("IntersectionObserver" in window) {
+      var tio = new IntersectionObserver(function (es) {
+        es.forEach(function (en) {
+          var v = en.target.querySelector("video");
+          if (en.isIntersecting) { v.preload = "metadata"; if (!still) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } }
+          else { v.pause(); }
+        });
+      }, { threshold: 0.35 });
+      trailers.forEach(function (t) { tio.observe(t); });
+    }
+    var modal = document.getElementById("trailer-modal");
+    var mv = modal && modal.querySelector("video"), opener = null;
+    var shut = function () { if (!mv) return; mv.pause(); mv.removeAttribute("src"); mv.load(); modal.hidden = true; document.body.style.overflow = ""; if (opener) opener.focus(); };
+    trailers.forEach(function (t) {
+      t.addEventListener("click", function () {
+        if (!modal) return;
+        opener = t; mv.src = t.getAttribute("data-trailer"); modal.hidden = false; document.body.style.overflow = "hidden";
+        modal.querySelector(".trailer-modal__close").focus();
+        var pr = mv.play(); if (pr && pr.catch) pr.catch(function () {});
+      });
+    });
+    if (modal) {
+      modal.querySelector(".trailer-modal__close").addEventListener("click", shut);
+      modal.addEventListener("click", function (e) { if (e.target === modal) shut(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !modal.hidden) shut(); });
+    }
+  }
 })();

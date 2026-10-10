@@ -2,7 +2,7 @@
 
 <!-- ═══ HERO ═══ -->
 <section id="cc-hero" style="min-height:72vh;width:100%;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0a0908;">
-  <div id="cc-hero-bg" style="position:absolute;inset:0;background-image:url('https://chariscreationsltd.com/wp-content/uploads/2026/04/Staff-photos-46-scaled-e1775753593180.jpg');background-size:cover;background-position:center;opacity:.55;transition:opacity .4s;"></div>
+  <div id="cc-hero-bg" style="position:absolute;inset:0;background-image:url('/media/2026/04/Staff-photos-46-scaled-e1775753593180.jpg');background-size:cover;background-position:center;opacity:.55;transition:opacity .4s;"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.35) 0%,rgba(0,0,0,.7) 100%);"></div>
   <div style="position:relative;z-index:2;text-align:center;padding:80px 24px 60px;">
     <div style="font-family:var(--font-cond,monospace);font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--or,#f16623);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:14px;">
@@ -38,7 +38,7 @@
       </div>
       <div class="origin-right rv d2">
         <div class="origin-img-main">
-          <img src="https://chariscreationsltd.com/wp-content/uploads/2026/04/Staff-photos-45-scaled.jpg" alt="Charis Team" loading="lazy"/>
+          <img src="/media/2026/04/Staff-photos-45-scaled.jpg" alt="Charis Team" loading="lazy"/>
         </div>
         <div class="origin-img-badge"><span>2013</span><span>Founded</span></div>
         <div class="origin-img-accent"></div>
@@ -203,7 +203,7 @@
             </defs>
             <circle cx="260" cy="260" r="90" fill="#0a0a0a" stroke="rgba(232,83,10,0.28)" stroke-width="1.5"/>
             <!-- Actual Charis logo image clipped to circle -->
-            <image href="https://chariscreationsltd.com/wp-content/uploads/2026/03/withoutwords-3.png"
+            <image href="/media/2026/03/withoutwords-3.png"
               x="178" y="178" width="164" height="164"
               preserveAspectRatio="xMidYMid meet"
               clip-path="url(#logo-clip)"
@@ -330,7 +330,7 @@
 ╚══════════════════════════════════════════════════════════════╝
 */
 /* BASE IMAGE URL — update ONLY if you move images to a new upload folder */
-var B='https://chariscreationsltd.com/wp-content/uploads/2026/04/';
+var B='/media/2026/04/';
 
 /* PORTRAIT GRID — 14 photo cards shown at the top of the page */
 var CHARIS=[
@@ -368,11 +368,11 @@ var CREATIVE=[
 
 /* BEHIND THE SCENES — 5 BTS video slots (paste YouTube/video URL in yt:) */
 var REELS=[
-  {label:'Behind The Scenes', name:'Ceremony Day',    video:'https://chariscreationsltd.com/wp-content/uploads/2026/03/0219-1920.mp4'},
-  {label:'On Location',       name:'Wedding Trailer', video:'https://chariscreationsltd.com/wp-content/uploads/2026/03/TIMOTHY-WEDS-MILDRED-TRAILER-FINAL-1920.mp4'},
-  {label:'Live Energy',       name:'Wedding Reel',    video:'https://chariscreationsltd.com/wp-content/uploads/2026/04/ANDREW-WEDS-BARBARA-REEL-1-1920.mp4'},
-  {label:'Event Day',         name:'Grand Opening',   video:'https://chariscreationsltd.com/wp-content/uploads/2026/03/2025-GRAND-OPENING-1920.mp4'},
-  {label:'Wedding Film',      name:'The Big Day',     video:'https://chariscreationsltd.com/wp-content/uploads/2026/04/EMMA-WEDS-RITAH-1920.mp4'}
+  {label:'Behind The Scenes', name:'Ceremony Day',    video:'/media/2026/03/0219-1920.mp4'},
+  {label:'On Location',       name:'Wedding Trailer', video:'/media/2026/03/TIMOTHY-WEDS-MILDRED-TRAILER-FINAL-1920.mp4'},
+  {label:'Live Energy',       name:'Wedding Reel',    video:'/media/2026/04/ANDREW-WEDS-BARBARA-REEL-1-1920.mp4'},
+  {label:'Event Day',         name:'Grand Opening',   video:'/media/2026/03/2025-GRAND-OPENING-1920.mp4'},
+  {label:'Wedding Film',      name:'The Big Day',     video:'/media/2026/04/EMMA-WEDS-RITAH-1920.mp4'}
 ];
 
 /* ══════════════════ END OF EDITABLE DATA ══════════════════ */
@@ -399,7 +399,7 @@ window.cm=function(){document.getElementById('mob').classList.remove('op');docum
 var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.06});
 document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
 
-var B='https://chariscreationsltd.com/wp-content/uploads/2026/04/';
+var B='/media/2026/04/';
 
 /* ── CHARIS TEAM — 14 members ── */
 

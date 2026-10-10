@@ -137,32 +137,32 @@
     "_note": "The trailers from the current site. Videos still play from the current site's uploads folder; copy them across before launch. Titles are descriptive: add couple names only with their consent.",
     "items": [
       {
-        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/03/2025-GRAND-OPENING-1920.mp4",
+        "video": "/media/2026/03/2025-GRAND-OPENING-1920.mp4",
         "title": "Grand Opening",
         "type": "Event Film"
       },
       {
-        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/03/TIMOTHY-WEDS-MILDRED-TRAILER-FINAL-1920.mp4",
+        "video": "/media/2026/03/TIMOTHY-WEDS-MILDRED-TRAILER-FINAL-1920.mp4",
         "title": "Wedding Trailer",
         "type": "Wedding"
       },
       {
-        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/04/ANDREW-WEDS-BARBARA-REEL-1-1920.mp4",
+        "video": "/media/2026/04/ANDREW-WEDS-BARBARA-REEL-1-1920.mp4",
         "title": "Wedding Reel",
         "type": "Wedding"
       },
       {
-        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/04/EMMA-WEDS-RITAH-1920.mp4",
+        "video": "/media/2026/04/EMMA-WEDS-RITAH-1920.mp4",
         "title": "Wedding Film",
         "type": "Wedding"
       },
       {
-        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/04/HUDSON-WEDS-PATIENCE-2-1920.mp4",
+        "video": "/media/2026/04/HUDSON-WEDS-PATIENCE-2-1920.mp4",
         "title": "Wedding Film",
         "type": "Wedding"
       },
       {
-        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/04/QUEEN-AND-SILAS-TRAILER-1920.mp4",
+        "video": "/media/2026/04/QUEEN-AND-SILAS-TRAILER-1920.mp4",
         "title": "Wedding Trailer",
         "type": "Wedding"
       }
@@ -184,22 +184,22 @@
         "type": "Kukyala"
       },
       {
-        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/03/0219-1920.mp4",
+        "video": "/media/2026/03/0219-1920.mp4",
         "title": "Ceremony Day",
         "type": "Behind the scenes"
       },
       {
-        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/04/ANDREW-WEDS-BARBARA-REEL-1-1920.mp4",
+        "video": "/media/2026/04/ANDREW-WEDS-BARBARA-REEL-1-1920.mp4",
         "title": "Wedding Reel",
         "type": "Live energy"
       },
       {
-        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/03/2025-GRAND-OPENING-1920.mp4",
+        "video": "/media/2026/03/2025-GRAND-OPENING-1920.mp4",
         "title": "Grand Opening",
         "type": "Event day"
       },
       {
-        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/04/EMMA-WEDS-RITAH-1920.mp4",
+        "video": "/media/2026/04/EMMA-WEDS-RITAH-1920.mp4",
         "title": "The Big Day",
         "type": "Wedding film"
       }

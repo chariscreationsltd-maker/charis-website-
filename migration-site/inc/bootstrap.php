@@ -117,13 +117,13 @@ function photo(?string $name, string $alt = '', string $sizes = '100vw', string 
 /**
  * Media that used to load from WordPress (chariscreationsltd.com/wp-content/uploads)
  * now lives in this site's /media/ folder under the same year/month path
- * (copied by tools/import-wordpress-media.php). Until a file has been copied,
- * the old address is kept so nothing breaks during the move.
+ * (moved 10 October 2026). Any old address that still turns up, for example
+ * pasted into the editor, is pointed at the local copy: nothing is loaded
+ * from WordPress.
  */
 function media_url(string $url): string {
     if (preg_match('~^https?://(?:www\.)?chariscreationsltd\.com/wp-content/uploads/([^\s"\'<>?#]*)$~iu', $url, $m) && !str_contains($m[1], '..')) {
-        $local = SITE_ROOT . '/media/' . rawurldecode($m[1]);
-        if (str_ends_with($m[1], '/') ? is_dir($local) : is_file($local)) return '/media/' . $m[1];
+        return '/media/' . $m[1];
     }
     return $url;
 }

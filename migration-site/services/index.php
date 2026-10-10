@@ -17,8 +17,11 @@ function render_buttons(array $buttons): void {
     echo '</div>';
 }
 
-function render_offer_intro(array $o, string $id): void { ?>
-        <div class="offer__intro">
+function render_offer_intro(array $o, string $id): void {
+    // Photo and words swap sides from one service to the next.
+    static $n = 0;
+    $flip = !empty($o['photo']) && has_photo($o['photo']) && ($n++ % 2 === 1); ?>
+        <div class="offer__intro<?= $flip ? ' offer__intro--flip' : '' ?>">
           <div class="stack reveal">
             <h2 id="<?= e($id) ?>-title"><?= e($o['headline']) ?></h2>
             <p class="lede"><?= e($o['body']) ?></p>

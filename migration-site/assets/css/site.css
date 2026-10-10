@@ -976,3 +976,15 @@ body { background: var(--bg); color: var(--text); }
 @media (min-width: 961px) {
   .page-services .svc-hero__media { top: calc(var(--nav-h) + 4px); -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 110px); mask-image: linear-gradient(to bottom, transparent 0, #000 110px); }
 }
+
+/* Services: photo and words alternate sides; every photo sits in a rounded frame */
+.offer__intro { align-items: center; }
+.offer__intro--flip { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+.offer__intro--flip .offer__media { order: -1; }
+.offer__media { border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06); }
+.offer__media img { border-radius: inherit; }
+@media (max-width: 900px) {
+  .offer__intro--flip { grid-template-columns: 1fr; }
+  .offer__intro--flip .offer__media { order: 0; }
+  .offer__media { border-radius: 18px; }
+}

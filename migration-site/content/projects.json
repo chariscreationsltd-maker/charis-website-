@@ -167,6 +167,43 @@
       }
     ]
   },
+  "reels": {
+    "eyebrow": "Reel highlights",
+    "heading": "Short films, big moments",
+    "support": "Quick cuts from the day and from behind the camera. Tap any reel to watch it in full.",
+    "items": [
+      {
+        "youtube": "SwDNzUg5HDo",
+        "title": "Ashley Introduces Marvin",
+        "type": "Introduction"
+      },
+      {
+        "youtube": "LbLnq2fj8OU",
+        "title": "Becky's Kukyala",
+        "type": "Kukyala"
+      },
+      {
+        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/03/0219-1920.mp4",
+        "title": "Ceremony Day",
+        "type": "Behind the scenes"
+      },
+      {
+        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/04/ANDREW-WEDS-BARBARA-REEL-1-1920.mp4",
+        "title": "Wedding Reel",
+        "type": "Live energy"
+      },
+      {
+        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/03/2025-GRAND-OPENING-1920.mp4",
+        "title": "Grand Opening",
+        "type": "Event day"
+      },
+      {
+        "video": "https://chariscreationsltd.com/wp-content/uploads/2026/04/EMMA-WEDS-RITAH-1920.mp4",
+        "title": "The Big Day",
+        "type": "Wedding film"
+      }
+    ]
+  },
   "close": {
     "heading": "Your story could be next.",
     "button": {

@@ -233,6 +233,7 @@
       var tio = new IntersectionObserver(function (es) {
         es.forEach(function (en) {
           var v = en.target.querySelector("video");
+          if (!v) return;
           if (en.isIntersecting) { v.preload = "metadata"; if (!still) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } }
           else { v.pause(); }
         });
@@ -241,13 +242,32 @@
     }
     var modal = document.getElementById("trailer-modal");
     var mv = modal && modal.querySelector("video"), opener = null;
-    var shut = function () { if (!mv) return; mv.pause(); mv.removeAttribute("src"); mv.load(); modal.hidden = true; document.body.style.overflow = ""; if (opener) opener.focus(); };
+    var box = modal && modal.querySelector(".trailer-modal__box");
+    var shut = function () {
+      if (!mv) return; mv.pause(); mv.removeAttribute("src"); mv.load();
+      var fr = box.querySelector("iframe"); if (fr) fr.remove();
+      box.classList.remove("is-vertical"); mv.hidden = false;
+      modal.hidden = true; document.body.style.overflow = ""; if (opener) opener.focus();
+    };
     trailers.forEach(function (t) {
       t.addEventListener("click", function () {
         if (!modal) return;
-        opener = t; mv.src = t.getAttribute("data-trailer"); modal.hidden = false; document.body.style.overflow = "hidden";
+        opener = t;
+        var yt = t.getAttribute("data-youtube");
+        if (yt) {
+          var fr = document.createElement("iframe");
+          fr.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(yt) + "?autoplay=1&rel=0&playsinline=1";
+          fr.title = t.getAttribute("aria-label").replace(/^Play /, "");
+          fr.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+          fr.allowFullscreen = true;
+          mv.hidden = true; box.classList.add("is-vertical"); box.insertBefore(fr, box.firstChild);
+        } else {
+          mv.src = t.getAttribute("data-trailer");
+          if (t.classList.contains("trailer--reel")) box.classList.remove("is-vertical");
+        }
+        modal.hidden = false; document.body.style.overflow = "hidden";
         modal.querySelector(".trailer-modal__close").focus();
-        var pr = mv.play(); if (pr && pr.catch) pr.catch(function () {});
+        if (!yt) { var pr = mv.play(); if (pr && pr.catch) pr.catch(function () {}); }
       });
     });
     if (modal) {

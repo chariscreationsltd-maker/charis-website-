@@ -80,14 +80,44 @@ page_start($C['meta'] + ['path' => '/projects/'], 'projects');
 <?php endforeach; ?>
         </ul>
       </div>
-      <div class="trailer-modal" id="trailer-modal" hidden role="dialog" aria-modal="true" aria-label="Trailer">
-        <div class="trailer-modal__box">
-          <video controls playsinline></video>
-          <button class="trailer-modal__close" type="button" aria-label="Close"><?= icon('close') ?></button>
+    </section>
+<?php endif; ?>
+
+<?php if (!empty($C['reels']['items'])): $R = $C['reels']; ?>
+    <section class="section reels" id="reels" aria-labelledby="reels-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="chip"><span class="chip__dot" aria-hidden="true"></span><?= e($R['eyebrow']) ?></p>
+          <h2 id="reels-title"><?= e($R['heading']) ?></h2>
+          <p class="lede"><?= e($R['support']) ?></p>
         </div>
+        <ul class="reels__row">
+<?php foreach ($R['items'] as $r): $yt = $r['youtube'] ?? ''; ?>
+          <li>
+<?php if ($yt): ?>
+            <button class="trailer trailer--reel" type="button" data-trailer data-youtube="<?= e($yt) ?>" aria-label="Play <?= e($r['title']) ?>">
+              <img src="https://i.ytimg.com/vi/<?= e($yt) ?>/hqdefault.jpg" alt="" loading="lazy" decoding="async">
+<?php else: ?>
+            <button class="trailer trailer--reel" type="button" data-trailer="<?= e($r['video']) ?>" aria-label="Play <?= e($r['title']) ?>">
+              <video src="<?= e($r['video']) ?>#t=0.5" muted loop playsinline preload="none" aria-hidden="true"></video>
+<?php endif; ?>
+              <span class="trailer__shade" aria-hidden="true"></span>
+              <span class="trailer__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+              <span class="trailer__meta"><span class="trailer__type"><?= e($r['type']) ?></span><span class="trailer__title"><?= e($r['title']) ?></span></span>
+            </button>
+          </li>
+<?php endforeach; ?>
+        </ul>
       </div>
     </section>
 <?php endif; ?>
+
+    <div class="trailer-modal" id="trailer-modal" hidden role="dialog" aria-modal="true" aria-label="Film player">
+      <div class="trailer-modal__box">
+        <video controls playsinline></video>
+        <button class="trailer-modal__close" type="button" aria-label="Close"><?= icon('close') ?></button>
+      </div>
+    </div>
 
     <section class="section close" aria-labelledby="close-title">
       <div class="wrap">

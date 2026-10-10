@@ -1,5 +1,16 @@
 # CharisOS ↔ website: what the CharisOS developer needs to do
 
+> **Update, 10 October 2026.** CharisOS has run 01 and 02. The editor now lives **inside CharisOS**
+> (Settings > Website, Owner only), not on the website. `site_editor_allowed()` allows **Owner only**,
+> and `get_public_testimonials()` also returns `photo` (https address or null, consented photos only).
+> The website side is done: `/editor/api.php` and `/editor/refresh.php` send
+> `Access-Control-Allow-Origin: https://app.chariscreationsltd.com` (with `Vary: Origin`), the sign-in page
+> at `/editor/` is gone (it now says "The website is edited from CharisOS."), and review cards show the
+> client's photo when one is sent (accepted from the site-media bucket, charis.smugmug.com and
+> photos.smugmug.com only), and no photo otherwise. Content paths are kept stable; any rename will be
+> announced first. Sections below describe the original plan; where they mention the editor at
+> `/editor/` on the website or Owner/Admin, read "CharisOS Settings > Website" and "Owner".
+
 The new website (`migration-site/`, preview at https://preview.chariscreationsltd.com/) talks to
 CharisOS in three ways. Everything below runs in the existing CharisOS Supabase project
 (`vlmcwmjhmenbnymwfkdk`). Nothing changes in the CharisOS app code, and no existing table is altered.

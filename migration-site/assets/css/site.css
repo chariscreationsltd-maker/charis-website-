@@ -1028,3 +1028,9 @@ body { background: var(--bg); color: var(--text); }
 .policy-hero { padding-bottom: clamp(16px, 2vw, 28px); }
 .policy-body { padding-top: clamp(8px, 1.5vw, 20px); }
 .policy-hero .page-hero__inner { gap: 12px; }
+
+/* Review cards: the reviewer's own photo fills the photo column; without one the words take the full card */
+.voice__media { position: relative; overflow: hidden; }
+.voice__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.voice--nophoto .voice__copy { flex: 1 1 auto; max-width: none; }
+.voice--nophoto .voice__quote { font-size: clamp(1.25rem, 2vw, 1.6rem); line-height: 1.4; max-width: 34ch; }

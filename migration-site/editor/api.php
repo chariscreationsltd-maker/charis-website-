@@ -1,10 +1,21 @@
 <?php
 /**
- * Read-only data for the website editor: the list of editable pages and each
- * page's defaults (the same text and photo names already public on the site).
- * Saving happens in CharisOS, never here.
+ * Read-only data for the website editor in CharisOS (Settings > Website): the
+ * list of editable pages and each page's defaults (the same text and photo
+ * names already public on the site). Saving happens in CharisOS, never here.
+ * Keep content paths stable: published edits are stored against them.
  */
 require dirname(__DIR__) . '/inc/bootstrap.php';
+
+// CharisOS (Settings > Website) reads this from the owner's browser.
+const CHARIS_OS_ORIGIN = 'https://app.chariscreationsltd.com';
+header('Vary: Origin');
+if (($_SERVER['HTTP_ORIGIN'] ?? '') === CHARIS_OS_ORIGIN) {
+    header('Access-Control-Allow-Origin: ' . CHARIS_OS_ORIGIN);
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+    header('Access-Control-Max-Age: 86400');
+}
+if (($_SERVER['REQUEST_METHOD'] ?? '') === 'OPTIONS') { http_response_code(204); exit; }
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 header('X-Robots-Tag: noindex');

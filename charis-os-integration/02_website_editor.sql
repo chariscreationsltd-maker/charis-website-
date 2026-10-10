@@ -5,11 +5,11 @@
 --   site_content           one row per website page: the owner's published changes
 --   site_content_history   every publish, so any earlier version can be restored
 --   site-media bucket      public photo store for images uploaded in the editor
---   site_editor_allowed()  who may publish: CharisOS profiles with app_role Owner or Admin
+--   site_editor_allowed()  who may publish: CharisOS profiles with app_role Owner
 --   get_site_content()     public: what the website lays over its built-in text and photos
 --   site_editor_me()       signed-in: name, role and whether this account may publish
---   save_site_content()    Owner/Admin: publish a page's changes
---   list_site_content_history(), restore_site_content()   Owner/Admin: undo
+--   save_site_content()    Owner: publish a page's changes
+--   list_site_content_history(), restore_site_content()   Owner: undo
 --
 -- How the data looks
 --   site_content.data is a flat object of "path": value pairs, e.g.
@@ -23,7 +23,7 @@
 -- and no policies: they are reached only through the functions below.
 
 -- ── Who may publish ───────────────────────────────────────────
--- Owner and Admin only. To let PAs edit the website too, add 'PA' to the list.
+-- Owner only (as run by CharisOS, October 2026).
 create or replace function public.site_editor_allowed()
 returns boolean
 language sql
@@ -34,7 +34,7 @@ as $$
   select exists (
     select 1 from profiles
     where id = auth.uid()
-      and app_role in ('Owner', 'Admin')
+      and app_role = 'Owner'
   );
 $$;
 
@@ -104,7 +104,7 @@ declare
   v_bad  text;
 begin
   if not public.site_editor_allowed() then
-    raise exception 'Only Owner and Admin accounts can change the website.' using errcode = '42501';
+    raise exception 'Only the Owner account can change the website.' using errcode = '42501';
   end if;
   if p_page not in ('site', 'home', 'projects', 'galleries', 'services') then
     raise exception 'Unknown page: %', p_page using errcode = '22023';
@@ -149,7 +149,7 @@ set search_path = public
 as $$
 begin
   if not public.site_editor_allowed() then
-    raise exception 'Only Owner and Admin accounts can see website history.' using errcode = '42501';
+    raise exception 'Only the Owner account can see website history.' using errcode = '42501';
   end if;
   return coalesce((
     select json_agg(json_build_object(
@@ -172,7 +172,7 @@ declare
   v_row site_content_history%rowtype;
 begin
   if not public.site_editor_allowed() then
-    raise exception 'Only Owner and Admin accounts can change the website.' using errcode = '42501';
+    raise exception 'Only the Owner account can change the website.' using errcode = '42501';
   end if;
   select * into v_row from site_content_history where id = p_id;
   if not found then

@@ -6,8 +6,9 @@ Pushing to the `website-preview` branch deploys `migration-site/` to the preview
 
 ## The website editor (no code)
 
-The owner can change text, links and photos at `/editor/`, signing in with their CharisOS account
-(Owner or Admin role). Published changes are stored in CharisOS and laid over the JSON files, so a code
+The owner changes text, links and photos from CharisOS (Settings > Website, Owner only). CharisOS
+reads `/editor/api.php` and calls `/editor/refresh.php` after each publish; keep content paths in the
+JSON files stable, because published edits are stored against them. Published changes are stored in CharisOS and laid over the JSON files, so a code
 deploy never wipes them; "Use original" in the editor goes back to what the JSON file says. Editing a JSON
 file still works and changes the default. Setup for CharisOS is in `../charis-os-integration/README.md`.
 

@@ -22,6 +22,19 @@ function live_testimonials(): array {
     return charis_cached('testimonials', TESTIMONIALS_TTL, 'fetch_testimonials') ?? [];
 }
 
+/**
+ * A reviewer's own photo, sent by CharisOS only when the client agreed to it.
+ * Accepted only from the website's photo store in CharisOS or the client's
+ * own SmugMug gallery; anything else is dropped (no stock images).
+ */
+function review_photo($url): string {
+    $url = trim((string) $url);
+    if ($url === '' || !preg_match('#^https://[A-Za-z0-9.-]+/[A-Za-z0-9/_.~%+=&?,:@!$-]*$#', $url)) return '';
+    if (str_starts_with($url, SITE_MEDIA_PREFIX)) return $url;
+    $host = strtolower((string) parse_url($url, PHP_URL_HOST));
+    return in_array($host, ['charis.smugmug.com', 'photos.smugmug.com'], true) ? $url : '';
+}
+
 /** null means "could not reach CharisOS"; [] means "reached it, nothing approved yet". */
 function fetch_testimonials(): ?array {
     $data = charis_os_rpc('get_public_testimonials', ['p_limit' => TESTIMONIALS_MAX]);
@@ -41,6 +54,7 @@ function fetch_testimonials(): ?array {
             'event'  => trim((string) ($r['eventType'] ?? '')),
             'date'   => $date,
             'rating' => max(0, min(5, (int) ($r['rating'] ?? 0))),
+            'photo'  => review_photo($r['photo'] ?? ''),
         ];
     }
     return $out;

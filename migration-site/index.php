@@ -229,7 +229,9 @@ $voices = live_testimonials();
 $studio = !$voices;
 if ($studio) $voices = array_map(fn($c) => ['quote' => $c['quote'], 'name' => $c['name'], 'event' => $c['kicker'], 'date' => '', 'rating' => 0, 'link' => $c['link'] ?? ''], $C['voices']['placeholders']);
 $tones = ['ember', 'ivory', 'graphite', 'burnt'];
-// Photo column: studio portfolio images (decorative, not of the reviewer)
+// Photo column. Real reviews show only the client's own photo (sent by CharisOS
+// with their consent) or no photo at all. The studio's own lines, shown until
+// reviews arrive, use portfolio images as decoration.
 $voicePhotos = array_values(array_filter(array_map(fn($x) => $x['photo'], $C['tagline']['strip']), 'has_photo'));
 ?>
     <section class="voices" id="testimonials" aria-labelledby="voices-title">
@@ -241,8 +243,8 @@ $voicePhotos = array_values(array_filter(array_map(fn($x) => $x['photo'], $C['ta
 <?php foreach ($voices as $i => $v):
     $len = mb_strlen($v['quote']);
     $size = $len > 360 ? ' is-long' : ($len > 180 ? ' is-mid' : '');
-    $ph = $voicePhotos ? $voicePhotos[$i % count($voicePhotos)] : null; ?>
-        <li class="voice voice--<?= $tones[$i % count($tones)] ?><?= $size ?>" style="z-index: <?= count($voices) - $i ?>">
+    $ph = $studio ? ($voicePhotos ? photo_src($voicePhotos[$i % count($voicePhotos)], 800) : '') : ($v['photo'] ?? ''); ?>
+        <li class="voice voice--<?= $tones[$i % count($tones)] ?><?= $size ?><?= $ph ? '' : ' voice--nophoto' ?>" style="z-index: <?= count($voices) - $i ?>">
           <figure class="voice__inner">
             <div class="voice__copy">
               <p class="voice__kicker"><?= e(implode(' · ', array_filter([$v['event'], $v['date']]))) ?: 'Charis client' ?></p>
@@ -257,7 +259,9 @@ $voicePhotos = array_values(array_filter(array_map(fn($x) => $x['photo'], $C['ta
 <?php endif; ?>
               </figcaption>
             </div>
-            <div class="voice__media" aria-hidden="true"<?= $ph ? ' style="background-image: url(' . e(photo_src($ph, 800)) . ')"' : '' ?>></div>
+<?php if ($ph): ?>
+            <div class="voice__media"><img src="<?= e($ph) ?>" alt="<?= $studio ? '' : e('Photo from ' . $v['name'] . '’s ' . ($v['event'] ?: 'event')) ?>" loading="lazy" decoding="async" referrerpolicy="no-referrer"></div>
+<?php endif; ?>
           </figure>
         </li>
 <?php endforeach; ?>

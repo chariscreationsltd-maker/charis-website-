@@ -1,6 +1,10 @@
 <?php
 require __DIR__ . '/inc/bootstrap.php';
-http_response_code(404);
+// Old WordPress posts (spam injected into the old site) answer 410 Gone so search engines drop them for good.
+$slug = trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+$gone = $slug !== '' && !str_contains($slug, '/') && in_array($slug, array_map('trim', file(SITE_ROOT . '/content/legacy/removed-posts.txt', FILE_IGNORE_NEW_LINES) ?: []), true);
+http_response_code($gone ? 410 : 404);
+header('X-Robots-Tag: noindex');
 page_start([
     'title' => 'Page not found | Charis Creations',
     'description' => 'The page you were looking for may have a new home.',

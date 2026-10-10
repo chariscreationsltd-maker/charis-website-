@@ -11,4 +11,8 @@ foreach ($pages as $p) {
     $mod = is_file($file) ? date('Y-m-d', filemtime($file)) : date('Y-m-d');
     echo "  <url><loc>" . e($base . $p) . "</loc><lastmod>$mod</lastmod></url>\n";
 }
+// Gallery pages
+foreach (array_keys(content('galleries')['galleries'] ?? []) as $k) {
+    echo "  <url><loc>" . e($base . '/projects/gallery/?c=' . $k) . "</loc></url>\n";
+}
 echo "</urlset>\n";

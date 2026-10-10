@@ -26,6 +26,9 @@ function page_start(array $meta, string $current = ''): void {
 <?php if (!empty($SITE['noindex'])): ?>
   <meta name="robots" content="noindex, nofollow">
 <?php endif; ?>
+<?php if (!empty($SITE['googleSiteVerification']) && !IS_PREVIEW): ?>
+  <meta name="google-site-verification" content="<?= e($SITE['googleSiteVerification']) ?>">
+<?php endif; ?>
   <link rel="canonical" href="<?= e($canonical) ?>">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="<?= e($SITE['siteName']) ?>">

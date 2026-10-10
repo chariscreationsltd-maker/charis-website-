@@ -5,6 +5,8 @@
   "baseUrl": "https://chariscreationsltd.com",
   "noindex": false,
   "analyticsId": "",
+  "googleSiteVerification": "",
+  "_googleSiteVerificationNote": "Only the code from Search Console's HTML tag method (the content=\"…\" part). Not needed if the domain is verified by DNS.",
   "_analyticsNote": "TO CONFIRM: paste the existing Google Analytics ID (G-XXXXXXX) from the WordPress site so history continues. Hudson must be owner.",
   "_noindexNote": "The preview address is always hidden from Google automatically; this switch is for the real domain.",
   "tagline": "Bringing Image to Life.",

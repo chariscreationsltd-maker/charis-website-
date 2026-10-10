@@ -157,18 +157,31 @@ $rows = [$strip, array_merge(array_slice($strip, $half), array_slice($strip, 0, 
       </div>
     </section>
 
+<?php $st = $C['story']; $years = (int) date('Y') - (int) ($SITE['founded'] ?? 2013); ?>
     <section class="section" id="story" aria-labelledby="story-title">
+<?php if (!empty($st['ghost'])): ?>
+      <p class="story__ghost" aria-hidden="true"><?= e($st['ghost']) ?></p>
+<?php endif; ?>
       <div class="wrap story">
-        <div class="story__media develop reveal"><?= photo($C['story']['photo'], $C['story']['alt'], '(max-width: 860px) 100vw, 50vw') ?></div>
+        <div class="story__visual reveal">
+          <span class="story__frame" aria-hidden="true"></span>
+          <div class="story__media develop"><?= photo($st['photo'], $st['alt'], '(max-width: 860px) 100vw, 55vw') ?></div>
+<?php if ($years > 0): ?>
+          <p class="story__badge"><b><?= $years ?></b><span>years of<br>telling stories</span></p>
+<?php endif; ?>
+        </div>
         <div class="story__copy reveal">
-          <h2 id="story-title"><?= e($C['story']['heading']) ?></h2>
-          <p class="lede"><?= e($C['story']['body']) ?></p>
-          <dl class="facts">
-<?php foreach ($C['story']['facts'] as $f): ?>
+<?php if (!empty($st['label'])): ?>
+          <p class="chip"><span class="chip__dot" aria-hidden="true"></span><?= e($st['label']) ?></p>
+<?php endif; ?>
+          <h2 id="story-title"><?php if (!empty($st['headingLight'])): ?><span class="story__light"><?= e($st['headingLight']) ?></span> <span><?= e($st['headingBold'] ?? '') ?></span><?php else: ?><?= e($st['heading']) ?><?php endif; ?></h2>
+          <p class="lede"><?= e($st['body']) ?></p>
+          <dl class="facts facts--tiles">
+<?php foreach ($st['facts'] as $f): ?>
             <div><dt><?= e($f['label']) ?></dt><dd><?= e($f['value']) ?></dd></div>
 <?php endforeach; ?>
           </dl>
-          <p><?= button($C['story']['link']['label'], $C['story']['link']['url'], 'text') ?></p>
+          <p><?= button($st['link']['label'], $st['link']['url'], 'text') ?></p>
         </div>
       </div>
     </section>

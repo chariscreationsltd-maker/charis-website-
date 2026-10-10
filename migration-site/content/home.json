@@ -304,6 +304,10 @@
   },
   "story": {
     "heading": "A camera was the beginning.",
+    "label": "Our story",
+    "headingLight": "A camera was",
+    "headingBold": "the beginning.",
+    "ghost": "Since 2013",
     "body": "Charis Creations began in 2013 with a camera and a belief that people deserve to see their lives and work represented with care. Today we photograph weddings, create films, produce brand stories and work with organisations across Uganda. The work has grown. The attention we give people remains at its centre.",
     "photo": "about-team-group",
     "alt": "The Charis Creations team together in the studio, three seated in front and the rest standing behind",

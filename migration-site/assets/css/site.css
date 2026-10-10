@@ -946,3 +946,8 @@ body { background: var(--bg); color: var(--text); }
   .reels__row > li { scroll-snap-align: start; }
 }
 @media (max-width: 560px) { .reels__row { grid-auto-columns: 62%; } }
+
+/* Projects: galleries, trailers and reels read as one run, so they sit closer together */
+.page-projects #galleries { padding-bottom: clamp(24px, 3vw, 40px); }
+.page-projects .trailers { padding-block: clamp(32px, 4vw, 56px); }
+.page-projects .reels { padding-top: clamp(32px, 4vw, 56px); }

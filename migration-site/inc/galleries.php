@@ -20,7 +20,17 @@ function gallery_photos(string $key): array {
     $G = content('galleries');
     $manual = $G['galleries'][$key]['photos'] ?? [];
     if ($manual) {
-        return array_values(array_map(fn($p) => photo_src($p, 1600), $manual));
+        return array_values(array_map(fn($p) => photo_src(media_url($p), 1600), $manual));
+    }
+    // Lists saved when the photos were moved off WordPress (media/galleries.json).
+    static $moved = null;
+    if ($moved === null) {
+        $f = SITE_ROOT . '/media/galleries.json';
+        $moved = is_file($f) ? (json_decode((string) file_get_contents($f), true) ?: []) : [];
+    }
+    if (!empty($moved[$key]) && is_array($moved[$key])) {
+        $have = array_values(array_filter($moved[$key], fn($p) => is_string($p) && str_starts_with($p, '/media/') && !str_contains($p, '..') && is_file(SITE_ROOT . rawurldecode($p))));
+        if ($have) return $have;
     }
     $dir = __DIR__ . '/cache';
     if (!is_dir($dir)) @mkdir($dir, 0755, true);

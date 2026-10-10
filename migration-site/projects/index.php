@@ -73,8 +73,8 @@ page_start($C['meta'] + ['path' => '/projects/'], 'projects');
         <ul class="trailers__grid">
 <?php foreach ($T['items'] as $i => $t): ?>
           <li>
-            <button class="trailer" type="button" data-trailer="<?= e($t['video']) ?>" aria-label="Play <?= e($t['title']) ?>">
-              <video src="<?= e($t['video']) ?>#t=0.5" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <button class="trailer" type="button" data-trailer="<?= e(media_url($t['video'])) ?>" aria-label="Play <?= e($t['title']) ?>">
+              <video src="<?= e(media_url($t['video'])) ?>#t=0.5" muted loop playsinline preload="none" aria-hidden="true"></video>
               <span class="trailer__shade" aria-hidden="true"></span>
               <span class="trailer__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
               <span class="trailer__meta"><span class="trailer__type"><?= e($t['type']) ?></span><span class="trailer__title"><?= e($t['title']) ?></span></span>
@@ -101,8 +101,8 @@ page_start($C['meta'] + ['path' => '/projects/'], 'projects');
             <button class="trailer trailer--reel" type="button" data-trailer data-youtube="<?= e($yt) ?>" aria-label="Play <?= e($r['title']) ?>">
               <img src="https://i.ytimg.com/vi/<?= e($yt) ?>/hqdefault.jpg" alt="" loading="lazy" decoding="async">
 <?php else: ?>
-            <button class="trailer trailer--reel" type="button" data-trailer="<?= e($r['video']) ?>" aria-label="Play <?= e($r['title']) ?>">
-              <video src="<?= e($r['video']) ?>#t=0.5" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <button class="trailer trailer--reel" type="button" data-trailer="<?= e(media_url($r['video'])) ?>" aria-label="Play <?= e($r['title']) ?>">
+              <video src="<?= e(media_url($r['video'])) ?>#t=0.5" muted loop playsinline preload="none" aria-hidden="true"></video>
 <?php endif; ?>
               <span class="trailer__shade" aria-hidden="true"></span>
               <span class="trailer__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>

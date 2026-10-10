@@ -47,3 +47,6 @@ migration-site/hero section/
 # Live CharisOS data: key written at deploy, cache made on the server
 migration-site/inc/cache/
 migration-site/inc/charis-os-key.php
+
+# Media moved off WordPress lives only on the server
+migration-site/media/

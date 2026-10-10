@@ -114,6 +114,25 @@ function photo(?string $name, string $alt = '', string $sizes = '100vw', string 
     );
 }
 
+/**
+ * Media that used to load from WordPress (chariscreationsltd.com/wp-content/uploads)
+ * now lives in this site's /media/ folder under the same year/month path
+ * (copied by tools/import-wordpress-media.php). Until a file has been copied,
+ * the old address is kept so nothing breaks during the move.
+ */
+function media_url(string $url): string {
+    if (preg_match('~^https?://(?:www\.)?chariscreationsltd\.com/wp-content/uploads/([^\s"\'<>?#]*)$~iu', $url, $m) && !str_contains($m[1], '..')) {
+        $local = SITE_ROOT . '/media/' . rawurldecode($m[1]);
+        if (str_ends_with($m[1], '/') ? is_dir($local) : is_file($local)) return '/media/' . $m[1];
+    }
+    return $url;
+}
+
+/** media_url() for every WordPress media address inside a block of HTML. */
+function media_html(string $html): string {
+    return (string) preg_replace_callback('~https?://(?:www\.)?chariscreationsltd\.com/wp-content/uploads/[^\s"\'<>?#\\\\)]*~iu', fn($m) => media_url($m[0]), $html);
+}
+
 /** The seasonal banner that should show right now, or null. */
 function active_banner(): ?array {
     global $SITE;

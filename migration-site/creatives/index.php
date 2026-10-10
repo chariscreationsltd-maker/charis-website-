@@ -13,7 +13,7 @@ $head = '  <link rel="preconnect" href="https://fonts.googleapis.com">' . "\n"
 page_start(['title' => 'Meet the Creators | Charis Creations', 'description' => 'Meet the Charis Creations team: photographers, cinematographers, editors and storytellers in Kampala.', 'path' => '/creatives/', 'image' => 'og-team', 'head' => $head], 'team');
 ?>
     <div class="lg-creatives">
-<?php readfile($dir . 'creatives.body.html'); ?>
+<?= media_html((string) file_get_contents($dir . 'creatives.body.html')) ?>
     </div>
     <div class="trailer-modal" id="trailer-modal" hidden role="dialog" aria-modal="true" aria-label="Behind the scenes">
       <div class="trailer-modal__box">

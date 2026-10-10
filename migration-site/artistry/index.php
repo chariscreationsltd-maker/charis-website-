@@ -13,6 +13,6 @@ $head = '  <link rel="preconnect" href="https://fonts.googleapis.com">' . "\n"
 page_start(['title' => 'Makeup & Beauty | Charis Artistry', 'description' => 'Charis Artistry: bridal and special occasion makeup in Kampala by the Charis Creations team.', 'path' => '/artistry/', 'image' => 'og-artistry', 'head' => $head], 'artistry');
 ?>
     <div class="lg-artistry">
-<?php readfile($dir . 'artistry.body.html'); ?>
+<?= media_html((string) file_get_contents($dir . 'artistry.body.html')) ?>
     </div>
 <?php page_end(); ?>

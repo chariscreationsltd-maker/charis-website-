@@ -1,0 +1,31 @@
+# ============================================================
+# chariscreationsltd.com -> the new website
+# Goes in public_html/.htaccess (replace the WordPress one; keep a copy of it).
+# Visitors to chariscreationsltd.com and www.chariscreationsltd.com are served
+# the new site from public_html/Websitemigration/ without the address changing.
+# Other subdomains (app., preview., mail) are not touched.
+# To undo: put the saved WordPress .htaccess back.
+# ============================================================
+Options -Indexes
+RewriteEngine On
+
+# One address: https://chariscreationsltd.com (no www)
+RewriteCond %{HTTP_HOST} ^www\.chariscreationsltd\.com$ [NC]
+RewriteRule ^ https://chariscreationsltd.com%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^chariscreationsltd\.com$ [NC]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^ https://chariscreationsltd.com%{REQUEST_URI} [L,R=301]
+
+# Folders without a trailing slash: add it here, so the internal folder name never shows
+RewriteCond %{HTTP_HOST} ^chariscreationsltd\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/Websitemigration/
+RewriteCond %{DOCUMENT_ROOT}/Websitemigration/$1 -d
+RewriteRule ^(.+[^/])$ /$1/ [L,R=301]
+
+# Serve everything else from the new site
+RewriteCond %{HTTP_HOST} ^chariscreationsltd\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/Websitemigration/
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteRule ^(.*)$ /Websitemigration/$1 [L]

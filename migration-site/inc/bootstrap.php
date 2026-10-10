@@ -28,6 +28,10 @@ function content(string $name): array {
 
 $SITE = content('site');
 
+/** The preview copy (preview.chariscreationsltd.com) is never indexed; the real domain follows site.json. */
+define('IS_PREVIEW', str_starts_with(strtolower((string) ($_SERVER['HTTP_HOST'] ?? '')), 'preview.'));
+if (IS_PREVIEW) { $SITE['noindex'] = true; if (!headers_sent()) header('X-Robots-Tag: noindex, nofollow'); }
+
 /** Escape text for HTML. */
 function e(?string $s): string {
     return htmlspecialchars((string) $s, ENT_QUOTES | ENT_HTML5, 'UTF-8');

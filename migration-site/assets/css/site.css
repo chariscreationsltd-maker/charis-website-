@@ -818,3 +818,9 @@ body { background: var(--bg); color: var(--text); }
 /* Tighter hand-off from the journey ("We sell peace of mind") into client voices */
 #experience { padding-bottom: clamp(48px, 6vw, 88px); }
 .voices { padding-top: clamp(56px, 7vw, 104px); }
+
+/* Tighter vertical rhythm site-wide: sections sat 168px apart on each side,
+   which read as dead space between them. */
+:root { --space-section: clamp(64px, 8vw, 112px); }
+.voices { padding-bottom: clamp(48px, 6vw, 80px); }
+#starting-points { padding-top: clamp(56px, 7vw, 96px); }

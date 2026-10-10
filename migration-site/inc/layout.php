@@ -70,7 +70,7 @@ function site_header(string $current): void {
   <header class="site-header" data-menu="closed">
     <div class="wrap site-header__inner">
       <a class="brand" href="/" aria-label="Charis Creations, home">
-        <img src="/assets/img/logo-symbol.png" width="107" height="93" alt="">
+        <img src="/assets/img/logo-symbol.svg" width="107" height="103" alt="">
         <span class="brand__word">Charis<br><b>Creations</b></span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
@@ -107,7 +107,7 @@ function page_end(): void {
       <div class="site-footer__grid">
         <div class="site-footer__brand">
           <a class="brand" href="/" aria-label="Charis Creations, home">
-            <img src="/assets/img/logo-symbol.png" width="107" height="93" alt="">
+            <img src="/assets/img/logo-symbol.svg" width="107" height="103" alt="">
             <span class="brand__word">Charis<br><b>Creations</b></span>
           </a>
           <p class="site-footer__tagline"><?= e($SITE['tagline']) ?><br><span><?= e($SITE['taglineSub']) ?></span></p>

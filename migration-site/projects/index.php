@@ -3,17 +3,34 @@ require dirname(__DIR__) . '/inc/bootstrap.php';
 $C = content('projects');
 page_start($C['meta'] + ['path' => '/projects/'], 'projects');
 ?>
-    <section class="page-hero" aria-labelledby="page-title">
-      <div class="wrap">
-        <div class="page-hero__inner">
-          <p class="eyebrow"><?= e($C['hero']['eyebrow']) ?></p>
+    <section class="page-hero arc-hero" aria-labelledby="page-title">
+      <div class="wrap arc-hero__grid">
+        <div class="page-hero__inner arc-hero__copy">
+          <p class="chip"><span class="chip__dot" aria-hidden="true"></span><?= e($C['hero']['eyebrow']) ?></p>
           <h1 id="page-title"><?= e($C['hero']['headline']) ?></h1>
           <p class="lede"><?= e($C['hero']['support']) ?></p>
+          <p><a class="btn btn--primary" href="#galleries">Browse the galleries</a></p>
         </div>
-<?php if (!empty($C['hero']['showreel'])): ?>
-        <div class="reel"><iframe src="<?= e($C['hero']['showreel']) ?>" title="Charis Creations showreel" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-<?php endif; ?>
+        <div class="arc" data-arc aria-label="Gallery cards. Drag or scroll to turn the deck; choose a card to open its gallery.">
+          <div class="arc__stage" data-arc-stage></div>
+          <p class="arc__hint" aria-hidden="true"><span>Drag</span><i></i><span>Scroll</span></p>
+          <template data-arc-cards>
+<?php foreach ($C['gallery']['items'] as $i => $it): ?>
+            <a class="arc-card" href="<?= e($it['link'] ?: '#galleries') ?>" aria-label="<?= e($it['title']) ?> gallery">
+              <span class="arc-card__motion"><span class="arc-card__surface">
+                <img src="/assets/img/photo/<?= e($it['photo']) ?>-800.webp" alt="" loading="lazy" decoding="async" draggable="false">
+                <span class="arc-card__shade"></span>
+                <span class="arc-card__top"><span>Gallery <?= sprintf('%02d', $i + 1) ?></span><span>Charis Creations</span></span>
+                <span class="arc-card__title"><?= e($it['title']) ?></span>
+              </span></span>
+            </a>
+<?php endforeach; ?>
+          </template>
+        </div>
       </div>
+<?php if (!empty($C['hero']['showreel'])): ?>
+      <div class="wrap"><div class="reel"><iframe src="<?= e($C['hero']['showreel']) ?>" title="Charis Creations showreel" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>
+<?php endif; ?>
     </section>
 
 

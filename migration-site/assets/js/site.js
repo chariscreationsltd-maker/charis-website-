@@ -256,4 +256,110 @@
       document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !modal.hidden) shut(); });
     }
   }
+
+  // Projects hero: gallery cards turning along one shared circle. Every card's
+  // position comes from the same centre and radius (sine/cosine at 10.5 degree
+  // steps); a short presentation loop runs until the visitor takes over with
+  // the mouse wheel over the deck, a drag (vertical with a mouse, sideways on
+  // touch so the page still scrolls), or a click. Clicking a centred card opens
+  // its gallery; clicking any other card turns it to the centre first.
+  var arc = document.querySelector("[data-arc]");
+  if (arc) {
+    var stage = arc.querySelector("[data-arc-stage]");
+    var tpl = arc.querySelector("[data-arc-cards]");
+    var data = Array.prototype.slice.call(tpl.content.children);
+    var N = data.length, LOGICAL = 19, still2 = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var cl = function (v, a, b) { return v < a ? a : v > b ? b : v; };
+    var ease = function (t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
+    var nodes = [];
+    for (var L = 0; L < LOGICAL; L++) {
+      var logical = L - 7, di = ((logical % N) + N) % N;
+      var el = data[di].cloneNode(true);
+      el.setAttribute("data-logical", logical);
+      el.setAttribute("draggable", "false");
+      stage.appendChild(el);
+      nodes.push({ el: el, logical: logical, motion: el.querySelector(".arc-card__motion") });
+    }
+    var W = stage.clientWidth || 300;
+    if ("ResizeObserver" in window) new ResizeObserver(function () { W = stage.clientWidth || 300; }).observe(stage);
+    var value = -1, target = -1, vel = 0, vm = 0, lastV = -1, manual = still2, dragging = false, dragged = false, sx = 0, sy = 0, sv = 0, axis = "y", lastWheel = 0, hovered = null, t0 = performance.now(), live = true;
+    if (still2) { value = target = 0; }
+    var place = function () {
+      var r = W * 1.868, cx = -W * 1.322, cy = W * 0.812, travel = cl(vm, -1, 1);
+      nodes.forEach(function (n) {
+        var slot = n.logical + value;
+        var th = (-20 + slot * 10.5) * Math.PI / 180;
+        var x = cx + r * Math.cos(th), y = cy + r * Math.sin(th);
+        var edge = Math.max(0, Math.abs(slot - 2) - 3.15), vis = slot > -2.2 && slot < 6.2;
+        var side = cl(Math.abs(slot - 2) / 2.6, 0, 1), str = Math.abs(travel) * (0.34 + side * 0.66);
+        n.el.style.transform = "translate3d(" + x.toFixed(1) + "px," + y.toFixed(1) + "px,0) translate(-50%,-50%) rotate(" + th.toFixed(4) + "rad)";
+        n.el.style.opacity = vis ? cl(1 - edge * 0.52, 0, 1).toFixed(3) : "0";
+        n.el.style.filter = edge > 0.01 ? "blur(" + (edge * (2.5 + Math.abs(travel) * 1.4)).toFixed(2) + "px)" : "none";
+        n.el.style.pointerEvents = vis ? "auto" : "none";
+        n.el.style.zIndex = hovered === n.el ? 1000 : Math.round((slot + 3) * 10);
+        n.el.tabIndex = Math.abs(slot - 2) < 0.5 ? 0 : -1;
+        n.motion.style.transform = still2 ? "" : "translate3d(" + (travel * W * 0.009 * side).toFixed(2) + "px," + (-str * W * 0.014).toFixed(2) + "px,0) rotate(" + (travel * (slot < 2 ? -1 : 1) * (0.7 + side * 1.8)).toFixed(3) + "deg) scale(" + (1 + str * 0.012).toFixed(4) + ")";
+      });
+    };
+    var take = function () { if (!manual) { manual = true; target = value; } };
+    var move = function (d) { take(); target = Math.round(target) + d; };
+    var frame = function (now) {
+      if (!manual) {
+        var t = ((now - t0) % 5300) / 1000;
+        value = t < 2.1 ? -1 + ease(t / 2.1) : t < 3.72 ? 0 : -ease((t - 3.72) / 1.58);
+      } else if (!dragging) {
+        var d = target - value;
+        vel = (vel + d * 0.105) * 0.72; value += vel;
+        if (Math.abs(d) < 0.0005 && Math.abs(vel) < 0.0005) { value = target; vel = 0; }
+        if (Math.abs(value) > N) { var cyc = Math.round(value / N) * N; value -= cyc; target -= cyc; }
+      }
+      var fd = value - lastV; fd -= Math.round(fd / N) * N; lastV = value;
+      var req = cl(fd * 28, -1, 1);
+      vm += (req - vm) * (Math.abs(req) > Math.abs(vm) ? 0.38 : 0.115);
+      if (Math.abs(vm) < 0.0005) vm = 0;
+      place();
+      if (live) requestAnimationFrame(frame);
+    };
+    // only animate while the hero is on screen
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) { var was = live; live = es[0].isIntersecting; if (live && !was) requestAnimationFrame(frame); }, { threshold: 0 }).observe(arc);
+    }
+    requestAnimationFrame(frame);
+    stage.addEventListener("wheel", function (e) {
+      e.preventDefault();
+      if (Math.abs(e.deltaY) < 4) return;
+      var now = performance.now(); if (now - lastWheel < 420) return; lastWheel = now;
+      move(e.deltaY > 0 ? -1 : 1);
+    }, { passive: false });
+    stage.addEventListener("pointerdown", function (e) {
+      if (e.button !== 0) return;
+      take(); dragging = true; dragged = false; sx = e.clientX; sy = e.clientY; sv = value;
+      axis = e.pointerType === "mouse" || e.pointerType === "pen" ? "y" : "x";
+      if (axis === "y") { stage.setPointerCapture(e.pointerId); stage.classList.add("is-dragging"); }
+    });
+    stage.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      var dl = axis === "y" ? e.clientY - sy : e.clientX - sx;
+      if (Math.abs(dl) > 5) dragged = true;
+      if (dragged) { value = sv + dl / (W * (axis === "y" ? 0.34 : 0.5)); target = value; }
+    });
+    var end = function () { if (!dragging) return; dragging = false; target = Math.round(value); stage.classList.remove("is-dragging"); };
+    stage.addEventListener("pointerup", end);
+    stage.addEventListener("pointercancel", function () { dragging = false; dragged = false; target = Math.round(value); stage.classList.remove("is-dragging"); });
+    stage.addEventListener("click", function (e) {
+      var card = e.target.closest(".arc-card"); if (!card) return;
+      if (dragged) { e.preventDefault(); dragged = false; return; }
+      var slot = parseInt(card.getAttribute("data-logical"), 10) + value;
+      if (Math.abs(slot - 2) > 0.5) { e.preventDefault(); move(2 - Math.round(slot)); }
+    });
+    stage.addEventListener("dragstart", function (e) { e.preventDefault(); });
+    nodes.forEach(function (n) {
+      n.el.addEventListener("mouseenter", function () { hovered = n.el; });
+      n.el.addEventListener("mouseleave", function () { if (hovered === n.el) hovered = null; });
+    });
+    arc.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" || e.key === "ArrowRight") { e.preventDefault(); move(-1); setTimeout(function () { var f = stage.querySelector('.arc-card[tabindex="0"]'); if (f) f.focus(); }, 450); }
+      if (e.key === "ArrowUp" || e.key === "ArrowLeft") { e.preventDefault(); move(1); setTimeout(function () { var f = stage.querySelector('.arc-card[tabindex="0"]'); if (f) f.focus(); }, 450); }
+    });
+  }
 })();

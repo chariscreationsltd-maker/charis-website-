@@ -225,6 +225,21 @@
     render();
   }
 
+  // Looping film cards (featured work): play only while on screen, and not at all for reduced motion.
+  var loops = document.querySelectorAll("video[data-autoplay]");
+  if (loops.length) {
+    var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    loops.forEach(function (v) { v.muted = true; if (calm) { v.removeAttribute("autoplay"); v.pause(); } });
+    if (!calm && "IntersectionObserver" in window) {
+      var lio = new IntersectionObserver(function (es) {
+        es.forEach(function (en) {
+          if (en.isIntersecting) { var pr = en.target.play(); if (pr && pr.catch) pr.catch(function () {}); } else en.target.pause();
+        });
+      }, { threshold: 0.2 });
+      loops.forEach(function (v) { lio.observe(v); });
+    }
+  }
+
   // Trailers: muted previews play only while on screen; a click opens the full film.
   var trailers = document.querySelectorAll("[data-trailer]");
   if (trailers.length) {

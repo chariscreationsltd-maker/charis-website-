@@ -111,9 +111,15 @@ $rows = [$strip, array_merge(array_slice($strip, $half), array_slice($strip, 0, 
     if (!has_photo($it['photo'])) continue;
     $meta = trim($it['type'] . ($it['place'] ? ' | ' . $it['place'] : '')); ?>
           <li class="work__item reveal">
+<?php if (!empty($it['video'])): ?>
+            <span class="work__media work__media--video">
+              <video src="<?= e($it['video']) ?>" poster="<?= e(photo_src($it['photo'], 800)) ?>" autoplay muted loop playsinline preload="metadata" aria-label="<?= e($it['alt']) ?>" data-autoplay></video>
+            </span>
+<?php else: ?>
             <a class="work__open" href="<?= e(photo_src($it['photo'], 1600)) ?>" data-lightbox="work" data-alt="<?= e($it['alt']) ?>" data-caption="<?= e($it['title'] . ' | ' . $meta) ?>" aria-label="View <?= e($it['title']) ?> larger">
               <span class="work__media develop"><?= photo($it['photo'], $it['alt'], '(max-width: 760px) 78vw, 330px') ?></span>
             </a>
+<?php endif; ?>
             <div>
               <h3><?= e($it['title']) ?></h3>
               <p class="work__meta"><?= e($meta) ?></p>

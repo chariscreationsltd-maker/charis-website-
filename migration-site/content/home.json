@@ -190,6 +190,16 @@
         "linkLabel": ""
       },
       {
+        "photo": "feat-the-bride",
+        "video": "/assets/video/the-bride.mp4",
+        "title": "The Bride",
+        "type": "Bridal Film",
+        "place": "",
+        "alt": "A bride getting ready in a white robe, then smiling in her gown with a bouquet",
+        "link": "",
+        "linkLabel": ""
+      },
+      {
         "photo": "feat-rbm-dialogue",
         "title": "Strategic Dialogue on Malaria Tools",
         "type": "Corporate Event",

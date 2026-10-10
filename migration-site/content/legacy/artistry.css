@@ -9,11 +9,11 @@
 
 .lg-artistry{
   --ca-orange: #f16623;
-  --ca-text: #e2e8f0;
-  --ca-muted: rgba(226,232,240,0.6);
-  --ca-bg: #0d1b2a;
-  --ca-dark: #0a1628;
-  --ca-card: #1e293b;
+  --ca-text: #f4efe9;
+  --ca-muted: rgba(244,239,233,0.6);
+  --ca-bg: #0e0d0c;
+  --ca-dark: #171412;
+  --ca-card: #201d1a;
   --ca-border: rgba(255,255,255,0.1);
 }
 /* Hide the bare theme header on this page */
@@ -28,7 +28,7 @@
   top: 0; left: 0;
   width: 100%;
   z-index: 99999;
-  background: #0d1b2a;
+  background: #0e0d0c;
   height: 60px;
   padding: 0 32px;
   box-sizing: border-box;
@@ -52,7 +52,7 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
   font-weight: 600;
-  font-family: Montserrat, sans-serif;
+  font-family: var(--body);
 }
 .lg-artistry #ca-nav .ca-nlinks a:hover{ color: #f16623; }
 .lg-artistry #ca-nav .ca-nlinks a.active{
@@ -67,12 +67,12 @@
   border-radius: 4px;
   font-weight: 700 !important;
 }
-.lg-artistry #ca-nav .ncta:hover{ background: #d4541a; color: #fff !important; }
+.lg-artistry #ca-nav .ncta:hover{ background: #e05a1a; color: #fff !important; }
 .lg-artistry #ca-ham{ display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 .lg-artistry #ca-ham span{ display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; }
 
 @media (max-width: 768px) {
-  .lg-artistry #ca-nav .ca-nlinks{ display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: #0d1b2a; padding: 16px 32px; gap: 16px; }
+  .lg-artistry #ca-nav .ca-nlinks{ display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: #0e0d0c; padding: 16px 32px; gap: 16px; }
   .lg-artistry #ca-nav .ca-nlinks.open{ display: flex; }
   .lg-artistry #ca-ham{ display: flex; }
 }
@@ -97,7 +97,7 @@
 .lg-artistry .ca-page{
   background: var(--ca-bg);
   color: var(--ca-text);
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--body);
   line-height: 1.6;
 }
 .lg-artistry .ca-page a{ text-decoration: none; }
@@ -113,15 +113,15 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #0a1520 0%, #1a0d05 50%, #0a1520 100%);
+  background: linear-gradient(135deg, #0a0908 0%, #1a0d05 50%, #0a0908 100%);
 }
 .lg-artistry .ca-hero-bg{
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, #0D1B2A 0%, #1a0f05 45%, #0D1B2A 100%);
+  background: linear-gradient(135deg, #0e0d0c 0%, #1a0f05 45%, #0e0d0c 100%);
 }
 .lg-artistry .ca-hero-overlay{
   position: absolute; inset: 0;
-  background: linear-gradient(to right, rgba(13,27,42,0.55) 45%, rgba(13,27,42,0.05) 100%);
+  background: linear-gradient(to right, rgba(10,9,8,0.55) 45%, rgba(10,9,8,0.05) 100%);
   z-index: 1;
 }
 .lg-artistry .ca-hero-photo{
@@ -141,7 +141,7 @@
 .lg-artistry .ca-hero-photo-placeholder span{
   color: rgba(212,175,55,0.4);
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--body);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -167,7 +167,7 @@
   font-weight: 600;
 }
 .lg-artistry .ca-hero-title{
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--body);
   font-size: clamp(38px, 5vw, 68px);
   font-weight: 900;
   line-height: 1.05;
@@ -186,7 +186,7 @@
 }
 .lg-artistry .ca-hero-desc{
   font-size: 15px;
-  color: rgba(226,232,240,0.8);
+  color: rgba(244,239,233,0.8);
   margin-bottom: 40px;
   max-width: 480px;
   line-height: 1.7;
@@ -199,7 +199,7 @@
   background: var(--ca-orange);
   color: #fff;
   padding: 16px 32px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--body);
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 1px;
@@ -207,13 +207,13 @@
   border-radius: 4px;
   transition: background 0.2s, transform 0.2s;
 }
-.lg-artistry .ca-btn-primary:hover{ background: #d4551a; transform: translateY(-1px); }
+.lg-artistry .ca-btn-primary:hover{ background: #e05a1a; transform: translateY(-1px); }
 .lg-artistry .ca-btn-outline{
   display: inline-flex; align-items: center; gap: 10px;
   border: 2px solid rgba(241,102,35,0.5);
   color: var(--ca-orange);
   padding: 14px 28px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--body);
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 1px;
@@ -249,7 +249,7 @@
   font-weight: 600;
 }
 .lg-artistry .ca-section-title{
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--body);
   font-size: clamp(28px, 4vw, 48px);
   font-weight: 900;
   text-transform: uppercase;
@@ -386,7 +386,7 @@
   font-size: 28px;
   font-weight: 900;
   color: var(--ca-orange);
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--body);
 }
 .lg-artistry .ca-pkg-includes{
   list-style: none;
@@ -432,7 +432,7 @@
   text-transform: uppercase;
   transition: background 0.2s;
 }
-.lg-artistry .ca-pkg-cta:hover{ background: #d4551a; }
+.lg-artistry .ca-pkg-cta:hover{ background: #e05a1a; }
 .lg-artistry .ca-pkg-cta.outline{
   background: transparent;
   border: 2px solid rgba(241,102,35,0.4);
@@ -514,7 +514,7 @@
   opacity: 0.25;
 }
 .lg-artistry .ca-gallery-placeholder span{
-  color: rgba(226,232,240,0.25);
+  color: rgba(244,239,233,0.25);
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -540,7 +540,7 @@
   font-size: 48px;
   font-weight: 900;
   color: rgba(241,102,35,0.15);
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--body);
   line-height: 1;
   margin-bottom: 10px;
 }
@@ -571,7 +571,7 @@
   margin-top: 48px;
 }
 .lg-artistry .ca-combo-banner h2{
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--body);
   font-size: clamp(24px, 3vw, 40px);
   font-weight: 900;
   text-transform: uppercase;
@@ -709,7 +709,7 @@
   .lg-artistry .ca-hero{ min-height: 100svh; }
   .lg-artistry .ca-hero-content{ padding: 100px 24px 60px; max-width: 100%; }
   .lg-artistry .ca-hero-photo{ display: none; }
-  .lg-artistry .ca-hero-overlay{ background: rgba(13,27,42,0.9); }
+  .lg-artistry .ca-hero-overlay{ background: rgba(10,9,8,0.9); }
   .lg-artistry .ca-section{ padding: 60px 20px; }
   .lg-artistry .ca-services-grid{ grid-template-columns: repeat(2, 1fr); }
   .lg-artistry .ca-other-grid{ grid-template-columns: 1fr; }
@@ -734,18 +734,18 @@
   background-color: transparent !important;
 }
 .lg-artistry .elementor-877{
-  background: #0d1b2a !important;
+  background: #0e0d0c !important;
 }
 
 .lg-artistry .ca-services-grid{display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:18px!important;padding:0!important}
-.lg-artistry .ca-service-card{position:relative!important;aspect-ratio:1/1!important;overflow:hidden!important;border-radius:10px!important;background:#1a2535!important;cursor:pointer!important;transition:box-shadow .35s ease,transform .3s ease!important;border:none!important}
+.lg-artistry .ca-service-card{position:relative!important;aspect-ratio:1/1!important;overflow:hidden!important;border-radius:10px!important;background:#201d1a!important;cursor:pointer!important;transition:box-shadow .35s ease,transform .3s ease!important;border:none!important}
 .lg-artistry .ca-service-card:hover{box-shadow:0 0 0 1.5px #f16623,0 0 16px 3px rgba(241,102,35,.38)!important;transform:translateY(-3px)!important}
-.lg-artistry .ca-service-img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;background:linear-gradient(135deg,#1e2d40 0%,#0d1b2a 100%)}
+.lg-artistry .ca-service-img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;background:linear-gradient(135deg,#2a2522 0%,#0e0d0c 100%)}
 .lg-artistry .ca-service-img img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;transition:transform .45s ease!important}
 .lg-artistry .ca-service-card:hover .ca-service-img img{transform:scale(1.07)!important}
 
 .lg-artistry .ca-service-info{position:absolute!important;bottom:0!important;left:0!important;right:0!important;padding:18px 16px!important;z-index:2!important}
-.lg-artistry .ca-service-info h3{color:#fff!important;font-family:Montserrat,sans-serif!important;font-size:clamp(12px,1vw,15px)!important;font-weight:700!important;text-transform:uppercase!important;letter-spacing:.6px!important;margin:0 0 5px!important;line-height:1.2!important}
+.lg-artistry .ca-service-info h3{color:#fff!important;font-family:var(--display)!important;font-size:clamp(12px,1vw,15px)!important;font-weight:700!important;text-transform:uppercase!important;letter-spacing:.6px!important;margin:0 0 5px!important;line-height:1.2!important}
 .lg-artistry .ca-service-info p{color:rgba(255,255,255,.78)!important;font-size:clamp(10px,.8vw,12px)!important;line-height:1.45!important;margin:0!important;max-height:0;overflow:hidden;opacity:0;transform:translateY(10px);transition:max-height .4s ease,opacity .35s ease,transform .35s ease}
 .lg-artistry .ca-service-card:hover .ca-service-info p{max-height:100px!important;opacity:1!important;transform:translateY(0)!important}
 .lg-artistry .ca-service-icon{display:flex;align-items:center;justify-content:center;width:100%;height:100%;opacity:.2}
@@ -764,7 +764,7 @@
 /* === HERO IMAGE BRIGHTNESS FIX === */
 .lg-artistry .ca-hero-photo-placeholder{ background: none !important; display: block !important; position: relative !important; }
 .lg-artistry .ca-hero-photo-placeholder img{ position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center top !important; display: block !important; filter: brightness(1.15) contrast(1.05) !important; }
-.lg-artistry .ca-hero-overlay{ background: linear-gradient(to right, rgba(13,27,42,0.95) 55%, rgba(13,27,42,0.004) 90%) !important; }
+.lg-artistry .ca-hero-overlay{ background: linear-gradient(to right, rgba(10,9,8,0.95) 55%, rgba(10,9,8,0.004) 90%) !important; }
 
 
 
@@ -929,3 +929,39 @@
   .lg-artistry .ca-gallery-bg .ca-section-label,.lg-artistry .ca-gallery-bg .ca-section-title,.lg-artistry .ca-gallery-bg .ca-section-desc{ padding-left: 16px !important; padding-right: 16px !important; }
 }
 /* === END === */
+
+
+/* =====================================================================
+   Premium layer: Artistry in the home page's palette and type.
+   Warm night / warm black / graphite instead of navy, Barlow + Barlow
+   Condensed instead of Montserrat and Playfair, pill buttons, glass chips.
+   Content, prices, links and behaviour are unchanged.
+   ===================================================================== */
+.lg-artistry{--ca-text:#f4efe9;--ca-muted:#b5aca4;--ca-bg:#0e0d0c;--ca-dark:#171412;--ca-card:#201d1a;--ca-border:rgba(244,239,233,.1);background:var(--bg);color:var(--text);font-family:var(--body)}
+.lg-artistry .ca-page{background:var(--bg)}
+
+/* Headlines: Barlow Condensed, heavy and tight */
+.lg-artistry .ca-hero-title,.lg-artistry .ca-section-title,.lg-artistry .ca-combo-banner h2,.lg-artistry .ca-booking-cta-box h3,
+.lg-artistry .ca-pkg-price-amount,.lg-artistry .ca-advantage-card .ca-adv-num,.lg-artistry .ca-combo-plus{font-family:var(--display)!important;font-weight:800!important;letter-spacing:.01em!important}
+.lg-artistry .ca-hero-title{font-size:clamp(3rem,6.6vw,6rem)!important;line-height:.9!important}
+.lg-artistry .ca-section-title{font-size:clamp(2.2rem,4.6vw,3.8rem)!important;line-height:.95!important;text-transform:uppercase}
+/* The serif accents become the home page's light condensed line */
+.lg-artistry .ca-hero-sub{font-family:var(--display)!important;font-style:normal!important;font-weight:200!important;text-transform:uppercase;letter-spacing:.14em;color:var(--text-2)!important}
+.lg-artistry .ca-pkg-name{font-family:var(--display)!important;font-style:normal!important;font-weight:800!important;text-transform:uppercase;letter-spacing:.02em;font-size:1.5rem!important}
+.lg-artistry .ca-pkg-tagline{font-family:var(--body)!important;font-style:normal!important;color:var(--text-2)!important}
+.lg-artistry .ca-service-info h3{font-family:var(--display)!important;font-weight:800!important;font-size:clamp(14px,1.2vw,17px)!important}
+
+/* Hero: night with the orange glow, like the home page */
+.lg-artistry .ca-hero{background:radial-gradient(700px 420px at 30% 55%,rgba(241,102,35,.14),transparent 65%),var(--night)!important}
+
+/* Buttons: orange pill with glow, frosted glass partner */
+.lg-artistry .ca-btn-primary{border-radius:999px!important;background:linear-gradient(180deg,#f57a3d 0%,#f16623 55%,#e05a1a 100%)!important;color:var(--on-accent)!important;font-family:var(--display)!important;font-size:15px!important;letter-spacing:.15em!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 8px 24px rgba(241,102,35,.28)}
+.lg-artistry .ca-btn-primary:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 10px 36px rgba(241,102,35,.5)!important}
+.lg-artistry .ca-btn-outline{border-radius:999px!important;border:1px solid rgba(255,255,255,.16)!important;background:rgba(255,255,255,.06)!important;color:var(--text)!important;font-family:var(--display)!important;font-size:15px!important;letter-spacing:.15em!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.lg-artistry .ca-btn-outline:hover{background:rgba(255,255,255,.1)!important;border-color:rgba(255,255,255,.3)!important}
+.lg-artistry .ca-hero-badge{background:rgba(255,255,255,.06)!important;border-color:rgba(255,255,255,.16)!important;color:var(--text-2)!important}
+
+/* Frames: rounder and warmer */
+.lg-artistry .ca-pkg-card,.lg-artistry .ca-advantage-card,.lg-artistry .ca-booking-cta-box,.lg-artistry .ca-combo-banner{border-radius:22px!important}
+.lg-artistry .ca-service-card{border-radius:18px!important;background:var(--card)!important}
+.lg-artistry .ca-gallery-item{border-radius:16px;overflow:hidden}

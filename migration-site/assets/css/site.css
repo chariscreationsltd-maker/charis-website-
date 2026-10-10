@@ -997,3 +997,22 @@ body { background: var(--bg); color: var(--text); }
 .guides a { border-radius: 18px; border: 1px solid rgba(255, 255, 255, 0.08); }
 @media (max-width: 640px) { .package { border-radius: 20px; } }
 .subnav a { border-radius: 999px; }
+
+/* Closing call-to-action on every page: ribbons of orange and silver light,
+   fine streaks on top, a faint dot grid, then the frosted card. */
+.finale::before { content: ""; position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  background-image: radial-gradient(rgba(244, 239, 233, 0.08) 1px, transparent 1.3px); background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 38%, #000 0%, transparent 75%); mask-image: radial-gradient(ellipse 70% 55% at 50% 38%, #000 0%, transparent 75%); }
+.finale__pattern { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.finale__haze, .finale__lines { position: absolute; left: -6%; top: 0; width: 112%; height: min(560px, 85%); }
+.finale__haze { filter: blur(34px); opacity: 0.78; }
+.finale__lines { filter: blur(0.4px); opacity: 0.9; }
+.finale__card { background: rgba(22, 20, 18, 0.42); }
+@media (prefers-reduced-motion: no-preference) {
+  .finale__haze { animation: finale-drift 14s ease-in-out infinite alternate; }
+  .finale__lines { animation: finale-drift 14s ease-in-out infinite alternate-reverse; }
+}
+@keyframes finale-drift { from { transform: translate3d(-1.5%, 0, 0) scaleY(1); } to { transform: translate3d(1.5%, 2%, 0) scaleY(1.06); } }
+@media (max-width: 700px) { .finale__haze, .finale__lines { height: 60%; top: 4%; } }
+.finale__haze { opacity: 1; filter: blur(30px) saturate(1.15); }
+.finale__glow { left: 50%; top: 120px; width: min(640px, 80vw); height: 340px; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(241, 102, 35, 0.28), rgba(141, 155, 176, 0.18) 60%, transparent); filter: blur(60px); }

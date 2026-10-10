@@ -165,3 +165,53 @@ function page_end(): void {
 </html>
 <?php
 }
+
+/**
+ * Closing call-to-action used at the end of every main page: a frosted glass
+ * card over swirling ribbons of orange and silver light, with an outlined
+ * ghost word below. $o keys: id, label, light, bold, body, buttons (HTML),
+ * ghost, socials (bool).
+ */
+function finale(array $o): void {
+    global $SITE;
+    $id = $o['id'] ?? 'finale';
+    $so = $SITE['social'] ?? []; ?>
+    <section class="finale" aria-labelledby="<?= e($id) ?>-title">
+      <div class="finale__pattern" aria-hidden="true">
+        <svg class="finale__haze" viewBox="0 0 1440 640" preserveAspectRatio="none" fill="none" focusable="false">
+          <path d="M-60 420 C 240 180, 520 560, 800 330 S 1220 60, 1520 230" stroke="#8d9bb0" stroke-width="120" stroke-linecap="round" opacity="0.32"/>
+          <path d="M-60 360 C 300 140, 560 520, 820 300 S 1200 80, 1500 220" stroke="#f16623" stroke-width="34" stroke-linecap="round"/>
+          <path d="M200 620 C 420 420, 760 600, 980 420 S 1300 260, 1520 330" stroke="#ff8a4c" stroke-width="18" stroke-linecap="round" opacity="0.7"/>
+        </svg>
+        <svg class="finale__lines" viewBox="0 0 1440 640" preserveAspectRatio="none" fill="none" focusable="false">
+          <path d="M-60 380 C 290 170, 550 540, 815 315 S 1205 70, 1500 228" stroke="#ff9a5e" stroke-width="2.4" stroke-linecap="round" opacity="0.85"/>
+          <path d="M-60 400 C 280 200, 540 560, 810 335 S 1210 95, 1500 250" stroke="#f16623" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/>
+          <path d="M120 600 C 380 400, 740 580, 960 400 S 1290 250, 1520 318" stroke="#ffb27f" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+          <path d="M-60 300 C 260 120, 600 470, 860 270 S 1230 30, 1500 160" stroke="#c9d3e2" stroke-width="1" stroke-linecap="round" opacity="0.25"/>
+        </svg>
+      </div>
+      <div class="finale__glow" aria-hidden="true"></div>
+      <div class="finale__wrap">
+        <div class="finale__card">
+<?php if (!empty($o['label'])): ?>
+          <p class="chip"><span class="chip__dot" aria-hidden="true"></span><?= e($o['label']) ?></p>
+<?php endif; ?>
+          <h2 id="<?= e($id) ?>-title"><?php if (!empty($o['light'])): ?><span class="finale__light"><?= e($o['light']) ?></span> <?php endif; ?><span><?= e($o['bold'] ?? '') ?></span></h2>
+<?php if (!empty($o['body'])): ?>
+          <p class="finale__body"><?= e($o['body']) ?></p>
+<?php endif; ?>
+          <div class="btn-row"><?= $o['buttons'] ?? '' ?></div>
+<?php if (!empty($o['socials']) && $so): ?>
+          <ul class="socials finale__socials" aria-label="Charis Creations on social media">
+            <li><a href="<?= e($so['instagram']) ?>" aria-label="Instagram"><?= icon('instagram') ?></a></li>
+            <li><a href="<?= e($so['youtube']) ?>" aria-label="YouTube"><?= icon('youtube') ?></a></li>
+            <li><a href="<?= e($so['tiktok']) ?>" aria-label="TikTok"><?= icon('tiktok') ?></a></li>
+          </ul>
+<?php endif; ?>
+        </div>
+      </div>
+<?php if (!empty($o['ghost'])): ?>
+      <p class="finale__ghost" aria-hidden="true"><?= e($o['ghost']) ?></p>
+<?php endif; ?>
+    </section>
+<?php }

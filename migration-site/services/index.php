@@ -145,11 +145,11 @@ function render_addons(array $a): void { ?>
       </div>
     </section>
 
-    <section class="section close section--raised" aria-labelledby="close-title">
-      <div class="wrap">
-        <h2 id="close-title"><?= e($C['close']['heading']) ?></h2>
-        <p class="lede"><?= e($C['close']['body']) ?></p>
-        <?php render_buttons($C['close']['buttons']); ?>
-      </div>
-    </section>
+<?php $cl = $C['close'];
+$btns = '';
+foreach ($cl['buttons'] as $i => $b) $btns .= button($b['label'], svc_url($b['url']), $i === 0 ? 'primary' : ($i === 1 ? 'ivory' : 'outline'));
+finale([
+    'id' => 'close', 'label' => $cl['label'] ?? '', 'light' => $cl['headingLight'] ?? '', 'bold' => $cl['headingBold'] ?? '',
+    'body' => $cl['body'] ?? '', 'ghost' => $cl['ghost'] ?? '', 'buttons' => $btns,
+]); ?>
 <?php page_end(); ?>

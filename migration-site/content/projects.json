@@ -206,10 +206,14 @@
     ]
   },
   "close": {
-    "heading": "Your story could be next.",
+    "label": "Your turn",
+    "headingLight": "Your story",
+    "headingBold": "could be next.",
+    "body": "Tell us your date and the kind of day you are planning. We will tell you if we are free and where to start.",
     "button": {
       "label": "Check Your Date",
       "link": "date"
-    }
+    },
+    "ghost": "Next"
   }
 }

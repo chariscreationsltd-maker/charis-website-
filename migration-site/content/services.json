@@ -631,7 +631,9 @@
     ]
   },
   "close": {
-    "heading": "Whatever you’re building, it starts with one message.",
+    "label": "Let’s talk",
+    "headingLight": "Whatever you’re building,",
+    "headingBold": "it starts with one message.",
     "body": "A wedding. A brand. A podcast. A partnership. Send it.",
     "buttons": [
       {
@@ -649,6 +651,7 @@
         "url": "enquiry",
         "variant": "outline"
       }
-    ]
+    ],
+    "ghost": "Hello"
   }
 }

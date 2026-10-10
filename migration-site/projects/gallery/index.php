@@ -42,12 +42,11 @@ page_start([
       </div>
     </section>
 
-    <section class="section close" aria-labelledby="close-title">
-      <div class="wrap">
-        <h2 id="close-title">Your story could be next.</h2>
-        <?= button('Check Your Date', href('date'), 'primary') ?>
-      </div>
-    </section>
+<?php $cl = content('projects')['close']; finale([
+    'id' => 'close', 'label' => $cl['label'] ?? '', 'light' => $cl['headingLight'] ?? '', 'bold' => $cl['headingBold'] ?? '',
+    'body' => $cl['body'] ?? '', 'ghost' => $cl['ghost'] ?? '',
+    'buttons' => button($cl['button']['label'], href($cl['button']['link']), 'primary') . button('WhatsApp Us', $SITE['whatsapp'], 'ivory'),
+]); ?>
 
     <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="<?= e($g['title']) ?>">
       <img src="data:," alt="">

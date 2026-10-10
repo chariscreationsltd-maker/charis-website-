@@ -122,12 +122,11 @@ page_start($C['meta'] + ['path' => '/projects/'], 'projects');
       </div>
     </div>
 
-    <section class="section close" aria-labelledby="close-title">
-      <div class="wrap">
-        <h2 id="close-title"><?= e($C['close']['heading']) ?></h2>
-        <?= button($C['close']['button']['label'], href($C['close']['button']['link']), 'primary') ?>
-      </div>
-    </section>
+<?php $cl = $C['close']; finale([
+    'id' => 'close', 'label' => $cl['label'] ?? '', 'light' => $cl['headingLight'] ?? '', 'bold' => $cl['headingBold'] ?? '',
+    'body' => $cl['body'] ?? '', 'ghost' => $cl['ghost'] ?? '',
+    'buttons' => button($cl['button']['label'], href($cl['button']['link']), 'primary') . button('WhatsApp Us', $SITE['whatsapp'], 'ivory'),
+]); ?>
 
     <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo story">
       <img src="data:," alt="">

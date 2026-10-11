@@ -1307,3 +1307,11 @@ body { background: var(--bg); color: var(--text); }
 .hero--glass .hero__copy { margin-top: clamp(80px, 16vh, 170px); }
 .hero--glass { padding-bottom: clamp(120px, 14vw, 200px); }
 @media (max-width: 700px) { .hero--glass .hero__copy { margin-top: 90px; } .hero--glass { padding-bottom: 110px; } }
+/* Glass hero: primary button back to the brand orange pill */
+.hero--glass .glass-panel .btn--primary {
+  background: linear-gradient(180deg, #f57a3d 0%, #f16623 55%, #e05a1a 100%); color: var(--on-accent); border: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 8px 24px rgba(241, 102, 35, 0.35);
+}
+@media (hover: hover) {
+  .hero--glass .glass-panel .btn--primary:hover { background: linear-gradient(180deg, #f8884f 0%, #f16623 55%, #e05a1a 100%); color: var(--on-accent); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 36px rgba(241, 102, 35, 0.55); }
+}

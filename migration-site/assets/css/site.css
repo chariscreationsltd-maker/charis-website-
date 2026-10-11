@@ -1089,3 +1089,118 @@ body { background: var(--bg); color: var(--text); }
 .hero__copy { gap: 20px; }
 .hero__copy .lede { font-size: clamp(0.98rem, 1.15vw, 1.1rem); }
 @media (max-width: 700px) { .hero__copy h1 { font-size: clamp(1.9rem, 8.4vw, 2.6rem); } }
+
+/* ===================================================================
+   Home hero, glass edition (October 2026): full-bleed photos slide
+   behind a frosted glass panel; headline, glass chip, glass socials,
+   outlined ghost word. Scoped to .hero--glass so other heroes are untouched.
+   =================================================================== */
+.hero--glass { padding-bottom: clamp(150px, 18vw, 230px); }
+.hero--glass .slides { position: absolute; inset: 0; z-index: -3; overflow: hidden; background: var(--night); }
+.hero--glass .slides__track { display: flex; height: 100%; will-change: transform; transition: transform 1.6s var(--ease-in-out); }
+.hero--glass .slides__item { position: relative; flex: 0 0 100%; height: 100%; overflow: hidden; }
+.hero--glass .slides__item img { width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 50% 35%; transform: scale(1.04); transition: transform 7.5s linear; filter: saturate(0.9) contrast(1.04); }
+.hero--glass .slides__item.is-active img { transform: scale(1.12); }
+/* Darken for legibility: deep edges, softer centre, warm night at the bottom */
+.hero--glass::before {
+  z-index: -2;
+  background:
+    radial-gradient(ellipse 85% 70% at 50% 42%, rgba(10, 9, 8, 0.25), rgba(10, 9, 8, 0.78) 78%),
+    linear-gradient(to bottom, rgba(10, 9, 8, 0.6) 0%, rgba(10, 9, 8, 0.2) 32%, rgba(10, 9, 8, 0.45) 70%, rgba(10, 9, 8, 0.92) 100%);
+}
+.hero--glass::after { height: 32%; z-index: -1; background: linear-gradient(to bottom, transparent, var(--night)); }
+.hero--glass .hero__glow { z-index: -1; top: 36%; opacity: 0.85; mix-blend-mode: screen; }
+.hero--glass .hero__ribbon { z-index: -1; top: 26%; opacity: 0.55; mix-blend-mode: screen; filter: blur(28px); }
+
+.hero--glass .hero__copy { gap: 22px; max-width: 980px; padding-top: 8px; }
+.chip--glass {
+  background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: var(--text);
+  -webkit-backdrop-filter: blur(14px) saturate(150%); backdrop-filter: blur(14px) saturate(150%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+/* Headline: bright ivory fading to stone, like light on glass */
+.hero--glass h1 {
+  position: relative; z-index: 2; margin: 0;
+  font-size: clamp(2.3rem, 5.6vw, 5.2rem); line-height: 0.92; letter-spacing: 0.005em;
+  background: linear-gradient(180deg, #ffffff 0%, #f4efe9 45%, rgba(244, 239, 233, 0.62) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+  text-shadow: none; filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.55));
+}
+.hero--glass h1 span:first-child { font-weight: 300; letter-spacing: 0.04em; }
+
+/* The glass panel */
+.glass-panel {
+  position: relative; z-index: 1; overflow: hidden;
+  width: min(760px, 100%); margin-top: -34px;
+  display: grid; justify-items: center; gap: 18px;
+  padding: clamp(46px, 5vw, 60px) clamp(22px, 5vw, 64px) clamp(28px, 3.6vw, 40px);
+  border-radius: 30px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.05) 42%, rgba(255, 255, 255, 0.03) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-backdrop-filter: blur(24px) saturate(160%); backdrop-filter: blur(24px) saturate(160%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+/* A soft sheen across the top edge and a whisper of orange from the glow behind */
+.glass-panel::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: -1;
+  background:
+    radial-gradient(120% 60% at 50% -10%, rgba(255, 255, 255, 0.14), transparent 60%),
+    radial-gradient(60% 80% at 85% 120%, rgba(241, 102, 35, 0.16), transparent 70%);
+}
+.glass-panel .lede { margin: 0; color: rgba(244, 239, 233, 0.88); font-weight: 300; max-width: 44ch; font-size: clamp(1rem, 1.25vw, 1.15rem); }
+.glass-panel .btn-row { margin-top: 4px; justify-content: center; }
+.glass-panel .btn--outline { background: rgba(255, 255, 255, 0.07); border-color: rgba(255, 255, 255, 0.22); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.glass-panel .hero__motto { margin: 2px 0 0; color: rgba(244, 239, 233, 0.6); font-size: 0.8rem; }
+
+/* Glass social buttons under the panel */
+.glass-socials { display: flex; gap: 10px; justify-content: center; margin: 2px 0 0; padding: 0; list-style: none; }
+.glass-socials a {
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 13px; color: var(--text);
+  background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s var(--ease-out), color 0.25s ease;
+}
+.glass-socials svg { width: 18px; height: 18px; }
+@media (hover: hover) {
+  .glass-socials a:hover { background: rgba(241, 102, 35, 0.18); border-color: rgba(241, 102, 35, 0.55); color: #fff; transform: translateY(-2px); }
+}
+.glass-socials a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Ghost word: outlined glass letters rising from the bottom edge */
+.hero--glass .hero__ghost {
+  z-index: -1; bottom: -0.16em;
+  font-size: clamp(6.5rem, 23vw, 23rem); letter-spacing: 0.02em;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 60%, transparent 85%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.16);
+}
+@media (max-width: 700px) {
+  .hero--glass { padding-bottom: 120px; }
+  .hero--glass h1 { font-size: clamp(2rem, 9vw, 2.7rem); }
+  .glass-panel { margin-top: -18px; border-radius: 24px; padding: 34px 20px 24px; }
+  .glass-panel .btn-row { flex-direction: column; align-self: stretch; width: 100%; }
+  .glass-panel .btn { width: 100%; }
+  .hero--glass .slides__item img { object-position: 50% 30%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero--glass .slides__track, .hero--glass .slides__item img { transition: none; }
+}
+/* No backdrop-filter support: a darker tint keeps the words readable */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-panel, .chip--glass, .glass-socials a { background: rgba(20, 18, 16, 0.82); }
+}
+/* Glass hero refinements: gradient per line, tighter fit on laptop screens, cleaner glass */
+.hero--glass h1 { background: none; -webkit-text-fill-color: currentColor; color: var(--text); font-size: clamp(2.2rem, 4.9vw, 4.7rem); }
+.hero--glass h1 span {
+  background: linear-gradient(180deg, #ffffff 15%, #f4efe9 60%, rgba(244, 239, 233, 0.74) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
+.glass-panel { gap: 16px; padding-top: clamp(42px, 4.4vw, 54px); padding-bottom: clamp(24px, 3vw, 34px); }
+.glass-panel::before { background: radial-gradient(120% 60% at 50% -10%, rgba(255, 255, 255, 0.16), transparent 60%), radial-gradient(50% 70% at 90% 125%, rgba(241, 102, 35, 0.1), transparent 70%); }
+.hero--glass .hero__glow { opacity: 0.6; }
+@media (max-width: 700px) { .hero--glass h1 { font-size: clamp(2rem, 9vw, 2.7rem); } }

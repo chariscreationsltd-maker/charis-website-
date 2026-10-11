@@ -21,7 +21,18 @@
       "label": "See Our Work",
       "link": "/projects/"
     },
-    "motto": "Unscripted. Unfiltered. Unforgettable."
+    "motto": "Unscripted. Unfiltered. Unforgettable.",
+    "_slidesNote": "Background photos that slide behind the glass panel, in order. Names in /assets/img/photo/ (landscape works best).",
+    "slides": [
+      "feat-couple-white",
+      "cat-wedding",
+      "svc-studio",
+      "cat-kukyala",
+      "svc-corporate",
+      "feat-couple-garden",
+      "cat-documentary",
+      "svc-podcasts"
+    ]
   },
   "tagline": {
     "_note": "The cream band under the hero, from the old website. Strip photos are names in /assets/img/photo/ (the -800 version is used).",

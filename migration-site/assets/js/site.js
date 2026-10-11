@@ -417,4 +417,39 @@
       if (e.key === "ArrowUp" || e.key === "ArrowLeft") { e.preventDefault(); move(1); setTimeout(function () { var f = stage.querySelector('.arc-card[tabindex="0"]'); if (f) f.focus(); }, 450); }
     });
   }
+  /* ---- Home hero: photos slide behind the glass panel ---- */
+  (function () {
+    var track = document.querySelector(".hero--glass .slides__track");
+    if (!track) return;
+    var items = track.children, n = items.length, i = 0, timer = null, visible = true;
+    if (n < 2) { if (n) items[0].classList.add("is-active"); return; }
+    items[0].classList.add("is-active");
+    if (reduceMotion) return; // first photo only, no movement
+    function go() {
+      items[i].classList.remove("is-active");
+      i += 1;
+      track.style.transform = "translateX(" + (-i * 100) + "%)";
+      items[i].classList.add("is-active");
+    }
+    // The last item repeats the first: once it is in place, jump back without a transition.
+    track.addEventListener("transitionend", function (e) {
+      if (e.target !== track || i !== n - 1) return;
+      track.style.transition = "none";
+      items[i].classList.remove("is-active");
+      i = 0;
+      track.style.transform = "translateX(0)";
+      var img0 = items[0].querySelector("img");
+      if (img0) { img0.style.transition = "none"; img0.offsetWidth; img0.style.transition = ""; }
+      items[0].classList.add("is-active");
+      track.offsetWidth; // apply the jump before restoring the transition
+      track.style.transition = "";
+    });
+    function start() { if (!timer && visible && !document.hidden) timer = setInterval(go, 6500); }
+    function stop() { clearInterval(timer); timer = null; }
+    document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) { visible = es[0].isIntersecting; visible ? start() : stop(); }).observe(track.parentNode);
+    }
+    start();
+  })();
 })();

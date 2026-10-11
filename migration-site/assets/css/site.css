@@ -1303,3 +1303,7 @@ body { background: var(--bg); color: var(--text); }
   .hero--glass .glass-panel { width: min(360px, 100%); padding: 24px 16px 18px; }
   .hero--glass .glass-panel h1 { font-size: clamp(1.6rem, 7.4vw, 2.1rem); }
 }
+/* Glass hero: panel sits lower, leaving the photos open at the top */
+.hero--glass .hero__copy { margin-top: clamp(80px, 16vh, 170px); }
+.hero--glass { padding-bottom: clamp(120px, 14vw, 200px); }
+@media (max-width: 700px) { .hero--glass .hero__copy { margin-top: 90px; } .hero--glass { padding-bottom: 110px; } }

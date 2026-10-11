@@ -1220,3 +1220,69 @@ body { background: var(--bg); color: var(--text); }
   .hero--glass .glass-panel { margin-top: 0; padding: 30px 18px 22px; }
   .hero--glass .glass-panel h1 { font-size: clamp(1.8rem, 8.4vw, 2.4rem); }
 }
+
+/* Glass hero v3: closer to the reference. Smoky dark glass, blurred orange
+   light swirling behind the panel, white pill CTA, compact glass socials. */
+.hero--glass .hero__ribbon { display: none; }
+.hero--glass .wall { opacity: 0.42; }
+.hero--glass::before {
+  background:
+    radial-gradient(ellipse 62% 55% at 50% 46%, rgba(6, 6, 7, 0.1), rgba(6, 6, 7, 0.82) 82%),
+    linear-gradient(to bottom, rgba(6, 6, 7, 0.65) 0%, rgba(6, 6, 7, 0.2) 30%, rgba(6, 6, 7, 0.4) 68%, rgba(6, 6, 7, 0.95) 100%);
+}
+.hero__swirl { position: absolute; z-index: -1; left: 50%; top: 50%; width: min(1500px, 140vw); height: 100%; transform: translate(-50%, -52%); filter: blur(16px) saturate(120%); opacity: 0.9; mix-blend-mode: screen; pointer-events: none; }
+.hero__swirl .sw--c { filter: blur(10px); }
+.hero--glass .hero__glow { top: 34%; width: min(680px, 90vw); height: 380px; background: radial-gradient(closest-side, rgba(241, 102, 35, 0.32), transparent); filter: blur(60px); opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero__swirl .sw { transform-origin: 50% 50%; animation: swirl 14s ease-in-out infinite; }
+  .hero__swirl .sw--b { animation-duration: 18s; animation-direction: reverse; }
+  .hero__swirl .sw--c { animation-duration: 20s; }
+  .hero__swirl .sw--d { animation-duration: 16s; animation-direction: reverse; }
+}
+@keyframes swirl { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-18px, -12px) rotate(-1.6deg); } }
+
+/* Smoky glass panel */
+.hero--glass .glass-panel {
+  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(58, 58, 64, 0.38) 0%, rgba(24, 24, 28, 0.42) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  -webkit-backdrop-filter: blur(28px) saturate(140%); backdrop-filter: blur(28px) saturate(140%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 0 40px rgba(255, 255, 255, 0.04), 0 40px 90px rgba(0, 0, 0, 0.55);
+}
+.hero--glass .glass-panel::before { background: radial-gradient(110% 55% at 50% -12%, rgba(255, 255, 255, 0.13), transparent 62%); }
+.hero--glass .glass-panel h1 span { background: linear-gradient(180deg, #ffffff 20%, #e9e6e2 62%, rgba(214, 210, 205, 0.78) 100%); -webkit-background-clip: text; background-clip: text; }
+.hero--glass .glass-panel .lede { color: rgba(240, 238, 235, 0.8); }
+
+/* Buttons: white pill first, smoky pill second, like "Join Waitlist" and the email field */
+.hero--glass .glass-panel .btn { border-radius: 999px; }
+.hero--glass .glass-panel .btn--primary {
+  background: #ffffff; color: #0e0d0c; border: 0;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6), 0 8px 30px rgba(255, 255, 255, 0.22);
+}
+.hero--glass .glass-panel .btn--outline { background: rgba(8, 8, 10, 0.45); border: 1px solid rgba(255, 255, 255, 0.22); color: var(--text); }
+@media (hover: hover) {
+  .hero--glass .glass-panel .btn--primary:hover { background: #ffffff; color: #0e0d0c; box-shadow: 0 0 0 1px #fff, 0 10px 40px rgba(241, 102, 35, 0.45); transform: translateY(-1px); }
+  .hero--glass .glass-panel .btn--outline:hover { background: rgba(8, 8, 10, 0.6); border-color: rgba(255, 255, 255, 0.4); }
+}
+
+/* Compact chip and socials */
+.hero--glass .chip--glass { min-height: 32px; padding: 0 14px; background: rgba(40, 40, 46, 0.45); border-color: rgba(255, 255, 255, 0.22); }
+.hero--glass .glass-socials { gap: 8px; }
+.hero--glass .glass-socials a { width: 36px; height: 36px; border-radius: 10px; background: rgba(30, 30, 34, 0.55); border-color: rgba(255, 255, 255, 0.14); }
+.hero--glass .glass-socials svg { width: 16px; height: 16px; }
+
+/* Ghost word: clearer glass outline, more of it showing */
+.hero--glass { padding-bottom: clamp(190px, 22vw, 300px); }
+.hero--glass .hero__ghost {
+  bottom: -0.08em; text-transform: none; font-weight: 800; letter-spacing: -0.01em;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 55%, rgba(255, 255, 255, 0.01) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.22);
+}
+@media (max-width: 700px) {
+  .hero--glass { padding-bottom: 130px; }
+  .hero__swirl { width: 220vw; filter: blur(12px); }
+}
+.hero__swirl { transform: translate(-50%, -66%); filter: blur(9px) saturate(130%); opacity: 1; }
+.hero__swirl .sw--c { filter: blur(14px); }
+@media (max-width: 700px) { .hero__swirl { transform: translate(-50%, -62%); filter: blur(8px); } }

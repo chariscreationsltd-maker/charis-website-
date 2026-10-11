@@ -57,7 +57,16 @@ foreach ($rows as $ri => $row) {
 ?>
       </div>
       <div class="hero__glow" aria-hidden="true"></div>
-      <svg class="hero__ribbon" aria-hidden="true" focusable="false" viewBox="0 0 1440 600" preserveAspectRatio="none" fill="none"><path d="M-40 420 C 260 260, 520 520, 760 330 S 1180 120, 1500 260" stroke="#f16623" stroke-width="26" stroke-linecap="round"/><path d="M-40 470 C 300 330, 560 560, 820 380 S 1200 200, 1500 320" stroke="#ff7a3a" stroke-width="8" stroke-linecap="round" opacity="0.8"/></svg>
+      <svg class="hero__swirl" aria-hidden="true" focusable="false" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" fill="none">
+        <defs>
+          <linearGradient id="sw-o" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f16623" stop-opacity="0"/><stop offset=".3" stop-color="#f16623"/><stop offset=".62" stop-color="#ff9a5c"/><stop offset="1" stop-color="#f16623" stop-opacity="0"/></linearGradient>
+          <linearGradient id="sw-w" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cfd6e4" stop-opacity="0"/><stop offset=".45" stop-color="#e9eef7"/><stop offset="1" stop-color="#cfd6e4" stop-opacity="0"/></linearGradient>
+        </defs>
+        <path class="sw sw--a" d="M80 520 C 320 300, 560 300, 760 380 S 1120 520, 1380 300" stroke="url(#sw-o)" stroke-width="30" stroke-linecap="round"/>
+        <path class="sw sw--b" d="M160 600 C 420 420, 640 470, 820 430 S 1160 300, 1360 420" stroke="url(#sw-o)" stroke-width="10" stroke-linecap="round" opacity=".85"/>
+        <path class="sw sw--c" d="M420 300 C 620 220, 820 240, 980 330 S 1180 470, 1280 430" stroke="url(#sw-w)" stroke-width="46" stroke-linecap="round" opacity=".5"/>
+        <path class="sw sw--d" d="M300 380 C 520 200, 760 160, 900 230 S 1080 380, 1200 330" stroke="url(#sw-o)" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+      </svg>
       <div class="wrap hero__copy">
         <p class="chip chip--glass"><span class="chip__dot" aria-hidden="true"></span><?= e($h['eyebrow']) ?></p>
         <div class="glass-panel">

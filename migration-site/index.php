@@ -39,24 +39,29 @@ $h = $C['hero'];
 <?php endif; ?>
 
     <section class="hero hero--glass" aria-labelledby="hero-title">
-      <div class="slides" aria-hidden="true">
-        <div class="slides__track">
+      <div class="wall" aria-hidden="true">
 <?php
-$slides = array_values(array_filter($h['slides'] ?? [], 'has_photo'));
-foreach ($slides as $i => $s) {
-    echo '          <div class="slides__item">' . photo($s, '', '100vw', '', $i > 0, $i === 0) . "</div>\n";
+$rows = [range(1, 6), range(7, 12), range(13, 18)];
+foreach ($rows as $ri => $row) {
+    $imgs = '';
+    foreach ($row as $n) {
+        $f = sprintf('/assets/img/hero/wall-%02d.webp', $n);
+        if (!is_file(SITE_ROOT . $f)) continue;
+        [$w, $hh] = getimagesize(SITE_ROOT . $f);
+        $load = ($ri === 0 && $n <= 4) ? ' fetchpriority="high"' : ' loading="lazy"';
+        $imgs .= sprintf('<img src="%s" width="%d" height="%d" alt="" decoding="async"%s>', $f, $w, $hh, $load);
+    }
+    // Each row repeats its photos once so the drift loops without a seam.
+    echo '        <div class="wall__row">' . $imgs . $imgs . "</div>\n";
 }
-// The first photo again at the end, so the slide back to the start is seamless.
-if (count($slides) > 1) echo '          <div class="slides__item">' . photo($slides[0], '', '100vw') . "</div>\n";
 ?>
-        </div>
       </div>
       <div class="hero__glow" aria-hidden="true"></div>
       <svg class="hero__ribbon" aria-hidden="true" focusable="false" viewBox="0 0 1440 600" preserveAspectRatio="none" fill="none"><path d="M-40 420 C 260 260, 520 520, 760 330 S 1180 120, 1500 260" stroke="#f16623" stroke-width="26" stroke-linecap="round"/><path d="M-40 470 C 300 330, 560 560, 820 380 S 1200 200, 1500 320" stroke="#ff7a3a" stroke-width="8" stroke-linecap="round" opacity="0.8"/></svg>
       <div class="wrap hero__copy">
         <p class="chip chip--glass"><span class="chip__dot" aria-hidden="true"></span><?= e($h['eyebrow']) ?></p>
-        <h1 id="hero-title"><?php foreach ($h['headline'] as $line): ?><span><?= e($line) ?></span> <?php endforeach; ?></h1>
         <div class="glass-panel">
+          <h1 id="hero-title"><?php foreach ($h['headline'] as $line): ?><span><?= e($line) ?></span> <?php endforeach; ?></h1>
           <p class="lede"><?= e($h['support']) ?></p>
           <div class="btn-row">
             <?= button($h['primary']['label'], href($h['primary']['link']), 'primary') ?>

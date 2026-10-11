@@ -1315,3 +1315,36 @@ body { background: var(--bg); color: var(--text); }
 @media (hover: hover) {
   .hero--glass .glass-panel .btn--primary:hover { background: linear-gradient(180deg, #f8884f 0%, #f16623 55%, #e05a1a 100%); color: var(--on-accent); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 36px rgba(241, 102, 35, 0.55); }
 }
+
+/* Home hero: no box. The words sit straight on the photos, held by a soft dark
+   pool of shade behind them so they stay readable on the 70% photo wall. */
+.hero--glass .glass-panel {
+  width: min(820px, 100%); margin-top: 0; padding: 0; gap: 18px; overflow: visible;
+  background: none; border: 0; border-radius: 0; box-shadow: none;
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+}
+.hero--glass .glass-panel::before {
+  inset: -70px -140px; z-index: -1; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(6, 6, 7, 0.78), rgba(6, 6, 7, 0.5) 55%, transparent 100%);
+  filter: blur(10px);
+}
+.hero--glass .glass-panel h1 { font-size: clamp(2.1rem, 4.4vw, 4.1rem); line-height: 0.95; filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.6)); }
+.hero--glass .glass-panel .lede { font-size: clamp(1rem, 1.2vw, 1.12rem); max-width: 44ch; color: rgba(244, 239, 233, 0.9); text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7); }
+.hero--glass .glass-panel .btn-row { margin-top: 6px; gap: 12px; }
+.hero--glass .glass-panel .btn { min-height: 48px; padding-inline: 26px; font-size: 0.9rem; }
+.hero--glass .glass-panel .btn--outline { background: rgba(10, 9, 8, 0.45); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.hero--glass .glass-panel .hero__motto {
+  display: inline-flex; align-items: center; gap: 14px; margin-top: 6px;
+  font: 600 0.82rem/1.2 var(--display); letter-spacing: 0.32em; text-transform: uppercase; color: rgba(244, 239, 233, 0.82);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+.hero--glass .glass-panel .hero__motto::before,
+.hero--glass .glass-panel .hero__motto::after { content: ""; width: 34px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent)); }
+.hero--glass .glass-panel .hero__motto::after { background: linear-gradient(90deg, var(--accent), transparent); }
+@media (max-width: 700px) {
+  .hero--glass .glass-panel { width: 100%; padding: 0; }
+  .hero--glass .glass-panel::before { inset: -40px -30px; }
+  .hero--glass .glass-panel h1 { font-size: clamp(1.9rem, 8.6vw, 2.5rem); }
+  .hero--glass .glass-panel .hero__motto { letter-spacing: 0.22em; font-size: 0.74rem; gap: 10px; }
+  .hero--glass .glass-panel .hero__motto::before, .hero--glass .glass-panel .hero__motto::after { width: 22px; }
+}

@@ -965,3 +965,11 @@
 .lg-artistry .ca-pkg-card,.lg-artistry .ca-advantage-card,.lg-artistry .ca-booking-cta-box,.lg-artistry .ca-combo-banner{border-radius:22px!important}
 .lg-artistry .ca-service-card{border-radius:18px!important;background:var(--card)!important}
 .lg-artistry .ca-gallery-item{border-radius:16px;overflow:hidden}
+
+/* === Service cards: photo fills the whole card (October 2026) === */
+.lg-artistry .ca-service-card{padding:0!important;text-align:left!important;isolation:isolate}
+.lg-artistry .ca-service-img{position:absolute!important;inset:0!important;overflow:hidden!important;background:#1a1715!important}
+.lg-artistry .ca-service-img img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center 22%!important;opacity:1!important;filter:none!important;border-radius:0!important;margin:0!important}
+.lg-artistry .ca-service-card::after{height:62%!important;background:linear-gradient(to top,rgba(8,7,6,.92) 0%,rgba(8,7,6,.55) 45%,transparent 100%)!important}
+.lg-artistry .ca-service-info{padding:16px 16px 18px!important;text-align:left!important}
+@media (hover:none){.lg-artistry .ca-service-info p{max-height:none!important;opacity:1!important;transform:none!important}}

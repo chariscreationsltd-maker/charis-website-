@@ -54,7 +54,7 @@
   "banners": [
     {
       "_note": "October free studio campaign. Shows only between start and end (end is the first day it is hidden).",
-      "on": true,
+      "on": false,
       "start": "2026-10-01",
       "end": "2026-11-01",
       "text": "A free studio photoshoot this October.",
@@ -63,7 +63,7 @@
     },
     {
       "_note": "Default seasonal slot. Switch on or off with \"on\".",
-      "on": true,
+      "on": false,
       "start": "",
       "end": "",
       "text": "A portrait session to give.",

@@ -1,0 +1,71 @@
+name: Lock chariscreationsltd.com to the new site
+
+# Runs when this file or launch/lock.trigger changes on website-preview, or by hand.
+# 1. Reports what is in public_html (the .htaccess now in place, recently changed files).
+# 2. Puts the new-site .htaccess back (the WordPress one stays saved as .htaccess-wordpress).
+# 3. Makes .htaccess read-only (444) so WordPress cannot quietly rewrite it.
+# 4. Checks the live site. Results appear as notices on the run.
+on:
+  push:
+    branches: [website-preview]
+    paths: [launch/lock.trigger, .github/workflows/lock-domain.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ftp-deploy-preview
+  cancel-in-progress: false
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Inspect, restore and lock public_html/.htaccess
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          set -uo pipefail
+          OPTS="set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate no; set net:max-retries 3; set net:timeout 30"
+          L() { lftp -u "$FTP_USERNAME,$FTP_PASSWORD" "$FTP_SERVER" -e "$OPTS; $1; bye"; }
+          ROOT=""
+          for d in "" "public_html" "domains/chariscreationsltd.com/public_html"; do
+            if L "cd '/$d' && cls -1a" > listing.txt 2>/dev/null && grep -qx 'Websitemigration/' listing.txt && grep -q 'wp-config.php' listing.txt; then ROOT="/$d"; break; fi
+          done
+          [ -n "$ROOT" ] || { echo "::error::Could not find public_html"; exit 1; }
+          echo "::notice title=root::$ROOT"
+          mkdir -p out
+          L "cd '$ROOT'; get -e .htaccess -o out/before.htaccess" || true
+          if grep -q 'Websitemigration' out/before.htaccess 2>/dev/null; then state=new-site; elif grep -q 'BEGIN WordPress' out/before.htaccess 2>/dev/null; then state=wordpress; else state=other; fi
+          echo "::notice title=htaccess-before::state=$state lines=$(wc -l < out/before.htaccess 2>/dev/null || echo 0) first=$(head -c 300 out/before.htaccess 2>/dev/null | tr '\n' '|' | tr -d '\r')"
+          echo "::notice title=root-listing::$(L "cd '$ROOT'; cls -la --sort=date" 2>/dev/null | head -25 | awk '{print $6,$7,$8,$9}' | tr '\n' '|')"
+          # Save the WordPress version once, if it is not saved yet
+          if ! L "cd '$ROOT'; cls -1a" | grep -qx '.htaccess-wordpress'; then
+            [ "$state" = wordpress ] && L "cd '$ROOT'; put out/before.htaccess -o .htaccess-wordpress"
+          fi
+          [ "$state" = new-site ] || [ "$state" = wordpress ] || L "cd '$ROOT'; put out/before.htaccess -o .htaccess-replaced-$(date +%Y%m%d%H%M)"
+          L "cd '$ROOT'; chmod 644 .htaccess" || true
+          L "cd '$ROOT'; put launch/public_html.htaccess -o .htaccess" || { echo "::error::Could not upload .htaccess"; exit 1; }
+          L "cd '$ROOT'; chmod 444 .htaccess" && echo "::notice title=locked::.htaccess is now read-only (444)" || echo "::warning::chmod 444 not allowed by the server"
+          echo "::notice title=htaccess-after::$(L "cd '$ROOT'; cls -l .htaccess" 2>/dev/null | tr -s ' ')"
+
+      - name: Check the live site
+        run: |
+          sleep 8
+          out=""
+          for u in / /projects/ /services/ /creatives/ /artistry/ /sitemap.xml /wp-login.php; do
+            out="$out $u=$(curl -s -o /dev/null -w '%{http_code}' "https://chariscreationsltd.com$u")"
+          done
+          echo "::notice title=codes::$out"
+          home=$(curl -s -D headers.txt "https://chariscreationsltd.com/")
+          bust=$(curl -s "https://chariscreationsltd.com/?v=$RANDOM" | grep -c '/assets/css/site.css')
+          echo "::notice title=home::newsite=$(echo "$home" | grep -c '/assets/css/site.css') wordpress=$(echo "$home" | grep -c 'wp-content') cachebusted-newsite=$bust"
+          echo "::notice title=headers::$(grep -iE '^(server|x-litespeed-cache|cache-control|x-hcdn|age|platform):' headers.txt | tr -d '\r' | tr '\n' '|')"
